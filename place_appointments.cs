@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace finals_UI
 {
-    public partial class schedule : Form
+    public partial class place_appointments : Form
     {
-        public schedule()
+        public place_appointments()
         {
             InitializeComponent();
-        }
-
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
