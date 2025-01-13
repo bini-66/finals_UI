@@ -16,7 +16,7 @@ namespace finals_UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new place_appointments());
+            Application.Run(new manage_offers());
             //yujyv
         }
     }
