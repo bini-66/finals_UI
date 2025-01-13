@@ -52,11 +52,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="manage_employee.cs">
+    <Compile Include="manage_inventory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="manage_employee.Designer.cs">
-      <DependentUpon>manage_employee.cs</DependentUpon>
+    <Compile Include="manage_inventory.Designer.cs">
+      <DependentUpon>manage_inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="manage_services.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manage_services.Designer.cs">
+      <DependentUpon>manage_services.cs</DependentUpon>
+    </Compile>
+    <Compile Include="manage_users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manage_users.Designer.cs">
+      <DependentUpon>manage_users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="manage_offers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manage_offers.Designer.cs">
+      <DependentUpon>manage_offers.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,11 +84,26 @@
     <Compile Include="Register_user.Designer.cs">
       <DependentUpon>Register_user.cs</DependentUpon>
     </Compile>
+    <Compile Include="schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="schedule.Designer.cs">
+      <DependentUpon>schedule.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="manage_employee.resx">
-      <DependentUpon>manage_employee.cs</DependentUpon>
+    <EmbeddedResource Include="manage_inventory.resx">
+      <DependentUpon>manage_inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manage_offers.resx">
+      <DependentUpon>manage_offers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manage_services.resx">
+      <DependentUpon>manage_services.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manage_users.resx">
+      <DependentUpon>manage_users.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="Register_user.resx">
       <DependentUpon>Register_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="schedule.resx">
+      <DependentUpon>schedule.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
