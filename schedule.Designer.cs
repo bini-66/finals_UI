@@ -33,33 +33,36 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button14 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Appointment_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Customer_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Appointment_Status = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.decline = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button14 = new System.Windows.Forms.Button();
+            this.vehicle_PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employee_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button4);
@@ -70,7 +73,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 738);
+            this.panel1.Size = new System.Drawing.Size(255, 711);
             this.panel1.TabIndex = 4;
             // 
             // button6
@@ -80,7 +83,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button6.Location = new System.Drawing.Point(0, 687);
+            this.button6.Location = new System.Drawing.Point(0, 660);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(255, 51);
             this.button6.TabIndex = 6;
@@ -129,6 +132,20 @@
             this.button2.Text = "Dashboard";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.button1.Location = new System.Drawing.Point(0, 204);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(255, 63);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Dashboard";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.pictureBox1);
@@ -164,7 +181,7 @@
             // monthCalendar1
             // 
             this.monthCalendar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.monthCalendar1.Location = new System.Drawing.Point(335, 213);
+            this.monthCalendar1.Location = new System.Drawing.Point(300, 192);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 8;
             this.monthCalendar1.TitleForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -173,86 +190,37 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Teal;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Appointment_ID,
             this.Time,
             this.Customer_Name,
-            this.Appointment_Status,
-            this.decline});
+            this.vehicle_PlateNumber,
+            this.employee_Name});
             this.dataGridView1.GridColor = System.Drawing.Color.Teal;
-            this.dataGridView1.Location = new System.Drawing.Point(665, 120);
+            this.dataGridView1.Location = new System.Drawing.Point(643, 161);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(838, 397);
+            this.dataGridView1.Size = new System.Drawing.Size(803, 397);
             this.dataGridView1.TabIndex = 29;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Appointment_ID
+            // button14
             // 
-            this.Appointment_ID.HeaderText = "Appointment_ID";
-            this.Appointment_ID.MinimumWidth = 6;
-            this.Appointment_ID.Name = "Appointment_ID";
-            this.Appointment_ID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Appointment_ID.Width = 125;
-            // 
-            // Time
-            // 
-            this.Time.HeaderText = "Time";
-            this.Time.MinimumWidth = 6;
-            this.Time.Name = "Time";
-            this.Time.Width = 125;
-            // 
-            // Customer_Name
-            // 
-            this.Customer_Name.HeaderText = "Customer_Name";
-            this.Customer_Name.MinimumWidth = 6;
-            this.Customer_Name.Name = "Customer_Name";
-            this.Customer_Name.Width = 125;
-            // 
-            // Appointment_Status
-            // 
-            this.Appointment_Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Appointment_Status.HeaderText = "";
-            this.Appointment_Status.MinimumWidth = 6;
-            this.Appointment_Status.Name = "Appointment_Status";
-            this.Appointment_Status.Text = "Confirm";
-            this.Appointment_Status.UseColumnTextForButtonValue = true;
-            // 
-            // decline
-            // 
-            this.decline.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.decline.HeaderText = "";
-            this.decline.MinimumWidth = 6;
-            this.decline.Name = "decline";
-            this.decline.Text = "Decline";
-            this.decline.UseColumnTextForButtonValue = true;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button1.Location = new System.Drawing.Point(0, 204);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(255, 63);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Dashboard";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::finals_UI.Properties.Resources.LOGOUT3;
-            this.pictureBox3.Location = new System.Drawing.Point(26, 690);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(39, 36);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
+            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.button14.Location = new System.Drawing.Point(1443, 12);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(30, 28);
+            this.button14.TabIndex = 60;
+            this.button14.Text = "X";
+            this.button14.UseVisualStyleBackColor = false;
             // 
             // pictureBox2
             // 
@@ -274,24 +242,95 @@
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
-            // button14
+            // Appointment_ID
             // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.button14.Image = global::finals_UI.Properties.Resources.close1;
-            this.button14.Location = new System.Drawing.Point(1478, 12);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(15, 19);
-            this.button14.TabIndex = 60;
-            this.button14.UseVisualStyleBackColor = false;
+            this.Appointment_ID.HeaderText = "Appointment_ID";
+            this.Appointment_ID.MinimumWidth = 6;
+            this.Appointment_ID.Name = "Appointment_ID";
+            this.Appointment_ID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Time
+            // 
+            this.Time.HeaderText = "Time";
+            this.Time.MinimumWidth = 6;
+            this.Time.Name = "Time";
+            // 
+            // Customer_Name
+            // 
+            this.Customer_Name.HeaderText = "Customer_Name";
+            this.Customer_Name.MinimumWidth = 6;
+            this.Customer_Name.Name = "Customer_Name";
+            // 
+            // vehicle_PlateNumber
+            // 
+            this.vehicle_PlateNumber.HeaderText = "vehicle_PlateNumber";
+            this.vehicle_PlateNumber.MinimumWidth = 6;
+            this.vehicle_PlateNumber.Name = "vehicle_PlateNumber";
+            // 
+            // employee_Name
+            // 
+            this.employee_Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.employee_Name.HeaderText = "employee_Name";
+            this.employee_Name.MinimumWidth = 6;
+            this.employee_Name.Name = "employee_Name";
+            this.employee_Name.Width = 141;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::finals_UI.Properties.Resources.LOGOUT3;
+            this.pictureBox4.Location = new System.Drawing.Point(26, 663);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 9;
+            this.pictureBox4.TabStop = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.button5.Location = new System.Drawing.Point(1534, -111);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(30, 28);
+            this.button5.TabIndex = 64;
+            this.button5.Text = "X";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(890, 607);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(100, 33);
+            this.button11.TabIndex = 62;
+            this.button11.Text = "Update";
+            this.button11.UseVisualStyleBackColor = false;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(1084, 607);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(100, 33);
+            this.button10.TabIndex = 61;
+            this.button10.Text = "Delete";
+            this.button10.UseVisualStyleBackColor = false;
             // 
             // schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1718, 738);
+            this.ClientSize = new System.Drawing.Size(1485, 711);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button11);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.monthCalendar1);
@@ -305,9 +344,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,14 +365,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Appointment_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Time;
         private System.Windows.Forms.DataGridViewTextBoxColumn Customer_Name;
-        private System.Windows.Forms.DataGridViewButtonColumn Appointment_Status;
-        private System.Windows.Forms.DataGridViewButtonColumn decline;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vehicle_PlateNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employee_Name;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button10;
     }
 }

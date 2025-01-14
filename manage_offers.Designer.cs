@@ -420,12 +420,13 @@
             // 
             this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.button14.Image = global::finals_UI.Properties.Resources.close1;
-            this.button14.Location = new System.Drawing.Point(1154, 34);
+            this.button14.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.button14.Location = new System.Drawing.Point(1466, 12);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(15, 19);
+            this.button14.Size = new System.Drawing.Size(30, 28);
             this.button14.TabIndex = 59;
+            this.button14.Text = "X";
             this.button14.UseVisualStyleBackColor = false;
             // 
             // pictureBox2

@@ -29,15 +29,22 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Employee_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Employee_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Present = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Absent = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.button5 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -46,19 +53,13 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.Employee_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Employee_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Present = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Absent = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button14 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,6 +77,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(255, 874);
             this.panel1.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::finals_UI.Properties.Resources.home3;
+            this.pictureBox2.Location = new System.Drawing.Point(28, 210);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
             // 
             // button6
             // 
@@ -157,6 +168,17 @@
             this.panel2.Size = new System.Drawing.Size(255, 204);
             this.panel2.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::finals_UI.Properties.Resources.user;
+            this.pictureBox1.Location = new System.Drawing.Point(87, 50);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 73);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -192,6 +214,41 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(824, 495);
             this.dataGridView1.TabIndex = 29;
+            // 
+            // Employee_ID
+            // 
+            this.Employee_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Employee_ID.HeaderText = "Employee_ID";
+            this.Employee_ID.MinimumWidth = 6;
+            this.Employee_ID.Name = "Employee_ID";
+            // 
+            // Employee_Name
+            // 
+            this.Employee_Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Employee_Name.HeaderText = "Employee_Name";
+            this.Employee_Name.MinimumWidth = 6;
+            this.Employee_Name.Name = "Employee_Name";
+            // 
+            // Date
+            // 
+            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Date.HeaderText = "Date";
+            this.Date.MinimumWidth = 6;
+            this.Date.Name = "Date";
+            // 
+            // Present
+            // 
+            this.Present.HeaderText = "Present";
+            this.Present.MinimumWidth = 6;
+            this.Present.Name = "Present";
+            this.Present.Width = 125;
+            // 
+            // Absent
+            // 
+            this.Absent.HeaderText = "Absent";
+            this.Absent.MinimumWidth = 6;
+            this.Absent.Name = "Absent";
+            this.Absent.Width = 125;
             // 
             // button5
             // 
@@ -283,41 +340,6 @@
             this.button9.Text = "Update";
             this.button9.UseVisualStyleBackColor = false;
             // 
-            // Employee_ID
-            // 
-            this.Employee_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Employee_ID.HeaderText = "Employee_ID";
-            this.Employee_ID.MinimumWidth = 6;
-            this.Employee_ID.Name = "Employee_ID";
-            // 
-            // Employee_Name
-            // 
-            this.Employee_Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Employee_Name.HeaderText = "Employee_Name";
-            this.Employee_Name.MinimumWidth = 6;
-            this.Employee_Name.Name = "Employee_Name";
-            // 
-            // Date
-            // 
-            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Date.HeaderText = "Date";
-            this.Date.MinimumWidth = 6;
-            this.Date.Name = "Date";
-            // 
-            // Present
-            // 
-            this.Present.HeaderText = "Present";
-            this.Present.MinimumWidth = 6;
-            this.Present.Name = "Present";
-            this.Present.Width = 125;
-            // 
-            // Absent
-            // 
-            this.Absent.HeaderText = "Absent";
-            this.Absent.MinimumWidth = 6;
-            this.Absent.Name = "Absent";
-            this.Absent.Width = 125;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -330,26 +352,18 @@
             this.label3.Text = "Attendance System";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // pictureBox2
+            // button14
             // 
-            this.pictureBox2.Image = global::finals_UI.Properties.Resources.home3;
-            this.pictureBox2.Location = new System.Drawing.Point(28, 210);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(39, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::finals_UI.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(87, 50);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 73);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.button14.Location = new System.Drawing.Point(1797, 12);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(30, 28);
+            this.button14.TabIndex = 60;
+            this.button14.Text = "X";
+            this.button14.UseVisualStyleBackColor = false;
             // 
             // employee_attendance
             // 
@@ -357,6 +371,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1854, 874);
+            this.Controls.Add(this.button14);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -375,11 +390,11 @@
             this.Text = "employee_attendance";
             this.Load += new System.EventHandler(this.employee_attendance_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,5 +428,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button14;
     }
 }
