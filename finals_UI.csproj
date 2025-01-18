@@ -150,6 +150,12 @@
     <Compile Include="view_employee.Designer.cs">
       <DependentUpon>view_employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="view_feedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view_feedback.Designer.cs">
+      <DependentUpon>view_feedback.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="confirm_appointment.resx">
       <DependentUpon>confirm_appointment.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +217,9 @@
     <EmbeddedResource Include="view_employee.resx">
       <DependentUpon>view_employee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="view_feedback.resx">
+      <DependentUpon>view_feedback.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -256,6 +265,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\logout4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\appointmnet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\payment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\payment2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\payment3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\appointment2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\customer2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
