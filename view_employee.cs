@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace finals_UI
 {
-    public partial class place_appointments : Form
+    public partial class view_employee : Form
     {
-        public place_appointments()
+        public view_employee()
         {
             InitializeComponent();
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

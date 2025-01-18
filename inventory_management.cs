@@ -16,5 +16,15 @@ namespace finals_UI
         {
             InitializeComponent();
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

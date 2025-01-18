@@ -82,6 +82,12 @@
     <Compile Include="manage_services.Designer.cs">
       <DependentUpon>manage_services.cs</DependentUpon>
     </Compile>
+    <Compile Include="manage_supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manage_supplier.Designer.cs">
+      <DependentUpon>manage_supplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="manage_users.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,12 @@
     <Compile Include="manage_offers.Designer.cs">
       <DependentUpon>manage_offers.cs</DependentUpon>
     </Compile>
+    <Compile Include="payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="payment.Designer.cs">
+      <DependentUpon>payment.cs</DependentUpon>
+    </Compile>
     <Compile Include="place_appointments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +114,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receptionist_dash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist_dash.Designer.cs">
+      <DependentUpon>Receptionist_dash.cs</DependentUpon>
+    </Compile>
     <Compile Include="Register_user.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +137,18 @@
     </Compile>
     <Compile Include="trial.Designer.cs">
       <DependentUpon>trial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view_customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view_customer.Designer.cs">
+      <DependentUpon>view_customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view_employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view_employee.Designer.cs">
+      <DependentUpon>view_employee.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="confirm_appointment.resx">
       <DependentUpon>confirm_appointment.cs</DependentUpon>
@@ -141,8 +171,14 @@
     <EmbeddedResource Include="manage_services.resx">
       <DependentUpon>manage_services.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="manage_supplier.resx">
+      <DependentUpon>manage_supplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="manage_users.resx">
       <DependentUpon>manage_users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="payment.resx">
+      <DependentUpon>payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="place_appointments.resx">
       <DependentUpon>place_appointments.cs</DependentUpon>
@@ -157,6 +193,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Receptionist_dash.resx">
+      <DependentUpon>Receptionist_dash.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Register_user.resx">
       <DependentUpon>Register_user.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +204,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="trial.resx">
       <DependentUpon>trial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view_customer.resx">
+      <DependentUpon>view_customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view_employee.resx">
+      <DependentUpon>view_employee.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -202,6 +247,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\schedule.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\logout4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
