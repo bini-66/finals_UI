@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace finals_UI
 {
-    public partial class manage_services : Form
+    public partial class vehicle_details : Form
     {
-        public manage_services()
+        public vehicle_details()
         {
             InitializeComponent();
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

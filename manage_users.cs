@@ -49,5 +49,15 @@ namespace finals_UI
         {
 
         }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,16 +10,21 @@ using System.Windows.Forms;
 
 namespace finals_UI
 {
-    public partial class manage_services : Form
+    public partial class serviceManager_dash : Form
     {
-        public manage_services()
+        public serviceManager_dash()
         {
             InitializeComponent();
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

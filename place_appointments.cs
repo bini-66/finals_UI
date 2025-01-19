@@ -26,5 +26,17 @@ namespace finals_UI
         {
 
         }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+                 this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Receptionist_dash dash= new Receptionist_dash();
+            dash.Show();
+        }
     }
 }

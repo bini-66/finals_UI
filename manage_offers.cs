@@ -26,5 +26,15 @@ namespace finals_UI
         {
 
         }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

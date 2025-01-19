@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace finals_UI
 {
-    public partial class payment : Form
+    public partial class manage_customers : Form
     {
-        public payment()
+        public manage_customers()
         {
             InitializeComponent();
         }
@@ -22,29 +22,19 @@ namespace finals_UI
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox7_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            this.Close();
+           this.Close();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)
