@@ -46,168 +46,170 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="confirm_appointment.cs">
+    <Compile Include="Controller\testFile.cs" />
+    <Compile Include="Model\Database\dbConnection.cs" />
+    <Compile Include="View\confirm_appointment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="confirm_appointment.Designer.cs">
+    <Compile Include="View\confirm_appointment.Designer.cs">
       <DependentUpon>confirm_appointment.cs</DependentUpon>
     </Compile>
-    <Compile Include="employee_attendance.cs">
+    <Compile Include="View\employee_attendance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="employee_attendance.Designer.cs">
+    <Compile Include="View\employee_attendance.Designer.cs">
       <DependentUpon>employee_attendance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="View\sign_in.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="View\sign_in.Designer.cs">
+      <DependentUpon>sign_in.cs</DependentUpon>
     </Compile>
-    <Compile Include="inventory_management.cs">
+    <Compile Include="View\inventory_management.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="inventory_management.Designer.cs">
+    <Compile Include="View\inventory_management.Designer.cs">
       <DependentUpon>inventory_management.cs</DependentUpon>
     </Compile>
-    <Compile Include="manage_customers.cs">
+    <Compile Include="View\manage_customers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="manage_customers.Designer.cs">
+    <Compile Include="View\manage_customers.Designer.cs">
       <DependentUpon>manage_customers.cs</DependentUpon>
     </Compile>
-    <Compile Include="manage_inventory.cs">
+    <Compile Include="View\manage_inventory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="manage_inventory.Designer.cs">
+    <Compile Include="View\manage_inventory.Designer.cs">
       <DependentUpon>manage_inventory.cs</DependentUpon>
     </Compile>
-    <Compile Include="manage_services.cs">
+    <Compile Include="View\manage_services.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="manage_services.Designer.cs">
+    <Compile Include="View\manage_services.Designer.cs">
       <DependentUpon>manage_services.cs</DependentUpon>
     </Compile>
-    <Compile Include="manage_supplier.cs">
+    <Compile Include="View\manage_supplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="manage_supplier.Designer.cs">
+    <Compile Include="View\manage_supplier.Designer.cs">
       <DependentUpon>manage_supplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="manage_users.cs">
+    <Compile Include="View\manage_users.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="manage_users.Designer.cs">
+    <Compile Include="View\manage_users.Designer.cs">
       <DependentUpon>manage_users.cs</DependentUpon>
     </Compile>
-    <Compile Include="manage_offers.cs">
+    <Compile Include="View\manage_offers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="manage_offers.Designer.cs">
+    <Compile Include="View\manage_offers.Designer.cs">
       <DependentUpon>manage_offers.cs</DependentUpon>
     </Compile>
-    <Compile Include="payment.cs">
+    <Compile Include="View\payment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="payment.Designer.cs">
+    <Compile Include="View\payment.Designer.cs">
       <DependentUpon>payment.cs</DependentUpon>
     </Compile>
-    <Compile Include="place_appointments.cs">
+    <Compile Include="View\place_appointments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="place_appointments.Designer.cs">
+    <Compile Include="View\place_appointments.Designer.cs">
       <DependentUpon>place_appointments.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Receptionist_dash.cs">
+    <Compile Include="View\Receptionist_dash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Receptionist_dash.Designer.cs">
+    <Compile Include="View\Receptionist_dash.Designer.cs">
       <DependentUpon>Receptionist_dash.cs</DependentUpon>
     </Compile>
-    <Compile Include="Register_user.cs">
+    <Compile Include="View\Register_user.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Register_user.Designer.cs">
+    <Compile Include="View\Register_user.Designer.cs">
       <DependentUpon>Register_user.cs</DependentUpon>
     </Compile>
-    <Compile Include="schedule.cs">
+    <Compile Include="View\schedule.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="schedule.Designer.cs">
+    <Compile Include="View\schedule.Designer.cs">
       <DependentUpon>schedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="serviceManager_dash.cs">
+    <Compile Include="View\serviceManager_dash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="serviceManager_dash.Designer.cs">
+    <Compile Include="View\serviceManager_dash.Designer.cs">
       <DependentUpon>serviceManager_dash.cs</DependentUpon>
     </Compile>
-    <Compile Include="trial.cs">
+    <Compile Include="View\trial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="trial.Designer.cs">
+    <Compile Include="View\trial.Designer.cs">
       <DependentUpon>trial.cs</DependentUpon>
     </Compile>
-    <Compile Include="vehicle_details.cs">
+    <Compile Include="View\vehicle_details.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vehicle_details.Designer.cs">
+    <Compile Include="View\vehicle_details.Designer.cs">
       <DependentUpon>vehicle_details.cs</DependentUpon>
     </Compile>
-    <Compile Include="view_customer.cs">
+    <Compile Include="View\view_customer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view_customer.Designer.cs">
+    <Compile Include="View\view_customer.Designer.cs">
       <DependentUpon>view_customer.cs</DependentUpon>
     </Compile>
-    <Compile Include="view_employee.cs">
+    <Compile Include="View\view_employee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view_employee.Designer.cs">
+    <Compile Include="View\view_employee.Designer.cs">
       <DependentUpon>view_employee.cs</DependentUpon>
     </Compile>
-    <Compile Include="view_feedback.cs">
+    <Compile Include="View\view_feedback.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view_feedback.Designer.cs">
+    <Compile Include="View\view_feedback.Designer.cs">
       <DependentUpon>view_feedback.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="confirm_appointment.resx">
+    <EmbeddedResource Include="View\confirm_appointment.resx">
       <DependentUpon>confirm_appointment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="employee_attendance.resx">
+    <EmbeddedResource Include="View\employee_attendance.resx">
       <DependentUpon>employee_attendance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="View\sign_in.resx">
+      <DependentUpon>sign_in.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="inventory_management.resx">
+    <EmbeddedResource Include="View\inventory_management.resx">
       <DependentUpon>inventory_management.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="manage_customers.resx">
+    <EmbeddedResource Include="View\manage_customers.resx">
       <DependentUpon>manage_customers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="manage_inventory.resx">
+    <EmbeddedResource Include="View\manage_inventory.resx">
       <DependentUpon>manage_inventory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="manage_offers.resx">
+    <EmbeddedResource Include="View\manage_offers.resx">
       <DependentUpon>manage_offers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="manage_services.resx">
+    <EmbeddedResource Include="View\manage_services.resx">
       <DependentUpon>manage_services.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="manage_supplier.resx">
+    <EmbeddedResource Include="View\manage_supplier.resx">
       <DependentUpon>manage_supplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="manage_users.resx">
+    <EmbeddedResource Include="View\manage_users.resx">
       <DependentUpon>manage_users.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="payment.resx">
+    <EmbeddedResource Include="View\payment.resx">
       <DependentUpon>payment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="place_appointments.resx">
+    <EmbeddedResource Include="View\place_appointments.resx">
       <DependentUpon>place_appointments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -220,31 +222,31 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Receptionist_dash.resx">
+    <EmbeddedResource Include="View\Receptionist_dash.resx">
       <DependentUpon>Receptionist_dash.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Register_user.resx">
+    <EmbeddedResource Include="View\Register_user.resx">
       <DependentUpon>Register_user.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="schedule.resx">
+    <EmbeddedResource Include="View\schedule.resx">
       <DependentUpon>schedule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="serviceManager_dash.resx">
+    <EmbeddedResource Include="View\serviceManager_dash.resx">
       <DependentUpon>serviceManager_dash.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="trial.resx">
+    <EmbeddedResource Include="View\trial.resx">
       <DependentUpon>trial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vehicle_details.resx">
+    <EmbeddedResource Include="View\vehicle_details.resx">
       <DependentUpon>vehicle_details.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view_customer.resx">
+    <EmbeddedResource Include="View\view_customer.resx">
       <DependentUpon>view_customer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view_employee.resx">
+    <EmbeddedResource Include="View\view_employee.resx">
       <DependentUpon>view_employee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view_feedback.resx">
+    <EmbeddedResource Include="View\view_feedback.resx">
       <DependentUpon>view_feedback.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -317,5 +319,6 @@
   <ItemGroup>
     <None Include="Images\employee.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
