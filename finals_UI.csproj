@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\testFile.cs" />
+    <Compile Include="Model\Database\dbConnection.cs" />
     <Compile Include="View\confirm_appointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,9 +319,6 @@
   <ItemGroup>
     <None Include="Images\employee.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
