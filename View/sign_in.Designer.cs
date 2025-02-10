@@ -1,6 +1,6 @@
 ﻿namespace finals_UI
 {
-    partial class Form1
+    partial class sign_in
     {
         /// <summary>
         /// Required designer variable.

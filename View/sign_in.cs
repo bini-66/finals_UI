@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace finals_UI
 {
-    public partial class Form1 : Form
+    public partial class sign_in : Form
     {
-        public Form1()
+        public sign_in()
         {
             InitializeComponent();
         }
