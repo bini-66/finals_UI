@@ -18,9 +18,13 @@ namespace finals_UI
     {
         serviceController serviceController=new serviceController();
         service service = new service();
+
         public manage_services()
         {
             InitializeComponent();
+            DataSet ds = serviceController.viewServices();
+            this.dataGridView1.DataSource = ds.Tables[0];
+
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -29,13 +33,65 @@ namespace finals_UI
         }
 
         private void btnadd_Click(object sender, EventArgs e)
+
         {
-           
-            service.serviceName=this.txtsername.Text;
-            service.serviceDescription=this.txtserdes.Text;
-            service.servicePrice = float.Parse(this.txtserprice.Text);
+            //validations
+            if(this.txtsername.Text=="")
+            {
+                this.errorProvider1.SetError(this.txtsername, "service name cannot be empty");
+                return;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (this.txtserprice.Text == "")
+            {
+                this.errorProvider2.SetError(this.txtserprice, "service price cannot be empty");
+                return;
+
+            }
+
+            else
+            {
+                errorProvider2.Clear();
+            }
+            //price validation
+            float price;
+            if (!float.TryParse(this.txtserprice.Text, out price) || price <= 0)
+            {
+                errorProvider3.SetError(this.txtserprice, "Please enter a valid price greater than 0.");
+                return;
+            }
+            else
+            {
+                service.servicePrice = price;
+                errorProvider3.Clear();
+            }
+            if (this.txtserdes.Text == "")
+            {
+                this.errorProvider3.SetError(this.txtserdes, "service description cannot be empty");
+                return;
+
+
+            }
+            else
+            {
+                errorProvider3.Clear();
+            }
+
+
+            //set service details
+            service.serviceName = this.txtsername.Text;
+            service.serviceDescription = this.txtserdes.Text;
             service.serviceManagerId = 1;       //need to maintain a session fr this
+
+            //calling function to add service
             serviceController.addService(service);
+
+            //update datagridview
+            RefreshGrid();
+            clearFields();
 
 
         }
@@ -45,6 +101,107 @@ namespace finals_UI
             
             DataSet ds= serviceController.viewServices();
             this.dataGridView1.DataSource = ds.Tables[0];
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.txtsername.Text=this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            this.txtserdes.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            this.txtserprice.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            service.serviceId=Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+
+
+        }
+
+        private void btndlt_Click(object sender, EventArgs e)
+        {
+
+            //calling function to delete service
+            serviceController.deleteService(service.serviceId);
+            //update datagridview
+            RefreshGrid();
+            //clear text fields
+            clearFields();
+
+        }
+
+        private void btnup_Click(object sender, EventArgs e)
+        {
+            //validations
+            if (this.txtsername.Text == "")
+            {
+                this.errorProvider1.SetError(this.txtsername, "service name cannot be empty");
+                return;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (this.txtserprice.Text == "")
+            {
+                this.errorProvider2.SetError(this.txtserprice, "service price cannot be empty");
+                return;
+
+            }
+
+            else
+            {
+                errorProvider2.Clear();
+            }
+            //price validation
+            float price;
+            if (!float.TryParse(this.txtserprice.Text, out price) || price <= 0)
+            {
+                errorProvider3.SetError(this.txtserprice, "Please enter a valid price greater than 0.");
+                return;
+            }
+            else
+            {
+                service.servicePrice = price;
+                errorProvider3.Clear();
+            }
+            if (this.txtserdes.Text == "")
+            {
+                this.errorProvider3.SetError(this.txtserdes, "service description cannot be empty");
+                return;
+
+
+            }
+            else
+            {
+                errorProvider3.Clear();
+            }
+
+            //set service details
+            service.serviceName = this.txtsername.Text;
+            service.serviceDescription = this.txtserdes.Text;
+
+
+            //calling function to update service
+            serviceController.updateService(service);
+
+            //update datagridview
+            RefreshGrid();
+
+            //clear fields
+            clearFields();
+
+
+        }
+        private void RefreshGrid()
+        {
+            this.dataGridView1.DataSource = serviceController.viewServices().Tables[0];
+        }
+        private void clearFields()
+        {
+            this.txtsername.Text = "";
+            this.txtserdes.Text = "";
+            this.txtserprice.Text = "";
+        }
+
+        private void btnclr_Click(object sender, EventArgs e)
+        {
+            clearFields();
         }
     }
 }
