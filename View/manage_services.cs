@@ -203,5 +203,10 @@ namespace finals_UI
         {
             clearFields();
         }
+
+        private void txtsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
