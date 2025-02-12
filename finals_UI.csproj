@@ -101,9 +101,11 @@
     <Compile Include="Controller\inventoryController.cs" />
     <Compile Include="Controller\offerController.cs" />
     <Compile Include="Controller\serviceController.cs" />
+    <Compile Include="Controller\stockController.cs" />
     <Compile Include="Model\classes\inventory.cs" />
     <Compile Include="Model\classes\offer.cs" />
     <Compile Include="Model\classes\service.cs" />
+    <Compile Include="Model\classes\stock.cs" />
     <Compile Include="Model\Database\dbConnection.cs" />
     <Compile Include="View\confirm_appointment.cs">
       <SubType>Form</SubType>
@@ -135,11 +137,11 @@
     <Compile Include="View\manage_customers.Designer.cs">
       <DependentUpon>manage_customers.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\manage_inventory.cs">
+    <Compile Include="View\manage_stock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\manage_inventory.Designer.cs">
-      <DependentUpon>manage_inventory.cs</DependentUpon>
+    <Compile Include="View\manage_stock.Designer.cs">
+      <DependentUpon>manage_stock.cs</DependentUpon>
     </Compile>
     <Compile Include="View\manage_services.cs">
       <SubType>Form</SubType>
@@ -248,8 +250,8 @@
     <EmbeddedResource Include="View\manage_customers.resx">
       <DependentUpon>manage_customers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\manage_inventory.resx">
-      <DependentUpon>manage_inventory.cs</DependentUpon>
+    <EmbeddedResource Include="View\manage_stock.resx">
+      <DependentUpon>manage_stock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\manage_offers.resx">
       <DependentUpon>manage_offers.cs</DependentUpon>

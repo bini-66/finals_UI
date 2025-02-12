@@ -71,6 +71,7 @@
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button11 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -101,7 +102,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 864);
+            this.panel1.Size = new System.Drawing.Size(255, 998);
             this.panel1.TabIndex = 2;
             // 
             // pictureBox5
@@ -151,7 +152,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button6.Location = new System.Drawing.Point(0, 813);
+            this.button6.Location = new System.Drawing.Point(0, 947);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(255, 51);
             this.button6.TabIndex = 6;
@@ -541,12 +542,26 @@
             // 
             this.errorProvider5.ContainerControl = this;
             // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button11.Location = new System.Drawing.Point(747, 825);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(215, 31);
+            this.button11.TabIndex = 108;
+            this.button11.Text = "Update Stock";
+            this.button11.UseVisualStyleBackColor = false;
+            // 
             // inventory_management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1452, 864);
+            this.ClientSize = new System.Drawing.Size(1452, 998);
+            this.Controls.Add(this.button11);
             this.Controls.Add(this.txtitmDes);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtitmBrand);
@@ -639,5 +654,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider3;
         private System.Windows.Forms.ErrorProvider errorProvider4;
         private System.Windows.Forms.ErrorProvider errorProvider5;
+        private System.Windows.Forms.Button button11;
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace finals_UI
 {
-    public partial class manage_inventory : Form
+    public partial class manage_stock : Form
     {
-        public manage_inventory()
+        public manage_stock()
         {
             InitializeComponent();
         }
@@ -28,6 +28,21 @@ namespace finals_UI
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown2_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
