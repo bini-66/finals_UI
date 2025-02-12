@@ -42,9 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -235,39 +232,6 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(654, 144);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 33);
-            this.button5.TabIndex = 27;
-            this.button5.Text = "Search";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label7.Location = new System.Drawing.Point(367, 147);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(30, 23);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "ID";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(461, 143);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 30);
-            this.textBox1.TabIndex = 25;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Teal;
@@ -285,11 +249,14 @@
             // 
             this.txtsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.txtsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsername.ForeColor = System.Drawing.Color.White;
             this.txtsername.Location = new System.Drawing.Point(492, 511);
             this.txtsername.Multiline = true;
             this.txtsername.Name = "txtsername";
             this.txtsername.Size = new System.Drawing.Size(326, 30);
             this.txtsername.TabIndex = 32;
+            this.txtsername.TextChanged += new System.EventHandler(this.txtsername_TextChanged);
             // 
             // label2
             // 
@@ -306,6 +273,8 @@
             // 
             this.txtserprice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.txtserprice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtserprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtserprice.ForeColor = System.Drawing.Color.White;
             this.txtserprice.Location = new System.Drawing.Point(492, 603);
             this.txtserprice.Multiline = true;
             this.txtserprice.Name = "txtserprice";
@@ -390,6 +359,8 @@
             // 
             this.txtserdes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.txtserdes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtserdes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtserdes.ForeColor = System.Drawing.Color.White;
             this.txtserdes.Location = new System.Drawing.Point(1132, 508);
             this.txtserdes.Multiline = true;
             this.txtserdes.Name = "txtserdes";
@@ -401,7 +372,7 @@
             this.btnsearchname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnsearchname.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsearchname.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsearchname.Location = new System.Drawing.Point(1268, 147);
+            this.btnsearchname.Location = new System.Drawing.Point(1020, 142);
             this.btnsearchname.Name = "btnsearchname";
             this.btnsearchname.Size = new System.Drawing.Size(100, 33);
             this.btnsearchname.TabIndex = 56;
@@ -413,7 +384,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label9.Location = new System.Drawing.Point(874, 150);
+            this.label9.Location = new System.Drawing.Point(604, 144);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(61, 23);
             this.label9.TabIndex = 55;
@@ -423,7 +394,7 @@
             // 
             this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Location = new System.Drawing.Point(976, 147);
+            this.textBox5.Location = new System.Drawing.Point(720, 143);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(264, 30);
@@ -502,9 +473,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtsername);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "manage_services";
@@ -535,9 +503,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtsername;
         private System.Windows.Forms.Label label2;

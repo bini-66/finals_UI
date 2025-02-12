@@ -98,7 +98,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\offerController.cs" />
     <Compile Include="Controller\serviceController.cs" />
+    <Compile Include="Model\classes\offer.cs" />
     <Compile Include="Model\classes\service.cs" />
     <Compile Include="Model\Database\dbConnection.cs" />
     <Compile Include="View\confirm_appointment.cs">
