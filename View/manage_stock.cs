@@ -15,8 +15,8 @@ namespace finals_UI
 {
     public partial class manage_stock : Form
     {
-        stockController stockController=new stockController();
-        stock stock=new stock();
+        purchaseController purchaseController=new purchaseController();
+        purchase purchase=new purchase();
         public manage_stock()
         {
             InitializeComponent();
@@ -55,7 +55,7 @@ namespace finals_UI
         private void manage_stock_Load(object sender, EventArgs e)
         {
             //populating combo box with item names
-            DataSet ds = stockController.loadItemName();
+            DataSet ds = purchaseController.loadItemName();
             CBitmName.DataSource=ds.Tables[0];
             CBitmName.DisplayMember = "itemName";
             CBitmName.ValueMember = "itemId";
@@ -64,13 +64,13 @@ namespace finals_UI
 
             //load data to data gridview
 
-            DataSet ds2 = stockController.viewStock();
+            DataSet ds2 = purchaseController.viewPurchaseDetails();
             dataGridView1.DataSource = ds2.Tables[0];
-            //hiding stockId column
-            dataGridView1.Columns["stockId"].Visible = false;
+            ////hiding stockId column
+            dataGridView1.Columns["purchaseId"].Visible = false;
 
             //populating combo box with supplier comapny names aand their ids
-            DataSet ds3 = stockController.loadSupplierDetails();
+            DataSet ds3 = purchaseController.loadSupplierDetails();
             CBsupDetails.DataSource = ds3.Tables[0];
             CBsupDetails.DisplayMember = "supplierCompany";
             CBsupDetails.ValueMember = "supplierId";
@@ -81,10 +81,10 @@ namespace finals_UI
 
         private void btnview_Click(object sender, EventArgs e)
         {
-            DataSet ds = stockController.viewStock();
+            DataSet ds = purchaseController.viewPurchaseDetails();
             dataGridView1.DataSource = ds.Tables[0];
-            //hiding stockId column
-            dataGridView1.Columns["stockId"].Visible = false;
+            ////hiding stockId column
+            dataGridView1.Columns["purchaseId"].Visible = false;
 
         }
 
@@ -123,13 +123,28 @@ namespace finals_UI
             {
                 errorProvider3.Clear();
             }
-            stock.itemId = Convert.ToInt32(CBitmName.SelectedValue);
-            stock.quantity = Convert.ToInt32(this.NUDqty.Value);
-            stock.purchaseDate=Convert.ToDateTime(this.DTPpurDate.Value);
-            stock.supplierId= Convert.ToInt32(CBsupDetails.SelectedValue);
-            stock.inventoryManagerId = 1;
+            //supplier invoice
+            if (this.txtinvoice.Text == "")
+            {
+                this.errorProvider1.SetError(this.txtinvoice, "please enter an invoice number");
+                return;
+            }
+
+            else
+            {
+                errorProvider4.Clear();
+
+            }
+
+            purchase.itemId = Convert.ToInt32(CBitmName.SelectedValue);
+            purchase.quantity = Convert.ToInt32(this.NUDqty.Value);
+            purchase.purchaseDate=Convert.ToDateTime(this.DTPpurDate.Value);
+            purchase.supplierId= Convert.ToInt32(CBsupDetails.SelectedValue);
+            purchase.comment=this.txtcomment.Text;
+            purchase.supplierInvoiceId= Convert.ToInt32(txtinvoice.Text);
+            purchase.inventoryManagerId = 1;
             
-            stockController.addStock(stock);
+            purchaseController.addStock(purchase);
 
             //refresh grid
             refreshGrid();
@@ -144,8 +159,11 @@ namespace finals_UI
                 this.CBitmName.SelectedValue = this.dataGridView1.CurrentRow.Cells["itemId"].Value.ToString();
                 this.DTPpurDate.Value = Convert.ToDateTime(this.dataGridView1.CurrentRow.Cells["purchaseDate"].Value);
                 this.NUDqty.Value = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells["quantity"].Value);
-                stock.stockId = int.Parse(this.dataGridView1.CurrentRow.Cells["stockId"].Value.ToString());
+                purchase.purchaseId = int.Parse(this.dataGridView1.CurrentRow.Cells["purchaseId"].Value.ToString());
                 this.CBsupDetails.Text= this.dataGridView1.CurrentRow.Cells["supplierCompany"].Value.ToString();
+                this.txtinvoice.Text = this.dataGridView1.CurrentRow.Cells["supplierInvoiceId"].Value.ToString();
+                this.txtcomment.Text = this.dataGridView1.CurrentRow.Cells["comment"].Value.ToString();
+
 
 
 
@@ -186,13 +204,27 @@ namespace finals_UI
             {
                 errorProvider3.Clear();
             }
-            stock.itemId = Convert.ToInt32(CBitmName.SelectedValue);
-            stock.quantity = Convert.ToInt32(this.NUDqty.Value);
-            stock.purchaseDate = Convert.ToDateTime(this.DTPpurDate.Value);
-            stock.supplierId = Convert.ToInt32(CBsupDetails.SelectedValue);
+            //supplier invoice
+            if (this.txtinvoice.Text == "")
+            {
+                this.errorProvider1.SetError(this.txtinvoice, "please enter an invoice number");
+                return;
+            }
+
+            else
+            {
+                errorProvider4.Clear();
+
+            }
+            purchase.itemId = Convert.ToInt32(CBitmName.SelectedValue);
+            purchase.quantity = Convert.ToInt32(this.NUDqty.Value);
+            purchase.purchaseDate = Convert.ToDateTime(this.DTPpurDate.Value);
+            purchase.supplierId = Convert.ToInt32(CBsupDetails.SelectedValue);
+            purchase.comment = this.txtcomment.Text;
+            purchase.supplierInvoiceId = Convert.ToInt32(txtinvoice.Text);
 
 
-            stockController.updateStock(stock);
+            purchaseController.updateStock(purchase);
 
             //refresh grid
             refreshGrid();
@@ -204,7 +236,7 @@ namespace finals_UI
 
         private void btndlt_Click(object sender, EventArgs e)
         {
-            stockController.deleteStock(stock.stockId);
+            purchaseController.deleteStock(purchase.purchaseId);
             //refresh grid
             refreshGrid();
 
@@ -216,10 +248,10 @@ namespace finals_UI
 
         private void refreshGrid()
         {
-            DataSet ds = stockController.viewStock();
+            DataSet ds = purchaseController.viewPurchaseDetails();
             dataGridView1.DataSource = ds.Tables[0];
-            //hiding stockId column
-            dataGridView1.Columns["stockId"].Visible = false;
+            ////hiding stockId column
+            dataGridView1.Columns["purchaseId"].Visible = false;
         }
         private void clearFields()
         {
@@ -227,7 +259,8 @@ namespace finals_UI
             this.DTPpurDate.Value = DateTime.Now;
             this.NUDqty.Value = 0;
             this.CBsupDetails.SelectedIndex = -1;
-
+            this.txtcomment.Text = "";
+            this.txtinvoice.Text = "";
 
         }
 
@@ -239,6 +272,16 @@ namespace finals_UI
         private void button14_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

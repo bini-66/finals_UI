@@ -101,12 +101,12 @@
     <Compile Include="Controller\inventoryController.cs" />
     <Compile Include="Controller\offerController.cs" />
     <Compile Include="Controller\serviceController.cs" />
-    <Compile Include="Controller\stockController.cs" />
+    <Compile Include="Controller\purchaseController.cs" />
     <Compile Include="Controller\supplierController.cs" />
     <Compile Include="Model\classes\inventory.cs" />
     <Compile Include="Model\classes\offer.cs" />
     <Compile Include="Model\classes\service.cs" />
-    <Compile Include="Model\classes\stock.cs" />
+    <Compile Include="Model\classes\purchase.cs" />
     <Compile Include="Model\classes\supplier.cs" />
     <Compile Include="Model\Database\dbConnection.cs" />
     <Compile Include="View\confirm_appointment.cs">
