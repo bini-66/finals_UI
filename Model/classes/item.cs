@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace finals_UI.Model.classes
 {
-    internal class inventory
+    internal class item
     {
         public int itemId { get; set; }
         public string itemName { get; set; }

@@ -13,15 +13,15 @@ using System.Windows.Forms;
 
 namespace finals_UI
 {
-    public partial class inventory_management : Form
+    public partial class item_management : Form
     {
-        inventory item=new inventory();
-        inventoryController inventoryController=new inventoryController();
+        item item=new item();
+        itemController itemController=new itemController();
 
-        public inventory_management()
+        public item_management()
         {
             InitializeComponent();
-            DataSet ds = inventoryController.viewItem();
+            DataSet ds = itemController.viewItem();
             this.dataGridView1.DataSource = ds.Tables[0];
         }
 
@@ -121,7 +121,7 @@ namespace finals_UI
             item.itemDescription=this.txtitmDes.Text;
 
             //calling functipn to add item
-            inventoryController.addItem(item);
+            itemController.addItem(item);
 
             //refresh grid
             RefreshGrid();
@@ -134,7 +134,7 @@ namespace finals_UI
 
         private void btnview_Click(object sender, EventArgs e)
         {
-           DataSet ds=inventoryController.viewItem();
+           DataSet ds=itemController.viewItem();
            this.dataGridView1.DataSource = ds.Tables[0];
         }
 
@@ -229,7 +229,7 @@ namespace finals_UI
             item.itemDescription = this.txtitmDes.Text;
             
             //calling update item method
-            inventoryController.updateItem(item);
+            itemController.updateItem(item);
 
             //refresh grid
             RefreshGrid();
@@ -242,7 +242,7 @@ namespace finals_UI
         private void btndlt_Click(object sender, EventArgs e)
         {
             //calling function to delete item
-            inventoryController.deleteItem(item.itemId);
+            itemController.deleteItem(item.itemId);
 
             //refresh grid
             RefreshGrid();
@@ -252,7 +252,7 @@ namespace finals_UI
         }
         private void RefreshGrid()
         {
-            this.dataGridView1.DataSource = inventoryController.viewItem().Tables[0];
+            this.dataGridView1.DataSource = itemController.viewItem().Tables[0];
         }
 
         private void clearFields()

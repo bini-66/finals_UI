@@ -11,16 +11,16 @@ using System.Data;
 
 namespace finals_UI.Controller
 {
-    internal class inventoryController
+    internal class itemController
     {
-        public void addItem(inventory item)
+        public void addItem(item item)
         {
             //connection class
             dbConnection con=new dbConnection();
             con.openConnection();
 
             //command class
-            string query = "INSERT INTO inventory(itemName,itemCategory,itemBrand,itemDescription,itemPrice) Values(@itemName,@itemCategory,@itemBrand,@itemDescription,@itemPrice)";
+            string query = "INSERT INTO item(itemName,itemCategory,itemBrand,itemDescription,itemPrice) Values(@itemName,@itemCategory,@itemBrand,@itemDescription,@itemPrice)";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             com.Parameters.AddWithValue("@itemName", item.itemName);
@@ -46,7 +46,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT * FROM inventory";
+            string query = "SELECT * FROM item";
             MySqlCommand com = new MySqlCommand( query, con.getConnection());
 
             //data adapter class
@@ -59,14 +59,14 @@ namespace finals_UI.Controller
 
         }
 
-        public void updateItem(inventory item)
+        public void updateItem(item item)
         {
             //connection class
             dbConnection con= new dbConnection();
             con.openConnection();
 
             //command class
-            String query = "UPDATE inventory SET itemName=@itemName,itemCategory=@itemCategory,itemBrand=@itemBrand,itemDescription=@itemDescription,itemPrice=@itemPrice WHERE itemId=@itemId";
+            String query = "UPDATE item SET itemName=@itemName,itemCategory=@itemCategory,itemBrand=@itemBrand,itemDescription=@itemDescription,itemPrice=@itemPrice WHERE itemId=@itemId";
             MySqlCommand com = new MySqlCommand( query , con.getConnection());
             com.Parameters.AddWithValue("@itemName", item.itemName);
             com.Parameters.AddWithValue("@itemCategory", item.itemCategory);
@@ -97,7 +97,7 @@ namespace finals_UI.Controller
                 con.openConnection();
 
                 //command class
-                string query = "DELETE FROM inventory WHERE itemId=@itemId";
+                string query = "DELETE FROM item WHERE itemId=@itemId";
                 MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
 
