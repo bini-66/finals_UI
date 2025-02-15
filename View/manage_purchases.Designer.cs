@@ -1,6 +1,6 @@
 ﻿namespace finals_UI
 {
-    partial class manage_stock
+    partial class manage_purchases
     {
         /// <summary>
         /// Required designer variable.

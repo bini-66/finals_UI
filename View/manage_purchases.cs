@@ -13,11 +13,11 @@ using finals_UI.Model.classes;
 
 namespace finals_UI
 {
-    public partial class manage_stock : Form
+    public partial class manage_purchases : Form
     {
         purchaseController purchaseController=new purchaseController();
         purchase purchase=new purchase();
-        public manage_stock()
+        public manage_purchases()
         {
             InitializeComponent();
         }

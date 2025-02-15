@@ -98,17 +98,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\employeeController.cs" />
-    <Compile Include="Controller\inventoryController.cs" />
+    <Compile Include="Controller\attendanceController.cs" />
+    <Compile Include="Controller\itemController.cs" />
     <Compile Include="Controller\offerController.cs" />
+    <Compile Include="Controller\saleController.cs" />
     <Compile Include="Controller\serviceController.cs" />
-    <Compile Include="Controller\stockController.cs" />
+    <Compile Include="Controller\purchaseController.cs" />
     <Compile Include="Controller\supplierController.cs" />
-    <Compile Include="Model\classes\employee.cs" />
-    <Compile Include="Model\classes\inventory.cs" />
+    <Compile Include="Model\classes\attendance.cs" />
+    <Compile Include="Model\classes\item.cs" />
     <Compile Include="Model\classes\offer.cs" />
+    <Compile Include="Model\classes\sale.cs" />
     <Compile Include="Model\classes\service.cs" />
-    <Compile Include="Model\classes\stock.cs" />
+    <Compile Include="Model\classes\purchase.cs" />
     <Compile Include="Model\classes\supplier.cs" />
     <Compile Include="Model\Database\dbConnection.cs" />
     <Compile Include="View\confirm_appointment.cs">
@@ -123,17 +125,23 @@
     <Compile Include="View\employee_attendance.Designer.cs">
       <DependentUpon>employee_attendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\manage_sales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\manage_sales.Designer.cs">
+      <DependentUpon>manage_sales.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\sign_in.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\sign_in.Designer.cs">
       <DependentUpon>sign_in.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\inventory_management.cs">
+    <Compile Include="View\item_management.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\inventory_management.Designer.cs">
-      <DependentUpon>inventory_management.cs</DependentUpon>
+    <Compile Include="View\item_management.Designer.cs">
+      <DependentUpon>item_management.cs</DependentUpon>
     </Compile>
     <Compile Include="View\manage_customers.cs">
       <SubType>Form</SubType>
@@ -141,11 +149,11 @@
     <Compile Include="View\manage_customers.Designer.cs">
       <DependentUpon>manage_customers.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\manage_stock.cs">
+    <Compile Include="View\manage_purchases.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\manage_stock.Designer.cs">
-      <DependentUpon>manage_stock.cs</DependentUpon>
+    <Compile Include="View\manage_purchases.Designer.cs">
+      <DependentUpon>manage_purchases.cs</DependentUpon>
     </Compile>
     <Compile Include="View\manage_services.cs">
       <SubType>Form</SubType>
@@ -245,17 +253,20 @@
     <EmbeddedResource Include="View\employee_attendance.resx">
       <DependentUpon>employee_attendance.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\manage_sales.resx">
+      <DependentUpon>manage_sales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\sign_in.resx">
       <DependentUpon>sign_in.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\inventory_management.resx">
-      <DependentUpon>inventory_management.cs</DependentUpon>
+    <EmbeddedResource Include="View\item_management.resx">
+      <DependentUpon>item_management.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\manage_customers.resx">
       <DependentUpon>manage_customers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\manage_stock.resx">
-      <DependentUpon>manage_stock.cs</DependentUpon>
+    <EmbeddedResource Include="View\manage_purchases.resx">
+      <DependentUpon>manage_purchases.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\manage_offers.resx">
       <DependentUpon>manage_offers.cs</DependentUpon>
@@ -383,6 +394,8 @@
   <ItemGroup>
     <None Include="Images\employee.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

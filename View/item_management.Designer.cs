@@ -1,6 +1,6 @@
 ﻿namespace finals_UI
 {
-    partial class inventory_management
+    partial class item_management
     {
         /// <summary>
         /// Required designer variable.

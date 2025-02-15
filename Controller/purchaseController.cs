@@ -86,9 +86,9 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT purchaseId,inventory.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceId,inventoryManagerID " +
+            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceId,inventoryManagerID " +
                 "FROM purchase " +
-                "INNER JOIN  inventory ON  inventory.itemId=purchase.itemId" +
+                "INNER JOIN  item ON  item.itemId=purchase.itemId" +
                 " INNER JOIN supplier ON supplier.supplierId=purchase.supplierId";
             MySqlCommand com=new MySqlCommand( query,con.getConnection());
 
@@ -106,7 +106,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT itemId,itemName FROM inventory";
+            string query = "SELECT itemId,itemName FROM item";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());   
 
             //data adapter ckass
