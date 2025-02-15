@@ -159,8 +159,8 @@ namespace finals_UI
                 this.CBitmName.SelectedValue = this.dataGridView1.CurrentRow.Cells["itemId"].Value.ToString();
                 this.DTPpurDate.Value = Convert.ToDateTime(this.dataGridView1.CurrentRow.Cells["purchaseDate"].Value);
                 this.NUDqty.Value = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells["quantity"].Value);
-                purchase.purchaseId = int.Parse(this.dataGridView1.CurrentRow.Cells["purchaseId"].Value.ToString());
-                this.CBsupDetails.Text= this.dataGridView1.CurrentRow.Cells["supplierCompany"].Value.ToString();
+            purchase.purchaseId = int.Parse(this.dataGridView1.CurrentRow.Cells["purchaseId"].Value.ToString());
+            this.CBsupDetails.Text= this.dataGridView1.CurrentRow.Cells["supplierCompany"].Value.ToString();
                 this.txtinvoice.Text = this.dataGridView1.CurrentRow.Cells["supplierInvoiceId"].Value.ToString();
                 this.txtcomment.Text = this.dataGridView1.CurrentRow.Cells["comment"].Value.ToString();
 

@@ -123,7 +123,15 @@ namespace finals_UI.Controller
             dbConnection con= new dbConnection();   
             con.openConnection();
 
-            //command class
+            //get existing qty
+            string query1 = "SELECT quantity FROM purchase WHERE purchaseId=@purchaseId";
+            MySqlCommand com1=new MySqlCommand (query1,con.getConnection());    
+
+            com1.Parameters.AddWithValue("@purchaseId",purchase.purchaseId);
+
+            int oldQuantity = Convert.ToInt32(com1.ExecuteScalar());
+
+            //update purchase record
             string query = "UPDATE purchase SET itemId=@itemId,quantity=@quantity,purchaseDate=@purchaseDate,supplierId=@supplierId,comment=@comment,supplierInvoiceId=@supplierInvoiceId WHERE purchaseId=@purchaseId";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());
 
@@ -139,12 +147,14 @@ namespace finals_UI.Controller
 
             int ret = com.ExecuteNonQuery();
 
+            //update stock qty
+            int quantityDifference = purchase.quantity - oldQuantity;
 
-            string query2 = "UPDATE stock SET quantity=quantity+@quantity where itemId=@itemId";
+            string query2 = "UPDATE stock SET quantity=quantity+@quantityDifference where itemId=@itemId";
             MySqlCommand com2 = new MySqlCommand(query2, con.getConnection());
 
             com2.Parameters.AddWithValue("@itemId", purchase.itemId);
-            com2.Parameters.AddWithValue("@quantity", purchase.quantity);
+            com2.Parameters.AddWithValue("@quantityDifference", quantityDifference);
 
             com2.ExecuteNonQuery();
             if (ret != 0)
