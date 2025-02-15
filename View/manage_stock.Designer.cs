@@ -67,6 +67,11 @@
             this.CBsupDetails = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtinvoice = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtcomment = new System.Windows.Forms.TextBox();
+            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -79,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
             this.SuspendLayout();
             // 
             // button5
@@ -120,7 +126,7 @@
             this.btnup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnup.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnup.Location = new System.Drawing.Point(745, 763);
+            this.btnup.Location = new System.Drawing.Point(745, 828);
             this.btnup.Name = "btnup";
             this.btnup.Size = new System.Drawing.Size(100, 33);
             this.btnup.TabIndex = 51;
@@ -133,7 +139,7 @@
             this.btndlt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btndlt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndlt.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndlt.Location = new System.Drawing.Point(909, 763);
+            this.btndlt.Location = new System.Drawing.Point(909, 828);
             this.btndlt.Name = "btndlt";
             this.btndlt.Size = new System.Drawing.Size(100, 33);
             this.btndlt.TabIndex = 50;
@@ -146,7 +152,7 @@
             this.btnclr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnclr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclr.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclr.Location = new System.Drawing.Point(1073, 763);
+            this.btnclr.Location = new System.Drawing.Point(1073, 828);
             this.btnclr.Name = "btnclr";
             this.btnclr.Size = new System.Drawing.Size(100, 33);
             this.btnclr.TabIndex = 49;
@@ -159,7 +165,7 @@
             this.btnadd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnadd.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnadd.Location = new System.Drawing.Point(573, 763);
+            this.btnadd.Location = new System.Drawing.Point(573, 828);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(100, 33);
             this.btnadd.TabIndex = 48;
@@ -198,11 +204,12 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label8.Location = new System.Drawing.Point(343, 662);
+            this.label8.Location = new System.Drawing.Point(343, 628);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 23);
             this.label8.TabIndex = 61;
             this.label8.Text = "Qunatity";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // panel1
             // 
@@ -219,7 +226,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 823);
+            this.panel1.Size = new System.Drawing.Size(255, 973);
             this.panel1.TabIndex = 63;
             // 
             // pictureBox5
@@ -269,7 +276,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button6.Location = new System.Drawing.Point(0, 772);
+            this.button6.Location = new System.Drawing.Point(0, 922);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(255, 51);
             this.button6.TabIndex = 6;
@@ -368,20 +375,20 @@
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(314, 31);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(314, 40);
+            this.label12.Size = new System.Drawing.Size(369, 40);
             this.label12.TabIndex = 64;
-            this.label12.Text = "Stock Management";
+            this.label12.Text = "Purchase Management";
             // 
             // NUDqty
             // 
-            this.NUDqty.Location = new System.Drawing.Point(528, 662);
+            this.NUDqty.Location = new System.Drawing.Point(528, 628);
             this.NUDqty.Name = "NUDqty";
             this.NUDqty.Size = new System.Drawing.Size(120, 22);
             this.NUDqty.TabIndex = 65;
             // 
             // DTPpurDate
             // 
-            this.DTPpurDate.Location = new System.Drawing.Point(1191, 565);
+            this.DTPpurDate.Location = new System.Drawing.Point(528, 696);
             this.DTPpurDate.Name = "DTPpurDate";
             this.DTPpurDate.Size = new System.Drawing.Size(253, 22);
             this.DTPpurDate.TabIndex = 67;
@@ -391,7 +398,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label4.Location = new System.Drawing.Point(926, 564);
+            this.label4.Location = new System.Drawing.Point(343, 696);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(140, 23);
             this.label4.TabIndex = 68;
@@ -443,9 +450,9 @@
             this.btnview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnview.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnview.Location = new System.Drawing.Point(1344, 475);
+            this.btnview.Location = new System.Drawing.Point(1181, 475);
             this.btnview.Name = "btnview";
-            this.btnview.Size = new System.Drawing.Size(100, 33);
+            this.btnview.Size = new System.Drawing.Size(263, 33);
             this.btnview.TabIndex = 73;
             this.btnview.Text = "View Stock";
             this.btnview.UseVisualStyleBackColor = false;
@@ -476,7 +483,7 @@
             // CBsupDetails
             // 
             this.CBsupDetails.FormattingEnabled = true;
-            this.CBsupDetails.Location = new System.Drawing.Point(1191, 665);
+            this.CBsupDetails.Location = new System.Drawing.Point(1181, 567);
             this.CBsupDetails.Name = "CBsupDetails";
             this.CBsupDetails.Size = new System.Drawing.Size(253, 24);
             this.CBsupDetails.TabIndex = 75;
@@ -486,7 +493,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label3.Location = new System.Drawing.Point(926, 666);
+            this.label3.Location = new System.Drawing.Point(946, 564);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(170, 23);
             this.label3.TabIndex = 76;
@@ -496,12 +503,63 @@
             // 
             this.errorProvider3.ContainerControl = this;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.label6.Location = new System.Drawing.Point(946, 627);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(178, 23);
+            this.label6.TabIndex = 77;
+            this.label6.Text = "Supplier Invoice No";
+            // 
+            // txtinvoice
+            // 
+            this.txtinvoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.txtinvoice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtinvoice.Location = new System.Drawing.Point(1181, 621);
+            this.txtinvoice.Multiline = true;
+            this.txtinvoice.Name = "txtinvoice";
+            this.txtinvoice.Size = new System.Drawing.Size(157, 30);
+            this.txtinvoice.TabIndex = 78;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.label9.Location = new System.Drawing.Point(946, 695);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(94, 23);
+            this.label9.TabIndex = 79;
+            this.label9.Text = "Comment";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // txtcomment
+            // 
+            this.txtcomment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.txtcomment.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtcomment.Location = new System.Drawing.Point(1181, 689);
+            this.txtcomment.Multiline = true;
+            this.txtcomment.Name = "txtcomment";
+            this.txtcomment.Size = new System.Drawing.Size(270, 89);
+            this.txtcomment.TabIndex = 80;
+            // 
+            // errorProvider4
+            // 
+            this.errorProvider4.ContainerControl = this;
+            // 
             // manage_stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1489, 823);
+            this.ClientSize = new System.Drawing.Size(1489, 973);
+            this.Controls.Add(this.txtcomment);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtinvoice);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.CBsupDetails);
             this.Controls.Add(this.button14);
@@ -543,6 +601,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -587,5 +646,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox CBsupDetails;
         private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtinvoice;
+        private System.Windows.Forms.TextBox txtcomment;
+        private System.Windows.Forms.ErrorProvider errorProvider4;
     }
 }

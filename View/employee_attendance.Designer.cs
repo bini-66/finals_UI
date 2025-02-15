@@ -46,16 +46,15 @@
             this.Employee_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Employee_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Present = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Absent = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.button5 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btn = new System.Windows.Forms.Button();
+            this.btnup = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button14 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -231,23 +230,26 @@
             this.monthCalendar1.Location = new System.Drawing.Point(355, 204);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 4;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Teal;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Employee_ID,
             this.Employee_Name,
             this.Date,
-            this.Present,
-            this.Absent});
+            this.status});
             this.dataGridView1.GridColor = System.Drawing.Color.Teal;
             this.dataGridView1.Location = new System.Drawing.Point(704, 204);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(824, 495);
+            this.dataGridView1.Size = new System.Drawing.Size(824, 450);
             this.dataGridView1.TabIndex = 29;
             // 
             // Employee_ID
@@ -271,19 +273,12 @@
             this.Date.MinimumWidth = 6;
             this.Date.Name = "Date";
             // 
-            // Present
+            // status
             // 
-            this.Present.HeaderText = "Present";
-            this.Present.MinimumWidth = 6;
-            this.Present.Name = "Present";
-            this.Present.Width = 125;
-            // 
-            // Absent
-            // 
-            this.Absent.HeaderText = "Absent";
-            this.Absent.MinimumWidth = 6;
-            this.Absent.Name = "Absent";
-            this.Absent.Width = 125;
+            this.status.HeaderText = "Status";
+            this.status.MinimumWidth = 6;
+            this.status.Name = "status";
+            this.status.Width = 125;
             // 
             // button5
             // 
@@ -351,29 +346,31 @@
             this.button7.Text = "Search";
             this.button7.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // btn
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(929, 742);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(100, 33);
-            this.button8.TabIndex = 36;
-            this.button8.Text = "Save";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn.Location = new System.Drawing.Point(929, 742);
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(100, 33);
+            this.btn.TabIndex = 36;
+            this.btn.Text = "Save";
+            this.btn.UseVisualStyleBackColor = false;
+            this.btn.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button9
+            // btnup
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(1095, 742);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(100, 33);
-            this.button9.TabIndex = 37;
-            this.button9.Text = "Update";
-            this.button9.UseVisualStyleBackColor = false;
+            this.btnup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnup.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnup.Location = new System.Drawing.Point(1095, 742);
+            this.btnup.Name = "btnup";
+            this.btnup.Size = new System.Drawing.Size(100, 33);
+            this.btnup.TabIndex = 37;
+            this.btnup.Text = "Update";
+            this.btnup.UseVisualStyleBackColor = false;
+            this.btnup.Click += new System.EventHandler(this.btnup_Click);
             // 
             // label3
             // 
@@ -409,8 +406,8 @@
             this.ClientSize = new System.Drawing.Size(1854, 874);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
+            this.Controls.Add(this.btnup);
+            this.Controls.Add(this.btn);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
@@ -455,13 +452,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Employee_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Employee_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Present;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Absent;
+        private System.Windows.Forms.Button btn;
+        private System.Windows.Forms.Button btnup;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -471,5 +463,9 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Employee_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Employee_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn status;
     }
 }
