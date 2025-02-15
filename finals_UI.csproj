@@ -125,6 +125,12 @@
     <Compile Include="View\employee_attendance.Designer.cs">
       <DependentUpon>employee_attendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\manage_sales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\manage_sales.Designer.cs">
+      <DependentUpon>manage_sales.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\sign_in.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,11 +149,11 @@
     <Compile Include="View\manage_customers.Designer.cs">
       <DependentUpon>manage_customers.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\manage_stock.cs">
+    <Compile Include="View\manage_purchases.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\manage_stock.Designer.cs">
-      <DependentUpon>manage_stock.cs</DependentUpon>
+    <Compile Include="View\manage_purchases.Designer.cs">
+      <DependentUpon>manage_purchases.cs</DependentUpon>
     </Compile>
     <Compile Include="View\manage_services.cs">
       <SubType>Form</SubType>
@@ -247,6 +253,9 @@
     <EmbeddedResource Include="View\employee_attendance.resx">
       <DependentUpon>employee_attendance.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\manage_sales.resx">
+      <DependentUpon>manage_sales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\sign_in.resx">
       <DependentUpon>sign_in.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,8 +265,8 @@
     <EmbeddedResource Include="View\manage_customers.resx">
       <DependentUpon>manage_customers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\manage_stock.resx">
-      <DependentUpon>manage_stock.cs</DependentUpon>
+    <EmbeddedResource Include="View\manage_purchases.resx">
+      <DependentUpon>manage_purchases.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\manage_offers.resx">
       <DependentUpon>manage_offers.cs</DependentUpon>
