@@ -98,11 +98,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\attendanceController.cs" />
     <Compile Include="Controller\inventoryController.cs" />
     <Compile Include="Controller\offerController.cs" />
     <Compile Include="Controller\serviceController.cs" />
     <Compile Include="Controller\purchaseController.cs" />
     <Compile Include="Controller\supplierController.cs" />
+    <Compile Include="Model\classes\attendance.cs" />
     <Compile Include="Model\classes\inventory.cs" />
     <Compile Include="Model\classes\offer.cs" />
     <Compile Include="Model\classes\service.cs" />
