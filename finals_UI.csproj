@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\appointmentController.cs" />
     <Compile Include="Controller\attendanceController.cs" />
     <Compile Include="Controller\itemController.cs" />
     <Compile Include="Controller\offerController.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="Controller\serviceController.cs" />
     <Compile Include="Controller\purchaseController.cs" />
     <Compile Include="Controller\supplierController.cs" />
+    <Compile Include="Model\classes\appointment.cs" />
     <Compile Include="Model\classes\attendance.cs" />
     <Compile Include="Model\classes\item.cs" />
     <Compile Include="Model\classes\offer.cs" />
@@ -113,11 +115,11 @@
     <Compile Include="Model\classes\purchase.cs" />
     <Compile Include="Model\classes\supplier.cs" />
     <Compile Include="Model\Database\dbConnection.cs" />
-    <Compile Include="View\confirm_appointment.cs">
+    <Compile Include="View\view_appointment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\confirm_appointment.Designer.cs">
-      <DependentUpon>confirm_appointment.cs</DependentUpon>
+    <Compile Include="View\view_appointment.Designer.cs">
+      <DependentUpon>view_appointment.cs</DependentUpon>
     </Compile>
     <Compile Include="View\employee_attendance.cs">
       <SubType>Form</SubType>
@@ -247,8 +249,8 @@
     <Compile Include="View\view_feedback.Designer.cs">
       <DependentUpon>view_feedback.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\confirm_appointment.resx">
-      <DependentUpon>confirm_appointment.cs</DependentUpon>
+    <EmbeddedResource Include="View\view_appointment.resx">
+      <DependentUpon>view_appointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\employee_attendance.resx">
       <DependentUpon>employee_attendance.cs</DependentUpon>
