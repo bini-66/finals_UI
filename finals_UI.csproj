@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\attendanceController.cs" />
+    <Compile Include="Controller\customerController.cs" />
     <Compile Include="Controller\employeeController.cs" />
     <Compile Include="Controller\itemController.cs" />
     <Compile Include="Controller\offerController.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Controller\purchaseController.cs" />
     <Compile Include="Controller\supplierController.cs" />
     <Compile Include="Model\classes\attendance.cs" />
+    <Compile Include="Model\classes\customer.cs" />
     <Compile Include="Model\classes\employee.cs" />
     <Compile Include="Model\classes\item.cs" />
     <Compile Include="Model\classes\offer.cs" />
