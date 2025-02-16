@@ -16,7 +16,7 @@ namespace finals_UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new item_management());
+            Application.Run(new view_employee());
             //yujyv
         }
     }
