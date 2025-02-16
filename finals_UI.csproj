@@ -32,6 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>packages\BouncyCastle.Cryptography.2.5.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
@@ -99,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\attendanceController.cs" />
+    <Compile Include="Controller\employeeController.cs" />
     <Compile Include="Controller\itemController.cs" />
     <Compile Include="Controller\offerController.cs" />
     <Compile Include="Controller\saleController.cs" />
@@ -106,6 +111,7 @@
     <Compile Include="Controller\purchaseController.cs" />
     <Compile Include="Controller\supplierController.cs" />
     <Compile Include="Model\classes\attendance.cs" />
+    <Compile Include="Model\classes\employee.cs" />
     <Compile Include="Model\classes\item.cs" />
     <Compile Include="Model\classes\offer.cs" />
     <Compile Include="Model\classes\sale.cs" />
