@@ -1,4 +1,5 @@
-﻿using System;
+﻿using finals_UI.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace finals_UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new item_management());
+            Application.Run(new manage_sales());
             //yujyv
         }
     }

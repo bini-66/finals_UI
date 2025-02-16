@@ -54,6 +54,8 @@ namespace finals_UI
 
         private void manage_stock_Load(object sender, EventArgs e)
         {
+          
+
             //populating combo box with item names
             DataSet ds = purchaseController.loadItemName();
             CBitmName.DataSource=ds.Tables[0];
