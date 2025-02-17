@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using finals_UI.Controller;
+using finals_UI.Model.classes;
 
 namespace finals_UI
 {
@@ -52,18 +53,9 @@ namespace finals_UI
             txtSearch.Text = "";
         }
 
-        private void btnReserve_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnNewCustomer_Click(object sender, EventArgs e)
         {
 
-        }
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
@@ -142,23 +134,38 @@ namespace finals_UI
 
         private void new_appointment_Load(object sender, EventArgs e)
         {
-            List<string> services = appointmentController.getServices();
-            CheckBox[] checkboxes = { chkService1, chkService2, chkService3, chkService4, chkService5, chkService6, chkService7, chkService8, chkService9, chkService10 };
+            List<KeyValuePair<int, string>> services = appointmentController.getServices();
 
-            // Hide all checkboxes by default
-            foreach (CheckBox chk in checkboxes)
+            foreach (var service in services)
             {
-                chk.Visible = false;
-            }
-
-            // Display checkboxes for available services
-            for (int i = 0; i < services.Count && i < checkboxes.Length; i++)
-            {
-                checkboxes[i].Text = services[i];
-                checkboxes[i].Visible = true;
+                CheckBox checkBox = new CheckBox();
+                checkBox.Text = service.Value;
+                checkBox.Tag = service.Key; //store serviceId as a tag
+                checkBox.AutoSize = true;
+                flowLayoutPanelServices.Controls.Add(checkBox);
             }
         }
 
+        private void btnReserve_Click(object sender, EventArgs e)
+        {
+            //List<int> selectedServiceIds = new List<int>();
 
+            //foreach (CheckBox checkBox in flowLayoutPanelServices.Controls)
+            //{
+            //    if (checkBox.Checked)
+            //    {
+            //        int serviceId = (int)checkBox.Tag;
+            //        selectedServiceIds.Add(serviceId);
+            //    }
+            //}
+
+            //appointmentController.saveAppointmentServices(appointmentId, selectedServiceIds);
+            //MessageBox.Show("Appointment and Services Reserved!");
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -64,7 +64,6 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBoxServices = new System.Windows.Forms.GroupBox();
-            this.chkService10 = new System.Windows.Forms.CheckBox();
             this.chkService9 = new System.Windows.Forms.CheckBox();
             this.chkService8 = new System.Windows.Forms.CheckBox();
             this.chkService7 = new System.Windows.Forms.CheckBox();
@@ -75,11 +74,14 @@
             this.chkService2 = new System.Windows.Forms.CheckBox();
             this.chkService1 = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.flowLayoutPanelServices = new System.Windows.Forms.FlowLayoutPanel();
+            this.chkService10 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.groupBoxCustomer.SuspendLayout();
             this.groupBoxStatus.SuspendLayout();
             this.groupBoxServices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.flowLayoutPanelServices.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClose
@@ -103,7 +105,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(1211, 522);
+            this.btnSave.Location = new System.Drawing.Point(1065, 514);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(116, 48);
@@ -480,16 +482,7 @@
             // groupBoxServices
             // 
             this.groupBoxServices.BackColor = System.Drawing.Color.White;
-            this.groupBoxServices.Controls.Add(this.chkService10);
-            this.groupBoxServices.Controls.Add(this.chkService9);
-            this.groupBoxServices.Controls.Add(this.chkService8);
-            this.groupBoxServices.Controls.Add(this.chkService7);
-            this.groupBoxServices.Controls.Add(this.chkService6);
-            this.groupBoxServices.Controls.Add(this.chkService5);
-            this.groupBoxServices.Controls.Add(this.chkService4);
-            this.groupBoxServices.Controls.Add(this.chkService3);
-            this.groupBoxServices.Controls.Add(this.chkService2);
-            this.groupBoxServices.Controls.Add(this.chkService1);
+            this.groupBoxServices.Controls.Add(this.flowLayoutPanelServices);
             this.groupBoxServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxServices.Location = new System.Drawing.Point(76, 316);
             this.groupBoxServices.Name = "groupBoxServices";
@@ -498,22 +491,11 @@
             this.groupBoxServices.TabStop = false;
             this.groupBoxServices.Text = "Services";
             // 
-            // chkService10
-            // 
-            this.chkService10.AutoSize = true;
-            this.chkService10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService10.Location = new System.Drawing.Point(116, 126);
-            this.chkService10.Name = "chkService10";
-            this.chkService10.Size = new System.Drawing.Size(99, 19);
-            this.chkService10.TabIndex = 9;
-            this.chkService10.Text = "chkService10";
-            this.chkService10.UseVisualStyleBackColor = true;
-            // 
             // chkService9
             // 
             this.chkService9.AutoSize = true;
             this.chkService9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService9.Location = new System.Drawing.Point(116, 103);
+            this.chkService9.Location = new System.Drawing.Point(3, 103);
             this.chkService9.Name = "chkService9";
             this.chkService9.Size = new System.Drawing.Size(92, 19);
             this.chkService9.TabIndex = 8;
@@ -524,7 +506,7 @@
             // 
             this.chkService8.AutoSize = true;
             this.chkService8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService8.Location = new System.Drawing.Point(116, 80);
+            this.chkService8.Location = new System.Drawing.Point(101, 78);
             this.chkService8.Name = "chkService8";
             this.chkService8.Size = new System.Drawing.Size(92, 19);
             this.chkService8.TabIndex = 7;
@@ -535,7 +517,7 @@
             // 
             this.chkService7.AutoSize = true;
             this.chkService7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService7.Location = new System.Drawing.Point(116, 57);
+            this.chkService7.Location = new System.Drawing.Point(3, 78);
             this.chkService7.Name = "chkService7";
             this.chkService7.Size = new System.Drawing.Size(92, 19);
             this.chkService7.TabIndex = 6;
@@ -546,7 +528,7 @@
             // 
             this.chkService6.AutoSize = true;
             this.chkService6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService6.Location = new System.Drawing.Point(116, 34);
+            this.chkService6.Location = new System.Drawing.Point(101, 53);
             this.chkService6.Name = "chkService6";
             this.chkService6.Size = new System.Drawing.Size(92, 19);
             this.chkService6.TabIndex = 5;
@@ -557,7 +539,7 @@
             // 
             this.chkService5.AutoSize = true;
             this.chkService5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService5.Location = new System.Drawing.Point(21, 126);
+            this.chkService5.Location = new System.Drawing.Point(3, 53);
             this.chkService5.Name = "chkService5";
             this.chkService5.Size = new System.Drawing.Size(92, 19);
             this.chkService5.TabIndex = 4;
@@ -568,7 +550,7 @@
             // 
             this.chkService4.AutoSize = true;
             this.chkService4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService4.Location = new System.Drawing.Point(21, 103);
+            this.chkService4.Location = new System.Drawing.Point(101, 28);
             this.chkService4.Name = "chkService4";
             this.chkService4.Size = new System.Drawing.Size(92, 19);
             this.chkService4.TabIndex = 3;
@@ -579,7 +561,7 @@
             // 
             this.chkService3.AutoSize = true;
             this.chkService3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService3.Location = new System.Drawing.Point(21, 80);
+            this.chkService3.Location = new System.Drawing.Point(3, 28);
             this.chkService3.Name = "chkService3";
             this.chkService3.Size = new System.Drawing.Size(92, 19);
             this.chkService3.TabIndex = 2;
@@ -590,7 +572,7 @@
             // 
             this.chkService2.AutoSize = true;
             this.chkService2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService2.Location = new System.Drawing.Point(21, 57);
+            this.chkService2.Location = new System.Drawing.Point(101, 3);
             this.chkService2.Name = "chkService2";
             this.chkService2.Size = new System.Drawing.Size(92, 19);
             this.chkService2.TabIndex = 1;
@@ -601,7 +583,7 @@
             // 
             this.chkService1.AutoSize = true;
             this.chkService1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService1.Location = new System.Drawing.Point(21, 34);
+            this.chkService1.Location = new System.Drawing.Point(3, 3);
             this.chkService1.Name = "chkService1";
             this.chkService1.Size = new System.Drawing.Size(92, 19);
             this.chkService1.TabIndex = 0;
@@ -617,6 +599,36 @@
             this.dataGridView1.TabIndex = 84;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectedChanged);
             // 
+            // flowLayoutPanelServices
+            // 
+            this.flowLayoutPanelServices.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanelServices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.flowLayoutPanelServices.Controls.Add(this.chkService1);
+            this.flowLayoutPanelServices.Controls.Add(this.chkService2);
+            this.flowLayoutPanelServices.Controls.Add(this.chkService3);
+            this.flowLayoutPanelServices.Controls.Add(this.chkService4);
+            this.flowLayoutPanelServices.Controls.Add(this.chkService5);
+            this.flowLayoutPanelServices.Controls.Add(this.chkService6);
+            this.flowLayoutPanelServices.Controls.Add(this.chkService7);
+            this.flowLayoutPanelServices.Controls.Add(this.chkService8);
+            this.flowLayoutPanelServices.Controls.Add(this.chkService9);
+            this.flowLayoutPanelServices.Controls.Add(this.chkService10);
+            this.flowLayoutPanelServices.Location = new System.Drawing.Point(6, 25);
+            this.flowLayoutPanelServices.Name = "flowLayoutPanelServices";
+            this.flowLayoutPanelServices.Size = new System.Drawing.Size(215, 133);
+            this.flowLayoutPanelServices.TabIndex = 85;
+            // 
+            // chkService10
+            // 
+            this.chkService10.AutoSize = true;
+            this.chkService10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkService10.Location = new System.Drawing.Point(101, 103);
+            this.chkService10.Name = "chkService10";
+            this.chkService10.Size = new System.Drawing.Size(99, 19);
+            this.chkService10.TabIndex = 9;
+            this.chkService10.Text = "chkService10";
+            this.chkService10.UseVisualStyleBackColor = true;
+            // 
             // new_appointments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -625,7 +637,7 @@
             this.AutoScrollMargin = new System.Drawing.Size(1, 1);
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1266, 625);
+            this.ClientSize = new System.Drawing.Size(1266, 608);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBoxServices);
             this.Controls.Add(this.groupBoxStatus);
@@ -651,8 +663,9 @@
             this.groupBoxStatus.ResumeLayout(false);
             this.groupBoxStatus.PerformLayout();
             this.groupBoxServices.ResumeLayout(false);
-            this.groupBoxServices.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.flowLayoutPanelServices.ResumeLayout(false);
+            this.flowLayoutPanelServices.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -697,7 +710,6 @@
         private System.Windows.Forms.CheckBox chkService3;
         private System.Windows.Forms.CheckBox chkService2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.CheckBox chkService10;
         private System.Windows.Forms.CheckBox chkService9;
         private System.Windows.Forms.CheckBox chkService8;
         private System.Windows.Forms.CheckBox chkService7;
@@ -706,5 +718,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtPlateNumber;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelServices;
+        private System.Windows.Forms.CheckBox chkService10;
     }
 }

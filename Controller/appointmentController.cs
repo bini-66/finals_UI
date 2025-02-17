@@ -135,5 +135,21 @@ namespace finals_UI.Controller
             return services;
         }
 
+        public void saveAppointmentServices(int appointmentId, List<int> selectedServiceIds)
+        {
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            foreach (int serviceId in selectedServiceIds)
+            {
+                string query = "INSERT INTO appointment_service (appointmentId, serviceId) VALUES (@appointmentId, @serviceId)";
+                MySqlCommand com = new MySqlCommand(query, con.getConnection());
+                com.Parameters.AddWithValue("@appointmentId", appointmentId);
+                com.Parameters.AddWithValue("@serviceId", serviceId);
+                com.ExecuteNonQuery();
+            }
+            con.closeConnection();
+        }
+
     }
 }
