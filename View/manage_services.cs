@@ -24,7 +24,8 @@ namespace finals_UI
             InitializeComponent();
             DataSet ds = serviceController.viewServices();
             this.dataGridView1.DataSource = ds.Tables[0];
-
+            //hiding serviceManagerId column
+           dataGridView1.Columns["serviceManagerId"].Visible = false;
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -98,9 +99,11 @@ namespace finals_UI
 
         private void btnview_Click(object sender, EventArgs e)
         {
-            
+            this.txtsearch.Text = "";
             DataSet ds= serviceController.viewServices();
             this.dataGridView1.DataSource = ds.Tables[0];
+            //hiding serviceManagerId column
+            dataGridView1.Columns["serviceManagerId"].Visible = false;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -191,6 +194,8 @@ namespace finals_UI
         private void RefreshGrid()
         {
             this.dataGridView1.DataSource = serviceController.viewServices().Tables[0];
+            //hiding serviceManagerId column
+            dataGridView1.Columns["serviceManagerId"].Visible = false;
         }
         private void clearFields()
         {
@@ -206,6 +211,25 @@ namespace finals_UI
 
         private void txtsername_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnsearchname_Click(object sender, EventArgs e)
+        {
+            string serviceName = this.txtsearch.Text;
+
+            //load data in to data grid
+            DataSet ds=serviceController.loadSearchResults(serviceName);
+
+            // Check if dataset is empty
+            if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("No matching services found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.txtsearch.Text = "";
+                return;
+
+            }
+            this.dataGridView1.DataSource = ds.Tables[0];
 
         }
     }

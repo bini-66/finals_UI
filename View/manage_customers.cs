@@ -43,5 +43,15 @@ namespace finals_UI
             Receptionist_dash dash = new Receptionist_dash();
             dash.Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

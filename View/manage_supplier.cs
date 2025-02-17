@@ -8,8 +8,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace finals_UI
 {
@@ -95,6 +97,11 @@ namespace finals_UI
                 return;
 
             }
+            if (!Regex.IsMatch(this.txtphone.Text, @"^\d{10}$"))
+            {
+                this.errorProvider3.SetError(this.txtphone, "Please enter a valid 10-digit phone number");
+                return;
+            }
 
             else
             {
@@ -105,6 +112,11 @@ namespace finals_UI
                 this.errorProvider4.SetError(this.txtemail, "supplier email cannot be empty");
                 return;
 
+            }
+            if (!Regex.IsMatch(this.txtemail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                this.errorProvider4.SetError(this.txtemail, "Please enter a valid email address");
+                return; 
             }
 
             else
@@ -172,6 +184,11 @@ namespace finals_UI
                 return;
 
             }
+            if (!Regex.IsMatch(this.txtphone.Text, @"^\d{10}$"))
+            {
+                this.errorProvider3.SetError(this.txtphone, "Please enter a valid 10-digit phone number");
+                return;
+            }
 
             else
             {
@@ -182,6 +199,11 @@ namespace finals_UI
                 this.errorProvider4.SetError(this.txtemail, "supplier email cannot be empty");
                 return;
 
+            }
+            if (!Regex.IsMatch(this.txtemail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                this.errorProvider4.SetError(this.txtemail, "Please enter a valid email address");
+                return;
             }
 
             else
@@ -218,6 +240,7 @@ namespace finals_UI
 
         private void btnview_Click(object sender, EventArgs e)
         {
+            //this.txtsearch.Text = "";
             DataSet ds = supplierController.viewSuppliers();
             this.dataGridView1.DataSource = ds.Tables[0];
         }
@@ -263,6 +286,45 @@ namespace finals_UI
         private void btnclr_Click(object sender, EventArgs e)
         {
             clearFields();
+        }
+
+        private void textBox4_Enter(object sender, EventArgs e)
+        {
+            //if(txtsearch.Text== "Search by supplier name / company")
+            //{
+            //    this.txtsearch.Text = "";
+            //    this.txtsearch.ForeColor=Color.White;
+
+            //}
+
+        }
+
+        private void txtsearch_Leave(object sender, EventArgs e)
+        {
+            //if (txtsearch.Text == "")
+            //{
+            //    txtsearch.Text = "Search by supplier name / company";
+            //    txtsearch.ForeColor= Color.FromArgb(200, 200, 200); ;
+            //}
+        }
+
+        //search button 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string supInfo = this.txtsearch.Text;
+
+            //load data in to data grid
+            DataSet ds = supplierController.loadSearchResults(supInfo);
+
+            // Check if dataset is empty
+            if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("No matching supplier found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.txtsearch.Text = "";
+                return;
+
+            }
+            this.dataGridView1.DataSource = ds.Tables[0];
         }
     }
 }

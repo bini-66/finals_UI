@@ -83,6 +83,8 @@ namespace finals_UI
 
         private void btnview_Click(object sender, EventArgs e)
         {
+            this.txtsearch.Text ="";
+            this.CBcolumns.SelectedIndex = -1;
             DataSet ds = purchaseController.viewPurchaseDetails();
             dataGridView1.DataSource = ds.Tables[0];
             ////hiding stockId column
@@ -143,7 +145,7 @@ namespace finals_UI
             purchase.purchaseDate=Convert.ToDateTime(this.DTPpurDate.Value);
             purchase.supplierId= Convert.ToInt32(CBsupDetails.SelectedValue);
             purchase.comment=this.txtcomment.Text;
-            purchase.supplierInvoiceId= Convert.ToInt32(txtinvoice.Text);
+            purchase.supplierInvoiceNo= this.txtinvoice.Text;
             purchase.inventoryManagerId = 1;
             
             purchaseController.addStock(purchase);
@@ -163,7 +165,7 @@ namespace finals_UI
                 this.NUDqty.Value = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells["quantity"].Value);
             purchase.purchaseId = int.Parse(this.dataGridView1.CurrentRow.Cells["purchaseId"].Value.ToString());
             this.CBsupDetails.Text= this.dataGridView1.CurrentRow.Cells["supplierCompany"].Value.ToString();
-                this.txtinvoice.Text = this.dataGridView1.CurrentRow.Cells["supplierInvoiceId"].Value.ToString();
+                this.txtinvoice.Text = this.dataGridView1.CurrentRow.Cells["supplierInvoiceNo"].Value.ToString();
                 this.txtcomment.Text = this.dataGridView1.CurrentRow.Cells["comment"].Value.ToString();
 
 
@@ -223,7 +225,7 @@ namespace finals_UI
             purchase.purchaseDate = Convert.ToDateTime(this.DTPpurDate.Value);
             purchase.supplierId = Convert.ToInt32(CBsupDetails.SelectedValue);
             purchase.comment = this.txtcomment.Text;
-            purchase.supplierInvoiceId = Convert.ToInt32(txtinvoice.Text);
+            purchase.supplierInvoiceNo = this.txtinvoice.Text;
 
 
             purchaseController.updateStock(purchase);
@@ -263,6 +265,9 @@ namespace finals_UI
             this.CBsupDetails.SelectedIndex = -1;
             this.txtcomment.Text = "";
             this.txtinvoice.Text = "";
+            this.CBcolumns.SelectedIndex = -1;
+            this.txtsearch.Text = "";
+            refreshGrid();
 
         }
 
@@ -284,6 +289,114 @@ namespace finals_UI
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnsearch_Click(object sender, EventArgs e)
+        {
+
+            if(this.CBcolumns.SelectedIndex == 0)
+            {
+                int itemId;
+                if (int.TryParse(this.txtsearch.Text, out itemId))
+                {
+                    
+                }
+                else
+                {
+                    // Invalid integer input
+                    MessageBox.Show("Please enter a valid item ID.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.txtsearch.Text = "";
+                    return;
+                }
+
+                DataSet ds =purchaseController.searchByItemId(itemId);
+
+                // Check if dataset is empty
+                if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0)
+                {
+                    MessageBox.Show("No matching results found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.txtsearch.Text = "";
+                    refreshGrid();
+                    return;
+
+                }
+                this.dataGridView1.DataSource = ds.Tables[0];
+            }
+           else if (this.CBcolumns.SelectedIndex == 1)
+            {
+                String itemName = this.txtsearch.Text;
+                DataSet ds = purchaseController.searchByItemName(itemName);
+
+                // Check if dataset is empty
+                if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0)
+                {
+                    MessageBox.Show("No matching results found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.txtsearch.Text = "";
+                    refreshGrid();
+                    return;
+
+                }
+                this.dataGridView1.DataSource = ds.Tables[0];
+            }
+            else if (this.CBcolumns.SelectedIndex ==2 )
+            {
+                DateTime date;
+                if (DateTime.TryParse(this.txtsearch.Text, out date))
+                {
+               
+                }
+                else
+                {
+                    // Invalid date format
+                    MessageBox.Show("Please enter a valid date.", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.txtsearch.Text = "";
+                    return;
+                }
+                DataSet ds = purchaseController.searchByPurchaseDate(date);
+
+                // Check if dataset is empty
+                if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0)
+                {
+                    MessageBox.Show("No matching results found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.txtsearch.Text = "";
+                    refreshGrid();
+                    return;
+
+                }
+                this.dataGridView1.DataSource = ds.Tables[0];
+            }
+            else if (this.CBcolumns.SelectedIndex == 3)
+            {
+               string supplierCompany = this.txtsearch.Text;
+                DataSet ds = purchaseController.searchBySupplierCompany(supplierCompany);
+
+                // Check if dataset is empty
+                if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0)
+                {
+                    MessageBox.Show("No matching results found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.txtsearch.Text = "";
+                    refreshGrid();
+                    return;
+
+                }
+                this.dataGridView1.DataSource = ds.Tables[0];
+            }
+            else if (this.CBcolumns.SelectedIndex == 4)
+            {
+                string supplierInvoiceNo = this.txtsearch.Text;
+                DataSet ds = purchaseController.searchByInvoiceNo(supplierInvoiceNo);
+
+                // Check if dataset is empty
+                if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0)
+                {
+                    MessageBox.Show("No matching results found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.txtsearch.Text = "";
+                    refreshGrid();
+                    return;
+
+                }
+                this.dataGridView1.DataSource = ds.Tables[0];
+            }
         }
     }
 }

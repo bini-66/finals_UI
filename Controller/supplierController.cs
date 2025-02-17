@@ -36,7 +36,7 @@ namespace finals_UI.Controller
 
             int ret = com.ExecuteNonQuery();
 
-            MessageBox.Show("no of records inserted:" + ret, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Supplier Added Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             con.closeConnection();
 
@@ -115,6 +115,30 @@ namespace finals_UI.Controller
             }
 
         }
-     
+        public DataSet loadSearchResults(string supInfo)
+        {
+            //connection class
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT * FROM supplier WHERE supplierfirstName LIKE @supplierfirstName OR supplierlastName LIKE @supplierlastName OR supplierCompany LIKE @supplierCompany";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+
+            com.Parameters.AddWithValue("@supplierfirstName",  supInfo + "%");
+            com.Parameters.AddWithValue("@supplierlastName",supInfo + "%");
+            com.Parameters.AddWithValue("@supplierCompany",  supInfo + "%");
+
+
+            //data adapter class
+            MySqlDataAdapter DAP = new MySqlDataAdapter(com);
+            DataSet ds = new DataSet();
+
+            DAP.Fill(ds);
+
+            return ds;
+
+        }
+
     }
 }

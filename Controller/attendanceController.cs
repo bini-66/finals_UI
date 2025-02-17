@@ -101,7 +101,34 @@ namespace finals_UI.Controller
 
         }
 
-        }
+        //public DataSet loadSearchResults(string empInfo,DateTime date)
+        //{
+        //    //connection class
+        //    dbConnection con = new dbConnection();
+        //    con.openConnection();
+
+        //    //command class
+        //    string query = "SELECT attendance.employeeId,employee.firstName,date, attendanceStatus FROM employee INNER JOIN attendance ON employee.employeeId=attendance.employeeId WHERE (firstName LIKE @firstName OR employee.employeeId=@employeeId OR lastName LIKE @lastName) AND date=@date";
+        //    MySqlCommand com = new MySqlCommand(query, con.getConnection());
+
+        //    com.Parameters.AddWithValue("@firstName", empInfo + "%");
+        //    com.Parameters.AddWithValue("@lastName",  empInfo + "%");
+        //    com.Parameters.AddWithValue("@employeeId", empInfo);
+        //    com.Parameters.AddWithValue("@date", date);
+
+
+
+        //    //data adapter class
+        //    MySqlDataAdapter DAP = new MySqlDataAdapter(com);
+        //    DataSet ds = new DataSet();
+
+        //    DAP.Fill(ds);
+
+        //    return ds;
+
+        //}
+
+    }
 
         
     }

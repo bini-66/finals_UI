@@ -277,7 +277,7 @@
             this.btnup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnup.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnup.Location = new System.Drawing.Point(688, 781);
+            this.btnup.Location = new System.Drawing.Point(775, 779);
             this.btnup.Name = "btnup";
             this.btnup.Size = new System.Drawing.Size(100, 33);
             this.btnup.TabIndex = 89;
@@ -290,7 +290,7 @@
             this.btndlt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btndlt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndlt.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndlt.Location = new System.Drawing.Point(852, 781);
+            this.btndlt.Location = new System.Drawing.Point(939, 779);
             this.btndlt.Name = "btndlt";
             this.btndlt.Size = new System.Drawing.Size(100, 33);
             this.btndlt.TabIndex = 88;
@@ -303,7 +303,7 @@
             this.btnclr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnclr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclr.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclr.Location = new System.Drawing.Point(1016, 781);
+            this.btnclr.Location = new System.Drawing.Point(1103, 779);
             this.btnclr.Name = "btnclr";
             this.btnclr.Size = new System.Drawing.Size(100, 33);
             this.btnclr.TabIndex = 87;
@@ -316,7 +316,7 @@
             this.btnadd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnadd.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnadd.Location = new System.Drawing.Point(516, 781);
+            this.btnadd.Location = new System.Drawing.Point(603, 779);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(100, 33);
             this.btnadd.TabIndex = 86;
