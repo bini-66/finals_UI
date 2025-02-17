@@ -17,7 +17,7 @@ namespace finals_UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new manage_sales());
+            Application.Run(new view_customer());
             //yujyv
         }
     }
