@@ -59,7 +59,7 @@ namespace finals_UI
 
         private void btnNewAppointment_Click(object sender, EventArgs e)
         {
-            place_appointments apt = new place_appointments();
+            new_appointments apt = new new_appointments();
             apt.ShowDialog();
         }
     }

@@ -54,8 +54,102 @@ namespace finals_UI.Controller
             MySqlDataAdapter DAP = new MySqlDataAdapter(com);
             DataSet ds = new DataSet();
             DAP.Fill(ds);
-            return ds;
 
+            return ds;
         }
+
+        public DataSet searchCustomer(string search)
+        {
+            //connection class
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT c.customerId AS 'Customer ID', CONCAT(c.firstName, ' ', c.lastName) AS Name, " +
+                  "c.phone AS 'Phone Number', v.vehicleId AS 'Vehicle ID', v.plateNumber as 'Vehicle Plate' " +
+                  "FROM customer c " +
+                  "INNER JOIN vehicle v ON c.customerId = v.customerId " +
+                  "WHERE v.plateNumber LIKE @search " +
+                  "OR c.firstName LIKE @search " +
+                  "OR c.lastName LIKE @search " +
+                  "OR c.customerId LIKE @search " +
+                  "OR c.phone LIKE @search";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+
+            com.Parameters.AddWithValue("@search", "%" + search + "%");
+
+            //data adapter class
+            MySqlDataAdapter DAP = new MySqlDataAdapter(com);
+            DataSet ds = new DataSet();
+            DAP.Fill(ds);
+
+            return ds;
+        }
+
+        public List<string> getUnavailableSlots(DateTime date)
+        {
+            List<string> unavailableSlots = new List<string>();
+
+            //connection class
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT time FROM appointment WHERE date = @date";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+            com.Parameters.AddWithValue("@date", date.ToString("yyyy-MM-dd"));
+
+            //data reader class
+            MySqlDataReader reader = com.ExecuteReader();
+            while (reader.Read())
+            {
+                unavailableSlots.Add(reader["time"].ToString());
+            }
+            reader.Close();
+            con.closeConnection();
+
+            return unavailableSlots;
+        }
+
+        public List<KeyValuePair<int,string>> getServices()
+        {
+            //connection class
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT serviceId, serviceName FROM service";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+            MySqlDataReader reader = com.ExecuteReader();
+
+            List<KeyValuePair<int, string>> services = new List<KeyValuePair<int, string>>();
+
+            while (reader.Read())
+            {
+                int id = reader.GetInt32("serviceId");
+                string name = reader.GetString("serviceName");
+                services.Add(new KeyValuePair<int, string>(id, name));
+            }
+            reader.Close();
+            con.closeConnection();
+            return services;
+        }
+
+        public void saveAppointmentServices(int appointmentId, List<int> selectedServiceIds)
+        {
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            foreach (int serviceId in selectedServiceIds)
+            {
+                string query = "INSERT INTO appointment_service (appointmentId, serviceId) VALUES (@appointmentId, @serviceId)";
+                MySqlCommand com = new MySqlCommand(query, con.getConnection());
+                com.Parameters.AddWithValue("@appointmentId", appointmentId);
+                com.Parameters.AddWithValue("@serviceId", serviceId);
+                com.ExecuteNonQuery();
+            }
+            con.closeConnection();
+        }
+
     }
 }
