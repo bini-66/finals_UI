@@ -26,7 +26,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "INSERT INTO purchase (itemId,quantity,purchaseDate,comment,supplierId,supplierInvoiceId,inventoryManagerId) VALUES (@itemId,@quantity,@purchaseDate,@comment,@supplierId,@supplierInvoiceId,@inventoryManagerId)";
+            string query = "INSERT INTO purchase (itemId,quantity,purchaseDate,comment,supplierId,supplierInvoiceNo,inventoryManagerId) VALUES (@itemId,@quantity,@purchaseDate,@comment,@supplierId,@supplierInvoiceNo,@inventoryManagerId)";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());
 
             com.Parameters.AddWithValue("@itemId", purchase.itemId);
@@ -35,7 +35,7 @@ namespace finals_UI.Controller
             com.Parameters.AddWithValue("@inventoryManagerId", purchase.inventoryManagerId);
             com.Parameters.AddWithValue("@supplierId", purchase.supplierId);
             com.Parameters.AddWithValue("@comment", purchase.comment);
-            com.Parameters.AddWithValue("@supplierInvoiceId", purchase.supplierInvoiceId);
+            com.Parameters.AddWithValue("@supplierInvoiceNo", purchase.supplierInvoiceNo);
 
             int ret = com.ExecuteNonQuery();
 
@@ -86,7 +86,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceId,inventoryManagerID " +
+            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceNo,inventoryManagerID " +
                 "FROM purchase " +
                 "INNER JOIN  item ON  item.itemId=purchase.itemId" +
                 " INNER JOIN supplier ON supplier.supplierId=purchase.supplierId";
@@ -132,7 +132,7 @@ namespace finals_UI.Controller
             int oldQuantity = Convert.ToInt32(com1.ExecuteScalar());
 
             //update purchase record
-            string query = "UPDATE purchase SET itemId=@itemId,quantity=@quantity,purchaseDate=@purchaseDate,supplierId=@supplierId,comment=@comment,supplierInvoiceId=@supplierInvoiceId WHERE purchaseId=@purchaseId";
+            string query = "UPDATE purchase SET itemId=@itemId,quantity=@quantity,purchaseDate=@purchaseDate,supplierId=@supplierId,comment=@comment,supplierInvoiceNo=@supplierInvoiceNo WHERE purchaseId=@purchaseId";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());
 
             com.Parameters.AddWithValue("@itemId", purchase.itemId);
@@ -141,7 +141,7 @@ namespace finals_UI.Controller
             com.Parameters.AddWithValue("@purchaseDate",purchase.purchaseDate);
             com.Parameters.AddWithValue("@purchaseId",purchase.purchaseId);
             com.Parameters.AddWithValue("@supplierId",purchase.supplierId);
-            com.Parameters.AddWithValue("@supplierInvoiceId", purchase.supplierInvoiceId);
+            com.Parameters.AddWithValue("@supplierInvoiceId", purchase.supplierInvoiceNo);
             com.Parameters.AddWithValue("@comment", purchase.comment);
 
 
@@ -209,5 +209,100 @@ namespace finals_UI.Controller
             return ds;
         }
 
+        public DataSet searchByItemId(int itemId)
+        {
+            //connection class
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceNo,inventoryManagerID FROM purchase INNER JOIN  item ON  item.itemId=purchase.itemId INNER JOIN supplier ON supplier.supplierId=purchase.supplierId WHERE purchase.itemId=@itemId";
+            MySqlCommand com = new MySqlCommand( query, con.getConnection());
+
+            com.Parameters.AddWithValue("@itemId", itemId);
+
+            //data adapter class
+            MySqlDataAdapter DAP=new MySqlDataAdapter(com);
+            DataSet ds = new DataSet();
+            DAP.Fill(ds);
+
+            return ds;
+        }
+        public DataSet searchByItemName(String itemName)
+        {
+            //connection class
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceNo,inventoryManagerID FROM purchase INNER JOIN  item ON  item.itemId=purchase.itemId INNER JOIN supplier ON supplier.supplierId=purchase.supplierId WHERE itemName LIKE @itemName";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+
+            com.Parameters.AddWithValue("@itemName", itemName+"%");
+
+            //data adapter class
+            MySqlDataAdapter DAP = new MySqlDataAdapter(com);
+            DataSet ds = new DataSet();
+            DAP.Fill(ds);
+
+            return ds;
+        }
+        public DataSet searchByPurchaseDate(DateTime date)
+        {
+            //connection class
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceNo,inventoryManagerID FROM purchase INNER JOIN  item ON  item.itemId=purchase.itemId INNER JOIN supplier ON supplier.supplierId=purchase.supplierId WHERE purchaseDate=@purchaseDate";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+
+            com.Parameters.AddWithValue("@purchaseDate", date);
+
+            //data adapter class
+            MySqlDataAdapter DAP = new MySqlDataAdapter(com);
+            DataSet ds = new DataSet();
+            DAP.Fill(ds);
+
+            return ds;
+        }
+        public DataSet searchBySupplierCompany(string supplierCompany)
+        {
+            //connection class
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceNo,inventoryManagerID FROM purchase INNER JOIN  item ON  item.itemId=purchase.itemId INNER JOIN supplier ON supplier.supplierId=purchase.supplierId WHERE supplierCompany LIKE @supplierCompany";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+
+            com.Parameters.AddWithValue("@supplierCompany", supplierCompany+"%");
+
+            //data adapter class
+            MySqlDataAdapter DAP = new MySqlDataAdapter(com);
+            DataSet ds = new DataSet();
+            DAP.Fill(ds);
+
+            return ds;
+        }
+        public DataSet searchByInvoiceNo(string invoiceNo)
+        {
+            //connection class
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceNo,inventoryManagerID FROM purchase INNER JOIN  item ON  item.itemId=purchase.itemId INNER JOIN supplier ON supplier.supplierId=purchase.supplierId WHERE supplierInvoiceNo=@supplierInvoiceNo";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+
+            com.Parameters.AddWithValue("@supplierInvoiceNo", invoiceNo );
+
+            //data adapter class
+            MySqlDataAdapter DAP = new MySqlDataAdapter(com);
+            DataSet ds = new DataSet();
+            DAP.Fill(ds);
+
+            return ds;
+        }
     }
 }

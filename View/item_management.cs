@@ -268,5 +268,29 @@ namespace finals_UI
         {
             clearFields();
         }
+
+        private void btnsearch_Click(object sender, EventArgs e)
+        {
+            string itemInfo = this.txtsearch.Text;
+
+            //load data in to data grid
+            DataSet ds = itemController.loadSearchResults(itemInfo);
+
+            // Check if dataset is empty
+            if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("No matching offers found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.txtsearch.Text = "";
+                return;
+
+            }
+            this.dataGridView1.DataSource = ds.Tables[0];
+        }
+
+        private void btnview_Click_1(object sender, EventArgs e)
+        {
+            DataSet ds = itemController.viewItem();
+            this.dataGridView1.DataSource = ds.Tables[0];
+        }
     }
 }

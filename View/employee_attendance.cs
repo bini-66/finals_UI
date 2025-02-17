@@ -57,6 +57,25 @@ namespace finals_UI
                     row.Cells["Date"].Value = DateTime.Now.ToString("yyyy-MM-dd");
                 }
             }
+            DataSet ds2 = attendanceController.loadAttendanceStatus(monthCalendar1.SelectionStart.Date);
+            foreach (DataGridViewRow dgvRow in dataGridView1.Rows)
+            {
+
+                if (dgvRow.Cells["Employee_ID"].Value != null)
+                {
+                    string employeeId = dgvRow.Cells["Employee_ID"].Value.ToString();
+
+                    foreach (DataRow dbRow in ds2.Tables[0].Rows)
+                    {
+                        if (dbRow["employeeId"].ToString() == employeeId)
+                        {
+                            string status = dbRow["attendanceStatus"].ToString().ToLower();
+                            dgvRow.Cells["Status"].Value = (status == "present"); // Checkbox checked if present
+                            break;
+                        }
+                    }
+                }
+            }
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -158,6 +177,45 @@ namespace finals_UI
                     }
                 }
             }
+        }
+        //search button
+        private void button7_Click(object sender, EventArgs e)
+        {
+           
+            //    string empInfo = this.txtsearch.Text;
+            //    DateTime date= monthCalendar1.SelectionStart;
+
+            ////load data in to data grid
+            //DataSet ds = attendanceController.loadSearchResults(empInfo,date);
+            //dataGridView1.Columns["Date"].DataPropertyName = "date";
+            ////dataGridView1.Columns["Status"].DataPropertyName = "attendanceStatus";
+
+            //dataGridView1.Columns["Status"].DataPropertyName = "attendanceStatus"; 
+
+            //// Convert "attendanceStatus" to boolean for checkbox column
+            //foreach (DataGridViewRow row in dataGridView1.Rows)
+            //{
+            //    if (!row.IsNewRow && row.Cells["Status"].Value != null)
+            //    {
+            //        string status = row.Cells["Status"].Value.ToString().Trim().ToLower();
+            //        row.Cells["Status"].Value= status == "present"; // True if "present", false otherwise
+            //            dataGridView1.Refresh();
+
+            //    }
+            //}
+
+
+
+            //// Check if dataset is empty
+            //if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0)
+            //    {
+            //        MessageBox.Show("No matching employee found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        this.txtsearch.Text = "";
+            //        return;
+
+            //    }
+            //    this.dataGridView1.DataSource = ds.Tables[0];
+            
         }
     }
 }

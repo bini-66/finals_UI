@@ -56,9 +56,9 @@
             this.btnadd = new System.Windows.Forms.Button();
             this.txtofferDes = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnsearch = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtsearch = new System.Windows.Forms.TextBox();
             this.btnview = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -240,9 +240,11 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Teal;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.dataGridView1.GridColor = System.Drawing.Color.Teal;
             this.dataGridView1.Location = new System.Drawing.Point(341, 199);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -267,7 +269,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label5.Location = new System.Drawing.Point(337, 507);
+            this.label5.Location = new System.Drawing.Point(341, 489);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 23);
             this.label5.TabIndex = 26;
@@ -278,7 +280,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label2.Location = new System.Drawing.Point(922, 617);
+            this.label2.Location = new System.Drawing.Point(961, 619);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 23);
             this.label2.TabIndex = 30;
@@ -308,7 +310,7 @@
             // 
             this.DTPend.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.DTPend.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTPend.Location = new System.Drawing.Point(1122, 619);
+            this.DTPend.Location = new System.Drawing.Point(1139, 619);
             this.DTPend.Name = "DTPend";
             this.DTPend.Size = new System.Drawing.Size(176, 22);
             this.DTPend.TabIndex = 33;
@@ -383,7 +385,7 @@
             this.txtofferDes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtofferDes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtofferDes.ForeColor = System.Drawing.Color.White;
-            this.txtofferDes.Location = new System.Drawing.Point(1122, 489);
+            this.txtofferDes.Location = new System.Drawing.Point(1139, 489);
             this.txtofferDes.Multiline = true;
             this.txtofferDes.Name = "txtofferDes";
             this.txtofferDes.Size = new System.Drawing.Size(299, 88);
@@ -394,44 +396,47 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label4.Location = new System.Drawing.Point(922, 507);
+            this.label4.Location = new System.Drawing.Point(961, 489);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 23);
             this.label4.TabIndex = 40;
             this.label4.Text = "Offer Description";
             // 
-            // button8
+            // btnsearch
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(1161, 146);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(100, 33);
-            this.button8.TabIndex = 56;
-            this.button8.Text = "Search";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsearch.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsearch.Location = new System.Drawing.Point(1338, 143);
+            this.btnsearch.Name = "btnsearch";
+            this.btnsearch.Size = new System.Drawing.Size(100, 33);
+            this.btnsearch.TabIndex = 56;
+            this.btnsearch.Text = "Search";
+            this.btnsearch.UseVisualStyleBackColor = false;
+            this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label9.Location = new System.Drawing.Point(568, 146);
+            this.label9.Location = new System.Drawing.Point(871, 145);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 23);
+            this.label9.Size = new System.Drawing.Size(158, 23);
             this.label9.TabIndex = 55;
-            this.label9.Text = "Name";
+            this.label9.Text = "Enter Offer Type";
             // 
-            // textBox4
+            // txtsearch
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Location = new System.Drawing.Point(807, 146);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(264, 30);
-            this.textBox4.TabIndex = 54;
+            this.txtsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.txtsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtsearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsearch.ForeColor = System.Drawing.Color.White;
+            this.txtsearch.Location = new System.Drawing.Point(1048, 143);
+            this.txtsearch.Multiline = true;
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(264, 30);
+            this.txtsearch.TabIndex = 54;
             // 
             // btnview
             // 
@@ -481,7 +486,7 @@
             this.txtofferType.Location = new System.Drawing.Point(523, 489);
             this.txtofferType.Multiline = true;
             this.txtofferType.Name = "txtofferType";
-            this.txtofferType.Size = new System.Drawing.Size(372, 58);
+            this.txtofferType.Size = new System.Drawing.Size(317, 58);
             this.txtofferType.TabIndex = 61;
             // 
             // errorProvider1
@@ -506,9 +511,9 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.btnview);
-            this.Controls.Add(this.button8);
+            this.Controls.Add(this.btnsearch);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtofferDes);
             this.Controls.Add(this.btnup);
@@ -568,9 +573,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnsearch;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.Button btnview;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Label label1;

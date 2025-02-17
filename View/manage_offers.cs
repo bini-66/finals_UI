@@ -120,6 +120,7 @@ namespace finals_UI
 
         private void btnview_Click(object sender, EventArgs e)
         {
+            this.txtsearch.Text = "";
             DataSet ds = offerController.viewOffer();
             this.dataGridView1.DataSource=ds.Tables[0];
         }
@@ -225,6 +226,26 @@ namespace finals_UI
         private void btnclr_Click(object sender, EventArgs e)
         {
             clearFields();
+        }
+
+        private void btnsearch_Click(object sender, EventArgs e)
+        {
+                string offerType = this.txtsearch.Text;
+
+                //load data in to data grid
+                DataSet ds = offerController.loadSearchResults(offerType);
+
+                // Check if dataset is empty
+                if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0)
+                {
+                    MessageBox.Show("No matching offers found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.txtsearch.Text = "";
+                    return;
+
+                }
+                this.dataGridView1.DataSource = ds.Tables[0];
+
+            
         }
     }
 }

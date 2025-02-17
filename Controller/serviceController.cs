@@ -34,7 +34,7 @@ namespace finals_UI.Controller
 
             int ret=com.ExecuteNonQuery();
 
-            MessageBox.Show("no of records inserted:"+ret,"Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("Service added successfully","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
    
 
@@ -114,6 +114,28 @@ namespace finals_UI.Controller
             }
            
             con.closeConnection();
+        }
+
+        public DataSet loadSearchResults(string serviceName)
+        {
+            //connection class
+            dbConnection con=new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT * FROM service WHERE serviceName LIKE @serviceName";
+            MySqlCommand com=new MySqlCommand(query,con.getConnection());
+
+            com.Parameters.AddWithValue("@serviceName", "%" + serviceName + "%");
+
+            //data adapter class
+            MySqlDataAdapter DAP = new MySqlDataAdapter(com);
+            DataSet ds=new DataSet();
+
+            DAP.Fill(ds);
+           
+            return ds;
+
         }
 
 

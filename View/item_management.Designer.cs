@@ -42,9 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnup = new System.Windows.Forms.Button();
             this.btndlt = new System.Windows.Forms.Button();
@@ -56,9 +53,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.btnsearch = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -70,8 +66,8 @@
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.button11 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnview = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -244,44 +240,13 @@
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
             // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(643, 105);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 33);
-            this.button5.TabIndex = 25;
-            this.button5.Text = "Search";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label7.Location = new System.Drawing.Point(388, 111);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(30, 23);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "ID";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(447, 108);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 30);
-            this.textBox1.TabIndex = 23;
-            // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Teal;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.dataGridView1.GridColor = System.Drawing.Color.Teal;
             this.dataGridView1.Location = new System.Drawing.Point(312, 164);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -346,19 +311,23 @@
             // 
             this.CBcategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.CBcategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CBcategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBcategory.ForeColor = System.Drawing.Color.White;
             this.CBcategory.FormattingEnabled = true;
             this.CBcategory.Items.AddRange(new object[] {
             "Engine & Mechanical Parts",
             "Braking System"});
             this.CBcategory.Location = new System.Drawing.Point(517, 574);
             this.CBcategory.Name = "CBcategory";
-            this.CBcategory.Size = new System.Drawing.Size(251, 24);
+            this.CBcategory.Size = new System.Drawing.Size(251, 28);
             this.CBcategory.TabIndex = 38;
             // 
             // txtitmPrice
             // 
             this.txtitmPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.txtitmPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtitmPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtitmPrice.ForeColor = System.Drawing.Color.White;
             this.txtitmPrice.Location = new System.Drawing.Point(517, 721);
             this.txtitmPrice.Multiline = true;
             this.txtitmPrice.Name = "txtitmPrice";
@@ -369,6 +338,8 @@
             // 
             this.txtitmName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.txtitmName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtitmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtitmName.ForeColor = System.Drawing.Color.White;
             this.txtitmName.Location = new System.Drawing.Point(517, 646);
             this.txtitmName.Multiline = true;
             this.txtitmName.Name = "txtitmName";
@@ -408,38 +379,30 @@
             this.label3.TabIndex = 43;
             this.label3.Text = "Item Category";
             // 
-            // textBox4
+            // txtsearch
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Location = new System.Drawing.Point(940, 108);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(264, 30);
-            this.textBox4.TabIndex = 51;
+            this.txtsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.txtsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtsearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsearch.ForeColor = System.Drawing.Color.White;
+            this.txtsearch.Location = new System.Drawing.Point(1013, 105);
+            this.txtsearch.Multiline = true;
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(264, 30);
+            this.txtsearch.TabIndex = 51;
             // 
-            // label9
+            // btnsearch
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label9.Location = new System.Drawing.Point(845, 111);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 23);
-            this.label9.TabIndex = 52;
-            this.label9.Text = "Name";
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(1247, 105);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(100, 33);
-            this.button8.TabIndex = 53;
-            this.button8.Text = "Search";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsearch.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsearch.Location = new System.Drawing.Point(1292, 102);
+            this.btnsearch.Name = "btnsearch";
+            this.btnsearch.Size = new System.Drawing.Size(100, 33);
+            this.btnsearch.TabIndex = 53;
+            this.btnsearch.Text = "Search";
+            this.btnsearch.UseVisualStyleBackColor = false;
+            this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
             // 
             // button14
             // 
@@ -460,7 +423,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(310, 29);
+            this.label12.Location = new System.Drawing.Point(318, 44);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(203, 40);
             this.label12.TabIndex = 63;
@@ -482,6 +445,8 @@
             // 
             this.txtitmBrand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.txtitmBrand.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtitmBrand.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtitmBrand.ForeColor = System.Drawing.Color.White;
             this.txtitmBrand.Location = new System.Drawing.Point(1112, 568);
             this.txtitmBrand.Multiline = true;
             this.txtitmBrand.Name = "txtitmBrand";
@@ -503,6 +468,8 @@
             // 
             this.txtitmDes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.txtitmDes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtitmDes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtitmDes.ForeColor = System.Drawing.Color.White;
             this.txtitmDes.Location = new System.Drawing.Point(1112, 633);
             this.txtitmDes.Multiline = true;
             this.txtitmDes.Name = "txtitmDes";
@@ -529,49 +496,47 @@
             // 
             this.errorProvider5.ContainerControl = this;
             // 
-            // button11
+            // btnview
             // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button11.Location = new System.Drawing.Point(630, 477);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(215, 31);
-            this.button11.TabIndex = 108;
-            this.button11.Text = "Update Stock";
-            this.button11.UseVisualStyleBackColor = false;
+            this.btnview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnview.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnview.ForeColor = System.Drawing.Color.Black;
+            this.btnview.Location = new System.Drawing.Point(1231, 459);
+            this.btnview.Name = "btnview";
+            this.btnview.Size = new System.Drawing.Size(163, 31);
+            this.btnview.TabIndex = 109;
+            this.btnview.Text = "View Item List";
+            this.btnview.UseVisualStyleBackColor = false;
+            this.btnview.Click += new System.EventHandler(this.btnview_Click_1);
             // 
-            // button4
+            // label7
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(895, 477);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(215, 31);
-            this.button4.TabIndex = 109;
-            this.button4.Text = "View Inventory List";
-            this.button4.UseVisualStyleBackColor = false;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.label7.Location = new System.Drawing.Point(871, 109);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(119, 19);
+            this.label7.TabIndex = 110;
+            this.label7.Text = "Item ID / Name";
             // 
-            // inventory_management
+            // item_management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1452, 998);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button11);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.btnview);
             this.Controls.Add(this.txtitmDes);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtitmBrand);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.button14);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.btnsearch);
+            this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnup);
             this.Controls.Add(this.btndlt);
@@ -582,13 +547,10 @@
             this.Controls.Add(this.txtitmName);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "inventory_management";
+            this.Name = "item_management";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "inventory_management";
             this.panel1.ResumeLayout(false);
@@ -620,9 +582,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnup;
         private System.Windows.Forms.Button btndlt;
@@ -634,9 +593,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.Button btnsearch;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label11;
@@ -653,7 +611,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider3;
         private System.Windows.Forms.ErrorProvider errorProvider4;
         private System.Windows.Forms.ErrorProvider errorProvider5;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnview;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -32,7 +32,7 @@ namespace finals_UI.Controller
 
             int ret = com.ExecuteNonQuery();
 
-            MessageBox.Show("no of records inserted:" + ret, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Offer added successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
 
@@ -103,11 +103,32 @@ namespace finals_UI.Controller
                 int ret = com.ExecuteNonQuery();
                 if (ret != 0)
                 {
-                    MessageBox.Show("service deleted successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Offer deleted successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 con.closeConnection();
             }
+        }
+        public DataSet loadSearchResults(string offerType)
+        {
+            //connection class
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT * FROM offer WHERE offerType LIKE @offerType";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+
+            com.Parameters.AddWithValue("@offerType", "%" + offerType + "%");
+
+            //data adapter class
+            MySqlDataAdapter DAP = new MySqlDataAdapter(com);
+            DataSet ds = new DataSet();
+
+            DAP.Fill(ds);
+
+            return ds;
+
         }
 
     }

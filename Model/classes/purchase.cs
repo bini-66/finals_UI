@@ -16,7 +16,7 @@ namespace finals_UI.Model.classes
         public DateTime purchaseDate { get; set; }
         public string comment {  get; set; }    
         public int inventoryManagerId {  get; set; }
-        public int supplierInvoiceId {  get; set; }
+        public string supplierInvoiceNo {  get; set; }
         public int supplierId {  get; set; }
 
 
