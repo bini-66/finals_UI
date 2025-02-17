@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace finals_UI
 {
-    public partial class place_appointments : Form
+    public partial class new_appointments : Form
     {
-        public place_appointments()
+        public new_appointments()
         {
             InitializeComponent();
         }
@@ -37,6 +37,41 @@ namespace finals_UI
             this.Hide();
             Receptionist_dash dash= new Receptionist_dash();
             dash.Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void place_appointments_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
