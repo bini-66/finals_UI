@@ -1,5 +1,6 @@
 ﻿using finals_UI.Controller;
 using finals_UI.Model.classes;
+using finals_UI.Model.Database;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -98,7 +99,6 @@ namespace finals_UI.View
             sale.quantity= Convert.ToInt32(this.NUDqty.Value);
             sale.plateNumber=this.txtplateNo.Text;
             sale.invoiceNo = this.txtInvoiceNo.Text;
-            sale.comment=this.txtcomment.Text;
             sale.operationalManagerId = 2;
 
             //function to retrieve customer ID
@@ -149,8 +149,10 @@ namespace finals_UI.View
             this.CBitmName.Text = this.dataGridView1.CurrentRow.Cells["ItemName"].Value.ToString();
             this.NUDqty.Value = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells["Quantity"].Value);
             sale.saleItemId=Convert.ToInt32(this.dataGridView1.CurrentRow.Cells["saleItemId"].Value);
-            //this.txtplateNo.Text=this.dataGridView1.CurrentRow.Cells["InvoiceNo"].ToString();
-            //this.txtInvoiceNo.Text = this.dataGridView1.CurrentRow.Cells["plateNumber"].ToString();
+           this.txtplateNo.Text=this.dataGridView1.CurrentRow.Cells["plateNumber"].Value.ToString();
+           this.txtInvoiceNo.Text = this.dataGridView1.CurrentRow.Cells["InvoiceNo"].Value.ToString();
+           
+            
             // Make Invoice No field readonly
             txtInvoiceNo.ReadOnly = true;
         }
@@ -260,14 +262,45 @@ namespace finals_UI.View
 
         }
 
+        //search btn click 
         private void button5_Click(object sender, EventArgs e)
         {
-            string searchInvoiceNo = this.txtsrchinv.Text;
-            // Ensure only existing columns are used
-            dataGridView1.AutoGenerateColumns = false;
-            DataSet ds = saleController.searchsales(searchInvoiceNo);
+            //clear existing columns
+            dataGridView1.Columns.Clear();
 
+            string searchInvoiceNo = this.txtsrchinv.Text;
+         
+            DataSet ds = saleController.searchsales(searchInvoiceNo);
+            dataGridView1.DataSource = null;
             this.dataGridView1.DataSource = ds.Tables[0];
+        }
+
+        private void btndlt_Click(object sender, EventArgs e)
+        {
+            sale.itemId = Convert.ToInt32(CBitmName.SelectedValue);
+            sale.invoiceNo = this.txtInvoiceNo.Text;
+
+            //callng delete function 
+            saleController.deletesale(sale);
+            // Remove the selected row from the DataGridView
+            dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
+            //clear fields
+            clearFields();
+
+        }
+        private void clearFields()
+        {
+            this.CBitmName.SelectedIndex= -1;
+            this.NUDqty.Value=0;
+            this.txtInvoiceNo.Text = "";
+            this.txtplateNo.Text = "";
+            this.txtsrchinv.Text = "";
+
+        }
+
+        private void btnclr_Click(object sender, EventArgs e)
+        {
+            clearFields();
         }
     }
 }

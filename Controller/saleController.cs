@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using System.Transactions;
 using System.Data.Common;
 using Mysqlx.Crud;
+using System.Reflection;
 
 namespace finals_UI.Controller
 {
@@ -177,13 +178,12 @@ namespace finals_UI.Controller
                 // If the sale does not exist, insert it
                 if (saleCount == 0)
                 {
-                    string query = "INSERT INTO sale(customerId,comment,customerInvoiceId,operationalManagerId) VALUES(@customerId,@comment,@customerInvoiceId,@operationalManagerId)";
+                    string query = "INSERT INTO sale(customerId,customerInvoiceId,operationalManagerId) VALUES(@customerId,@customerInvoiceId,@operationalManagerId)";
                     MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
 
                     com.Parameters.AddWithValue("@customerId", customerId);
                     com.Parameters.AddWithValue("@customerInvoiceId", invoiceId);
-                    com.Parameters.AddWithValue("@comment", sale.comment);
                     com.Parameters.AddWithValue("@operationalManagerId", sale.operationalManagerId);
 
                     com.ExecuteNonQuery();
@@ -277,11 +277,11 @@ namespace finals_UI.Controller
                 int oldQuantity = Convert.ToInt32(com3.ExecuteScalar());
                 int quantityDif=sale.quantity-oldQuantity;
 
-                string query4 = "UPDATE stock SET quantity=quantity-@quantityDifference WHERE saleItemId=@saleItemId";
+                string query4 = "UPDATE stock SET quantity=quantity-@quantityDifference WHERE itemId=@itemId";
                 MySqlCommand com4 = new MySqlCommand(query4, con.getConnection());
 
                 com4.Parameters.AddWithValue("@quantityDifference", quantityDif);
-                com4.Parameters.AddWithValue("@saleItemId", sale.saleItemId);
+                com4.Parameters.AddWithValue("@itemId", sale.itemId);
 
                 com4.ExecuteNonQuery();
           
@@ -289,7 +289,7 @@ namespace finals_UI.Controller
             }
             //updatng sale table
             string query1 = "UPDATE sale SET customerId=@customerId,operationalManagerId=@operationalManagerId WHERE customerInvoiceId=@customerInvoiceId";
-            MySqlCommand com1=new MySqlCommand();
+            MySqlCommand com1=new MySqlCommand(query1,con.getConnection());
       
 
             int customerId = retrieveCustomerId(sale.plateNumber);
@@ -302,7 +302,7 @@ namespace finals_UI.Controller
 
             //updatng saleItem Table
             string query2 = "UPDATE sale_item SET itemId=@itemId,quantity=@quantity WHERE saleItemId=@saleItemId";
-            MySqlCommand com2=new MySqlCommand();
+            MySqlCommand com2=new MySqlCommand(query2,con.getConnection());
 
             com2.Parameters.AddWithValue("@itemId", sale.itemId);
             com2.Parameters.AddWithValue("@quantity", sale.quantity);
@@ -319,10 +319,11 @@ namespace finals_UI.Controller
             con.openConnection();
 
             int invoiceId=retrieveInvoiceId(invoiceNo);
-            string query = "SELECT item.itemName AS 'Item Name',sale_item.quantity AS 'Quantity',customer_invoice.invoiceNo,vehicle.plateNumber,saleItemId FROM sale INNER JOIN sale_item ON sale_item.saleId=sale.saleId  INNER JOIN item ON sale_item.itemId = item.itemId  INNER JOIN vehicle ON sale.customerId = vehicle.customerId INNER JOIN customer_invoice ON customer_invoice.customerInvoiceId=sale.customerInvoiceId WHERE sale.customerInvoiceId=@customerInvoiceId";
+            string query = "SELECT item.itemName AS 'ItemName', sale_item.quantity AS 'Quantity',  customer_invoice.invoiceNo AS 'InvoiceNo',  vehicle.plateNumber AS 'plateNumber',  sale_item.saleItemId AS 'saleItemId' FROM sale INNER JOIN sale_item ON sale_item.saleId = sale.saleId INNER JOIN item ON sale_item.itemId = item.itemId INNER JOIN customer_invoice ON customer_invoice.customerInvoiceId = sale.customerInvoiceId INNER JOIN vehicle ON customer_invoice.vehicleId = vehicle.vehicleId WHERE sale.customerInvoiceId = @customerInvoiceId";
 
 
-            MySqlCommand com=new MySqlCommand(query,con.getConnection());
+
+            MySqlCommand com =new MySqlCommand(query,con.getConnection());
             com.Parameters.AddWithValue("@customerInvoiceId", invoiceId);
 
             //data adapetr class
@@ -332,6 +333,77 @@ namespace finals_UI.Controller
 
             return ds;
 
+        }
+        public void deletesale(sale sale)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to delete the record?", "delte confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                //connection class
+                dbConnection con = new dbConnection();
+                con.openConnection();
+
+
+                //adjustng the stock level
+
+                //retrieving the qty frm sale_item table
+                string query3 = "SELECT quantity FROM sale_item WHERE saleItemId=@saleItemId";
+                MySqlCommand com3 = new MySqlCommand(query3, con.getConnection());
+
+                com3.Parameters.AddWithValue("@saleItemId", sale.saleItemId);
+
+                int quantity = Convert.ToInt32(com3.ExecuteScalar());
+
+                //adding tht qunatoty to stock table
+                string query4 = "UPDATE stock SET quantity=quantity+@quantity WHERE itemId=@itemId";
+                MySqlCommand com4 = new MySqlCommand(query4, con.getConnection());
+
+                com4.Parameters.AddWithValue("@quantity", quantity);
+                com4.Parameters.AddWithValue("@itemId", sale.itemId);
+
+                com4.ExecuteNonQuery();
+
+                //retriveng saleId of deletng transaction
+                string query = "SELECT saleId FROM sale_item WHERE saleItemId=@saleItemId";
+                MySqlCommand com = new MySqlCommand(query, con.getConnection());
+                com.Parameters.AddWithValue("@saleItemId", sale.saleItemId);
+
+                int saleId = Convert.ToInt32(com.ExecuteScalar());
+
+
+                //deletng frm saleItem table
+                string query1 = "DELETE FROM sale_item WHERE saleItemId=@saleItemId";
+                MySqlCommand com1 = new MySqlCommand(query1, con.getConnection());
+
+                com1.Parameters.AddWithValue("@saleItemId", sale.saleItemId);
+
+                com1.ExecuteNonQuery();
+
+                string checkQuery = "SELECT COUNT(*) FROM sale_item WHERE saleId=@saleId";
+                MySqlCommand checkCom = new MySqlCommand(checkQuery, con.getConnection());
+
+                checkCom.Parameters.AddWithValue("@saleId", saleId);
+                int count = Convert.ToInt32(checkCom.ExecuteScalar());
+
+                if (count == 0)
+                {
+                    //deletng frm sale table
+                    string query2 = "DELETE FROM sale WHERE customerInvoiceId=@customerInvoiceId";
+                    MySqlCommand com2 = new MySqlCommand(query2, con.getConnection());
+
+                    int invoiceId = retrieveInvoiceId(sale.invoiceNo);
+
+                    com2.Parameters.AddWithValue("@customerInvoiceId", invoiceId);
+
+                    com2.ExecuteNonQuery();
+
+
+                }
+                MessageBox.Show("Record deleted successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                con.closeConnection();
+            }
         }
     }
 }
