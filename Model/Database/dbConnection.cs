@@ -10,7 +10,7 @@ namespace finals_UI.Model.Database
 {
     internal class dbConnection
     {
-        private readonly string cs = "Server=localhost;Database=car_service_db;User ID=root;SslMode=None;";
+        private readonly string cs = "Server=localhost; Port=3308; Database=car_service_db;User ID=root;SslMode=None;";
         private MySqlConnection con;
 
         // Constructor

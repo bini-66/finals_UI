@@ -113,43 +113,88 @@ namespace finals_UI.Controller
 
         public List<KeyValuePair<int,string>> getServices()
         {
-            //connection class
-            dbConnection con = new dbConnection();
-            con.openConnection();
-
-            //command class
-            string query = "SELECT serviceId, serviceName FROM service";
-            MySqlCommand com = new MySqlCommand(query, con.getConnection());
-            MySqlDataReader reader = com.ExecuteReader();
-
             List<KeyValuePair<int, string>> services = new List<KeyValuePair<int, string>>();
-
-            while (reader.Read())
+            try
             {
-                int id = reader.GetInt32("serviceId");
-                string name = reader.GetString("serviceName");
-                services.Add(new KeyValuePair<int, string>(id, name));
+                //connection class
+                dbConnection con = new dbConnection();
+                con.openConnection();
+                //command class
+                string query = "SELECT serviceId, serviceName FROM service";
+                MySqlCommand com = new MySqlCommand(query, con.getConnection());
+                MySqlDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32("serviceId");
+                    string name = reader.GetString("serviceName");
+                    services.Add(new KeyValuePair<int, string>(id, name));
+                }
+                reader.Close();
+                con.closeConnection();
             }
-            reader.Close();
-            con.closeConnection();
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
             return services;
         }
 
         public void saveAppointmentServices(int appointmentId, List<int> selectedServiceIds)
         {
-            dbConnection con = new dbConnection();
-            con.openConnection();
-
-            foreach (int serviceId in selectedServiceIds)
+            try
             {
-                string query = "INSERT INTO appointment_service (appointmentId, serviceId) VALUES (@appointmentId, @serviceId)";
-                MySqlCommand com = new MySqlCommand(query, con.getConnection());
-                com.Parameters.AddWithValue("@appointmentId", appointmentId);
-                com.Parameters.AddWithValue("@serviceId", serviceId);
-                com.ExecuteNonQuery();
+                //connection class
+                dbConnection con = new dbConnection();
+                con.openConnection();
+
+                foreach (int serviceId in selectedServiceIds)
+                {
+                    string query = "INSERT INTO appointment_service (appointmentId, serviceId) VALUES (@appointmentId, @serviceId)";
+                    MySqlCommand com = new MySqlCommand(query, con.getConnection());
+                    com.Parameters.AddWithValue("@appointmentId", appointmentId);
+                    com.Parameters.AddWithValue("@serviceId", serviceId);
+                    com.ExecuteNonQuery();
+                }
+                con.closeConnection();
             }
-            con.closeConnection();
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
         }
+
+        public int saveAppointment(string date, string time, string status, string description, int customerId, int vehicleId)
+        {
+            try
+            {
+                //connection class
+                dbConnection con = new dbConnection();
+                con.openConnection();
+                //command class
+                string query = "INSERT INTO appointment (date, time, appointmentStatus, description, vehicleId, customerId) " +
+                               "VALUES (@date, @time, @status, @description, @vehicleId, @customerId); " +
+                               "SELECT LAST_INSERT_ID();";
+                MySqlCommand com = new MySqlCommand(query, con.getConnection());
+                com.Parameters.AddWithValue("@date", date);
+                com.Parameters.AddWithValue("@time", time);
+                com.Parameters.AddWithValue("@status", status);
+                com.Parameters.AddWithValue("@description", description);
+                com.Parameters.AddWithValue("@vehicleId", vehicleId);
+                com.Parameters.AddWithValue("@customerId", customerId);
+                com.ExecuteNonQuery();
+
+                int appointmentId = Convert.ToInt32(com.ExecuteScalar());
+                con.closeConnection();
+                return appointmentId;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                return 0;
+            }
+        }
+
+
 
     }
 }

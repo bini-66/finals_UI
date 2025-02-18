@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using finals_UI.Controller;
 using finals_UI.Model.classes;
+using finals_UI.Model.Database;
+using MySql.Data.MySqlClient;
 
 namespace finals_UI
 {
@@ -18,7 +20,69 @@ namespace finals_UI
         public new_appointments()
         {
             InitializeComponent();
+            LoadServices();
         }
+
+        //global variables
+        private string selectedTimeSlot = "";
+
+        //Other methods
+        private string getStatus()
+        {
+            if (rbConfirmed.Checked) return "Confirmed";
+            if (rbPending.Checked) return "Pending";
+            if (rbCancelled.Checked) return "Cancelled";
+            if (rbMissed.Checked) return "Missed";
+            return "Pending"; // Default
+        }
+
+        private void ClearAllFields()
+        {
+            txtCustomerId.Clear();
+            txtFullName.Clear();
+            txtPhone.Clear();
+            txtVehicleId.Clear();
+            txtPlateNumber.Clear();
+            txtDescription.Clear();
+
+            foreach (CheckBox checkBox in flowLayoutPanelServices.Controls)
+            {
+                checkBox.Checked = false;
+            }
+
+            selectedTimeSlot = null;
+            rbPending.Checked = true;
+        }
+
+         private void LoadServices()
+        {
+            // Clear existing checkboxes
+            flowLayoutPanelServices.Controls.Clear();
+
+            // Establish a connection
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            // Query to get all services
+            string query = "SELECT serviceId, serviceName FROM service";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+            MySqlDataReader reader = com.ExecuteReader();
+
+            // Dynamically create checkboxes
+            while (reader.Read())
+            {
+                CheckBox checkBox = new CheckBox();
+                checkBox.Text = reader["serviceName"].ToString(); // Set service name as text
+                checkBox.Tag = reader["serviceId"]; // Set service ID as tag
+                flowLayoutPanelServices.Controls.Add(checkBox);
+            }
+
+            // Close the connection
+            con.closeConnection();
+        }
+
+
+        //events
 
         private void dataGridView1_SelectedChanged(object sender, EventArgs e)
         {
@@ -130,37 +194,62 @@ namespace finals_UI
             // Set the clicked button to orange
             Button clickedButton = (Button)sender;
             clickedButton.BackColor = Color.Orange;
+
+            // Store the selected time slot
+            selectedTimeSlot = clickedButton.Text;
         }
 
         private void new_appointment_Load(object sender, EventArgs e)
         {
-            List<KeyValuePair<int, string>> services = appointmentController.getServices();
-
-            foreach (var service in services)
-            {
-                CheckBox checkBox = new CheckBox();
-                checkBox.Text = service.Value;
-                checkBox.Tag = service.Key; //store serviceId as a tag
-                checkBox.AutoSize = true;
-                flowLayoutPanelServices.Controls.Add(checkBox);
-            }
+            LoadServices();
         }
 
         private void btnReserve_Click(object sender, EventArgs e)
         {
-            //List<int> selectedServiceIds = new List<int>();
+            // Basic Validations
+            if (string.IsNullOrEmpty(txtCustomerId.Text) || string.IsNullOrEmpty(txtVehicleId.Text))
+            {
+                MessageBox.Show("Please select a customer and vehicle.");
+                return;
+            }
 
-            //foreach (CheckBox checkBox in flowLayoutPanelServices.Controls)
-            //{
-            //    if (checkBox.Checked)
-            //    {
-            //        int serviceId = (int)checkBox.Tag;
-            //        selectedServiceIds.Add(serviceId);
-            //    }
-            //}
+            if (string.IsNullOrEmpty(selectedTimeSlot))
+            {
+                MessageBox.Show("Please select a time slot.");
+                return;
+            }
 
-            //appointmentController.saveAppointmentServices(appointmentId, selectedServiceIds);
-            //MessageBox.Show("Appointment and Services Reserved!");
+            List<int> selectedServiceIds = new List<int>();
+            foreach (CheckBox checkBox in flowLayoutPanelServices.Controls)
+            {
+                if (checkBox.Checked)
+                {
+                    int serviceId = (int)checkBox.Tag;
+                    selectedServiceIds.Add(serviceId);
+                }
+            }
+
+            if (selectedServiceIds.Count == 0)
+            {
+                MessageBox.Show("Please select at least one service.");
+                return;
+            }
+
+            // Save Appointment
+            int appointmentId = appointmentController.saveAppointment(
+                monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd"),
+                selectedTimeSlot,
+                getStatus(),
+                txtDescription.Text,
+                Convert.ToInt32(txtCustomerId.Text),
+                Convert.ToInt32(txtVehicleId.Text)
+            );
+
+            // Save Selected Services
+            appointmentController.saveAppointmentServices(appointmentId, selectedServiceIds);
+
+            MessageBox.Show("Appointment Reserved!");
+            ClearAllFields();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -59,29 +59,31 @@
             this.txtCustomerId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBoxStatus = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbMissed = new System.Windows.Forms.RadioButton();
+            this.rbCancelled = new System.Windows.Forms.RadioButton();
+            this.rbPending = new System.Windows.Forms.RadioButton();
+            this.rbConfirmed = new System.Windows.Forms.RadioButton();
             this.groupBoxServices = new System.Windows.Forms.GroupBox();
-            this.chkService9 = new System.Windows.Forms.CheckBox();
-            this.chkService8 = new System.Windows.Forms.CheckBox();
-            this.chkService7 = new System.Windows.Forms.CheckBox();
-            this.chkService6 = new System.Windows.Forms.CheckBox();
-            this.chkService5 = new System.Windows.Forms.CheckBox();
-            this.chkService4 = new System.Windows.Forms.CheckBox();
-            this.chkService3 = new System.Windows.Forms.CheckBox();
-            this.chkService2 = new System.Windows.Forms.CheckBox();
-            this.chkService1 = new System.Windows.Forms.CheckBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanelServices = new System.Windows.Forms.FlowLayoutPanel();
+            this.chkService1 = new System.Windows.Forms.CheckBox();
+            this.chkService2 = new System.Windows.Forms.CheckBox();
+            this.chkService3 = new System.Windows.Forms.CheckBox();
+            this.chkService4 = new System.Windows.Forms.CheckBox();
+            this.chkService5 = new System.Windows.Forms.CheckBox();
+            this.chkService6 = new System.Windows.Forms.CheckBox();
+            this.chkService7 = new System.Windows.Forms.CheckBox();
+            this.chkService8 = new System.Windows.Forms.CheckBox();
+            this.chkService9 = new System.Windows.Forms.CheckBox();
             this.chkService10 = new System.Windows.Forms.CheckBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.groupBoxCustomer.SuspendLayout();
             this.groupBoxStatus.SuspendLayout();
             this.groupBoxServices.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.flowLayoutPanelServices.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -303,6 +305,8 @@
             // groupBoxCustomer
             // 
             this.groupBoxCustomer.BackColor = System.Drawing.Color.White;
+            this.groupBoxCustomer.Controls.Add(this.txtDescription);
+            this.groupBoxCustomer.Controls.Add(this.label8);
             this.groupBoxCustomer.Controls.Add(this.txtVehicleId);
             this.groupBoxCustomer.Controls.Add(this.label9);
             this.groupBoxCustomer.Controls.Add(this.txtPlateNumber);
@@ -419,10 +423,10 @@
             // groupBoxStatus
             // 
             this.groupBoxStatus.BackColor = System.Drawing.Color.White;
-            this.groupBoxStatus.Controls.Add(this.radioButton3);
-            this.groupBoxStatus.Controls.Add(this.radioButton4);
-            this.groupBoxStatus.Controls.Add(this.radioButton2);
-            this.groupBoxStatus.Controls.Add(this.radioButton1);
+            this.groupBoxStatus.Controls.Add(this.rbMissed);
+            this.groupBoxStatus.Controls.Add(this.rbCancelled);
+            this.groupBoxStatus.Controls.Add(this.rbPending);
+            this.groupBoxStatus.Controls.Add(this.rbConfirmed);
             this.groupBoxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxStatus.Location = new System.Drawing.Point(328, 316);
             this.groupBoxStatus.Name = "groupBoxStatus";
@@ -431,53 +435,53 @@
             this.groupBoxStatus.TabStop = false;
             this.groupBoxStatus.Text = "Status:";
             // 
-            // radioButton3
+            // rbMissed
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(152, 87);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(65, 19);
-            this.radioButton3.TabIndex = 3;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Missed";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbMissed.AutoSize = true;
+            this.rbMissed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbMissed.Location = new System.Drawing.Point(152, 87);
+            this.rbMissed.Name = "rbMissed";
+            this.rbMissed.Size = new System.Drawing.Size(65, 19);
+            this.rbMissed.TabIndex = 3;
+            this.rbMissed.TabStop = true;
+            this.rbMissed.Text = "Missed";
+            this.rbMissed.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // rbCancelled
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton4.Location = new System.Drawing.Point(46, 87);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(80, 19);
-            this.radioButton4.TabIndex = 2;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Cancelled";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rbCancelled.AutoSize = true;
+            this.rbCancelled.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCancelled.Location = new System.Drawing.Point(46, 87);
+            this.rbCancelled.Name = "rbCancelled";
+            this.rbCancelled.Size = new System.Drawing.Size(80, 19);
+            this.rbCancelled.TabIndex = 2;
+            this.rbCancelled.TabStop = true;
+            this.rbCancelled.Text = "Cancelled";
+            this.rbCancelled.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbPending
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(152, 42);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(71, 19);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Pending";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbPending.AutoSize = true;
+            this.rbPending.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPending.Location = new System.Drawing.Point(152, 42);
+            this.rbPending.Name = "rbPending";
+            this.rbPending.Size = new System.Drawing.Size(71, 19);
+            this.rbPending.TabIndex = 1;
+            this.rbPending.TabStop = true;
+            this.rbPending.Text = "Pending";
+            this.rbPending.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbConfirmed
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(46, 42);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(82, 19);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Confirmed";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbConfirmed.AutoSize = true;
+            this.rbConfirmed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbConfirmed.Location = new System.Drawing.Point(46, 42);
+            this.rbConfirmed.Name = "rbConfirmed";
+            this.rbConfirmed.Size = new System.Drawing.Size(82, 19);
+            this.rbConfirmed.TabIndex = 0;
+            this.rbConfirmed.TabStop = true;
+            this.rbConfirmed.Text = "Confirmed";
+            this.rbConfirmed.UseVisualStyleBackColor = true;
             // 
             // groupBoxServices
             // 
@@ -490,114 +494,6 @@
             this.groupBoxServices.TabIndex = 83;
             this.groupBoxServices.TabStop = false;
             this.groupBoxServices.Text = "Services";
-            // 
-            // chkService9
-            // 
-            this.chkService9.AutoSize = true;
-            this.chkService9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService9.Location = new System.Drawing.Point(3, 103);
-            this.chkService9.Name = "chkService9";
-            this.chkService9.Size = new System.Drawing.Size(92, 19);
-            this.chkService9.TabIndex = 8;
-            this.chkService9.Text = "chkService9";
-            this.chkService9.UseVisualStyleBackColor = true;
-            // 
-            // chkService8
-            // 
-            this.chkService8.AutoSize = true;
-            this.chkService8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService8.Location = new System.Drawing.Point(101, 78);
-            this.chkService8.Name = "chkService8";
-            this.chkService8.Size = new System.Drawing.Size(92, 19);
-            this.chkService8.TabIndex = 7;
-            this.chkService8.Text = "chkService8";
-            this.chkService8.UseVisualStyleBackColor = true;
-            // 
-            // chkService7
-            // 
-            this.chkService7.AutoSize = true;
-            this.chkService7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService7.Location = new System.Drawing.Point(3, 78);
-            this.chkService7.Name = "chkService7";
-            this.chkService7.Size = new System.Drawing.Size(92, 19);
-            this.chkService7.TabIndex = 6;
-            this.chkService7.Text = "chkService7";
-            this.chkService7.UseVisualStyleBackColor = true;
-            // 
-            // chkService6
-            // 
-            this.chkService6.AutoSize = true;
-            this.chkService6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService6.Location = new System.Drawing.Point(101, 53);
-            this.chkService6.Name = "chkService6";
-            this.chkService6.Size = new System.Drawing.Size(92, 19);
-            this.chkService6.TabIndex = 5;
-            this.chkService6.Text = "chkService6";
-            this.chkService6.UseVisualStyleBackColor = true;
-            // 
-            // chkService5
-            // 
-            this.chkService5.AutoSize = true;
-            this.chkService5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService5.Location = new System.Drawing.Point(3, 53);
-            this.chkService5.Name = "chkService5";
-            this.chkService5.Size = new System.Drawing.Size(92, 19);
-            this.chkService5.TabIndex = 4;
-            this.chkService5.Text = "chkService5";
-            this.chkService5.UseVisualStyleBackColor = true;
-            // 
-            // chkService4
-            // 
-            this.chkService4.AutoSize = true;
-            this.chkService4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService4.Location = new System.Drawing.Point(101, 28);
-            this.chkService4.Name = "chkService4";
-            this.chkService4.Size = new System.Drawing.Size(92, 19);
-            this.chkService4.TabIndex = 3;
-            this.chkService4.Text = "chkService4";
-            this.chkService4.UseVisualStyleBackColor = true;
-            // 
-            // chkService3
-            // 
-            this.chkService3.AutoSize = true;
-            this.chkService3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService3.Location = new System.Drawing.Point(3, 28);
-            this.chkService3.Name = "chkService3";
-            this.chkService3.Size = new System.Drawing.Size(92, 19);
-            this.chkService3.TabIndex = 2;
-            this.chkService3.Text = "chkService3";
-            this.chkService3.UseVisualStyleBackColor = true;
-            // 
-            // chkService2
-            // 
-            this.chkService2.AutoSize = true;
-            this.chkService2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService2.Location = new System.Drawing.Point(101, 3);
-            this.chkService2.Name = "chkService2";
-            this.chkService2.Size = new System.Drawing.Size(92, 19);
-            this.chkService2.TabIndex = 1;
-            this.chkService2.Text = "chkService2";
-            this.chkService2.UseVisualStyleBackColor = true;
-            // 
-            // chkService1
-            // 
-            this.chkService1.AutoSize = true;
-            this.chkService1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkService1.Location = new System.Drawing.Point(3, 3);
-            this.chkService1.Name = "chkService1";
-            this.chkService1.Size = new System.Drawing.Size(92, 19);
-            this.chkService1.TabIndex = 0;
-            this.chkService1.Text = "chkService1";
-            this.chkService1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(634, 316);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(547, 164);
-            this.dataGridView1.TabIndex = 84;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectedChanged);
             // 
             // flowLayoutPanelServices
             // 
@@ -618,6 +514,105 @@
             this.flowLayoutPanelServices.Size = new System.Drawing.Size(215, 133);
             this.flowLayoutPanelServices.TabIndex = 85;
             // 
+            // chkService1
+            // 
+            this.chkService1.AutoSize = true;
+            this.chkService1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkService1.Location = new System.Drawing.Point(3, 3);
+            this.chkService1.Name = "chkService1";
+            this.chkService1.Size = new System.Drawing.Size(92, 19);
+            this.chkService1.TabIndex = 0;
+            this.chkService1.Text = "chkService1";
+            this.chkService1.UseVisualStyleBackColor = true;
+            // 
+            // chkService2
+            // 
+            this.chkService2.AutoSize = true;
+            this.chkService2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkService2.Location = new System.Drawing.Point(101, 3);
+            this.chkService2.Name = "chkService2";
+            this.chkService2.Size = new System.Drawing.Size(92, 19);
+            this.chkService2.TabIndex = 1;
+            this.chkService2.Text = "chkService2";
+            this.chkService2.UseVisualStyleBackColor = true;
+            // 
+            // chkService3
+            // 
+            this.chkService3.AutoSize = true;
+            this.chkService3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkService3.Location = new System.Drawing.Point(3, 28);
+            this.chkService3.Name = "chkService3";
+            this.chkService3.Size = new System.Drawing.Size(92, 19);
+            this.chkService3.TabIndex = 2;
+            this.chkService3.Text = "chkService3";
+            this.chkService3.UseVisualStyleBackColor = true;
+            // 
+            // chkService4
+            // 
+            this.chkService4.AutoSize = true;
+            this.chkService4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkService4.Location = new System.Drawing.Point(101, 28);
+            this.chkService4.Name = "chkService4";
+            this.chkService4.Size = new System.Drawing.Size(92, 19);
+            this.chkService4.TabIndex = 3;
+            this.chkService4.Text = "chkService4";
+            this.chkService4.UseVisualStyleBackColor = true;
+            // 
+            // chkService5
+            // 
+            this.chkService5.AutoSize = true;
+            this.chkService5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkService5.Location = new System.Drawing.Point(3, 53);
+            this.chkService5.Name = "chkService5";
+            this.chkService5.Size = new System.Drawing.Size(92, 19);
+            this.chkService5.TabIndex = 4;
+            this.chkService5.Text = "chkService5";
+            this.chkService5.UseVisualStyleBackColor = true;
+            // 
+            // chkService6
+            // 
+            this.chkService6.AutoSize = true;
+            this.chkService6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkService6.Location = new System.Drawing.Point(101, 53);
+            this.chkService6.Name = "chkService6";
+            this.chkService6.Size = new System.Drawing.Size(92, 19);
+            this.chkService6.TabIndex = 5;
+            this.chkService6.Text = "chkService6";
+            this.chkService6.UseVisualStyleBackColor = true;
+            // 
+            // chkService7
+            // 
+            this.chkService7.AutoSize = true;
+            this.chkService7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkService7.Location = new System.Drawing.Point(3, 78);
+            this.chkService7.Name = "chkService7";
+            this.chkService7.Size = new System.Drawing.Size(92, 19);
+            this.chkService7.TabIndex = 6;
+            this.chkService7.Text = "chkService7";
+            this.chkService7.UseVisualStyleBackColor = true;
+            // 
+            // chkService8
+            // 
+            this.chkService8.AutoSize = true;
+            this.chkService8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkService8.Location = new System.Drawing.Point(101, 78);
+            this.chkService8.Name = "chkService8";
+            this.chkService8.Size = new System.Drawing.Size(92, 19);
+            this.chkService8.TabIndex = 7;
+            this.chkService8.Text = "chkService8";
+            this.chkService8.UseVisualStyleBackColor = true;
+            // 
+            // chkService9
+            // 
+            this.chkService9.AutoSize = true;
+            this.chkService9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkService9.Location = new System.Drawing.Point(3, 103);
+            this.chkService9.Name = "chkService9";
+            this.chkService9.Size = new System.Drawing.Size(92, 19);
+            this.chkService9.TabIndex = 8;
+            this.chkService9.Text = "chkService9";
+            this.chkService9.UseVisualStyleBackColor = true;
+            // 
             // chkService10
             // 
             this.chkService10.AutoSize = true;
@@ -628,6 +623,35 @@
             this.chkService10.TabIndex = 9;
             this.chkService10.Text = "chkService10";
             this.chkService10.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(634, 316);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(547, 164);
+            this.dataGridView1.TabIndex = 84;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectedChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(269, 108);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(84, 15);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Description:";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.BackColor = System.Drawing.SystemColors.Control;
+            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescription.Location = new System.Drawing.Point(370, 102);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(151, 29);
+            this.txtDescription.TabIndex = 13;
+            this.txtDescription.Text = "";
             // 
             // new_appointments
             // 
@@ -663,9 +687,9 @@
             this.groupBoxStatus.ResumeLayout(false);
             this.groupBoxStatus.PerformLayout();
             this.groupBoxServices.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.flowLayoutPanelServices.ResumeLayout(false);
             this.flowLayoutPanelServices.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -693,10 +717,10 @@
         private System.Windows.Forms.Button btnSlot13;
         private System.Windows.Forms.GroupBox groupBoxCustomer;
         private System.Windows.Forms.GroupBox groupBoxStatus;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbMissed;
+        private System.Windows.Forms.RadioButton rbCancelled;
+        private System.Windows.Forms.RadioButton rbPending;
+        private System.Windows.Forms.RadioButton rbConfirmed;
         private System.Windows.Forms.GroupBox groupBoxServices;
         private System.Windows.Forms.CheckBox chkService1;
         private System.Windows.Forms.TextBox txtPhone;
@@ -720,5 +744,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelServices;
         private System.Windows.Forms.CheckBox chkService10;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.RichTextBox txtDescription;
     }
 }
