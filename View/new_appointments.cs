@@ -179,14 +179,63 @@ namespace finals_UI
             }
         }
 
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            //BOLDING THE SELECTED DATE
+            DateTime selectedDate = monthCalendar1.SelectionRange.Start;
+
+            //Check if selected date is in the past
+            if (selectedDate < DateTime.Today)
+            {
+                MessageBox.Show("You cannot select a date in the past.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                //Reset to today's date
+                monthCalendar1.SetDate(DateTime.Today);
+                return;
+            }
+
+            //Clear previous bolded dates
+            monthCalendar1.BoldedDates = new DateTime[0];
+
+            //Bold the newly selected date
+            monthCalendar1.AddBoldedDate(selectedDate);
+            monthCalendar1.UpdateBoldedDates();
+
+            //FLICKER FIX (For old dates at least. Limitations for bolded)
+            monthCalendar1.SuspendLayout();
+            // Apply the grey-out logic here
+            foreach (DateTime date in monthCalendar1.BoldedDates)
+            {
+                if (date < DateTime.Today)
+                {
+                    monthCalendar1.RemoveBoldedDate(date);
+                }
+            }
+            monthCalendar1.UpdateBoldedDates();
+            monthCalendar1.ResumeLayout();
+        }
+
         private void SlotButton_Click(object sender, EventArgs e)
         {
-            // Reset all other buttons to blue (if available)
+            DateTime selectedDate = monthCalendar1.SelectionRange.Start;
+            DateTime today = DateTime.Today;
+
             Button[] buttons = { btnSlot10, btnSlot11, btnSlot12, btnSlot13, btnSlot14, btnSlot15, btnSlot16, btnSlot17, btnSlot18 };
-            foreach (Button btn in buttons)
+
+            if (selectedDate < today)
             {
-                if (btn.Enabled)
+                // Disable and grey out all buttons for old dates
+                foreach (Button btn in buttons)
                 {
+                    btn.Enabled = false;
+                    btn.BackColor = Color.Gray;
+                }
+            }
+            else
+            {    // Reset all buttons to blue (available)
+                foreach (Button btn in buttons)
+                {
+                    btn.Enabled = true;
                     btn.BackColor = Color.DodgerBlue;
                 }
             }

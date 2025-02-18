@@ -95,7 +95,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT time FROM appointment WHERE date = @date";
+            string query = "SELECT TIME_FORMAT(time, '%H:%i') AS time FROM appointment WHERE DATE(date) = @date";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
             com.Parameters.AddWithValue("@date", date.ToString("yyyy-MM-dd"));
 
@@ -103,7 +103,9 @@ namespace finals_UI.Controller
             MySqlDataReader reader = com.ExecuteReader();
             while (reader.Read())
             {
-                unavailableSlots.Add(reader["time"].ToString());
+                string time = reader["time"].ToString();
+                unavailableSlots.Add(time);
+                Console.WriteLine("Unavailable Slot: " + time); //debug log
             }
             reader.Close();
             con.closeConnection();
@@ -193,8 +195,5 @@ namespace finals_UI.Controller
                 return 0;
             }
         }
-
-
-
     }
 }

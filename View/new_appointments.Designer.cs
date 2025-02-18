@@ -81,7 +81,6 @@
             this.panel1.SuspendLayout();
             this.groupBoxCustomer.SuspendLayout();
             this.groupBoxStatus.SuspendLayout();
-            this.groupBoxServices.SuspendLayout();
             this.flowLayoutPanelServices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -107,7 +106,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(1065, 514);
+            this.btnSave.Location = new System.Drawing.Point(1065, 549);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(116, 48);
@@ -173,6 +172,7 @@
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 79;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
             // panel1
             // 
@@ -430,7 +430,7 @@
             this.groupBoxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxStatus.Location = new System.Drawing.Point(328, 316);
             this.groupBoxStatus.Name = "groupBoxStatus";
-            this.groupBoxStatus.Size = new System.Drawing.Size(283, 164);
+            this.groupBoxStatus.Size = new System.Drawing.Size(283, 209);
             this.groupBoxStatus.TabIndex = 82;
             this.groupBoxStatus.TabStop = false;
             this.groupBoxStatus.Text = "Status:";
@@ -439,7 +439,7 @@
             // 
             this.rbMissed.AutoSize = true;
             this.rbMissed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMissed.Location = new System.Drawing.Point(152, 87);
+            this.rbMissed.Location = new System.Drawing.Point(157, 122);
             this.rbMissed.Name = "rbMissed";
             this.rbMissed.Size = new System.Drawing.Size(65, 19);
             this.rbMissed.TabIndex = 3;
@@ -451,7 +451,7 @@
             // 
             this.rbCancelled.AutoSize = true;
             this.rbCancelled.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCancelled.Location = new System.Drawing.Point(46, 87);
+            this.rbCancelled.Location = new System.Drawing.Point(51, 122);
             this.rbCancelled.Name = "rbCancelled";
             this.rbCancelled.Size = new System.Drawing.Size(80, 19);
             this.rbCancelled.TabIndex = 2;
@@ -463,7 +463,7 @@
             // 
             this.rbPending.AutoSize = true;
             this.rbPending.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPending.Location = new System.Drawing.Point(152, 42);
+            this.rbPending.Location = new System.Drawing.Point(157, 77);
             this.rbPending.Name = "rbPending";
             this.rbPending.Size = new System.Drawing.Size(71, 19);
             this.rbPending.TabIndex = 1;
@@ -475,7 +475,7 @@
             // 
             this.rbConfirmed.AutoSize = true;
             this.rbConfirmed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbConfirmed.Location = new System.Drawing.Point(46, 42);
+            this.rbConfirmed.Location = new System.Drawing.Point(51, 77);
             this.rbConfirmed.Name = "rbConfirmed";
             this.rbConfirmed.Size = new System.Drawing.Size(82, 19);
             this.rbConfirmed.TabIndex = 0;
@@ -486,18 +486,18 @@
             // groupBoxServices
             // 
             this.groupBoxServices.BackColor = System.Drawing.Color.White;
-            this.groupBoxServices.Controls.Add(this.flowLayoutPanelServices);
             this.groupBoxServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxServices.Location = new System.Drawing.Point(76, 316);
             this.groupBoxServices.Name = "groupBoxServices";
-            this.groupBoxServices.Size = new System.Drawing.Size(227, 164);
+            this.groupBoxServices.Size = new System.Drawing.Size(227, 209);
             this.groupBoxServices.TabIndex = 83;
             this.groupBoxServices.TabStop = false;
             this.groupBoxServices.Text = "Services";
             // 
             // flowLayoutPanelServices
             // 
-            this.flowLayoutPanelServices.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanelServices.AutoScroll = true;
+            this.flowLayoutPanelServices.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanelServices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.flowLayoutPanelServices.Controls.Add(this.chkService1);
             this.flowLayoutPanelServices.Controls.Add(this.chkService2);
@@ -509,9 +509,9 @@
             this.flowLayoutPanelServices.Controls.Add(this.chkService8);
             this.flowLayoutPanelServices.Controls.Add(this.chkService9);
             this.flowLayoutPanelServices.Controls.Add(this.chkService10);
-            this.flowLayoutPanelServices.Location = new System.Drawing.Point(6, 25);
+            this.flowLayoutPanelServices.Location = new System.Drawing.Point(76, 341);
             this.flowLayoutPanelServices.Name = "flowLayoutPanelServices";
-            this.flowLayoutPanelServices.Size = new System.Drawing.Size(215, 133);
+            this.flowLayoutPanelServices.Size = new System.Drawing.Size(227, 184);
             this.flowLayoutPanelServices.TabIndex = 85;
             // 
             // chkService1
@@ -629,7 +629,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(634, 316);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(547, 164);
+            this.dataGridView1.Size = new System.Drawing.Size(547, 209);
             this.dataGridView1.TabIndex = 84;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectedChanged);
             // 
@@ -647,6 +647,7 @@
             // 
             this.txtDescription.BackColor = System.Drawing.SystemColors.Control;
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.Location = new System.Drawing.Point(370, 102);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(151, 29);
@@ -661,7 +662,8 @@
             this.AutoScrollMargin = new System.Drawing.Size(1, 1);
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1266, 608);
+            this.ClientSize = new System.Drawing.Size(1266, 613);
+            this.Controls.Add(this.flowLayoutPanelServices);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBoxServices);
             this.Controls.Add(this.groupBoxStatus);
@@ -686,7 +688,6 @@
             this.groupBoxCustomer.PerformLayout();
             this.groupBoxStatus.ResumeLayout(false);
             this.groupBoxStatus.PerformLayout();
-            this.groupBoxServices.ResumeLayout(false);
             this.flowLayoutPanelServices.ResumeLayout(false);
             this.flowLayoutPanelServices.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
