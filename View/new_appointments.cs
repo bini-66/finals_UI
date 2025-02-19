@@ -52,6 +52,17 @@ namespace finals_UI
 
             selectedTimeSlot = null;
             rbPending.Checked = true;
+
+            // Clear search results in the DataGridView
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
+
+            // Reset the selected date in the calendar
+            monthCalendar1.SetDate(DateTime.Today);
+
+            // Clear all bolded dates
+            monthCalendar1.BoldedDates = new DateTime[] { };
+            monthCalendar1.UpdateBoldedDates();
         }
 
          private void LoadServices()
@@ -124,15 +135,22 @@ namespace finals_UI
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            List<string> unavailableSlots = appointmentController.getUnavailableSlots(monthCalendar1.SelectionRange.Start);
+            DateTime selectedDate = monthCalendar1.SelectionRange.Start;
+            DateTime today = DateTime.Today;
 
             // Reset all buttons to blue (available)
-            Button[] buttons = { btnSlot10, btnSlot11, btnSlot12, btnSlot13, btnSlot14, btnSlot15, btnSlot16, btnSlot17, btnSlot18 };
-            foreach (Button btn in buttons)
+            ResetButtons();
+
+            if (selectedDate < today)
             {
-                btn.Enabled = true;
-                btn.BackColor = Color.DodgerBlue;
+                // Disable and grey out all buttons for old dates
+                DisableAllButtons();
+                MessageBox.Show("You cannot select a date in the past.", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Exit the method early
             }
+
+            // Get unavailable slots for the selected date
+            List<string> unavailableSlots = appointmentController.getUnavailableSlots(selectedDate);
 
             // Disable and grey out unavailable slots
             foreach (string time in unavailableSlots)
@@ -179,12 +197,32 @@ namespace finals_UI
             }
         }
 
+        private void ResetButtons()
+        {
+            Button[] buttons = { btnSlot10, btnSlot11, btnSlot12, btnSlot13, btnSlot14, btnSlot15, btnSlot16, btnSlot17, btnSlot18 };
+            foreach (Button btn in buttons)
+            {
+                btn.Enabled = true;
+                btn.BackColor = Color.DodgerBlue;
+            }
+        }
+
+        private void DisableAllButtons()
+        {
+            Button[] buttons = { btnSlot10, btnSlot11, btnSlot12, btnSlot13, btnSlot14, btnSlot15, btnSlot16, btnSlot17, btnSlot18 };
+            foreach (Button btn in buttons)
+            {
+                btn.Enabled = false;
+                btn.BackColor = Color.Gray;
+            }
+        }
+
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
         {
             //BOLDING THE SELECTED DATE
             DateTime selectedDate = monthCalendar1.SelectionRange.Start;
 
-            //Check if selected date is in the past
+            //Check if old date
             if (selectedDate < DateTime.Today)
             {
                 MessageBox.Show("You cannot select a date in the past.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -220,32 +258,33 @@ namespace finals_UI
             DateTime selectedDate = monthCalendar1.SelectionRange.Start;
             DateTime today = DateTime.Today;
 
-            Button[] buttons = { btnSlot10, btnSlot11, btnSlot12, btnSlot13, btnSlot14, btnSlot15, btnSlot16, btnSlot17, btnSlot18 };
-
             if (selectedDate < today)
             {
-                // Disable and grey out all buttons for old dates
-                foreach (Button btn in buttons)
-                {
-                    btn.Enabled = false;
-                    btn.BackColor = Color.Gray;
-                }
+                //Disable & grey out all buttons for old dates
+                DisableAllButtons();
+                MessageBox.Show("You cannot select a date in the past.", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Exit the method early
             }
-            else
-            {    // Reset all buttons to blue (available)
-                foreach (Button btn in buttons)
+
+            //Reset only the previously selected slot, if any
+            if (!string.IsNullOrEmpty(selectedTimeSlot))
+            {
+                foreach (Button btn in new Button[] { btnSlot10, btnSlot11, btnSlot12, btnSlot13, btnSlot14, btnSlot15, btnSlot16, btnSlot17, btnSlot18 })
                 {
-                    btn.Enabled = true;
-                    btn.BackColor = Color.DodgerBlue;
+                    if (btn.Text == selectedTimeSlot)
+                    {
+                        btn.BackColor = Color.DodgerBlue;
+                        break;
+                    }
                 }
             }
 
-            // Set the clicked button to orange
+            //Selected slot to orange
             Button clickedButton = (Button)sender;
             clickedButton.BackColor = Color.Orange;
 
-            // Store the selected time slot
             selectedTimeSlot = clickedButton.Text;
+            Console.WriteLine("Selected Time Slot: " + selectedTimeSlot);
         }
 
         private void new_appointment_Load(object sender, EventArgs e)
@@ -255,16 +294,16 @@ namespace finals_UI
 
         private void btnReserve_Click(object sender, EventArgs e)
         {
-            // Basic Validations
             if (string.IsNullOrEmpty(txtCustomerId.Text) || string.IsNullOrEmpty(txtVehicleId.Text))
             {
-                MessageBox.Show("Please select a customer and vehicle.");
+                MessageBox.Show("Please select a customer and vehicle.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 return;
             }
 
             if (string.IsNullOrEmpty(selectedTimeSlot))
             {
-                MessageBox.Show("Please select a time slot.");
+                MessageBox.Show("Please select a time slot.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -280,7 +319,7 @@ namespace finals_UI
 
             if (selectedServiceIds.Count == 0)
             {
-                MessageBox.Show("Please select at least one service.");
+                MessageBox.Show("Please select at least one service.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -297,7 +336,7 @@ namespace finals_UI
             // Save Selected Services
             appointmentController.saveAppointmentServices(appointmentId, selectedServiceIds);
 
-            MessageBox.Show("Appointment Reserved!");
+            MessageBox.Show("Appointment Reserved!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ClearAllFields();
         }
 

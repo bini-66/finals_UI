@@ -48,6 +48,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxCustomer = new System.Windows.Forms.GroupBox();
+            this.txtDescription = new System.Windows.Forms.RichTextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtVehicleId = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtPlateNumber = new System.Windows.Forms.TextBox();
@@ -76,8 +78,6 @@
             this.chkService9 = new System.Windows.Forms.CheckBox();
             this.chkService10 = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.groupBoxCustomer.SuspendLayout();
             this.groupBoxStatus.SuspendLayout();
@@ -287,7 +287,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(181, 22);
+            this.label3.Location = new System.Drawing.Point(189, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 1;
@@ -324,6 +324,27 @@
             this.groupBoxCustomer.TabIndex = 81;
             this.groupBoxCustomer.TabStop = false;
             this.groupBoxCustomer.Text = "Customer:";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.BackColor = System.Drawing.SystemColors.Control;
+            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(370, 102);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(151, 29);
+            this.txtDescription.TabIndex = 13;
+            this.txtDescription.Text = "";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(269, 108);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(84, 15);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Description:";
             // 
             // txtVehicleId
             // 
@@ -632,27 +653,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(547, 209);
             this.dataGridView1.TabIndex = 84;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectedChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(269, 108);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 15);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Description:";
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.BackColor = System.Drawing.SystemColors.Control;
-            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(370, 102);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(151, 29);
-            this.txtDescription.TabIndex = 13;
-            this.txtDescription.Text = "";
             // 
             // new_appointments
             // 

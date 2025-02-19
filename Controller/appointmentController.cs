@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using finals_UI.Model.classes;
 using finals_UI.Model.Database;
+using System.Drawing;
 
 namespace finals_UI.Controller
 {
@@ -90,25 +91,31 @@ namespace finals_UI.Controller
         {
             List<string> unavailableSlots = new List<string>();
 
-            //connection class
-            dbConnection con = new dbConnection();
-            con.openConnection();
-
-            //command class
-            string query = "SELECT TIME_FORMAT(time, '%H:%i') AS time FROM appointment WHERE DATE(date) = @date";
-            MySqlCommand com = new MySqlCommand(query, con.getConnection());
-            com.Parameters.AddWithValue("@date", date.ToString("yyyy-MM-dd"));
-
-            //data reader class
-            MySqlDataReader reader = com.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                string time = reader["time"].ToString();
-                unavailableSlots.Add(time);
-                Console.WriteLine("Unavailable Slot: " + time); //debug log
+                //connection class
+                dbConnection con = new dbConnection();
+                con.openConnection();
+
+                //command class
+                string query = "SELECT TIME_FORMAT(time, '%H:%i') AS time FROM appointment WHERE DATE(date) = @date";
+                MySqlCommand com = new MySqlCommand(query, con.getConnection());
+                com.Parameters.AddWithValue("@date", date.ToString("yyyy-MM-dd"));
+
+                //data reader class
+                MySqlDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    string time = reader["time"].ToString();
+                    unavailableSlots.Add(time);
+                    Console.WriteLine("Unavailable Slot: " + time); //debug log
+                }
+                reader.Close();
             }
-            reader.Close();
-            con.closeConnection();
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in getUnavailableSlots: " + ex.Message);
+            }
 
             return unavailableSlots;
         }
@@ -183,8 +190,7 @@ namespace finals_UI.Controller
                 com.Parameters.AddWithValue("@description", description);
                 com.Parameters.AddWithValue("@vehicleId", vehicleId);
                 com.Parameters.AddWithValue("@customerId", customerId);
-                com.ExecuteNonQuery();
-
+                
                 int appointmentId = Convert.ToInt32(com.ExecuteScalar());
                 con.closeConnection();
                 return appointmentId;
