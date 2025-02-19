@@ -109,7 +109,7 @@ namespace finals_UI.Controller
             int ret = com.ExecuteNonQuery();
             if (ret != 0)
             {
-                MessageBox.Show("service updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Service updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
            
