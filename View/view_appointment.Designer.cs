@@ -190,14 +190,14 @@
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.editToolStripMenuItem.Text = "Refresh";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.refreshToolStripMenuItem.Text = "Edit";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
@@ -207,20 +207,20 @@
             this.selectEntireRowToolStripMenuItem,
             this.selectCellToolStripMenuItem});
             this.selectRowToolStripMenuItem.Name = "selectRowToolStripMenuItem";
-            this.selectRowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.selectRowToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.selectRowToolStripMenuItem.Text = "Mode Select";
             // 
             // selectEntireRowToolStripMenuItem
             // 
             this.selectEntireRowToolStripMenuItem.Name = "selectEntireRowToolStripMenuItem";
-            this.selectEntireRowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.selectEntireRowToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.selectEntireRowToolStripMenuItem.Text = "Select Entire Row";
             this.selectEntireRowToolStripMenuItem.Click += new System.EventHandler(this.selectEntireRowToolStripMenuItem_Click);
             // 
             // selectCellToolStripMenuItem
             // 
             this.selectCellToolStripMenuItem.Name = "selectCellToolStripMenuItem";
-            this.selectCellToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.selectCellToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.selectCellToolStripMenuItem.Text = "Select Cell";
             this.selectCellToolStripMenuItem.Click += new System.EventHandler(this.selectCellToolStripMenuItem_Click);
             // 
@@ -239,6 +239,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1041, 537);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnNewCustomer);
             this.Controls.Add(this.txtSearch);

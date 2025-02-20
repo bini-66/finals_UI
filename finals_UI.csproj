@@ -125,6 +125,11 @@
     <Compile Include="Model\classes\purchase.cs" />
     <Compile Include="Model\classes\supplier.cs" />
     <Compile Include="Model\Database\dbConnection.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="View\edit_appointments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +324,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Receptionist_dash.resx">
       <DependentUpon>Receptionist_dash.cs</DependentUpon>
@@ -421,7 +427,6 @@
   <ItemGroup>
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <None Include="Images\refresh-icon.png" />
-    <None Include="Images\search-icon.png" />
     <None Include="Images\selection-icon.png" />
     <None Include="Images\edit-icon.png" />
   </ItemGroup>

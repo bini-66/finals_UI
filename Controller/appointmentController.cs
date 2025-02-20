@@ -9,6 +9,7 @@ using finals_UI.Model.classes;
 using finals_UI.Model.Database;
 using System.Drawing;
 using System.Windows.Forms;
+using finals_UI.View;
 
 namespace finals_UI.Controller
 {
@@ -180,7 +181,7 @@ namespace finals_UI.Controller
             }
         }
 
-        public int saveAppointment(string date, string time, string status, string description, int customerId, int vehicleId)
+        public int reserveAppointment(string date, string time, string status, string description, int customerId, int vehicleId)
         {
             try
             {
@@ -211,9 +212,10 @@ namespace finals_UI.Controller
         }
 
         //EDIT APPOINTMENT
-        public appointment GetAppointmentById(int appointmentId)
+
+        public appointment getAppointmentById(int appointmentId)
         {
-            appointment apt = new appointment();
+            appointment appointment = null;
             try
             {
                 //connection class
@@ -227,13 +229,16 @@ namespace finals_UI.Controller
                 MySqlDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
-                    apt.appointmentId = reader.GetInt32("appointmentId");
-                    apt.date = reader.GetDateTime("date");
-                    apt.time = reader.GetString("time");
-                    apt.appointmentStatus = reader.GetString("appointmentStatus");
-                    apt.description = reader.GetString("description");
-                    apt.customerId = reader.GetInt32("customerId");
-                    apt.vehicleId = reader.GetInt32("vehicleId");
+                    appointment = new appointment
+                    {
+                        appointmentId = reader.GetInt32("appointmentId"),
+                        date = reader.GetDateTime("date"),
+                        time = reader.GetString("time"),
+                        appointmentStatus = reader.GetString("appointmentStatus"),
+                        description = reader.GetString("description"),
+                        customerId = reader.GetInt32("customerId"),
+                        vehicleId = reader.GetInt32("vehicleId")
+                    };
                 }
                 reader.Close();
                 con.closeConnection();
@@ -242,49 +247,45 @@ namespace finals_UI.Controller
             {
                 Console.WriteLine("Error: " + ex.Message);
             }
-            return apt;
-
+            return appointment;
         }
 
-        public List<int> GetSelectedServices(int appointmentId)
+        public List<int> getSelectedServiceIds(int appointmentId)
         {
-            List<int> selectedServices = new List<int>();
-
+            List<int> selectedServiceIds = new List<int>();
             try
             {
                 //connection class
                 dbConnection con = new dbConnection();
                 con.openConnection();
-
                 //command class
                 string query = "SELECT serviceId FROM appointment_service WHERE appointmentId = @appointmentId";
                 MySqlCommand com = new MySqlCommand(query, con.getConnection());
                 com.Parameters.AddWithValue("@appointmentId", appointmentId);
-
                 //data reader class
                 MySqlDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
-                    selectedServices.Add(Convert.ToInt32(reader["serviceId"]));
+                    int serviceId = reader.GetInt32("serviceId");
+                    selectedServiceIds.Add(serviceId);
                 }
                 reader.Close();
+                con.closeConnection();
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
             }
-
-            return selectedServices;
+            return selectedServiceIds;
         }
 
-        public bool UpdateAppointment(int appointmentId, string date, string time, string status, string description, int customerId, int vehicleId)
+        public int updateAppointment(int appointmentId, string date, string time, string status, string description, int customerId, int vehicleId)
         {
             try
             {
                 //connection class
                 dbConnection con = new dbConnection();
                 con.openConnection();
-
                 //command class
                 string query = "UPDATE appointment SET date = @date, time = @time, appointmentStatus = @status, " +
                                "description = @description, vehicleId = @vehicleId, customerId = @customerId " +
@@ -297,31 +298,29 @@ namespace finals_UI.Controller
                 com.Parameters.AddWithValue("@vehicleId", vehicleId);
                 com.Parameters.AddWithValue("@customerId", customerId);
                 com.Parameters.AddWithValue("@appointmentId", appointmentId);
-
                 int rowsAffected = com.ExecuteNonQuery();
-                return rowsAffected > 0;
+                con.closeConnection();
+                return rowsAffected;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
-                return false;
+                return 0;
             }
         }
 
-        public bool UpdateAppointmentServices(int appointmentId, List<int> selectedServiceIds)
+        public void updateAppointmentServices(int appointmentId, List<int> selectedServiceIds)
         {
             try
             {
                 //connection class
                 dbConnection con = new dbConnection();
                 con.openConnection();
-
                 // Delete existing services for the appointment
                 string deleteQuery = "DELETE FROM appointment_service WHERE appointmentId = @appointmentId";
                 MySqlCommand deleteCom = new MySqlCommand(deleteQuery, con.getConnection());
                 deleteCom.Parameters.AddWithValue("@appointmentId", appointmentId);
                 deleteCom.ExecuteNonQuery();
-
                 // Insert the newly selected services
                 foreach (int serviceId in selectedServiceIds)
                 {
@@ -331,15 +330,12 @@ namespace finals_UI.Controller
                     insertCom.Parameters.AddWithValue("@serviceId", serviceId);
                     insertCom.ExecuteNonQuery();
                 }
-
-                return true;
+                con.closeConnection();
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
-                return false;
             }
-
         }
     }
 }

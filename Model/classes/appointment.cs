@@ -17,6 +17,6 @@ namespace finals_UI.Model.classes
         public int customerId { get; set; }
         public int vehicleId { get; set; }
         public string customerName { get; set; }
-        public string customerPhone { get; set; }
+        public string phoneNumber { get; set; }
     }
 }

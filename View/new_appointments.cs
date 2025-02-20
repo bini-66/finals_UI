@@ -326,7 +326,7 @@ namespace finals_UI
             }
 
             // Save Appointment
-            int appointmentId = appointmentController.saveAppointment(
+            int appointmentId = appointmentController.reserveAppointment(
                 monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd"),
                 selectedTimeSlot,
                 getStatus(),
