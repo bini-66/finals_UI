@@ -326,5 +326,15 @@ namespace finals_UI
             }
             this.dataGridView1.DataSource = ds.Tables[0];
         }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            userSession.Logout();
+
+            sign_in sign_In = new sign_in();
+            sign_In.Show();
+            this.Close();
+
+        }
     }
 }

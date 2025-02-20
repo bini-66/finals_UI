@@ -118,5 +118,36 @@ namespace finals_UI.Controller
 
 
         }
+        public bool userLogin(user user)
+        {
+            //  connection class
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            string query = "SELECT userId, role FROM user WHERE username=@username AND password=@password";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+
+            com.Parameters.AddWithValue("@username", user.username);
+            com.Parameters.AddWithValue("@password", user.password);
+
+            MySqlDataReader reader = com.ExecuteReader();
+
+            if (reader.Read()) // If user exists
+            {
+                user.userId = reader.GetInt32("userId");
+                user.role = reader.GetString("role");
+
+                // Store session data         
+                userSession.Login(user.userId, user.username, user.role);
+
+                MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;   
+            }
+        }
     }
 }

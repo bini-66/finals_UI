@@ -63,11 +63,11 @@
             this.txtplateNo = new System.Windows.Forms.TextBox();
             this.btnaddservice = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnserup = new System.Windows.Forms.Button();
+            this.btnserclr = new System.Windows.Forms.Button();
             this.btndltser = new System.Windows.Forms.Button();
+            this.btnserup = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button14 = new System.Windows.Forms.Button();
-            this.btnserclr = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txttot = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -466,20 +466,20 @@
             this.groupBox1.Size = new System.Drawing.Size(552, 249);
             this.groupBox1.TabIndex = 110;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Add Services";
+            this.groupBox1.Text = "Services";
             // 
-            // btnserup
+            // btnserclr
             // 
-            this.btnserup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.btnserup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnserup.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnserup.Location = new System.Drawing.Point(158, 182);
-            this.btnserup.Name = "btnserup";
-            this.btnserup.Size = new System.Drawing.Size(100, 33);
-            this.btnserup.TabIndex = 111;
-            this.btnserup.Text = "Update";
-            this.btnserup.UseVisualStyleBackColor = false;
-            this.btnserup.Click += new System.EventHandler(this.btnserup_Click);
+            this.btnserclr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnserclr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnserclr.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnserclr.Location = new System.Drawing.Point(419, 182);
+            this.btnserclr.Name = "btnserclr";
+            this.btnserclr.Size = new System.Drawing.Size(100, 33);
+            this.btnserclr.TabIndex = 99;
+            this.btnserclr.Text = "Clear";
+            this.btnserclr.UseVisualStyleBackColor = false;
+            this.btnserclr.Click += new System.EventHandler(this.btnserclr_Click);
             // 
             // btndltser
             // 
@@ -493,6 +493,19 @@
             this.btndltser.Text = "Delete";
             this.btndltser.UseVisualStyleBackColor = false;
             this.btndltser.Click += new System.EventHandler(this.btndltser_Click);
+            // 
+            // btnserup
+            // 
+            this.btnserup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnserup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnserup.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnserup.Location = new System.Drawing.Point(158, 182);
+            this.btnserup.Name = "btnserup";
+            this.btnserup.Size = new System.Drawing.Size(100, 33);
+            this.btnserup.TabIndex = 111;
+            this.btnserup.Text = "Update";
+            this.btnserup.UseVisualStyleBackColor = false;
+            this.btnserup.Click += new System.EventHandler(this.btnserup_Click);
             // 
             // groupBox2
             // 
@@ -513,7 +526,7 @@
             this.groupBox2.Size = new System.Drawing.Size(573, 249);
             this.groupBox2.TabIndex = 112;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Add Items";
+            this.groupBox2.Text = "Items";
             // 
             // button14
             // 
@@ -528,19 +541,6 @@
             this.button14.Text = "X";
             this.button14.UseVisualStyleBackColor = false;
             this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // btnserclr
-            // 
-            this.btnserclr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.btnserclr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnserclr.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnserclr.Location = new System.Drawing.Point(419, 182);
-            this.btnserclr.Name = "btnserclr";
-            this.btnserclr.Size = new System.Drawing.Size(100, 33);
-            this.btnserclr.TabIndex = 99;
-            this.btnserclr.Text = "Clear";
-            this.btnserclr.UseVisualStyleBackColor = false;
-            this.btnserclr.Click += new System.EventHandler(this.btnserclr_Click);
             // 
             // btnSearch
             // 
@@ -593,7 +593,7 @@
             this.btnsave.UseVisualStyleBackColor = false;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
-            // manage_sales
+            // manage_sales_invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -613,7 +613,7 @@
             this.Controls.Add(this.txtInvoiceNo);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "manage_sales";
+            this.Name = "manage_sales_invoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "manage_sales";
             this.Load += new System.EventHandler(this.manage_sales_Load);
