@@ -125,6 +125,12 @@
     <Compile Include="Model\classes\purchase.cs" />
     <Compile Include="Model\classes\supplier.cs" />
     <Compile Include="Model\Database\dbConnection.cs" />
+    <Compile Include="View\edit_appointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\edit_appointments.Designer.cs">
+      <DependentUpon>edit_appointments.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\manage_employees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,6 +271,9 @@
     <Compile Include="View\view_feedback.Designer.cs">
       <DependentUpon>view_feedback.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\edit_appointments.resx">
+      <DependentUpon>edit_appointments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\manage_employees.resx">
       <DependentUpon>manage_employees.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,14 +318,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="View\Receptionist_dash.resx">
       <DependentUpon>Receptionist_dash.cs</DependentUpon>
     </EmbeddedResource>
@@ -417,7 +420,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
-    <None Include="Resources\search-icon.png" />
+    <None Include="Images\refresh-icon.png" />
+    <None Include="Images\search-icon.png" />
+    <None Include="Images\selection-icon.png" />
+    <None Include="Images\edit-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

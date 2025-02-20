@@ -78,6 +78,8 @@
             this.chkService9 = new System.Windows.Forms.CheckBox();
             this.chkService10 = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBoxCustomer.SuspendLayout();
             this.groupBoxStatus.SuspendLayout();
@@ -178,6 +180,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.btnSlot18);
             this.panel1.Controls.Add(this.btnSlot17);
             this.panel1.Controls.Add(this.btnSlot16);
@@ -287,7 +291,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(189, 22);
+            this.label3.Location = new System.Drawing.Point(157, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 1;
@@ -296,7 +300,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 22);
+            this.label1.Location = new System.Drawing.Point(70, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 0;
@@ -459,34 +463,33 @@
             // rbMissed
             // 
             this.rbMissed.AutoSize = true;
-            this.rbMissed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMissed.Location = new System.Drawing.Point(157, 122);
+            this.rbMissed.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbMissed.Location = new System.Drawing.Point(161, 113);
             this.rbMissed.Name = "rbMissed";
-            this.rbMissed.Size = new System.Drawing.Size(65, 19);
+            this.rbMissed.Size = new System.Drawing.Size(74, 22);
             this.rbMissed.TabIndex = 3;
-            this.rbMissed.TabStop = true;
             this.rbMissed.Text = "Missed";
             this.rbMissed.UseVisualStyleBackColor = true;
             // 
             // rbCancelled
             // 
             this.rbCancelled.AutoSize = true;
-            this.rbCancelled.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCancelled.Location = new System.Drawing.Point(51, 122);
+            this.rbCancelled.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCancelled.Location = new System.Drawing.Point(44, 113);
             this.rbCancelled.Name = "rbCancelled";
-            this.rbCancelled.Size = new System.Drawing.Size(80, 19);
+            this.rbCancelled.Size = new System.Drawing.Size(91, 22);
             this.rbCancelled.TabIndex = 2;
-            this.rbCancelled.TabStop = true;
             this.rbCancelled.Text = "Cancelled";
             this.rbCancelled.UseVisualStyleBackColor = true;
             // 
             // rbPending
             // 
             this.rbPending.AutoSize = true;
-            this.rbPending.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPending.Location = new System.Drawing.Point(157, 77);
+            this.rbPending.Checked = true;
+            this.rbPending.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPending.Location = new System.Drawing.Point(161, 63);
             this.rbPending.Name = "rbPending";
-            this.rbPending.Size = new System.Drawing.Size(71, 19);
+            this.rbPending.Size = new System.Drawing.Size(79, 22);
             this.rbPending.TabIndex = 1;
             this.rbPending.TabStop = true;
             this.rbPending.Text = "Pending";
@@ -495,12 +498,11 @@
             // rbConfirmed
             // 
             this.rbConfirmed.AutoSize = true;
-            this.rbConfirmed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbConfirmed.Location = new System.Drawing.Point(51, 77);
+            this.rbConfirmed.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbConfirmed.Location = new System.Drawing.Point(44, 63);
             this.rbConfirmed.Name = "rbConfirmed";
-            this.rbConfirmed.Size = new System.Drawing.Size(82, 19);
+            this.rbConfirmed.Size = new System.Drawing.Size(95, 22);
             this.rbConfirmed.TabIndex = 0;
-            this.rbConfirmed.TabStop = true;
             this.rbConfirmed.Text = "Confirmed";
             this.rbConfirmed.UseVisualStyleBackColor = true;
             // 
@@ -654,6 +656,26 @@
             this.dataGridView1.TabIndex = 84;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectedChanged);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.DodgerBlue;
+            this.label10.Location = new System.Drawing.Point(51, 22);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(13, 13);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "  ";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.label11.Location = new System.Drawing.Point(138, 22);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(13, 13);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "  ";
+            // 
             // new_appointments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -747,5 +769,7 @@
         private System.Windows.Forms.CheckBox chkService10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.RichTextBox txtDescription;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }

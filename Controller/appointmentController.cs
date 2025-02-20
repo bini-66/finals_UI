@@ -8,11 +8,14 @@ using MySql.Data.MySqlClient;
 using finals_UI.Model.classes;
 using finals_UI.Model.Database;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace finals_UI.Controller
 {
     internal class appointmentController
     {
+        //VIEW APPOINTMENTS
+
         public DataSet loadAppointments()
         {
             //connection class
@@ -58,6 +61,8 @@ namespace finals_UI.Controller
 
             return ds;
         }
+
+        //NEW APPOINTMENT
 
         public DataSet searchCustomer(string search)
         {
@@ -120,7 +125,7 @@ namespace finals_UI.Controller
             return unavailableSlots;
         }
 
-        public List<KeyValuePair<int,string>> getServices()
+        public List<KeyValuePair<int, string>> getServices()
         {
             List<KeyValuePair<int, string>> services = new List<KeyValuePair<int, string>>();
             try
@@ -128,9 +133,12 @@ namespace finals_UI.Controller
                 //connection class
                 dbConnection con = new dbConnection();
                 con.openConnection();
+
                 //command class
                 string query = "SELECT serviceId, serviceName FROM service";
                 MySqlCommand com = new MySqlCommand(query, con.getConnection());
+
+                //data reader class
                 MySqlDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
@@ -190,7 +198,7 @@ namespace finals_UI.Controller
                 com.Parameters.AddWithValue("@description", description);
                 com.Parameters.AddWithValue("@vehicleId", vehicleId);
                 com.Parameters.AddWithValue("@customerId", customerId);
-                
+
                 int appointmentId = Convert.ToInt32(com.ExecuteScalar());
                 con.closeConnection();
                 return appointmentId;
@@ -200,6 +208,138 @@ namespace finals_UI.Controller
                 Console.WriteLine("Error: " + ex.Message);
                 return 0;
             }
+        }
+
+        //EDIT APPOINTMENT
+        public appointment GetAppointmentById(int appointmentId)
+        {
+            appointment apt = new appointment();
+            try
+            {
+                //connection class
+                dbConnection con = new dbConnection();
+                con.openConnection();
+                //command class
+                string query = "SELECT * FROM appointment WHERE appointmentId = @appointmentId";
+                MySqlCommand com = new MySqlCommand(query, con.getConnection());
+                com.Parameters.AddWithValue("@appointmentId", appointmentId);
+                //data reader class
+                MySqlDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    apt.appointmentId = reader.GetInt32("appointmentId");
+                    apt.date = reader.GetDateTime("date");
+                    apt.time = reader.GetString("time");
+                    apt.appointmentStatus = reader.GetString("appointmentStatus");
+                    apt.description = reader.GetString("description");
+                    apt.customerId = reader.GetInt32("customerId");
+                    apt.vehicleId = reader.GetInt32("vehicleId");
+                }
+                reader.Close();
+                con.closeConnection();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            return apt;
+
+        }
+
+        public List<int> GetSelectedServices(int appointmentId)
+        {
+            List<int> selectedServices = new List<int>();
+
+            try
+            {
+                //connection class
+                dbConnection con = new dbConnection();
+                con.openConnection();
+
+                //command class
+                string query = "SELECT serviceId FROM appointment_service WHERE appointmentId = @appointmentId";
+                MySqlCommand com = new MySqlCommand(query, con.getConnection());
+                com.Parameters.AddWithValue("@appointmentId", appointmentId);
+
+                //data reader class
+                MySqlDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    selectedServices.Add(Convert.ToInt32(reader["serviceId"]));
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+
+            return selectedServices;
+        }
+
+        public bool UpdateAppointment(int appointmentId, string date, string time, string status, string description, int customerId, int vehicleId)
+        {
+            try
+            {
+                //connection class
+                dbConnection con = new dbConnection();
+                con.openConnection();
+
+                //command class
+                string query = "UPDATE appointment SET date = @date, time = @time, appointmentStatus = @status, " +
+                               "description = @description, vehicleId = @vehicleId, customerId = @customerId " +
+                               "WHERE appointmentId = @appointmentId";
+                MySqlCommand com = new MySqlCommand(query, con.getConnection());
+                com.Parameters.AddWithValue("@date", date);
+                com.Parameters.AddWithValue("@time", time);
+                com.Parameters.AddWithValue("@status", status);
+                com.Parameters.AddWithValue("@description", description);
+                com.Parameters.AddWithValue("@vehicleId", vehicleId);
+                com.Parameters.AddWithValue("@customerId", customerId);
+                com.Parameters.AddWithValue("@appointmentId", appointmentId);
+
+                int rowsAffected = com.ExecuteNonQuery();
+                return rowsAffected > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool UpdateAppointmentServices(int appointmentId, List<int> selectedServiceIds)
+        {
+            try
+            {
+                //connection class
+                dbConnection con = new dbConnection();
+                con.openConnection();
+
+                // Delete existing services for the appointment
+                string deleteQuery = "DELETE FROM appointment_service WHERE appointmentId = @appointmentId";
+                MySqlCommand deleteCom = new MySqlCommand(deleteQuery, con.getConnection());
+                deleteCom.Parameters.AddWithValue("@appointmentId", appointmentId);
+                deleteCom.ExecuteNonQuery();
+
+                // Insert the newly selected services
+                foreach (int serviceId in selectedServiceIds)
+                {
+                    string insertQuery = "INSERT INTO appointment_service (appointmentId, serviceId) VALUES (@appointmentId, @serviceId)";
+                    MySqlCommand insertCom = new MySqlCommand(insertQuery, con.getConnection());
+                    insertCom.Parameters.AddWithValue("@appointmentId", appointmentId);
+                    insertCom.Parameters.AddWithValue("@serviceId", serviceId);
+                    insertCom.ExecuteNonQuery();
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                return false;
+            }
+
         }
     }
 }

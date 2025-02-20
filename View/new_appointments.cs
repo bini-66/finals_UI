@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -130,7 +131,8 @@ namespace finals_UI
 
         private void btnNewCustomer_Click(object sender, EventArgs e)
         {
-
+            string url = "http://kae.ct.ws/register.php";
+            Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
