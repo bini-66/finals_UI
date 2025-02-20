@@ -222,7 +222,13 @@ namespace finals_UI.Controller
                 dbConnection con = new dbConnection();
                 con.openConnection();
                 //command class
-                string query = "SELECT * FROM appointment WHERE appointmentId = @appointmentId";
+                string query = "SELECT a.customerId, c.firstName, c.lastName, " +
+                    "a.date, a.time, a.appointmentStatus, a.description, " +
+    "a.customerId, a.vehicleId, c.phone, v.plateNumber, a.appointmentId " +
+    "FROM appointment a " +
+    "INNER JOIN customer c ON a.customerId = c.customerId " +
+    "INNER JOIN vehicle v ON a.vehicleId = v.vehicleId " +
+    "WHERE a.appointmentId = @appointmentId";
                 MySqlCommand com = new MySqlCommand(query, con.getConnection());
                 com.Parameters.AddWithValue("@appointmentId", appointmentId);
                 //data reader class
@@ -237,7 +243,9 @@ namespace finals_UI.Controller
                         appointmentStatus = reader.GetString("appointmentStatus"),
                         description = reader.GetString("description"),
                         customerId = reader.GetInt32("customerId"),
-                        vehicleId = reader.GetInt32("vehicleId")
+                        vehicleId = reader.GetInt32("vehicleId"),
+                        phoneNumber = reader.GetString("phone"),
+                        plateNumber = reader.GetString("plateNumber")
                     };
                 }
                 reader.Close();

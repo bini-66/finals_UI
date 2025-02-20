@@ -164,6 +164,7 @@ namespace finals_UI
                 var appointmentIdValue = dataGridView1.SelectedRows[0].Cells["appointmentId"].Value;
                 if (appointmentIdValue != null && int.TryParse(appointmentIdValue.ToString(), out int appointmentId))
                 {
+                    Console.WriteLine("Selected Appointment ID: " + appointmentId); // Debug message
                     edit_appointments editForm = new edit_appointments(appointmentId);
                     editForm.ShowDialog();
                     LoadAppointments(); //to refresh grid after editing
