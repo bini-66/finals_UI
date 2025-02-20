@@ -52,6 +52,7 @@
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
@@ -251,10 +252,10 @@
             this.txtpw.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtpw.Location = new System.Drawing.Point(809, 361);
-            this.txtpw.Multiline = true;
             this.txtpw.Name = "txtpw";
-            this.txtpw.Size = new System.Drawing.Size(321, 35);
+            this.txtpw.Size = new System.Drawing.Size(321, 23);
             this.txtpw.TabIndex = 15;
+            this.txtpw.UseSystemPasswordChar = true;
             this.txtpw.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // txtemail
@@ -289,12 +290,25 @@
             // 
             this.errorProvider5.ContainerControl = this;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.checkBox1.Location = new System.Drawing.Point(986, 402);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(125, 20);
+            this.checkBox1.TabIndex = 85;
+            this.checkBox1.Text = "Show Password";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Register_user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1193, 644);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.txtemail);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -353,5 +367,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider3;
         private System.Windows.Forms.ErrorProvider errorProvider4;
         private System.Windows.Forms.ErrorProvider errorProvider5;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

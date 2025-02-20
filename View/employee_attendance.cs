@@ -35,8 +35,11 @@ namespace finals_UI
 
         private void employee_attendance_Load(object sender, EventArgs e)
         {
+            monthCalendar1.MaxDate = DateTime.Today;
+
             // Set the current date as the selected date 
             monthCalendar1.SelectionStart = DateTime.Today;
+            //this.btnup.Visible = false;
 
             // Manually call the method to load attendance status for today's date
             monthCalendar1_DateSelected(monthCalendar1, new DateRangeEventArgs(DateTime.Now, DateTime.Now));
@@ -85,11 +88,14 @@ namespace finals_UI
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
+            //this.btnup.Enabled = true;
             
         }
         //save button
         private void button8_Click(object sender, EventArgs e)
         {
+            DateTime selectedDate = monthCalendar1.SelectionStart;
+            this.btnsave.Enabled = false;
             List<attendance> records = new List<attendance>();
 
             foreach(DataGridViewRow row in dataGridView1.Rows)
@@ -108,7 +114,7 @@ namespace finals_UI
 
             if (records.Count > 0)
             {
-                attendanceController.saveAttendance(records);
+                attendanceController.saveAttendance(records,selectedDate);
             }
         }
 
@@ -139,6 +145,7 @@ namespace finals_UI
 
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
         {
+           this.txtdate.Text= monthCalendar1.SelectionStart.ToShortDateString();
             //load employee details
             DataSet ds = attendanceController.loadEmployeeInfo();
 
