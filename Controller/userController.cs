@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace finals_UI.Controller
 {
@@ -148,6 +149,50 @@ namespace finals_UI.Controller
                 MessageBox.Show("Invalid username or password. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;   
             }
+        }
+
+        public void resetPW(string newPW,string username)
+        {
+            //connection classs
+            dbConnection con = new dbConnection();
+            con.openConnection();
+            //command class
+            string query = "UPDATE user SET password=@password WHERE username=@username";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+
+            com.Parameters.AddWithValue("@password", newPW);
+            com.Parameters.AddWithValue("@username", username);
+
+            int ret = com.ExecuteNonQuery();
+
+            MessageBox.Show("reset successfully");
+
+
+        }
+        public int validateUsername(string username)
+        {
+            //connection class
+            dbConnection con=new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT COUNT(*) FROM user WHERE username=@username";
+            MySqlCommand com = new MySqlCommand( query, con.getConnection());
+
+            com.Parameters.AddWithValue("@username", username);
+
+            int count = Convert.ToInt32(com.ExecuteScalar());
+            if (count == 0)
+            {
+                // Username does not exist
+                MessageBox.Show("Please enter a valid username", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return -1; 
+            }
+
+            // Username exists
+            return 1;
+
+
         }
     }
 }

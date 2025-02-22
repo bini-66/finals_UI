@@ -9,13 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
+using Org.BouncyCastle.Cms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
+using System.Runtime.Remoting.Messaging;
+using finals_UI.Controller;
 
 
 namespace finals_UI.View
 {
     public partial class sendCode : Form
     {
-        string randomCode;
+        userController userController=new userController(); 
+        private string randomCode = "";
         public static string to;
 
         public sendCode()
@@ -23,48 +28,76 @@ namespace finals_UI.View
             InitializeComponent();
         }
         //btnsend
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string from = "binithi.vihanga@gmail.com";
-            string to = txtemail.Text;
-            string messageBody;
+        private void button1_Click(object sender, EventArgs e) {
+            string username = this.txtemail.Text;
+            //calling teh functon to validate username
+          int userCount= userController.validateUsername(username);
+            if (userCount == -1)
+            {
+                return;
+            }
+
+
+
             Random rand = new Random();
-            string randomCode = rand.Next(999999).ToString();
+            randomCode = rand.Next(999999).ToString();
+            string recipient = txtemail.Text;
+            string subject = "Password Reset Code";
+            string body = "Your reset code is " + randomCode;
 
-            MailMessage message = new MailMessage
-            {
-                From = new MailAddress(from),
-                Subject = "Password Reset Code",
-                Body = "Your reset code is " + randomCode
-            };
-            message.To.Add(to);
+                    if (string.IsNullOrWhiteSpace(recipient) )
+                    {
+                        MessageBox.Show("Please enter an email to send the code", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
 
-            SmtpClient smtp = new SmtpClient("smtp.office365.com")
-            {
-                Port = 587,
-                EnableSsl = true,
-                Credentials = new NetworkCredential("binithi.elvitigala@outlook.com", "microout123")
-            };
+            SendEmail(recipient, subject, body);
 
+}
 
+        private void SendEmail(string toEmail, string subject, string body)
+        {
+           
             try
             {
-                smtp.Send(message);
-                MessageBox.Show("code send successfully" + randomCode);
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587,
+                    Credentials = new NetworkCredential("futuretechtips@gmail.com", "kanx mahw lwbb lfgn"),
+                    EnableSsl = true
+                };
+
+                MailMessage mailMessage = new MailMessage
+                {
+                    From = new MailAddress("futuretechtips@gmail.com"),
+                    Subject = subject,
+                    Body = body,
+                    IsBodyHtml = true
+                };
+
+                mailMessage.To.Add(toEmail);
+
+
+                smtpClient.Send(mailMessage);
+                MessageBox.Show("Email Sent Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error: " + ex.Message, "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+       
         }
 
-        private void btnverify_Click(object sender, EventArgs e)
+
+        private void  btnverify_Click(object sender, EventArgs e)
         {
+            string username = this.txtemail.Text;
+           
+            
             if (randomCode == (txtvercode.Text).ToString())
             {
-                to = txtemail.Text;
-                resetPW resetPW = new resetPW();
+                
+                resetPW resetPW = new resetPW(username);
                 this.Hide();
                 resetPW.Show();
             }
@@ -72,6 +105,18 @@ namespace finals_UI.View
             {
                 MessageBox.Show("wrong code");
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            sign_in sign_In = new sign_in();
+            this.Hide();
+            sign_In.Show();
+        }
+
+        private void sendCode_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
