@@ -49,14 +49,19 @@ namespace finals_UI.Controller
             DAP.Fill(ds);
             return ds;
         }
-        public void saveAttendance(List<attendance> records)
+        public void saveAttendance(List<attendance> records,DateTime date)
         {
             //connection class
             dbConnection con = new dbConnection();
             con.openConnection();
 
             //command class
- 
+            string query1 = "DELETE FROM attendance WHERE date=@date";
+            MySqlCommand com1=new MySqlCommand(query1 ,con.getConnection());
+            com1.Parameters.AddWithValue("@date", date);
+            com1.ExecuteNonQuery();
+
+
 
             string query = "INSERT INTO attendance (employeeId, date, attendanceStatus) VALUES (@employeeId, @date, @status)";
 

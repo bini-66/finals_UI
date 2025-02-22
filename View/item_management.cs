@@ -23,6 +23,8 @@ namespace finals_UI
             InitializeComponent();
             DataSet ds = itemController.viewItem();
             this.dataGridView1.DataSource = ds.Tables[0];
+
+
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -291,6 +293,16 @@ namespace finals_UI
         {
             DataSet ds = itemController.viewItem();
             this.dataGridView1.DataSource = ds.Tables[0];
+        }
+
+        private void CBcategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void item_management_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
