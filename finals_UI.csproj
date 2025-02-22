@@ -108,6 +108,7 @@
     <Compile Include="Controller\employeeController.cs" />
     <Compile Include="Controller\feedbackController.cs" />
     <Compile Include="Controller\itemController.cs" />
+    <Compile Include="Controller\maintenanceController.cs" />
     <Compile Include="Controller\offerController.cs" />
     <Compile Include="Controller\saleController.cs" />
     <Compile Include="Controller\serviceController.cs" />
@@ -119,12 +120,19 @@
     <Compile Include="Model\classes\employee.cs" />
     <Compile Include="Model\classes\feedback.cs" />
     <Compile Include="Model\classes\item.cs" />
+    <Compile Include="Model\classes\maintenance.cs" />
     <Compile Include="Model\classes\offer.cs" />
     <Compile Include="Model\classes\sale.cs" />
     <Compile Include="Model\classes\service.cs" />
     <Compile Include="Model\classes\purchase.cs" />
     <Compile Include="Model\classes\supplier.cs" />
     <Compile Include="Model\Database\dbConnection.cs" />
+    <Compile Include="View\maintenance_transaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\maintenance_transaction.Designer.cs">
+      <DependentUpon>maintenance_transaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\manage_employees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,6 +273,9 @@
     <Compile Include="View\view_feedback.Designer.cs">
       <DependentUpon>view_feedback.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\maintenance_transaction.resx">
+      <DependentUpon>maintenance_transaction.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\manage_employees.resx">
       <DependentUpon>manage_employees.cs</DependentUpon>
     </EmbeddedResource>
