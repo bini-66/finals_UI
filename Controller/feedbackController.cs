@@ -20,7 +20,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string sql = "SELECT * FROM feedback";
+            string sql = "SELECT feedbackId,feedbackDescription AS feedback,CONCAT(customer.firstName, ' ', customer.lastName) AS fullName,customer.email AS email FROM feedback INNER JOIN customer ON feedback.customerId=customer.customerId";
             MySqlCommand com = new MySqlCommand(sql, con.getConnection());
 
             //data adapter class
@@ -39,11 +39,11 @@ namespace finals_UI.Controller
                 con.openConnection();
 
                 //command class
-                string sql = "INSERT INTO feedback(feedbackDescription,rating) VALUES (@feedbackDescription,@rating)";
+                string sql = "INSERT INTO feedback(feedbackDescription) VALUES (@feedbackDescription)";
                 MySqlCommand com = new MySqlCommand(sql, con.getConnection());
 
                 com.Parameters.AddWithValue("@feedbackDescription", feedback.feedbackDescription);
-                com.Parameters.AddWithValue("@rating", feedback.rating);
+                //com.Parameters.AddWithValue("@rating", feedback.rating);
 
                 int ret = com.ExecuteNonQuery();
                 MessageBox.Show("no of records inserted:" + ret, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
