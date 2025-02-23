@@ -21,7 +21,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT employeeId,firstName FROM employee";
+            string query = "SELECT employeeId,firstName FROM employee WHERE deleted_flag=FALSE";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());
 
             //data adapter class
@@ -39,7 +39,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT employeeId,attendanceStatus FROM attendance WHERE date=@date  ";
+            string query = "SELECT employeeId,attendanceStatus FROM attendance WHERE date=@date";
             MySqlCommand com=new MySqlCommand( query,con.getConnection());
 
             com.Parameters.AddWithValue("@date",date);

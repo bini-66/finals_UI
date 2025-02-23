@@ -46,7 +46,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT *  FROM offer";
+            string query = "SELECT offerId,offerType,offerDescription,discount,startDate,endDate FROM offer WHERE deleted_flag=FALSE";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             //data adapter class
@@ -95,7 +95,7 @@ namespace finals_UI.Controller
                 con.openConnection();
 
                 //command class
-                string query = "DELETE FROM offer WHERE offerId=@offerId";
+                string query = "UPDATE  offer SET deleted_flag=TRUE WHERE  offerId=@offerId";
                 MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
                 com.Parameters.AddWithValue("@offerId", offerId);
@@ -116,7 +116,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT * FROM offer WHERE offerType LIKE @offerType";
+            string query = "SELECT offerId,offerType,offerDescription,discount,startDate,endDate FROM offer WHERE offerType LIKE @offerType AND deleted_flag=FALSE";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             com.Parameters.AddWithValue("@offerType", "%" + offerType + "%");

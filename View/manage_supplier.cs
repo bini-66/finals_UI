@@ -224,8 +224,8 @@ namespace finals_UI
             this.txtfname.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
             this.txtlname.Text= this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
             this.txtemail.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            this.txtphone.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            this.txtcompany.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            this.txtphone.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            this.txtcompany.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
 
             supplier.supplierId = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value);
             this.btnadd.Enabled = false;

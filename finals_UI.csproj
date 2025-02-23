@@ -242,11 +242,11 @@
     <Compile Include="View\manage_supplier.Designer.cs">
       <DependentUpon>manage_supplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\manage_users.cs">
+    <Compile Include="View\manage_user.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\manage_users.Designer.cs">
-      <DependentUpon>manage_users.cs</DependentUpon>
+    <Compile Include="View\manage_user.Designer.cs">
+      <DependentUpon>manage_user.cs</DependentUpon>
     </Compile>
     <Compile Include="View\manage_offers.cs">
       <SubType>Form</SubType>
@@ -376,8 +376,8 @@
     <EmbeddedResource Include="View\manage_supplier.resx">
       <DependentUpon>manage_supplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\manage_users.resx">
-      <DependentUpon>manage_users.cs</DependentUpon>
+    <EmbeddedResource Include="View\manage_user.resx">
+      <DependentUpon>manage_user.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\payment.resx">
       <DependentUpon>payment.cs</DependentUpon>

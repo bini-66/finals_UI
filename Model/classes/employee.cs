@@ -13,6 +13,6 @@ namespace finals_UI.Model.classes
         public string lastName { get; set; }
         public string email { get; set; }
         public string phoneNumber { get; set; }
-        public float employeeSalary { get; set; }
+        //public float employeeSalary { get; set; }
     }
 }

@@ -50,7 +50,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT *  FROM service";
+            string query = "SELECT serviceId,serviceName,serviceDescription,servicePrice,serviceManagerId  FROM service WHERE deleted_flag=FALSE";
             MySqlCommand com = new MySqlCommand( query, con.getConnection());
 
             //data adapter class
@@ -76,7 +76,7 @@ namespace finals_UI.Controller
                 con.openConnection();
 
                 //command class
-                string query = "DELETE FROM service WHERE serviceId=@serviceId";
+                string query = "UPDATE service SET deleted_flag=TRUE WHERE serviceId=@serviceId";
                 MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
                 com.Parameters.AddWithValue("@serviceId", serviceId);
@@ -123,7 +123,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT * FROM service WHERE serviceName LIKE @serviceName";
+            string query = "SELECT  serviceId,serviceName,serviceDescription,servicePrice,serviceManagerId FROM service WHERE serviceName LIKE @serviceName AND deleted_flag=FALSE";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());
 
             com.Parameters.AddWithValue("@serviceName", "%" + serviceName + "%");

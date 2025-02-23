@@ -46,7 +46,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT * FROM item";
+            string query = "SELECT itemId,itemName,itemCategory,itemBrand,itemDescription,itemPrice FROM item WHERE deleted_flag = FALSE";
             MySqlCommand com = new MySqlCommand( query, con.getConnection());
 
             //data adapter class
@@ -97,7 +97,7 @@ namespace finals_UI.Controller
                 con.openConnection();
 
                 //command class
-                string query = "DELETE FROM item WHERE itemId=@itemId";
+                string query = "UPDATE item SET deleted_flag = TRUE WHERE itemId=@itemId";
                 MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
 
@@ -119,7 +119,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT * FROM item WHERE itemName LIKE @itemName OR itemId=@itemId";
+            string query = "SELECT  itemId,itemName,itemCategory,itemBrand,itemDescription,itemPrice FROM item WHERE( itemName LIKE @itemName OR itemId=@itemId ) AND deleted_flag=FALSE";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             com.Parameters.AddWithValue("@itemName", "%" + itemInfo + "%");
