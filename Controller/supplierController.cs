@@ -49,7 +49,9 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT * FROM supplier";
+            string query = "SELECT supplierId, supplierfirstName AS `first name`, supplierlastName AS `last name`, supplierCompany AS company, email, phoneNumber " +
+                           "FROM supplier " +
+                           "WHERE deleted_flag = FALSE";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             //data adapter class
@@ -99,7 +101,7 @@ namespace finals_UI.Controller
                 con.openConnection();
 
                 //command class
-                string query = "DELETE FROM supplier WHERE supplierId=@supplierId";
+                string query = "UPDATE supplier SET deleted_flag=TRUE WHERE supplierId=@supplierId";
                 MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
 
@@ -122,7 +124,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT * FROM supplier WHERE supplierfirstName LIKE @supplierfirstName OR supplierlastName LIKE @supplierlastName OR supplierCompany LIKE @supplierCompany";
+            string query = "SELECT supplierId, supplierfirstName AS `first name`, supplierlastName AS `last name`, supplierCompany AS company, email, phoneNumber FROM supplier WHERE (supplierfirstName LIKE @supplierfirstName OR supplierlastName LIKE @supplierlastName OR supplierCompany LIKE @supplierCompany )AND deleted_flag=FALSE";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             com.Parameters.AddWithValue("@supplierfirstName",  supInfo + "%");

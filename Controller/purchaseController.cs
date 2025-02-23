@@ -41,7 +41,7 @@ namespace finals_UI.Controller
 
             //check if the item exists in teh stock table 
 
-            string query2 = "SELECT COUNT(*) FROM stock WHERE itemId=@itemId";
+            string query2 = "SELECT COUNT(*) FROM stock WHERE itemId=@itemId ";
             MySqlCommand com2=new MySqlCommand(query2,con.getConnection());
 
             com2.Parameters.AddWithValue("@itemId",purchase.itemId);    
@@ -106,7 +106,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT itemId,itemName FROM item";
+            string query = "SELECT itemId,itemName FROM item  WHERE deleted_flag=FALSE";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());   
 
             //data adapter ckass
@@ -198,7 +198,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command classs
-            String query = "SELECT supplierId,supplierCompany FROM supplier";
+            String query = "SELECT supplierId,supplierCompany FROM supplier WHERE deleted_flag=FALSE";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             //data adapter class

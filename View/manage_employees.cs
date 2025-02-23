@@ -94,7 +94,7 @@ namespace finals_UI
             employee.lastName = this.txtLName.Text;
             employee.email = this.txtEmail.Text;
             employee.phoneNumber = this.txtPhone.Text;
-            employee.employeeSalary = Convert.ToSingle(this.txtSalary.Text);
+            //employee.employeeSalary = Convert.ToSingle(this.txtSalary.Text);
 
             //calling update employee function 
             employeeController.updateEmployee(employee);
@@ -146,7 +146,7 @@ namespace finals_UI
             this.txtLName.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
             this.txtEmail.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
             this.txtPhone.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            this.txtSalary.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            //this.txtSalary.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
 
             employee.employeeId = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value);
         }

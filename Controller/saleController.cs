@@ -29,7 +29,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT itemId,itemName FROM item";
+            string query = "SELECT itemId,itemName FROM item WHERE deleted_flag=FALSE";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             //data adapter ckass
@@ -48,7 +48,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT serviceId,serviceName FROM service";
+            string query = "SELECT serviceId,serviceName FROM service WHERE deleted_flag=FALSE";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             //data adapter ckass

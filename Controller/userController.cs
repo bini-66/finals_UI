@@ -4,6 +4,7 @@ using MySql.Data.MySqlClient;
 using Mysqlx.Crud;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -193,6 +194,34 @@ namespace finals_UI.Controller
             return 1;
 
 
+        }
+        public DataSet loadUsers()
+        {
+            dbConnection con = new dbConnection();
+            con.openConnection();
+            string query = "SELECT CONCAT(user.firstName, ' ', user.lastName) AS fullName, " +
+                           "user.email, user.phoneNumber AS Phone, " +
+                           "CASE " +
+                           "   WHEN receptionist.userId IS NOT NULL THEN 'Receptionist' " +
+                           "   WHEN service_manager.userId IS NOT NULL THEN 'Service Manager' " +
+                           "   WHEN operational_manager.userId IS NOT NULL THEN 'Operational Manager' " +
+                           "   WHEN inventory_manager.userId IS NOT NULL THEN 'Inventory Manager' " +
+                           "   WHEN owner.userId IS NOT NULL THEN 'Owner' " +
+                           "   ELSE 'Unknown' " +
+                           "END AS role " +
+                           "FROM user " +
+                           "LEFT JOIN receptionist ON receptionist.userId = user.userId " +
+                           "LEFT JOIN service_manager ON service_manager.userId = user.userId " +
+                           "LEFT JOIN operational_manager ON operational_manager.userId = user.userId " +
+                           "LEFT JOIN inventory_manager ON inventory_manager.userId = user.userId " +
+                           "LEFT JOIN owner ON owner.userId = user.userId";
+
+
+            MySqlCommand com =new MySqlCommand(query, con.getConnection());
+            MySqlDataAdapter DAP = new MySqlDataAdapter(com);
+            DataSet ds=new DataSet();
+            DAP.Fill(ds);
+            return ds;
         }
     }
 }

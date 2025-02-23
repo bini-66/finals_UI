@@ -220,7 +220,6 @@
             this.label8.Size = new System.Drawing.Size(194, 25);
             this.label8.TabIndex = 33;
             this.label8.Text = "Operational Manager";
-//            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // pictureBox1
             // 
@@ -242,7 +241,6 @@
             this.label1.Size = new System.Drawing.Size(100, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "WELCOME";
-//            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridView1
             // 
@@ -258,7 +256,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1082, 303);
             this.dataGridView1.TabIndex = 23;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-//            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button8
             // 
@@ -277,14 +274,13 @@
             // 
             this.txtsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.txtsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtsearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.txtsearch.Location = new System.Drawing.Point(947, 155);
             this.txtsearch.Multiline = true;
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(316, 33);
             this.txtsearch.TabIndex = 57;
-//            this.txtsearch.Enter += new System.EventHandler(this.textBox4_Enter);
             this.txtsearch.Leave += new System.EventHandler(this.txtsearch_Leave);
             // 
             // btnview
@@ -375,7 +371,6 @@
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(362, 30);
             this.txtemail.TabIndex = 76;
-//            this.txtemail.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtlname
             // 
@@ -422,7 +417,6 @@
             this.label4.Size = new System.Drawing.Size(58, 23);
             this.label4.TabIndex = 72;
             this.label4.Text = "Email";
-//            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -434,7 +428,6 @@
             this.label3.Size = new System.Drawing.Size(95, 23);
             this.label3.TabIndex = 71;
             this.label3.Text = "Phone No";
-//            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -458,7 +451,6 @@
             this.txtcompany.Name = "txtcompany";
             this.txtcompany.Size = new System.Drawing.Size(362, 30);
             this.txtcompany.TabIndex = 82;
-//            this.txtcompany.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label5
             // 
@@ -495,7 +487,6 @@
             this.label10.Size = new System.Drawing.Size(351, 40);
             this.label10.TabIndex = 85;
             this.label10.Text = "Supplier Management";
-//            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // errorProvider1
             // 

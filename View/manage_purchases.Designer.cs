@@ -397,6 +397,7 @@
             // 
             // CBitmName
             // 
+            this.CBitmName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBitmName.FormattingEnabled = true;
             this.CBitmName.Location = new System.Drawing.Point(528, 567);
             this.CBitmName.Name = "CBitmName";
@@ -440,6 +441,7 @@
             // 
             // CBsupDetails
             // 
+            this.CBsupDetails.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBsupDetails.FormattingEnabled = true;
             this.CBsupDetails.Location = new System.Drawing.Point(1181, 567);
             this.CBsupDetails.Name = "CBsupDetails";
@@ -476,6 +478,8 @@
             // 
             this.txtinvoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.txtinvoice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtinvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtinvoice.ForeColor = System.Drawing.Color.White;
             this.txtinvoice.Location = new System.Drawing.Point(1181, 621);
             this.txtinvoice.Multiline = true;
             this.txtinvoice.Name = "txtinvoice";
@@ -498,6 +502,8 @@
             // 
             this.txtcomment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.txtcomment.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtcomment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcomment.ForeColor = System.Drawing.Color.White;
             this.txtcomment.Location = new System.Drawing.Point(1181, 689);
             this.txtcomment.Multiline = true;
             this.txtcomment.Name = "txtcomment";
