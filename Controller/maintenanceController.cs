@@ -143,7 +143,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT employeeId,CONCAT(firstName, ' ', lastName) AS Name FROM employee";
+            string query = "SELECT employeeId,CONCAT(firstName, ' ', lastName) AS Name FROM employee WHERE deleted_flag=FALSE";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             //data adapter ckass
