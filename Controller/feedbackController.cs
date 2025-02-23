@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Remoting.Messaging;
 
 namespace finals_UI.Controller
 {
@@ -20,7 +21,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string sql = "SELECT feedbackId,feedbackDescription AS feedback,CONCAT(customer.firstName, ' ', customer.lastName) AS fullName,customer.email AS email FROM feedback INNER JOIN customer ON feedback.customerId=customer.customerId";
+            string sql = "SELECT feedbackId AS FeedbackID,feedbackDescription AS Feedback,CONCAT(customer.firstName, ' ', customer.lastName) AS FullName,customer.email AS Email FROM feedback INNER JOIN customer ON feedback.customerId=customer.customerId";
             MySqlCommand com = new MySqlCommand(sql, con.getConnection());
 
             //data adapter class
@@ -120,36 +121,33 @@ namespace finals_UI.Controller
                 }
             }
         }
-        public DataSet searchName(string name1, string name2 = null)
+        public DataSet searchName(string name)
         {
-            dbConnection con = new dbConnection();
-            con.openConnection();
-
-            string sql;
-            MySqlCommand com;
-
-            if (string.IsNullOrEmpty(name2))
+            try
             {
+                dbConnection con = new dbConnection();
+                con.openConnection();
+
+                string sql;
+                MySqlCommand com;
+
                 // If only one name is entered, check both firstName and lastName
-                sql = "SELECT f.* FROM feedback f JOIN customer c ON c.customerId = f.customerId WHERE firstName = @name OR lastName = @name";
+                sql = "SELECT f.feedbackId AS FeedbackID,f.feedbackDescription AS Feedback,CONCAT(c.firstName, ' ', c.lastName) AS FullName," +
+                    " c.email AS Email FROM feedback f JOIN customer c ON f.customerId=c.customerId" +
+                    " WHERE CONCAT(LOWER(c.firstName), ' ', LOWER(c.lastName)) LIKE LOWER(@name)";
                 com = new MySqlCommand(sql, con.getConnection());
-                com.Parameters.AddWithValue("@name", name1);
-            }
-            else
-            {
-                // If two names are entered, check firstName AND lastName together
-                sql = "SELECT f.* FROM feedback f JOIN customer c ON c.customerId = f.customerId WHERE firstName = @name1 AND lastName = @name2";
-                com = new MySqlCommand(sql, con.getConnection());
-                com.Parameters.AddWithValue("@name1", name1);
-                com.Parameters.AddWithValue("@name2", name2);
-            }
+                com.Parameters.AddWithValue("@name", "%" + name + "%");
 
-            // Execute the query
-            MySqlDataAdapter da = new MySqlDataAdapter(com);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
+                MySqlDataAdapter da = new MySqlDataAdapter(com);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
 
-            return ds;
+                return ds;
+            }
+            catch (Exception ex) {
+                MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return null;
         }
     }
 }
