@@ -44,20 +44,21 @@ namespace finals_UI
                 errorProvider1.Clear();
             }
 
-            string[] nameParts = inputName.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            DataSet ds = feedbackController.searchName(inputName);
 
-            if (nameParts.Length == 1)
+            // Check if dataset is null or empty
+            if (ds == null || ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0)
             {
-                LoadFeedbackData(nameParts[0], null); // Search by single name
+                MessageBox.Show("No matching results found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.txtName.Text = "";
+                this.dataGridView1.DataSource = null; // Clears the grid without reloading all data
+                return;
             }
-            else if (nameParts.Length >= 2)
-            {
-                LoadFeedbackData(nameParts[0], nameParts[1]); // Search by full name
-            }
+            this.dataGridView1.DataSource = ds.Tables[0];
         }
-        private void LoadFeedbackData(string name1, string name2)
+        /*private void LoadFeedbackData(string name)
         {
-            DataSet ds = feedbackController.searchName(name1, name2);
+            DataSet ds = feedbackController.searchName(name);
 
             if (ds.Tables[0].Rows.Count > 0)
             {
@@ -68,7 +69,7 @@ namespace finals_UI
                 MessageBox.Show("No feedback found from this customer.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGridView1.DataSource = null; // Clear DataGridView if no match
             }
-        }
+        }*/
 
         private void btnView_Click(object sender, EventArgs e)
         {

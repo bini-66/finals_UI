@@ -15,11 +15,13 @@ using System.Transactions;
 using System.Data.Common;
 using Mysqlx.Crud;
 using System.Reflection;
+using System.Drawing;
 
 namespace finals_UI.Controller
 {
     internal class saleController
     {
+      
         public DataSet loadItemName()
         {
             //connection class
@@ -27,7 +29,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT itemId,itemName FROM item";
+            string query = "SELECT itemId,itemName FROM item WHERE deleted_flag=FALSE";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             //data adapter ckass
@@ -36,6 +38,151 @@ namespace finals_UI.Controller
             DAP.Fill(ds);
 
             return ds;
+
+        }
+
+        public DataSet loadServiceName()
+        {
+            //connection class
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT serviceId,serviceName FROM service WHERE deleted_flag=FALSE";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+
+            //data adapter ckass
+            MySqlDataAdapter DAP = new MySqlDataAdapter(com);
+            DataSet ds = new DataSet();
+            DAP.Fill(ds);
+
+            return ds;
+
+        }
+        public void addService(int serviceId,int invoiceId)
+        {
+            //connection cass
+            dbConnection con=new dbConnection();
+            con.openConnection();
+
+            //command clssd
+            string query = "INSERT INTO customerinvoice_service(serviceId,customerInvoiceId) VALUES( @serviceId,@customerInvoiceId)";
+            MySqlCommand com= new MySqlCommand(query,con.getConnection());
+            com.Parameters.AddWithValue("@serviceId", serviceId);
+            com.Parameters.AddWithValue("@customerInvoiceId", invoiceId);
+
+            com.ExecuteNonQuery();
+
+        }
+        public float retrieveServicePrice(int serviceId)
+        {  
+            //connection cass
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT servicePrice FROM service WHERE serviceId=@serviceId";
+            MySqlCommand com = new MySqlCommand( query,con.getConnection());
+            com.Parameters.AddWithValue("@serviceId", serviceId);
+
+            object result = com.ExecuteScalar();
+            float price = (result != null && result != DBNull.Value) ? Convert.ToSingle(result) : 0.0f;
+
+            return price;
+
+        }
+
+        public int retrieveinvserId(int serviceId,int invoiceId)
+        {
+            //connection cass
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT invoiceServiceId FROM customerinvoice_service WHERE serviceId=@serviceId AND customerInvoiceId=@customerInvoiceId";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+            com.Parameters.AddWithValue("@serviceId", serviceId);
+            com.Parameters.AddWithValue("@customerInvoiceId", invoiceId);
+
+
+
+            object result = com.ExecuteScalar();
+            return result != DBNull.Value ? Convert.ToInt32(result) : 0;
+            
+
+
+
+        }
+
+        public int retrieveinvitmId(int itemId, int invoiceId)
+        {
+            //connection cass
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT invoiceItemId FROM customerinvoice_item WHERE itemId=@itemId AND customerInvoiceId=@customerInvoiceId";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+            com.Parameters.AddWithValue("@itemId", itemId);
+            com.Parameters.AddWithValue("@customerInvoiceId", invoiceId);
+
+
+
+            object result = com.ExecuteScalar();
+            return result != DBNull.Value ? Convert.ToInt32(result) : 0;
+
+
+
+
+        }
+        public void updateService(int serviceId,int invoiceServiceId)
+        {
+            //connection cass
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "UPDATE customerinvoice_service SET serviceId=@serviceId WHERE invoiceServiceId=@invoiceServiceId";
+            MySqlCommand com = new MySqlCommand(query,con.getConnection()); 
+
+            com.Parameters.AddWithValue("@serviceId",serviceId);    
+            com.Parameters.AddWithValue("@invoiceServiceId",invoiceServiceId);
+
+            com.ExecuteNonQuery();
+            MessageBox.Show("Service updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+        public void deleteService(int invoiceServiceId)
+        {
+            //connection cass
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "DELETE FROM customerinvoice_service WHERE invoiceServiceId=@invoiceServiceId";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+
+            com.Parameters.AddWithValue("@invoiceServiceId", invoiceServiceId);
+
+            com.ExecuteNonQuery();
+            MessageBox.Show("Service deleted successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+        public float retrieveItemPrice(int itemId)
+        {
+            //connection cass
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT itemPrice FROM item WHERE itemId=@itemId";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+            com.Parameters.AddWithValue("@itemId", itemId);
+
+            object result = com.ExecuteScalar();
+            float price = (result != null && result != DBNull.Value) ? Convert.ToSingle(result) : 0.0f;
+
+            return price;
 
         }
         public int retrieveCustomerId(string plateNumber)
@@ -84,12 +231,12 @@ namespace finals_UI.Controller
             object result = com.ExecuteScalar();
 
             // Check if no result was found
-            if (result == null)
-            {
-                MessageBox.Show("No such invoiceNo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return -1;
+            //if (result == null)
+            //{
+            //    MessageBox.Show("No such invoiceNo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return -1;
 
-            }
+            //}
 
             int invoiceId =  Convert.ToInt32(result) ;
 
@@ -116,7 +263,7 @@ namespace finals_UI.Controller
 
         }
 
-        public int addSale(sale sale )
+        public int addItem(sale sale )
         {
 
             //connection class
@@ -193,7 +340,7 @@ namespace finals_UI.Controller
                 //retrieving saleId
 
                 // Retrieve the most recent saleId based on the inserted data 
-                string query1 = "SELECT saleId FROM sale WHERE customerId = @customerId AND customerInvoiceId = @customerInvoiceId ORDER BY saleId DESC LIMIT 1";
+                string query1 = "SELECT saleId FROM sale WHERE customerInvoiceId = @customerInvoiceId ORDER BY saleId DESC LIMIT 1";
                 MySqlCommand com1 = new MySqlCommand(query1, con.getConnection());
                 com1.Parameters.AddWithValue("@customerId", customerId);
                 com1.Parameters.AddWithValue("@customerInvoiceId", invoiceId);
@@ -219,20 +366,30 @@ namespace finals_UI.Controller
                 MySqlCommand com3 = new MySqlCommand(query3, con.getConnection());
                 int saleItemId = Convert.ToInt32(com3.ExecuteScalar());
 
-                MessageBox.Show("Sale record added successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //insertng intto customerinvoice_item table
+                string query5 = "INSERT INTO customerinvoice_item(itemId,customerInvoiceId) VALUES( @itemId,@customerInvoiceId)";
+                MySqlCommand com5 = new MySqlCommand(query5, con.getConnection());
+                com5.Parameters.AddWithValue("@itemId", sale.itemId);
+                com5.Parameters.AddWithValue("@customerInvoiceId", invoiceId);
 
+                com5.ExecuteNonQuery();
+
+
+               // MessageBox.Show("Sale record added successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+             
 
                 // Commit transaction
                 //transaction.Commit();
                 return saleItemId;
             }
-            catch (Exception ex)
-            {
-                // If any error occurs, rollback the transaction
-                //transaction.Rollback();
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return -1;
-            }
+            //catch (Exception ex)
+            //{
+            //    // If any error occurs, rollback the transaction
+            //    //transaction.Rollback();
+            //    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return -1;
+            //}
             finally
             {
                 con.closeConnection();
@@ -253,7 +410,7 @@ namespace finals_UI.Controller
 
         }
 
-        public void updatesale(sale sale)
+        public void updateitem(sale sale)
         {
             //connection class
             dbConnection con = new dbConnection();
@@ -308,6 +465,15 @@ namespace finals_UI.Controller
             com2.Parameters.AddWithValue("@quantity", sale.quantity);
             com2.Parameters.AddWithValue("@saleItemId",sale.saleItemId);
             com2.ExecuteNonQuery();
+
+            //updating customerinvouce_item tabel
+            string query = "UPDATE customerinvoice_item SET itemId=@itemId WHERE invoiceItemId=@invoiceItemId";
+            MySqlCommand com=new MySqlCommand(query,con.getConnection());
+
+            com.Parameters.AddWithValue("@itemId",sale.itemId);
+            com.Parameters.AddWithValue("@invoiceItemId", sale.invoiceItemServiceId);
+            com.ExecuteNonQuery();
+
             MessageBox.Show("Sale record updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
@@ -334,7 +500,7 @@ namespace finals_UI.Controller
             return ds;
 
         }
-        public void deletesale(sale sale)
+        public void deleteitem(sale sale)
         {
             DialogResult dr = MessageBox.Show("Are you sure you want to delete the record?", "delte confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
@@ -399,7 +565,17 @@ namespace finals_UI.Controller
 
 
                 }
-                MessageBox.Show("Record deleted successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //deleting from customerinvoice_item table
+                //command class
+                string query5 = "DELETE FROM customerinvoice_item WHERE invoiceItemId=@invoiceItemId";
+                MySqlCommand com5 = new MySqlCommand(query, con.getConnection());
+
+                com.Parameters.AddWithValue("@invoiceItemId", sale.invoiceItemServiceId);
+
+                com.ExecuteNonQuery();
+
+                //MessageBox.Show("Record deleted successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                 con.closeConnection();

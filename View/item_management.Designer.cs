@@ -310,17 +310,21 @@
             // CBcategory
             // 
             this.CBcategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.CBcategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBcategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CBcategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBcategory.ForeColor = System.Drawing.Color.White;
             this.CBcategory.FormattingEnabled = true;
             this.CBcategory.Items.AddRange(new object[] {
-            "Engine & Mechanical Parts",
-            "Braking System"});
+            "Automotive",
+            "Tools",
+            "Electronics",
+            "Accessories"});
             this.CBcategory.Location = new System.Drawing.Point(517, 574);
             this.CBcategory.Name = "CBcategory";
             this.CBcategory.Size = new System.Drawing.Size(251, 28);
             this.CBcategory.TabIndex = 38;
+            this.CBcategory.SelectedIndexChanged += new System.EventHandler(this.CBcategory_SelectedIndexChanged);
             // 
             // txtitmPrice
             // 
@@ -553,6 +557,7 @@
             this.Name = "item_management";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "inventory_management";
+            this.Load += new System.EventHandler(this.item_management_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();

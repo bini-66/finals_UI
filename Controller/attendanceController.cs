@@ -21,7 +21,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT employeeId,firstName FROM employee";
+            string query = "SELECT employeeId,firstName FROM employee WHERE deleted_flag=FALSE";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());
 
             //data adapter class
@@ -39,7 +39,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT employeeId,attendanceStatus FROM attendance WHERE date=@date  ";
+            string query = "SELECT employeeId,attendanceStatus FROM attendance WHERE date=@date";
             MySqlCommand com=new MySqlCommand( query,con.getConnection());
 
             com.Parameters.AddWithValue("@date",date);
@@ -49,14 +49,19 @@ namespace finals_UI.Controller
             DAP.Fill(ds);
             return ds;
         }
-        public void saveAttendance(List<attendance> records)
+        public void saveAttendance(List<attendance> records,DateTime date)
         {
             //connection class
             dbConnection con = new dbConnection();
             con.openConnection();
 
             //command class
- 
+            string query1 = "DELETE FROM attendance WHERE date=@date";
+            MySqlCommand com1=new MySqlCommand(query1 ,con.getConnection());
+            com1.Parameters.AddWithValue("@date", date);
+            com1.ExecuteNonQuery();
+
+
 
             string query = "INSERT INTO attendance (employeeId, date, attendanceStatus) VALUES (@employeeId, @date, @status)";
 

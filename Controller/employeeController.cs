@@ -23,14 +23,14 @@ namespace finals_UI.Controller
                 con.openConnection();
 
                 //command class
-                string sql = "INSERT INTO employee(firstName,lastName,email,phoneNumber,employeeSalary) Values (@firstName,@lastName,@email,@phoneNumber,@employeeSalary)";
+                string sql = "INSERT INTO employee(firstName,lastName,email,phoneNumber) Values (@firstName,@lastName,@email,@phoneNumber)";
                 MySqlCommand com = new MySqlCommand(sql, con.getConnection());
 
                 com.Parameters.AddWithValue("@firstName", employee.firstName);
                 com.Parameters.AddWithValue("@lastName", employee.lastName);
                 com.Parameters.AddWithValue("@email", employee.email);
                 com.Parameters.AddWithValue("@phoneNumber", employee.phoneNumber);
-                com.Parameters.AddWithValue("@employeeSalary", employee.employeeSalary);
+                //com.Parameters.AddWithValue("@employeeSalary", employee.employeeSalary);
 
                 int ret = com.ExecuteNonQuery();
                 MessageBox.Show("no of records inserted:" + ret, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -50,7 +50,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string sql = "SELECT * FROM employee";
+            string sql = "SELECT employeeId, firstName, lastName, email, phoneNo FROM employee WHERE deleted_flag=FALSE";
             MySqlCommand com = new MySqlCommand(sql, con.getConnection());
 
             //data adapter class
@@ -67,7 +67,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string sql = "SELECT * FROM employee WHERE employeeId = @employeeId";
+            string sql = "SELECT * FROM employee WHERE employeeId = @employeeId AND  deleted_flag=FALSE";
             MySqlCommand com = new MySqlCommand(sql, con.getConnection());
 
             com.Parameters.AddWithValue("@employeeId", employeeId);
@@ -90,14 +90,14 @@ namespace finals_UI.Controller
             if (string.IsNullOrEmpty(name2))
             {
                 // If only one name is entered, check both firstName and lastName
-                sql = "SELECT * FROM employee WHERE firstName = @name OR lastName = @name";
+                sql = "SELECT * FROM employee WHERE (firstName = @name OR lastName = @name  )AND  deleted_flag=FALSE";
                 com = new MySqlCommand(sql, con.getConnection());
                 com.Parameters.AddWithValue("@name", name1);
             }
             else
             {
                 // If two names are entered, check firstName AND lastName together
-                sql = "SELECT * FROM employee WHERE firstName = @name1 AND lastName = @name2";
+                sql = "SELECT * FROM employee WHERE firstName = @name1 AND lastName = @name2 AND  AND  deleted_flag=FALSE";
                 com = new MySqlCommand(sql, con.getConnection());
                 com.Parameters.AddWithValue("@name1", name1);
                 com.Parameters.AddWithValue("@name2", name2);
@@ -119,7 +119,7 @@ namespace finals_UI.Controller
                 con.openConnection();
 
                 //command class
-                string sql = "UPDATE employee SET firstName=@firstName,lastName=@lastName,email=@email,phoneNumber=@phoneNumber,employeeSalary=@employeeSalary WHERE employeeId=@employeeId";
+                string sql = "UPDATE employee SET firstName=@firstName,lastName=@lastName,email=@email,phoneNumber=@phoneNumber WHERE employeeId=@employeeId";
                 MySqlCommand com = new MySqlCommand(sql, con.getConnection());
 
                 com.Parameters.AddWithValue("@employeeId", employee.employeeId);
@@ -127,7 +127,7 @@ namespace finals_UI.Controller
                 com.Parameters.AddWithValue("@lastName", employee.lastName);
                 com.Parameters.AddWithValue("@email", employee.email);
                 com.Parameters.AddWithValue("@phoneNumber", employee.phoneNumber);
-                com.Parameters.AddWithValue("@employeeSalary", employee.employeeSalary);
+               
 
                 int ret = com.ExecuteNonQuery();
                 if (ret != 0)
@@ -156,7 +156,7 @@ namespace finals_UI.Controller
                     con.openConnection();
 
                     //command class
-                    string sql = "DELETE FROM employee WHERE employeeId=@employeeId";
+                    string sql = "UPDATE employee SET deleted_flag=TRUE WHERE employeeId=@employeeId";
                     MySqlCommand com = new MySqlCommand(sql, con.getConnection());
 
 

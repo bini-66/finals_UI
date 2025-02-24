@@ -34,7 +34,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnlogout = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -91,7 +91,7 @@
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.btnlogout);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
@@ -142,19 +142,20 @@
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
-            // button6
+            // btnlogout
             // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button6.Location = new System.Drawing.Point(0, 863);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(255, 51);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Log Out";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnlogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnlogout.FlatAppearance.BorderSize = 0;
+            this.btnlogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlogout.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnlogout.Location = new System.Drawing.Point(0, 863);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(255, 51);
+            this.btnlogout.TabIndex = 6;
+            this.btnlogout.Text = "Log Out";
+            this.btnlogout.UseVisualStyleBackColor = true;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
             // button3
             // 
@@ -219,7 +220,6 @@
             this.label8.Size = new System.Drawing.Size(194, 25);
             this.label8.TabIndex = 33;
             this.label8.Text = "Operational Manager";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // pictureBox1
             // 
@@ -241,7 +241,6 @@
             this.label1.Size = new System.Drawing.Size(100, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "WELCOME";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridView1
             // 
@@ -275,14 +274,13 @@
             // 
             this.txtsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.txtsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtsearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.txtsearch.Location = new System.Drawing.Point(947, 155);
             this.txtsearch.Multiline = true;
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(316, 33);
             this.txtsearch.TabIndex = 57;
-            this.txtsearch.Enter += new System.EventHandler(this.textBox4_Enter);
             this.txtsearch.Leave += new System.EventHandler(this.txtsearch_Leave);
             // 
             // btnview
@@ -368,12 +366,11 @@
             this.txtemail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtemail.ForeColor = System.Drawing.Color.White;
-            this.txtemail.Location = new System.Drawing.Point(1012, 700);
+            this.txtemail.Location = new System.Drawing.Point(1012, 683);
             this.txtemail.Multiline = true;
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(362, 30);
             this.txtemail.TabIndex = 76;
-            this.txtemail.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtlname
             // 
@@ -415,12 +412,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label4.Location = new System.Drawing.Point(891, 700);
+            this.label4.Location = new System.Drawing.Point(886, 680);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 23);
             this.label4.TabIndex = 72;
             this.label4.Text = "Email";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -432,7 +428,6 @@
             this.label3.Size = new System.Drawing.Size(95, 23);
             this.label3.TabIndex = 71;
             this.label3.Text = "Phone No";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -451,19 +446,18 @@
             this.txtcompany.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcompany.ForeColor = System.Drawing.Color.White;
-            this.txtcompany.Location = new System.Drawing.Point(1012, 620);
+            this.txtcompany.Location = new System.Drawing.Point(1012, 598);
             this.txtcompany.Multiline = true;
             this.txtcompany.Name = "txtcompany";
             this.txtcompany.Size = new System.Drawing.Size(362, 30);
             this.txtcompany.TabIndex = 82;
-            this.txtcompany.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label5.Location = new System.Drawing.Point(891, 627);
+            this.label5.Location = new System.Drawing.Point(897, 605);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 23);
             this.label5.TabIndex = 83;
@@ -490,10 +484,9 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(304, 60);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(161, 40);
+            this.label10.Size = new System.Drawing.Size(351, 40);
             this.label10.TabIndex = 85;
-            this.label10.Text = "Suppliers";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+            this.label10.Text = "Supplier Management";
             // 
             // errorProvider1
             // 
@@ -593,7 +586,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnlogout;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;

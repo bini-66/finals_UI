@@ -146,7 +146,7 @@ namespace finals_UI
             purchase.supplierId= Convert.ToInt32(CBsupDetails.SelectedValue);
             purchase.comment=this.txtcomment.Text;
             purchase.supplierInvoiceNo= this.txtinvoice.Text;
-            purchase.inventoryManagerId = 1;
+            purchase.inventoryManagerId = 2;
             
             purchaseController.addStock(purchase);
 

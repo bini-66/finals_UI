@@ -23,39 +23,14 @@ namespace finals_UI
         public manage_supplier()
         {
             InitializeComponent();
+      
+
+
             //loading data grid
             DataSet ds = supplierController.viewSuppliers();
             this.dataGridView1.DataSource = ds.Tables[0];
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
+            this.btnup.Enabled = false;
+            this.btndlt.Enabled = false;
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -63,10 +38,7 @@ namespace finals_UI
             Application.Exit();
         }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void btnadd_Click(object sender, EventArgs e)
         {
@@ -157,6 +129,8 @@ namespace finals_UI
 
         private void btnup_Click(object sender, EventArgs e)
         {
+            this.btnadd.Enabled = true;
+
             //validations
             if (this.txtfname.Text == "")
             {
@@ -250,16 +224,22 @@ namespace finals_UI
             this.txtfname.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
             this.txtlname.Text= this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
             this.txtemail.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            this.txtphone.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            this.txtcompany.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            this.txtphone.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            this.txtcompany.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
 
             supplier.supplierId = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value);
+            this.btnadd.Enabled = false;
+            this.btnup.Enabled = true;
+            this.btndlt.Enabled = true;
+
+
 
 
         }
 
         private void btndlt_Click(object sender, EventArgs e)
         {
+            this.btnadd.Enabled = true;
             supplierController.deleteSupplier(supplier.supplierId);
 
             //refresh grid
@@ -288,16 +268,6 @@ namespace finals_UI
             clearFields();
         }
 
-        private void textBox4_Enter(object sender, EventArgs e)
-        {
-            //if(txtsearch.Text== "Search by supplier name / company")
-            //{
-            //    this.txtsearch.Text = "";
-            //    this.txtsearch.ForeColor=Color.White;
-
-            //}
-
-        }
 
         private void txtsearch_Leave(object sender, EventArgs e)
         {
@@ -326,5 +296,16 @@ namespace finals_UI
             }
             this.dataGridView1.DataSource = ds.Tables[0];
         }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            userSession.Logout();
+
+            sign_in sign_In = new sign_in();
+            sign_In.Show();
+            this.Close();
+
+        }
+
     }
 }

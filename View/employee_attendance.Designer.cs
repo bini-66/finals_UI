@@ -47,10 +47,10 @@
             this.Employee_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btn = new System.Windows.Forms.Button();
-            this.btnup = new System.Windows.Forms.Button();
+            this.btnsave = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button14 = new System.Windows.Forms.Button();
+            this.txtdate = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -285,33 +285,19 @@
             this.status.Name = "status";
             this.status.Width = 125;
             // 
-            // btn
+            // btnsave
             // 
-            this.btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn.Location = new System.Drawing.Point(979, 534);
-            this.btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(100, 33);
-            this.btn.TabIndex = 36;
-            this.btn.Text = "Save";
-            this.btn.UseVisualStyleBackColor = false;
-            this.btn.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // btnup
-            // 
-            this.btnup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.btnup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnup.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnup.Location = new System.Drawing.Point(1130, 534);
-            this.btnup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnup.Name = "btnup";
-            this.btnup.Size = new System.Drawing.Size(100, 33);
-            this.btnup.TabIndex = 37;
-            this.btnup.Text = "Update";
-            this.btnup.UseVisualStyleBackColor = false;
-            this.btnup.Click += new System.EventHandler(this.btnup_Click);
+            this.btnsave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsave.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsave.Location = new System.Drawing.Point(1079, 513);
+            this.btnsave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnsave.Name = "btnsave";
+            this.btnsave.Size = new System.Drawing.Size(108, 54);
+            this.btnsave.TabIndex = 36;
+            this.btnsave.Text = "Save";
+            this.btnsave.UseVisualStyleBackColor = false;
+            this.btnsave.Click += new System.EventHandler(this.button8_Click);
             // 
             // label3
             // 
@@ -340,16 +326,30 @@
             this.button14.UseVisualStyleBackColor = false;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
+            // txtdate
+            // 
+            this.txtdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.txtdate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtdate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.txtdate.Location = new System.Drawing.Point(1375, 163);
+            this.txtdate.Multiline = true;
+            this.txtdate.Name = "txtdate";
+            this.txtdate.ReadOnly = true;
+            this.txtdate.Size = new System.Drawing.Size(158, 26);
+            this.txtdate.TabIndex = 61;
+            this.txtdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // employee_attendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1719, 788);
+            this.Controls.Add(this.txtdate);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnup);
-            this.Controls.Add(this.btn);
+            this.Controls.Add(this.btnsave);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.panel1);
@@ -383,8 +383,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btn;
-        private System.Windows.Forms.Button btnup;
+        private System.Windows.Forms.Button btnsave;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -398,5 +397,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Employee_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewCheckBoxColumn status;
+        private System.Windows.Forms.TextBox txtdate;
     }
 }
