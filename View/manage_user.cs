@@ -18,6 +18,16 @@ namespace finals_UI
 
         private void manage_employee_Load(object sender, EventArgs e)
         {
+            DataSet ds = userController.loadUsers();
+            this.dataGridView1.DataSource = ds.Tables[0];
+
+            // Create a delete button column
+            DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
+            deleteButtonColumn.HeaderText = "Actions";
+            deleteButtonColumn.Name = "Actions";
+            deleteButtonColumn.Text = "Delete";  
+            deleteButtonColumn.UseColumnTextForButtonValue = true;  // Makes sure all buttons display "Delete"
+            this.dataGridView1.Columns.Add(deleteButtonColumn);
 
         }
 
@@ -64,8 +74,41 @@ namespace finals_UI
 
         private void btnview_Click(object sender, EventArgs e)
         {
+            this.txtsearch.Text = "";
             DataSet ds = userController.loadUsers();
             this.dataGridView1.DataSource = ds.Tables[0];
+
+        }
+
+        private void btnsearch_Click(object sender, EventArgs e)
+        {
+            string searchText=this.txtsearch.Text;
+          
+            DataSet ds = userController.serachUser(searchText);
+
+            this.dataGridView1 .DataSource = ds.Tables[0];
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ensure the button column was clicked
+            if (e.ColumnIndex == dataGridView1.Columns["Actions"].Index && e.RowIndex >= 0)
+            {
+                // Get the userId from the current row
+                int userId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["userId"].Value);
+
+                // Confirm deletion
+                DialogResult dialogResult = MessageBox.Show($"Are you sure you want to delete user {userId}?", "Confirm Deletion", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    // Call the delete method here
+                    userController.deleteUser(userId);
+                    //refresh the DataGridView 
+                    DataSet ds = userController.loadUsers();
+                    this.dataGridView1.DataSource = ds.Tables[0];
+                }
+            }
         }
     }
 }

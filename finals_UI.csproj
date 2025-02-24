@@ -142,6 +142,12 @@
     <Compile Include="Model\classes\user.cs" />
     <Compile Include="Model\classes\userSession.cs" />
     <Compile Include="Model\Database\dbConnection.cs" />
+    <Compile Include="View\edit_appointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\edit_appointments.Designer.cs">
+      <DependentUpon>edit_appointments.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\inventoryManager_profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,12 @@
     </Compile>
     <Compile Include="View\manage_employees.Designer.cs">
       <DependentUpon>manage_employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\new_appointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\new_appointments.Designer.cs">
+      <DependentUpon>new_appointments.cs</DependentUpon>
     </Compile>
     <Compile Include="View\operationalManager_profile.cs">
       <SubType>Form</SubType>
@@ -195,12 +207,6 @@
     </Compile>
     <Compile Include="View\serviceManager_profile.Designer.cs">
       <DependentUpon>serviceManager_profile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\view_appointment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\view_appointment.Designer.cs">
-      <DependentUpon>view_appointment.cs</DependentUpon>
     </Compile>
     <Compile Include="View\employee_attendance.cs">
       <SubType>Form</SubType>
@@ -268,12 +274,6 @@
     <Compile Include="View\payment.Designer.cs">
       <DependentUpon>payment.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\new_appointments.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\new_appointments.Designer.cs">
-      <DependentUpon>new_appointments.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Receptionist_dash.cs">
@@ -312,6 +312,12 @@
     <Compile Include="View\vehicle_details.Designer.cs">
       <DependentUpon>vehicle_details.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\view_appointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\view_appointment.Designer.cs">
+      <DependentUpon>view_appointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\view_customer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +336,9 @@
     <Compile Include="View\view_feedback.Designer.cs">
       <DependentUpon>view_feedback.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\edit_appointments.resx">
+      <DependentUpon>edit_appointments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\inventoryManager_profile.resx">
       <DependentUpon>inventoryManager_profile.cs</DependentUpon>
     </EmbeddedResource>
@@ -338,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\manage_employees.resx">
       <DependentUpon>manage_employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\new_appointments.resx">
+      <DependentUpon>new_appointments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\operationalManager_profile.resx">
       <DependentUpon>operationalManager_profile.cs</DependentUpon>
@@ -356,9 +368,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\serviceManager_profile.resx">
       <DependentUpon>serviceManager_profile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\view_appointment.resx">
-      <DependentUpon>view_appointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\employee_attendance.resx">
       <DependentUpon>employee_attendance.cs</DependentUpon>
@@ -393,9 +402,6 @@
     <EmbeddedResource Include="View\payment.resx">
       <DependentUpon>payment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\new_appointments.resx">
-      <DependentUpon>new_appointments.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -423,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\vehicle_details.resx">
       <DependentUpon>vehicle_details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\view_appointment.resx">
+      <DependentUpon>view_appointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\view_customer.resx">
       <DependentUpon>view_customer.cs</DependentUpon>

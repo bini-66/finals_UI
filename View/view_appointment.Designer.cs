@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.components = new System.ComponentModel.Container();
             this.appointmentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,21 +43,17 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNewAppointment = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnNewCustomer = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectEntireRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectCellToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Teal;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.Teal;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 172);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(943, 314);
-            this.dataGridView1.TabIndex = 30;
             // 
             // appointmentId
             // 
@@ -168,13 +164,84 @@
             this.txtSearch.Size = new System.Drawing.Size(277, 27);
             this.txtSearch.TabIndex = 41;
             // 
+            // btnNewCustomer
+            // 
+            this.btnNewCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnNewCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewCustomer.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewCustomer.Location = new System.Drawing.Point(185, 97);
+            this.btnNewCustomer.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNewCustomer.Name = "btnNewCustomer";
+            this.btnNewCustomer.Size = new System.Drawing.Size(135, 27);
+            this.btnNewCustomer.TabIndex = 92;
+            this.btnNewCustomer.Text = "New Customer";
+            this.btnNewCustomer.UseVisualStyleBackColor = false;
+            this.btnNewCustomer.Click += new System.EventHandler(this.btnNewCustomer_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem,
+            this.refreshToolStripMenuItem,
+            this.selectRowToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(140, 70);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.editToolStripMenuItem.Text = "Refresh";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.refreshToolStripMenuItem.Text = "Edit";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // selectRowToolStripMenuItem
+            // 
+            this.selectRowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.selectEntireRowToolStripMenuItem,
+            this.selectCellToolStripMenuItem});
+            this.selectRowToolStripMenuItem.Name = "selectRowToolStripMenuItem";
+            this.selectRowToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.selectRowToolStripMenuItem.Text = "Mode Select";
+            // 
+            // selectEntireRowToolStripMenuItem
+            // 
+            this.selectEntireRowToolStripMenuItem.Name = "selectEntireRowToolStripMenuItem";
+            this.selectEntireRowToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.selectEntireRowToolStripMenuItem.Text = "Select Entire Row";
+            this.selectEntireRowToolStripMenuItem.Click += new System.EventHandler(this.selectEntireRowToolStripMenuItem_Click);
+            // 
+            // selectCellToolStripMenuItem
+            // 
+            this.selectCellToolStripMenuItem.Name = "selectCellToolStripMenuItem";
+            this.selectCellToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.selectCellToolStripMenuItem.Text = "Select Cell";
+            this.selectCellToolStripMenuItem.Click += new System.EventHandler(this.selectCellToolStripMenuItem_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(37, 155);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(856, 231);
+            this.dataGridView1.TabIndex = 96;
+            this.dataGridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDown);
+            // 
             // view_appointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1041, 451);
+            this.ClientSize = new System.Drawing.Size(1041, 537);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnNewCustomer);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnNewAppointment);
             this.Controls.Add(this.btnSearch);
@@ -184,6 +251,7 @@
             this.Name = "view_appointment";
             this.Text = "Appointment";
             this.Load += new System.EventHandler(this.view_appointment_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -191,8 +259,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn appointmentId;
         private System.Windows.Forms.DataGridViewTextBoxColumn plateNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
@@ -207,5 +273,13 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnNewAppointment;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnNewCustomer;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selectRowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selectEntireRowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selectCellToolStripMenuItem;
     }
 }
