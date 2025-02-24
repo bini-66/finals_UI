@@ -142,6 +142,17 @@
     <Compile Include="Model\classes\user.cs" />
     <Compile Include="Model\classes\userSession.cs" />
     <Compile Include="Model\Database\dbConnection.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\edit_appointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\edit_appointments.Designer.cs">
+      <DependentUpon>edit_appointments.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\inventoryManager_profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +341,9 @@
     <Compile Include="View\view_feedback.Designer.cs">
       <DependentUpon>view_feedback.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\edit_appointments.resx">
+      <DependentUpon>edit_appointments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\manage_employees.resx">
       <DependentUpon>manage_employees.cs</DependentUpon>
     </EmbeddedResource>
