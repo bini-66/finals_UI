@@ -126,7 +126,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT vehicleId,plateNumber FROM vehicle";
+            string query = "SELECT vehicleId,plateNumber FROM vehicle WHERE deleted_flag=FALSE";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             //data adapter ckass

@@ -193,7 +193,7 @@ namespace finals_UI.Controller
 
             //command class
             //retievinf cutomerId frm the plate number
-            string query = "SELECT vehicle.customerId FROM vehicle INNER JOIN customer ON customer.customerId=vehicle.customerId WHERE plateNumber=@plateNumber";
+            string query = "SELECT vehicle.customerId FROM vehicle INNER JOIN customer ON customer.customerId=vehicle.customerId WHERE plateNumber=@plateNumber AND deleted_flag=FALSE";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());
 
             com.Parameters.AddWithValue("@plateNumber", plateNumber);

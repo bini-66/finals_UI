@@ -2,6 +2,7 @@
 using finals_UI.Model.Database;
 using MySql.Data.MySqlClient;
 using Mysqlx.Crud;
+using Org.BouncyCastle.Crypto.Parameters;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -23,11 +24,12 @@ namespace finals_UI.Controller
 
             //command class
             //insertng into user table
-            string query = "INSERT INTO user(username,password,role) VALUES (@username,@password,@role)";
+            string query = "INSERT INTO user(username,password,role,application_id) VALUES (@username,@password,@role,@application_id)";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());
             com.Parameters.AddWithValue("@username", user.username);
             com.Parameters.AddWithValue("@password",user.password);
             com.Parameters.AddWithValue("@role",user.role);
+            com.Parameters.AddWithValue("@application_id", 2);
 
             com.ExecuteNonQuery();
 
@@ -126,7 +128,7 @@ namespace finals_UI.Controller
             dbConnection con = new dbConnection();
             con.openConnection();
 
-            string query = "SELECT userId, role FROM user WHERE username=@username AND password=@password";
+            string query = "SELECT userId, role FROM user WHERE username=@username AND password=@password AND deleted_flag=FALSE AND application_id=2";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             com.Parameters.AddWithValue("@username", user.username);
@@ -158,7 +160,7 @@ namespace finals_UI.Controller
             dbConnection con = new dbConnection();
             con.openConnection();
             //command class
-            string query = "UPDATE user SET password=@password WHERE username=@username";
+            string query = "UPDATE user SET password=@password WHERE username=@username AND deleted_flag=FALSE";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             com.Parameters.AddWithValue("@password", newPW);
@@ -177,7 +179,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT COUNT(*) FROM user WHERE username=@username";
+            string query = "SELECT COUNT(*) FROM user WHERE username=@username AND deleted_flag=FALSE AND application_id=2";
             MySqlCommand com = new MySqlCommand( query, con.getConnection());
 
             com.Parameters.AddWithValue("@username", username);
@@ -186,7 +188,7 @@ namespace finals_UI.Controller
             if (count == 0)
             {
                 // Username does not exist
-                MessageBox.Show("Please enter a valid username", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid login email", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return -1; 
             }
 
@@ -199,22 +201,22 @@ namespace finals_UI.Controller
         {
             dbConnection con = new dbConnection();
             con.openConnection();
-            string query = "SELECT CONCAT(user.firstName, ' ', user.lastName) AS fullName, " +
-                           "user.email, user.phoneNumber AS Phone, " +
-                           "CASE " +
-                           "   WHEN receptionist.userId IS NOT NULL THEN 'Receptionist' " +
-                           "   WHEN service_manager.userId IS NOT NULL THEN 'Service Manager' " +
-                           "   WHEN operational_manager.userId IS NOT NULL THEN 'Operational Manager' " +
-                           "   WHEN inventory_manager.userId IS NOT NULL THEN 'Inventory Manager' " +
-                           "   WHEN owner.userId IS NOT NULL THEN 'Owner' " +
-                           "   ELSE 'Unknown' " +
-                           "END AS role " +
-                           "FROM user " +
-                           "LEFT JOIN receptionist ON receptionist.userId = user.userId " +
-                           "LEFT JOIN service_manager ON service_manager.userId = user.userId " +
-                           "LEFT JOIN operational_manager ON operational_manager.userId = user.userId " +
-                           "LEFT JOIN inventory_manager ON inventory_manager.userId = user.userId " +
-                           "LEFT JOIN owner ON owner.userId = user.userId";
+            String query = "SELECT u.userId, cr.firstName, cr.lastName, " +
+               "CONCAT(cr.firstName, ' ', cr.lastName) AS fullName, " +
+               "cr.email, cr.phoneNumber AS phone, cr.role " +
+               "FROM user u " +
+               "JOIN ( " +
+               "    SELECT r.userId, r.firstName, r.lastName, r.email, r.phoneNumber, 'Receptionist' AS role FROM receptionist r " +
+               "    UNION ALL " +
+               "    SELECT sm.userId, sm.firstName, sm.lastName, sm.email, sm.phoneNumber, 'Service Manager' AS role FROM service_manager sm " +
+               "    UNION ALL " +
+               "    SELECT om.userId, om.firstName, om.lastName, om.email, om.phoneNumber, 'Operational Manager' AS role FROM operational_manager om " +
+               "    UNION ALL " +
+               "    SELECT im.userId, im.firstName, im.lastName, im.email, im.phoneNumber, 'Inventory Manager' AS role FROM inventory_manager im " +
+               "    UNION ALL " +
+               "    SELECT o.userId, o.firstName, o.lastName, o.email, o.phoneNumber, 'Owner' AS role FROM owner o " +
+               ") AS cr ON u.userId = cr.userId WHERE u.deleted_flag=FALSE;";
+
 
 
             MySqlCommand com =new MySqlCommand(query, con.getConnection());
@@ -222,6 +224,73 @@ namespace finals_UI.Controller
             DataSet ds=new DataSet();
             DAP.Fill(ds);
             return ds;
+        }
+        public DataSet serachUser(string searchText)
+        {
+            //connection class
+            dbConnection con= new dbConnection();
+            con.openConnection();
+
+            //command class
+            String query = "SELECT u.userId, cr.firstName, cr.lastName, " +
+                "CONCAT(cr.firstName, ' ', cr.lastName) AS fullName, " +
+                "cr.email, cr.phoneNumber AS phone, cr.role " +
+                "FROM user u " +
+                "JOIN ( " +
+                "    SELECT r.userId, r.firstName, r.lastName, r.email, r.phoneNumber, 'Receptionist' AS role FROM receptionist r " +
+                "    UNION ALL " +
+                "    SELECT sm.userId, sm.firstName, sm.lastName, sm.email, sm.phoneNumber, 'Service Manager' AS role FROM service_manager sm " +
+                "    UNION ALL " +
+                "    SELECT om.userId, om.firstName, om.lastName, om.email, om.phoneNumber, 'Operational Manager' AS role FROM operational_manager om " +
+                "    UNION ALL " +
+                "    SELECT im.userId, im.firstName, im.lastName, im.email, im.phoneNumber, 'Inventory Manager' AS role FROM inventory_manager im " +
+                "    UNION ALL " +
+                "    SELECT o.userId, o.firstName, o.lastName, o.email, o.phoneNumber, 'Owner' AS role FROM owner o " +
+                ") AS cr ON u.userId = cr.userId " +
+                "WHERE( u.userId = @txtsearch " +
+                "OR cr.firstName LIKE CONCAT('%', @txtsearch, '%') " +
+                "OR cr.role LIKE CONCAT('%', @txtsearch, '%') " +
+                "OR cr.lastName LIKE CONCAT('%', @txtsearch, '%') ) AND  u.deleted_flag=FALSE;";
+
+            MySqlCommand com =new MySqlCommand(query, con.getConnection());
+            com.Parameters.AddWithValue("@txtsearch", searchText);
+
+            MySqlDataAdapter DAP=new MySqlDataAdapter(com);
+            DataSet ds=new DataSet();
+            DAP.Fill(ds);
+
+            return ds;  
+            
+        }
+        public void deleteUser(int userId)
+        {
+            dbConnection con= new dbConnection();
+            con.openConnection();
+
+            //settng teh flag in user table
+            string query = "UPDATE user SET deleted_flag=TRUE WHERE userId=@userId";
+            MySqlCommand com =new MySqlCommand(query,con.getConnection());
+
+            com.Parameters.AddWithValue("@userId", userId);
+           int result1= com.ExecuteNonQuery();
+
+            //settng the flag in role based tables
+            string query2 = @"
+            UPDATE receptionist SET deleted_flag = TRUE WHERE userId = @userId;
+            UPDATE service_manager SET deleted_flag = TRUE WHERE userId = @userId;
+            UPDATE operational_manager SET deleted_flag = TRUE WHERE userId = @userId;
+            UPDATE inventory_manager SET deleted_flag = TRUE WHERE userId = @userId;
+            UPDATE owner SET deleted_flag = TRUE WHERE userId = @userId;";
+            MySqlCommand com2 = new MySqlCommand(query2, con.getConnection());
+
+            com2.Parameters.AddWithValue("@userId", userId);
+            int result2=com2.ExecuteNonQuery();
+
+            if(result1>0 && result2 > 0)
+            {
+                MessageBox.Show("User deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
     }
 }
