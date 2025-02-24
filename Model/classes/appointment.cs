@@ -12,7 +12,11 @@ namespace finals_UI.Model.classes
         public DateTime date { get; set; }
         public string time { get; set; }
         public string appointmentStatus { get; set; }
-        public int plateNumber { get; set; }
+        public string plateNumber { get; set; }
         public string description { get; set; }
+        public int customerId { get; set; }
+        public int vehicleId { get; set; }
+        public string customerName { get; set; }
+        public string phoneNumber { get; set; }
     }
 }

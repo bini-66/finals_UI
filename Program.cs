@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using finals_UI.View;
-using finals_UI.Model.classes;
 
 namespace finals_UI
 {
@@ -19,7 +17,7 @@ namespace finals_UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new view_feedback());
+            Application.Run(new view_appointment());
         }
     }
 }
