@@ -16,10 +16,5 @@ namespace finals_UI
         {
             InitializeComponent();
         }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

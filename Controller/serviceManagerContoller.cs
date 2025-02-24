@@ -22,7 +22,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT firstName,lastName,email,phoneNumber FROM service_manager WHERE email=@username AND deleted_flag=FALSE";
+            string query = "SELECT firstName,lastName,email,phoneNumber FROM service_manager WHERE email=@username";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             com.Parameters.AddWithValue("@username", userSession.userName);
@@ -41,7 +41,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "UPDATE service_manager SET firstname=@firstName,lastName=@lastName,phoneNumber=@phoneNumber WHERE email=@username ";
+            string query = "UPDATE service_manager SET firstname=@firstName,lastName=@lastName,phoneNumber=@phoneNumber WHERE email=@username";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());
 
             com.Parameters.AddWithValue("@firstName", serviceManager.firstName);

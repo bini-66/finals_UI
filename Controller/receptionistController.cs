@@ -24,7 +24,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT firstName,lastName,email,phoneNumber FROM receptionist WHERE email=@username AND deleted_flag=FALSE";
+            string query = "SELECT firstName,lastName,email,phoneNumber FROM receptionist WHERE email=@username";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());
 
             com.Parameters.AddWithValue("@username", userSession.userName);

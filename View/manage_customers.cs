@@ -58,10 +58,5 @@ namespace finals_UI
         {
 
         }
-
-        private void manage_customers_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
