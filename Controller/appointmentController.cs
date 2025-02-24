@@ -222,31 +222,40 @@ namespace finals_UI.Controller
                 dbConnection con = new dbConnection();
                 con.openConnection();
                 //command class
-                string query = "SELECT a.customerId, c.firstName, c.lastName, " +
-                    "a.date, a.time, a.appointmentStatus, a.description, " +
-    "a.customerId, a.vehicleId, c.phone, v.plateNumber, a.appointmentId " +
-    "FROM appointment a " +
-    "INNER JOIN customer c ON a.customerId = c.customerId " +
-    "INNER JOIN vehicle v ON a.vehicleId = v.vehicleId " +
-    "WHERE a.appointmentId = @appointmentId";
+                string query = "SELECT a.appointmentId, a.date, a.time, a.appointmentStatus, a.description, " +
+                   "a.customerId, a.vehicleId, c.firstName, c.lastName, c.phone, v.plateNumber " +
+                    "FROM appointment a " +
+                    "INNER JOIN customer c ON a.customerId = c.customerId " +
+                    "INNER JOIN vehicle v ON a.vehicleId = v.vehicleId " +
+                    "WHERE a.appointmentId = @appointmentId";
                 MySqlCommand com = new MySqlCommand(query, con.getConnection());
                 com.Parameters.AddWithValue("@appointmentId", appointmentId);
+
+                Console.WriteLine("Executing Query: " + query); // Debug message
+                Console.WriteLine("With Parameters: appointmentId = " + appointmentId); // Debug message
+
                 //data reader class
                 MySqlDataReader reader = com.ExecuteReader();
-                while (reader.Read())
+                if (reader.Read())
                 {
                     appointment = new appointment
                     {
                         appointmentId = reader.GetInt32("appointmentId"),
                         date = reader.GetDateTime("date"),
-                        time = reader.GetString("time"),
+                        time = reader.GetTimeSpan("time").ToString(),
                         appointmentStatus = reader.GetString("appointmentStatus"),
                         description = reader.GetString("description"),
                         customerId = reader.GetInt32("customerId"),
                         vehicleId = reader.GetInt32("vehicleId"),
+                        customerName = reader.GetString("firstName") + " " + reader.GetString("lastName"),
                         phoneNumber = reader.GetString("phone"),
                         plateNumber = reader.GetString("plateNumber")
                     };
+                    Console.WriteLine("Appointment Data Loaded Successfully"); // Debug message
+                }
+                else
+                {
+                    Console.WriteLine("No Data Found for Appointment ID: " + appointmentId); // Debug msg
                 }
                 reader.Close();
                 con.closeConnection();
@@ -270,6 +279,7 @@ namespace finals_UI.Controller
                 string query = "SELECT serviceId FROM appointment_service WHERE appointmentId = @appointmentId";
                 MySqlCommand com = new MySqlCommand(query, con.getConnection());
                 com.Parameters.AddWithValue("@appointmentId", appointmentId);
+
                 //data reader class
                 MySqlDataReader reader = com.ExecuteReader();
                 while (reader.Read())
@@ -324,11 +334,13 @@ namespace finals_UI.Controller
                 //connection class
                 dbConnection con = new dbConnection();
                 con.openConnection();
+
                 // Delete existing services for the appointment
                 string deleteQuery = "DELETE FROM appointment_service WHERE appointmentId = @appointmentId";
                 MySqlCommand deleteCom = new MySqlCommand(deleteQuery, con.getConnection());
                 deleteCom.Parameters.AddWithValue("@appointmentId", appointmentId);
                 deleteCom.ExecuteNonQuery();
+
                 // Insert the newly selected services
                 foreach (int serviceId in selectedServiceIds)
                 {
