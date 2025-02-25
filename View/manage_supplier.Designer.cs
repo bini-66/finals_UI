@@ -563,6 +563,7 @@
             this.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "manage_supplier";
+            this.Load += new System.EventHandler(this.manage_supplier_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
