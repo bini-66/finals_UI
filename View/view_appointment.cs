@@ -34,17 +34,6 @@ namespace finals_UI
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = ds.Tables[0];
 
-            //// Map predefined columns to dataset columns
-            //dataGridView1.Columns["appointmentId"].DataPropertyName = "appointmentId";
-            //dataGridView1.Columns["plateNumber"].DataPropertyName = "plateNumber";
-            //dataGridView1.Columns["date"].DataPropertyName = "date";
-            //dataGridView1.Columns["time"].DataPropertyName = "time";
-            //dataGridView1.Columns["appointmentStatus"].DataPropertyName = "appointmentStatus";
-            //dataGridView1.Columns["description"].DataPropertyName = "description";
-            //dataGridView1.Columns["firstName"].DataPropertyName = "firstName";
-            //dataGridView1.Columns["lastName"].DataPropertyName = "lastName";
-            //dataGridView1.Columns["phone"].DataPropertyName = "phone";
-
             dataGridView1.Columns.Clear();
 
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
