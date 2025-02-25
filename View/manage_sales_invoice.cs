@@ -39,6 +39,8 @@ namespace finals_UI.View
                 dataGridView1.Columns.Add("ItemServiceName", "Item/service Name");
                 dataGridView1.Columns.Add("type", "Type");
                 dataGridView1.Columns.Add("Quantity", "Quantity");
+                dataGridView1.Columns["Quantity"].SortMode = DataGridViewColumnSortMode.NotSortable;
+
                 dataGridView1.Columns.Add("unitPrice", "Unit Price");
                 dataGridView1.Columns.Add("price", "Price");
                 dataGridView1.Columns.Add("saleItemId", "saleItem Id");
@@ -56,7 +58,7 @@ namespace finals_UI.View
                 dataGridView1.Columns["type"].Visible = false;
 
 
-
+               
 
 
             }
@@ -75,6 +77,13 @@ namespace finals_UI.View
             CBservice.SelectedIndex = -1;
             CBitmName.SelectedIndex = -1;
 
+            //load offers
+            DataSet ds3 = saleController.retrieveOffers();
+            CBoffer.DataSource = ds3.Tables[0];
+            CBoffer.DisplayMember = "offerType";
+            CBoffer.ValueMember = "offerId";
+            // Make the ComboBox display empty initially
+            CBoffer.SelectedIndex = -1;
         }
 
         //items  adding button 
@@ -206,7 +215,16 @@ namespace finals_UI.View
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string type = this.dataGridView1.CurrentRow.Cells["type"].Value.ToString();
+            // Check if CurrentRow is null or if there are no rows in the grid
+            if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.Index < 0)
+            {
+                return;
+            }
+
+            var typeCell = dataGridView1.CurrentRow.Cells["type"].Value;
+            string type = typeCell != null ? typeCell.ToString() : string.Empty;
+
+            //  string type = this.dataGridView1.CurrentRow.Cells["type"].Value.ToString();
 
             if (type == "Item")
             {
@@ -433,6 +451,17 @@ namespace finals_UI.View
             {
                 errorProvider1.Clear();
             }
+            if (this.txtplateNo.Text == "")
+            {
+                this.errorProvider2.SetError(this.txtplateNo, "please enter plate number");
+                return;
+            }
+
+            else
+            {
+                errorProvider2.Clear();
+            }
+
             //checkg whther plate no is of a registered custimer
             sale.plateNumber = this.txtplateNo.Text;
             int customerId = saleController.retrieveCustomerId(sale.plateNumber);
@@ -570,14 +599,18 @@ namespace finals_UI.View
         private void updateTotal()
         {
             decimal total = 0;
+            decimal discount= Convert.ToDecimal(this.txtdisc.Text);
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 if (row.Cells["price"].Value != null)
                 {
-                    total += Convert.ToDecimal(row.Cells["price"].Value);
+                    total =total+ Convert.ToDecimal(row.Cells["price"].Value);
                 }
             }
-            txttot.Text = total.ToString("N2"); // Format as currency
+            decimal finalTotal = total - discount; 
+            txttot.Text = finalTotal.ToString("N2"); 
+
+          
         }
 
         //save invoice btn click
@@ -590,6 +623,40 @@ namespace finals_UI.View
             customerInvoice.vehicleId = customerInvoiceController.retrieveVehicleId(sale.plateNumber);
 
             customerInvoiceController.saveInvoiceInfo(customerInvoice);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CBoffer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            float discount = 0;
+            if (CBoffer.SelectedValue != null && int.TryParse(CBoffer.SelectedValue.ToString(), out int offerId))
+            {
+               // decimal total = Convert.ToDecimal(this.txttot.Text);
+
+                discount = saleController.retrieveDiscount(offerId);
+                this.txtdisc.Text = discount.ToString();
+                updateTotal();
+                //total=total - Convert.ToDecimal(discount);
+                //txttot.Text = total.ToString("N2");
+            }
+            txtdisc.Text = discount.ToString("N2");
+
+        }
+
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnpaymentDetails_Click(object sender, EventArgs e)
+        {
+           manage_payment payment= new manage_payment();    
+            payment.Show();
+            this.Hide();    
         }
     }
 }

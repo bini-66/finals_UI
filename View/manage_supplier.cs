@@ -307,5 +307,9 @@ namespace finals_UI
 
         }
 
+        private void manage_supplier_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

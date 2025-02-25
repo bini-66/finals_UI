@@ -42,15 +42,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.btndlt = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.btnview = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.btnsearch = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -63,15 +59,18 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Teal;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.dataGridView1.Location = new System.Drawing.Point(319, 120);
+            this.dataGridView1.GridColor = System.Drawing.Color.Teal;
+            this.dataGridView1.Location = new System.Drawing.Point(348, 245);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1042, 433);
+            this.dataGridView1.Size = new System.Drawing.Size(1042, 327);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel1
             // 
@@ -233,112 +232,65 @@
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(456, 57);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(133, 30);
-            this.textBox1.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label7.Location = new System.Drawing.Point(381, 60);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(30, 23);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "ID";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(631, 53);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 33);
-            this.button5.TabIndex = 21;
-            this.button5.Text = "Search";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // btndlt
-            // 
-            this.btndlt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.btndlt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btndlt.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndlt.Location = new System.Drawing.Point(881, 730);
-            this.btndlt.Name = "btndlt";
-            this.btndlt.Size = new System.Drawing.Size(100, 33);
-            this.btndlt.TabIndex = 30;
-            this.btndlt.Text = "Delete";
-            this.btndlt.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(1237, 50);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(100, 33);
-            this.button8.TabIndex = 56;
-            this.button8.Text = "Search";
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label9.Location = new System.Drawing.Point(835, 57);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 23);
-            this.label9.TabIndex = 55;
-            this.label9.Text = "Name";
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Location = new System.Drawing.Point(930, 56);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(264, 30);
-            this.textBox6.TabIndex = 54;
-            // 
             // btnview
             // 
             this.btnview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnview.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnview.Location = new System.Drawing.Point(712, 730);
+            this.btnview.Location = new System.Drawing.Point(348, 187);
             this.btnview.Name = "btnview";
             this.btnview.Size = new System.Drawing.Size(129, 33);
             this.btnview.TabIndex = 57;
-            this.btnview.Text = "View Users";
+            this.btnview.Text = "View All Users";
             this.btnview.UseVisualStyleBackColor = false;
             this.btnview.Click += new System.EventHandler(this.btnview_Click);
             // 
-            // button14
+            // label1
             // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.button14.Location = new System.Drawing.Point(1412, 12);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(30, 28);
-            this.button14.TabIndex = 60;
-            this.button14.Text = "X";
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.label1.Location = new System.Drawing.Point(921, 168);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(207, 17);
+            this.label1.TabIndex = 89;
+            this.label1.Text = "Search by user id / name / role";
+            // 
+            // txtsearch
+            // 
+            this.txtsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.txtsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtsearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.txtsearch.Location = new System.Drawing.Point(924, 189);
+            this.txtsearch.Multiline = true;
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(316, 33);
+            this.txtsearch.TabIndex = 88;
+            // 
+            // btnsearch
+            // 
+            this.btnsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsearch.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsearch.Location = new System.Drawing.Point(1290, 189);
+            this.btnsearch.Name = "btnsearch";
+            this.btnsearch.Size = new System.Drawing.Size(100, 33);
+            this.btnsearch.TabIndex = 90;
+            this.btnsearch.Text = "Search";
+            this.btnsearch.UseVisualStyleBackColor = false;
+            this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(341, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(296, 40);
+            this.label2.TabIndex = 91;
+            this.label2.Text = "User Management";
             // 
             // manage_employee
             // 
@@ -346,15 +298,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1454, 813);
-            this.Controls.Add(this.button14);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnsearch);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.btnview);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.btndlt);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -385,21 +333,17 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button btndlt;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button btnview;
-        private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.Button btnsearch;
+        private System.Windows.Forms.Label label2;
     }
 }

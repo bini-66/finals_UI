@@ -193,7 +193,7 @@ namespace finals_UI.Controller
 
             //command class
             //retievinf cutomerId frm the plate number
-            string query = "SELECT vehicle.customerId FROM vehicle INNER JOIN customer ON customer.customerId=vehicle.customerId WHERE plateNumber=@plateNumber";
+            string query = "SELECT vehicle.customerId FROM vehicle INNER JOIN customer ON customer.customerId=vehicle.customerId WHERE plateNumber=@plateNumber AND vehicle.deleted_flag=FALSE";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());
 
             com.Parameters.AddWithValue("@plateNumber", plateNumber);
@@ -580,6 +580,37 @@ namespace finals_UI.Controller
 
                 con.closeConnection();
             }
+        }
+        public DataSet retrieveOffers()
+        {
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            string query = "SELECT offerId,offerType FROM offer";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+
+            //dsta adapter class
+            MySqlDataAdapter DAP = new MySqlDataAdapter(com);
+            DataSet ds = new DataSet();
+            DAP.Fill(ds);
+
+            return ds;
+
+        }
+
+        public float retrieveDiscount(int offerId)
+        {
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            string query = "SELECT discount FROM OFFER WHERE offerId=@offerId";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+
+            com.Parameters.AddWithValue("@offerId", offerId);
+            object result = com.ExecuteScalar();
+            float discount = result != null ? Convert.ToSingle(result) : 0;
+
+            return discount;
         }
     }
 }

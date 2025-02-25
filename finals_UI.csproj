@@ -114,6 +114,7 @@
     <Compile Include="Controller\offerController.cs" />
     <Compile Include="Controller\operationalManagerController.cs" />
     <Compile Include="Controller\ownerController.cs" />
+    <Compile Include="Controller\paymentController.cs" />
     <Compile Include="Controller\receptionistController.cs" />
     <Compile Include="Controller\saleController.cs" />
     <Compile Include="Controller\serviceController.cs" />
@@ -133,6 +134,8 @@
     <Compile Include="Model\classes\offer.cs" />
     <Compile Include="Model\classes\operationalManager.cs" />
     <Compile Include="Model\classes\owner.cs" />
+    <Compile Include="Model\classes\payment.cs" />
+    <Compile Include="Model\classes\receipt.cs" />
     <Compile Include="Model\classes\receptionist.cs" />
     <Compile Include="Model\classes\sale.cs" />
     <Compile Include="Model\classes\service.cs" />
@@ -273,11 +276,11 @@
     <Compile Include="View\manage_offers.Designer.cs">
       <DependentUpon>manage_offers.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\payment.cs">
+    <Compile Include="View\manage_payment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\payment.Designer.cs">
-      <DependentUpon>payment.cs</DependentUpon>
+    <Compile Include="View\manage_payment.Designer.cs">
+      <DependentUpon>manage_payment.cs</DependentUpon>
     </Compile>
     <Compile Include="View\new_appointments.cs">
       <SubType>Form</SubType>
@@ -398,8 +401,8 @@
     <EmbeddedResource Include="View\manage_user.resx">
       <DependentUpon>manage_user.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\payment.resx">
-      <DependentUpon>payment.cs</DependentUpon>
+    <EmbeddedResource Include="View\manage_payment.resx">
+      <DependentUpon>manage_payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\new_appointments.resx">
       <DependentUpon>new_appointments.cs</DependentUpon>
