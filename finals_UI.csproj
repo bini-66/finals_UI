@@ -121,6 +121,7 @@
     <Compile Include="Controller\offerController.cs" />
     <Compile Include="Controller\operationalManagerController.cs" />
     <Compile Include="Controller\ownerController.cs" />
+    <Compile Include="Controller\paymentController.cs" />
     <Compile Include="Controller\receptionistController.cs" />
     <Compile Include="Controller\saleController.cs" />
     <Compile Include="Controller\serviceController.cs" />
@@ -140,6 +141,8 @@
     <Compile Include="Model\classes\offer.cs" />
     <Compile Include="Model\classes\operationalManager.cs" />
     <Compile Include="Model\classes\owner.cs" />
+    <Compile Include="Model\classes\payment.cs" />
+    <Compile Include="Model\classes\receipt.cs" />
     <Compile Include="Model\classes\receptionist.cs" />
     <Compile Include="Model\classes\sale.cs" />
     <Compile Include="Model\classes\service.cs" />
@@ -149,6 +152,17 @@
     <Compile Include="Model\classes\user.cs" />
     <Compile Include="Model\classes\userSession.cs" />
     <Compile Include="Model\Database\dbConnection.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\edit_appointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\edit_appointments.Designer.cs">
+      <DependentUpon>edit_appointments.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\inventoryManager_profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,11 +307,11 @@
     <Compile Include="View\manage_offers.Designer.cs">
       <DependentUpon>manage_offers.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\payment.cs">
+    <Compile Include="View\manage_payment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\payment.Designer.cs">
-      <DependentUpon>payment.cs</DependentUpon>
+    <Compile Include="View\manage_payment.Designer.cs">
+      <DependentUpon>manage_payment.cs</DependentUpon>
     </Compile>
     <Compile Include="View\new_appointments.cs">
       <SubType>Form</SubType>
@@ -361,11 +375,8 @@
     <Compile Include="View\view_feedback.Designer.cs">
       <DependentUpon>view_feedback.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\inventoryManager_profile.resx">
-      <DependentUpon>inventoryManager_profile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\maintenance_transaction.resx">
-      <DependentUpon>maintenance_transaction.cs</DependentUpon>
+    <EmbeddedResource Include="View\edit_appointments.resx">
+      <DependentUpon>edit_appointments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\manage_employees.resx">
       <DependentUpon>manage_employees.cs</DependentUpon>
@@ -435,22 +446,17 @@
     <EmbeddedResource Include="View\manage_user.resx">
       <DependentUpon>manage_user.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\payment.resx">
-      <DependentUpon>payment.cs</DependentUpon>
+    <EmbeddedResource Include="View\manage_payment.resx">
+      <DependentUpon>manage_payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\new_appointments.resx">
       <DependentUpon>new_appointments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="View\Receptionist_dash.resx">
       <DependentUpon>Receptionist_dash.cs</DependentUpon>
     </EmbeddedResource>
@@ -551,7 +557,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
-    <None Include="Resources\search-icon.png" />
+    <None Include="Images\refresh-icon.png" />
+    <None Include="Images\selection-icon.png" />
+    <None Include="Images\edit-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />

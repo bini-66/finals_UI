@@ -68,10 +68,16 @@
             this.btnserup = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button14 = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txttot = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnsave = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnpaymentDetails = new System.Windows.Forms.Button();
+            this.CBoffer = new System.Windows.Forms.ComboBox();
+            this.txtdisc = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -87,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -542,19 +549,6 @@
             this.button14.UseVisualStyleBackColor = false;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(543, 492);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(183, 33);
-            this.btnSearch.TabIndex = 114;
-            this.btnSearch.Text = "Print Invoice";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
             // txttot
             // 
             this.txttot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
@@ -564,6 +558,7 @@
             this.txttot.Location = new System.Drawing.Point(1314, 492);
             this.txttot.Multiline = true;
             this.txttot.Name = "txttot";
+            this.txttot.ReadOnly = true;
             this.txttot.Size = new System.Drawing.Size(183, 30);
             this.txttot.TabIndex = 115;
             this.txttot.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -584,7 +579,7 @@
             this.btnsave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsave.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsave.Location = new System.Drawing.Point(341, 492);
+            this.btnsave.Location = new System.Drawing.Point(341, 825);
             this.btnsave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(183, 33);
@@ -593,16 +588,105 @@
             this.btnsave.UseVisualStyleBackColor = false;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(572, 825);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(183, 33);
+            this.btnSearch.TabIndex = 117;
+            this.btnSearch.Text = "Print Invoice";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
+            // 
+            // btnpaymentDetails
+            // 
+            this.btnpaymentDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btnpaymentDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnpaymentDetails.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnpaymentDetails.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnpaymentDetails.Location = new System.Drawing.Point(1282, 827);
+            this.btnpaymentDetails.Name = "btnpaymentDetails";
+            this.btnpaymentDetails.Size = new System.Drawing.Size(215, 31);
+            this.btnpaymentDetails.TabIndex = 118;
+            this.btnpaymentDetails.Text = "Enter Payment Details";
+            this.btnpaymentDetails.UseVisualStyleBackColor = false;
+            this.btnpaymentDetails.Click += new System.EventHandler(this.btnpaymentDetails_Click);
+            // 
+            // CBoffer
+            // 
+            this.CBoffer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.CBoffer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CBoffer.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBoffer.ForeColor = System.Drawing.Color.White;
+            this.CBoffer.FormattingEnabled = true;
+            this.CBoffer.Items.AddRange(new object[] {
+            "Cash",
+            "Card"});
+            this.CBoffer.Location = new System.Drawing.Point(430, 492);
+            this.CBoffer.Name = "CBoffer";
+            this.CBoffer.Size = new System.Drawing.Size(255, 27);
+            this.CBoffer.TabIndex = 124;
+            this.CBoffer.SelectedIndexChanged += new System.EventHandler(this.CBoffer_SelectedIndexChanged);
+            // 
+            // txtdisc
+            // 
+            this.txtdisc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.txtdisc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtdisc.Font = new System.Drawing.Font("Arial Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdisc.ForeColor = System.Drawing.Color.White;
+            this.txtdisc.Location = new System.Drawing.Point(891, 492);
+            this.txtdisc.Multiline = true;
+            this.txtdisc.Name = "txtdisc";
+            this.txtdisc.ReadOnly = true;
+            this.txtdisc.Size = new System.Drawing.Size(183, 30);
+            this.txtdisc.TabIndex = 125;
+            this.txtdisc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.label6.Location = new System.Drawing.Point(755, 492);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 28);
+            this.label6.TabIndex = 126;
+            this.label6.Text = "Discount";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.label9.Location = new System.Drawing.Point(336, 489);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 28);
+            this.label9.TabIndex = 127;
+            this.label9.Text = "Offer";
+            // 
+            // errorProvider5
+            // 
+            this.errorProvider5.ContainerControl = this;
+            // 
             // manage_sales_invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1805, 943);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtdisc);
+            this.Controls.Add(this.CBoffer);
+            this.Controls.Add(this.btnpaymentDetails);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnsave);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txttot);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -635,6 +719,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -681,9 +766,15 @@
         private System.Windows.Forms.Button btnserup;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button btnserclr;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txttot;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnsave;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnpaymentDetails;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtdisc;
+        private System.Windows.Forms.ComboBox CBoffer;
+        private System.Windows.Forms.ErrorProvider errorProvider5;
     }
 }

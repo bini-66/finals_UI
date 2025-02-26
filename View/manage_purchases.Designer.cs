@@ -403,6 +403,7 @@
             this.CBitmName.Name = "CBitmName";
             this.CBitmName.Size = new System.Drawing.Size(253, 24);
             this.CBitmName.TabIndex = 72;
+            this.CBitmName.SelectedIndexChanged += new System.EventHandler(this.CBitmName_SelectedIndexChanged);
             // 
             // btnview
             // 

@@ -20,37 +20,18 @@ namespace finals_UI
         public view_customer()
         {
             InitializeComponent();
-            //loading data grid
-            DataSet ds = customerController.viewCustomer();
-            this.dataGridView1.DataSource = ds.Tables[0];
+            //load customer details on load
+            LoadCustomerDetails();
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        //Other Methods
+        private void LoadCustomerDetails()
         {
-            Application.Exit();
+            DataSet ds = customerController.ViewCustomer();     
+            dataGridView1.AutoGenerateColumns = true;
+            dataGridView1.DataSource = ds.Tables[0];
         }
-
-        private void btnView_Click(object sender, EventArgs e)
-        {
-            DataSet ds = customerController.viewCustomer();
-            this.dataGridView1.DataSource = ds.Tables[0];
-        }
-
-        private void btnPlateNoSearch_Click(object sender, EventArgs e)
-        {
-            if (this.txtPlateNo.Text == "")
-            {
-                this.errorProvider2.SetError(this.txtPlateNo, "Vehicle plate number cannot be empty");
-                return;
-            }
-            else
-            {
-                errorProvider2.Clear();
-            }
-            string plateNumber = this.txtPlateNo.Text;
-
-            loadCustomerData(plateNumber);
-        }
+       
         private void loadCustomerData(string plateNumber)
         {
             DataSet ds = customerController.searchPlateNo(plateNumber);
@@ -65,6 +46,31 @@ namespace finals_UI
                 dataGridView1.DataSource = null;
             }
         }
+        
+        private void LoadCustomerData(string name1, string name2)
+        {
+            DataSet ds = customerController.searchName(name1, name2);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                dataGridView1.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("No customer found with this name.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dataGridView1.DataSource = null; // Clear DataGridView if no match
+            }
+        }
+
+        private void ClearSearchFields()
+        {
+            txtName.Clear();
+            txtPlateNo.Clear();
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+        }
+
+        //Event Handlers
         private void btnNameSearch_Click(object sender, EventArgs e)
         {
             string inputName = txtName.Text.Trim();
@@ -89,20 +95,53 @@ namespace finals_UI
             {
                 LoadCustomerData(nameParts[0], nameParts[1]); // Search by full name
             }
-        }
-        private void LoadCustomerData(string name1, string name2)
-        {
-            DataSet ds = customerController.searchName(name1, name2);
 
-            if (ds.Tables[0].Rows.Count > 0)
+            ClearSearchFields();
+        }
+
+        private void btnPlateNoSearch_Click(object sender, EventArgs e)
+        {
+            if (this.txtPlateNo.Text == "")
             {
-                dataGridView1.DataSource = ds.Tables[0];
+                this.errorProvider2.SetError(this.txtPlateNo, "Vehicle plate number cannot be empty");
+                return;
             }
             else
             {
-                MessageBox.Show("No customer found with this name.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dataGridView1.DataSource = null; // Clear DataGridView if no match
+                errorProvider2.Clear();
             }
+            string plateNumber = this.txtPlateNo.Text;
+
+            loadCustomerData(plateNumber);
+            ClearSearchFields();
+        }
+
+        private void btnViewAllCustomers_Click(object sender, EventArgs e)
+        {
+            LoadCustomerDetails();
+            ClearSearchFields();
+        }
+
+        private void btnDeleteCustomer_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0) 
+            {
+                int customerId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Customer ID"].Value);
+                customerController.DeleteCustomer(customerId); // Call delete function
+
+                //Refresh DataGridView
+                LoadCustomerDetails();
+                ClearSearchFields();
+            }
+            else
+            {
+                MessageBox.Show("Please select a customer to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -398,5 +398,10 @@ namespace finals_UI
                 this.dataGridView1.DataSource = ds.Tables[0];
             }
         }
+
+        private void CBitmName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

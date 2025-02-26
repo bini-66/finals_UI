@@ -20,7 +20,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT firstName,lastName,email,phoneNumber FROM operational_manager WHERE email=@username";
+            string query = "SELECT firstName,lastName,email,phoneNumber FROM operational_manager WHERE email=@username AND deleted_flag=FALSE";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             com.Parameters.AddWithValue("@username", userSession.userName);

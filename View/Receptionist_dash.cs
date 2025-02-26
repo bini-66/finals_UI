@@ -34,7 +34,7 @@ namespace finals_UI
         private void btnPayments_Click(object sender, EventArgs e)
         {
             this.Hide();
-            payment payment = new payment();
+            manage_payment payment = new manage_payment();
             payment.ShowDialog();
         }
 
