@@ -19,7 +19,7 @@ namespace finals_UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new view_feedback());
+            Application.Run(new purchase_report());
         }
     }
 }
