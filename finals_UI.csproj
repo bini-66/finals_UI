@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -120,6 +121,7 @@
     <Compile Include="Controller\serviceController.cs" />
     <Compile Include="Controller\purchaseController.cs" />
     <Compile Include="Controller\serviceManagerContoller.cs" />
+    <Compile Include="Controller\stockController.cs" />
     <Compile Include="Controller\supplierController.cs" />
     <Compile Include="Controller\userController.cs" />
     <Compile Include="Model\classes\appointment.cs" />
@@ -141,6 +143,7 @@
     <Compile Include="Model\classes\service.cs" />
     <Compile Include="Model\classes\purchase.cs" />
     <Compile Include="Model\classes\serviceManager.cs" />
+    <Compile Include="Model\classes\stock.cs" />
     <Compile Include="Model\classes\supplier.cs" />
     <Compile Include="Model\classes\user.cs" />
     <Compile Include="Model\classes\userSession.cs" />
@@ -155,6 +158,12 @@
     </Compile>
     <Compile Include="View\edit_appointments.Designer.cs">
       <DependentUpon>edit_appointments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\inventoryManager_dash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\inventoryManager_dash.Designer.cs">
+      <DependentUpon>inventoryManager_dash.cs</DependentUpon>
     </Compile>
     <Compile Include="View\inventoryManager_profile.cs">
       <SubType>Form</SubType>
@@ -174,11 +183,23 @@
     <Compile Include="View\manage_employees.Designer.cs">
       <DependentUpon>manage_employees.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\operationalManager_dash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\operationalManager_dash.Designer.cs">
+      <DependentUpon>operationalManager_dash.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\operationalManager_profile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\operationalManager_profile.Designer.cs">
       <DependentUpon>operationalManager_profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\owner_dash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\owner_dash.Designer.cs">
+      <DependentUpon>owner_dash.cs</DependentUpon>
     </Compile>
     <Compile Include="View\owner_profile.cs">
       <SubType>Form</SubType>
@@ -209,6 +230,12 @@
     </Compile>
     <Compile Include="View\serviceManager_profile.Designer.cs">
       <DependentUpon>serviceManager_profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\superUser_dash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\superUser_dash.Designer.cs">
+      <DependentUpon>superUser_dash.cs</DependentUpon>
     </Compile>
     <Compile Include="View\view_appointment.cs">
       <SubType>Form</SubType>
@@ -344,14 +371,35 @@
     <Compile Include="View\view_feedback.Designer.cs">
       <DependentUpon>view_feedback.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\view_stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\view_stock.Designer.cs">
+      <DependentUpon>view_stock.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\edit_appointments.resx">
       <DependentUpon>edit_appointments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\inventoryManager_dash.resx">
+      <DependentUpon>inventoryManager_dash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\inventoryManager_profile.resx">
+      <DependentUpon>inventoryManager_profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\maintenance_transaction.resx">
+      <DependentUpon>maintenance_transaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\manage_employees.resx">
       <DependentUpon>manage_employees.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\operationalManager_dash.resx">
+      <DependentUpon>operationalManager_dash.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\operationalManager_profile.resx">
       <DependentUpon>operationalManager_profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\owner_dash.resx">
+      <DependentUpon>owner_dash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\owner_profile.resx">
       <DependentUpon>owner_profile.cs</DependentUpon>
@@ -367,6 +415,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\serviceManager_profile.resx">
       <DependentUpon>serviceManager_profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\superUser_dash.resx">
+      <DependentUpon>superUser_dash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\view_appointment.resx">
       <DependentUpon>view_appointment.cs</DependentUpon>
@@ -438,6 +489,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\view_feedback.resx">
       <DependentUpon>view_feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\view_stock.resx">
+      <DependentUpon>view_stock.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

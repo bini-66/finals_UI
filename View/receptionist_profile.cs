@@ -105,5 +105,17 @@ namespace finals_UI.View
             this.Close();
 
         }
+
+        private void btndash_Click(object sender, EventArgs e)
+        {
+            Receptionist_dash receptionist_Dash = new Receptionist_dash();
+            receptionist_Dash.Show();
+            this.Hide();
+        }
+
+        private void btnacc_Click(object sender, EventArgs e)
+        {
+            this.Show();
+        }
     }
 }

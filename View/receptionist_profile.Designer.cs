@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnlogout = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnacc = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btndash = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,6 +47,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnup = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -54,12 +58,11 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnup = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -67,9 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,9 +81,9 @@
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.btnlogout);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btnacc);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btndash);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -106,19 +106,20 @@
             this.btnlogout.UseVisualStyleBackColor = true;
             this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
-            // button3
+            // btnacc
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button3.Location = new System.Drawing.Point(0, 381);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(255, 51);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Account";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnacc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnacc.FlatAppearance.BorderSize = 0;
+            this.btnacc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnacc.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnacc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnacc.Location = new System.Drawing.Point(0, 381);
+            this.btnacc.Name = "btnacc";
+            this.btnacc.Size = new System.Drawing.Size(255, 51);
+            this.btnacc.TabIndex = 3;
+            this.btnacc.Text = "Account";
+            this.btnacc.UseVisualStyleBackColor = true;
+            this.btnacc.Click += new System.EventHandler(this.btnacc_Click);
             // 
             // button2
             // 
@@ -134,19 +135,20 @@
             this.button2.Text = "Schedule";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btndash
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button1.Location = new System.Drawing.Point(0, 267);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(255, 63);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Dashboard";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btndash.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btndash.FlatAppearance.BorderSize = 0;
+            this.btndash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndash.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btndash.Location = new System.Drawing.Point(0, 267);
+            this.btndash.Name = "btndash";
+            this.btndash.Size = new System.Drawing.Size(255, 63);
+            this.btndash.TabIndex = 1;
+            this.btndash.Text = "Dashboard";
+            this.btndash.UseVisualStyleBackColor = true;
+            this.btndash.Click += new System.EventHandler(this.btndash_Click);
             // 
             // panel2
             // 
@@ -295,6 +297,31 @@
             this.label11.TabIndex = 84;
             this.label11.Text = "First Name";
             // 
+            // btnup
+            // 
+            this.btnup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnup.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnup.Location = new System.Drawing.Point(694, 583);
+            this.btnup.Name = "btnup";
+            this.btnup.Size = new System.Drawing.Size(100, 33);
+            this.btnup.TabIndex = 125;
+            this.btnup.Text = "Update";
+            this.btnup.UseVisualStyleBackColor = false;
+            this.btnup.Click += new System.EventHandler(this.btnup_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
             // pictureBox7
             // 
             this.pictureBox7.Image = global::finals_UI.Properties.Resources.user;
@@ -365,31 +392,6 @@
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
             // 
-            // btnup
-            // 
-            this.btnup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.btnup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnup.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnup.Location = new System.Drawing.Point(694, 583);
-            this.btnup.Name = "btnup";
-            this.btnup.Size = new System.Drawing.Size(100, 33);
-            this.btnup.TabIndex = 125;
-            this.btnup.Text = "Update";
-            this.btnup.UseVisualStyleBackColor = false;
-            this.btnup.Click += new System.EventHandler(this.btnup_Click);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // errorProvider2
-            // 
-            this.errorProvider2.ContainerControl = this;
-            // 
-            // errorProvider3
-            // 
-            this.errorProvider3.ContainerControl = this;
-            // 
             // receptionist_profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -417,6 +419,9 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -424,9 +429,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,9 +442,9 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnlogout;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnacc;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btndash;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox1;

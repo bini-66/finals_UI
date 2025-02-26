@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using finals_UI.Model;
 using finals_UI.Model.classes;
+using finals_UI.View;
 
 namespace finals_UI
 {
@@ -290,10 +291,7 @@ namespace finals_UI
             clearFields();
         }
 
-        private void button14_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+      
 
         private void label8_Click(object sender, EventArgs e)
         {
@@ -431,6 +429,25 @@ namespace finals_UI
             cbInvoiceNo.ValueMember = "customerInvoiceId";
             // Make the ComboBox display empty initially
             cbInvoiceNo.SelectedIndex = -1;
+        }
+
+        private void btndash_Click(object sender, EventArgs e)
+        {
+            operationalManager_dash operationalManager_Dash = new operationalManager_dash();
+            operationalManager_Dash.Show();
+            this.Hide();
+        }
+
+        private void btnacc_Click(object sender, EventArgs e)
+        {
+            operationalManager_profile operationalManager_Profile = new operationalManager_profile();
+            operationalManager_Profile.Show();
+            this.Hide();
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

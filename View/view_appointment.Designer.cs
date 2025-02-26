@@ -59,57 +59,74 @@
             // 
             this.appointmentId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.appointmentId.HeaderText = "Appointment ID";
+            this.appointmentId.MinimumWidth = 6;
             this.appointmentId.Name = "appointmentId";
+            this.appointmentId.Width = 125;
             // 
             // plateNumber
             // 
             this.plateNumber.HeaderText = "Vehicle Plate";
+            this.plateNumber.MinimumWidth = 6;
             this.plateNumber.Name = "plateNumber";
+            this.plateNumber.Width = 125;
             // 
             // date
             // 
             this.date.HeaderText = "Date";
+            this.date.MinimumWidth = 6;
             this.date.Name = "date";
+            this.date.Width = 125;
             // 
             // time
             // 
             this.time.HeaderText = "Time";
+            this.time.MinimumWidth = 6;
             this.time.Name = "time";
+            this.time.Width = 125;
             // 
             // appointmentStatus
             // 
             this.appointmentStatus.HeaderText = "Status";
+            this.appointmentStatus.MinimumWidth = 6;
             this.appointmentStatus.Name = "appointmentStatus";
+            this.appointmentStatus.Width = 125;
             // 
             // description
             // 
             this.description.HeaderText = "Description";
+            this.description.MinimumWidth = 6;
             this.description.Name = "description";
+            this.description.Width = 125;
             // 
             // firstName
             // 
             this.firstName.HeaderText = "First Name";
+            this.firstName.MinimumWidth = 6;
             this.firstName.Name = "firstName";
+            this.firstName.Width = 125;
             // 
             // lastName
             // 
             this.lastName.HeaderText = "Last Name";
+            this.lastName.MinimumWidth = 6;
             this.lastName.Name = "lastName";
+            this.lastName.Width = 125;
             // 
             // phone
             // 
             this.phone.HeaderText = "Phone";
+            this.phone.MinimumWidth = 6;
             this.phone.Name = "phone";
+            this.phone.Width = 125;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(31, 31);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(41, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 31);
+            this.label2.Size = new System.Drawing.Size(214, 40);
             this.label2.TabIndex = 31;
             this.label2.Text = "Appointment";
             // 
@@ -118,10 +135,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label3.Location = new System.Drawing.Point(447, 100);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(596, 123);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 18);
+            this.label3.Size = new System.Drawing.Size(72, 23);
             this.label3.TabIndex = 34;
             this.label3.Text = "Search";
             // 
@@ -130,10 +146,10 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(818, 97);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearch.Location = new System.Drawing.Point(1091, 119);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 27);
+            this.btnSearch.Size = new System.Drawing.Size(100, 33);
             this.btnSearch.TabIndex = 35;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -144,10 +160,10 @@
             this.btnNewAppointment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnNewAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewAppointment.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewAppointment.Location = new System.Drawing.Point(37, 97);
-            this.btnNewAppointment.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNewAppointment.Location = new System.Drawing.Point(49, 119);
+            this.btnNewAppointment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNewAppointment.Name = "btnNewAppointment";
-            this.btnNewAppointment.Size = new System.Drawing.Size(133, 27);
+            this.btnNewAppointment.Size = new System.Drawing.Size(177, 33);
             this.btnNewAppointment.TabIndex = 36;
             this.btnNewAppointment.Text = "New Appointment";
             this.btnNewAppointment.UseVisualStyleBackColor = false;
@@ -157,11 +173,11 @@
             // 
             this.txtSearch.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.Location = new System.Drawing.Point(525, 97);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearch.Location = new System.Drawing.Point(700, 119);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(277, 27);
+            this.txtSearch.Size = new System.Drawing.Size(369, 33);
             this.txtSearch.TabIndex = 41;
             // 
             // btnNewCustomer
@@ -169,10 +185,10 @@
             this.btnNewCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnNewCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewCustomer.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewCustomer.Location = new System.Drawing.Point(185, 97);
-            this.btnNewCustomer.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNewCustomer.Location = new System.Drawing.Point(247, 119);
+            this.btnNewCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNewCustomer.Name = "btnNewCustomer";
-            this.btnNewCustomer.Size = new System.Drawing.Size(135, 27);
+            this.btnNewCustomer.Size = new System.Drawing.Size(180, 33);
             this.btnNewCustomer.TabIndex = 92;
             this.btnNewCustomer.Text = "New Customer";
             this.btnNewCustomer.UseVisualStyleBackColor = false;
@@ -180,24 +196,25 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editToolStripMenuItem,
             this.refreshToolStripMenuItem,
             this.selectRowToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(140, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(162, 76);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
             this.editToolStripMenuItem.Text = "Refresh";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
             this.refreshToolStripMenuItem.Text = "Edit";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
@@ -207,38 +224,41 @@
             this.selectEntireRowToolStripMenuItem,
             this.selectCellToolStripMenuItem});
             this.selectRowToolStripMenuItem.Name = "selectRowToolStripMenuItem";
-            this.selectRowToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.selectRowToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
             this.selectRowToolStripMenuItem.Text = "Mode Select";
             // 
             // selectEntireRowToolStripMenuItem
             // 
             this.selectEntireRowToolStripMenuItem.Name = "selectEntireRowToolStripMenuItem";
-            this.selectEntireRowToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.selectEntireRowToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.selectEntireRowToolStripMenuItem.Text = "Select Entire Row";
             this.selectEntireRowToolStripMenuItem.Click += new System.EventHandler(this.selectEntireRowToolStripMenuItem_Click);
             // 
             // selectCellToolStripMenuItem
             // 
             this.selectCellToolStripMenuItem.Name = "selectCellToolStripMenuItem";
-            this.selectCellToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.selectCellToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.selectCellToolStripMenuItem.Text = "Select Cell";
             this.selectCellToolStripMenuItem.Click += new System.EventHandler(this.selectCellToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Teal;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 155);
+            this.dataGridView1.Location = new System.Drawing.Point(49, 191);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(856, 352);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(1141, 433);
             this.dataGridView1.TabIndex = 96;
             this.dataGridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDown);
             // 
             // view_appointment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(928, 537);
+            this.ClientSize = new System.Drawing.Size(1237, 661);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnNewCustomer);
@@ -247,8 +267,10 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "view_appointment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Appointment";
             this.Load += new System.EventHandler(this.view_appointment_Load);
             this.contextMenuStrip1.ResumeLayout(false);

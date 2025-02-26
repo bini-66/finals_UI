@@ -34,10 +34,10 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnlogout = new System.Windows.Forms.Button();
+            this.btnacc = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btndash = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -47,6 +47,7 @@
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.btnsearch = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnclose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -79,10 +80,10 @@
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btnlogout);
+            this.panel1.Controls.Add(this.btnacc);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btndash);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -131,34 +132,34 @@
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
-            // button6
+            // btnlogout
             // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button6.Location = new System.Drawing.Point(0, 762);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(255, 51);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Log Out";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnlogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnlogout.FlatAppearance.BorderSize = 0;
+            this.btnlogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlogout.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnlogout.Location = new System.Drawing.Point(0, 762);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(255, 51);
+            this.btnlogout.TabIndex = 6;
+            this.btnlogout.Text = "Log Out";
+            this.btnlogout.UseVisualStyleBackColor = true;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
-            // button3
+            // btnacc
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button3.Location = new System.Drawing.Point(0, 381);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(255, 51);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Account";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnacc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnacc.FlatAppearance.BorderSize = 0;
+            this.btnacc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnacc.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnacc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnacc.Location = new System.Drawing.Point(0, 381);
+            this.btnacc.Name = "btnacc";
+            this.btnacc.Size = new System.Drawing.Size(255, 51);
+            this.btnacc.TabIndex = 3;
+            this.btnacc.Text = "Account";
+            this.btnacc.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -174,19 +175,20 @@
             this.button2.Text = "Schedule";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btndash
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button1.Location = new System.Drawing.Point(0, 267);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(255, 63);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Dashboard";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btndash.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btndash.FlatAppearance.BorderSize = 0;
+            this.btndash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndash.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btndash.Location = new System.Drawing.Point(0, 267);
+            this.btndash.Name = "btndash";
+            this.btndash.Size = new System.Drawing.Size(255, 63);
+            this.btndash.TabIndex = 1;
+            this.btndash.Text = "Dashboard";
+            this.btndash.UseVisualStyleBackColor = true;
+            this.btndash.Click += new System.EventHandler(this.btndash_Click);
             // 
             // panel2
             // 
@@ -204,11 +206,11 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label8.Location = new System.Drawing.Point(103, 182);
+            this.label8.Location = new System.Drawing.Point(74, 185);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 25);
+            this.label8.Size = new System.Drawing.Size(104, 25);
             this.label8.TabIndex = 35;
-            this.label8.Text = "User";
+            this.label8.Text = "Super User";
             // 
             // label10
             // 
@@ -292,12 +294,27 @@
             this.label2.TabIndex = 91;
             this.label2.Text = "User Management";
             // 
+            // btnclose
+            // 
+            this.btnclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclose.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnclose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.btnclose.Location = new System.Drawing.Point(1395, 28);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(30, 28);
+            this.btnclose.TabIndex = 85;
+            this.btnclose.Text = "X";
+            this.btnclose.UseVisualStyleBackColor = false;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
+            // 
             // manage_employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1454, 813);
+            this.Controls.Add(this.btnclose);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnsearch);
             this.Controls.Add(this.label1);
@@ -329,9 +346,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btndash;
+        private System.Windows.Forms.Button btnlogout;
+        private System.Windows.Forms.Button btnacc;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -345,5 +362,6 @@
         private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.Button btnsearch;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnclose;
     }
 }

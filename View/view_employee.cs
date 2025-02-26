@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using finals_UI.Controller;
 using finals_UI.Model.classes;
+using finals_UI.View;
 
 namespace finals_UI
 {
@@ -26,10 +27,6 @@ namespace finals_UI
             this.dataGridView1.DataSource = ds.Tables[0];
         }
 
-        private void button14_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void button12_Click(object sender, EventArgs e)
         {
@@ -105,6 +102,35 @@ namespace finals_UI
                 MessageBox.Show("No employee found with this name.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGridView1.DataSource = null; // Clear DataGridView if no match
             }
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btndash_Click(object sender, EventArgs e)
+        {
+            owner_dash owner_Dash = new owner_dash();
+            owner_Dash.Show();
+            this.Hide();
+        }
+
+        private void btnacc_Click(object sender, EventArgs e)
+        {
+            owner_profile owner_profile = new owner_profile();  
+            owner_profile.Show();
+            this.Hide();
+
+        }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            userSession.Logout();
+
+            sign_in sign_In = new sign_in();
+            sign_In.Show();
+            this.Close();
         }
     }
 }

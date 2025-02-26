@@ -1,5 +1,6 @@
 ﻿using finals_UI.Controller;
 using finals_UI.Model.classes;
+using finals_UI.View;
 using Org.BouncyCastle.Asn1.Mozilla;
 using System;
 using System.Collections.Generic;
@@ -32,11 +33,7 @@ namespace finals_UI
 
         }
 
-        private void button14_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
+     
         private void label12_Click(object sender, EventArgs e)
         {
 
@@ -304,6 +301,35 @@ namespace finals_UI
         private void item_management_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btndash_Click(object sender, EventArgs e)
+        {
+            inventoryManager_dash inventoryManager_Dash = new inventoryManager_dash();
+            inventoryManager_Dash.Show();
+            this.Hide();
+        }
+
+        private void btnacc_Click(object sender, EventArgs e)
+        {
+            inventoryManager_profile inventoryManager_Profile = new inventoryManager_profile();
+            inventoryManager_Profile.Show();
+            this.Hide();
+
+        }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            userSession.Logout();
+
+            sign_in sign_In = new sign_in();
+            sign_In.Show();
+            this.Close();
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

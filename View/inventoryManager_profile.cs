@@ -105,5 +105,17 @@ namespace finals_UI.View
             this.Close();
 
         }
+
+        private void btndash_Click(object sender, EventArgs e)
+        {
+            inventoryManager_dash inventoryManager_Dash = new inventoryManager_dash();
+            inventoryManager_Dash.Show();
+            this.Close();
+        }
+
+        private void btnacc_Click(object sender, EventArgs e)
+        {
+            this.Show();
+        }
     }
 }

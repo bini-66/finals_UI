@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using finals_UI.Controller;
 using finals_UI.Model.classes;
+using finals_UI.View;
 
 namespace finals_UI
 {
@@ -141,7 +142,30 @@ namespace finals_UI
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+        }
+
+        private void btndash_Click(object sender, EventArgs e)
+        {
+            owner_dash owner_Dash = new owner_dash();
+            owner_Dash.Show();
+            this.Hide();
+        }
+
+        private void btnacc_Click(object sender, EventArgs e)
+        {
+            owner_profile owner_Profile = new owner_profile();
+            owner_Profile.Show();
+            this.Hide();
+        }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            userSession.Logout();
+
+            sign_in sign_In = new sign_in();
+            sign_In.Show();
+            this.Close();
         }
     }
 }

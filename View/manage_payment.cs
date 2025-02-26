@@ -1,6 +1,7 @@
 ﻿using finals_UI.Controller;
 using finals_UI.Model;
 using finals_UI.Model.classes;
+using finals_UI.View;
 using Mysqlx.Crud;
 using Org.BouncyCastle.Asn1.IsisMtt;
 using System;
@@ -24,10 +25,12 @@ namespace finals_UI
         paymentController paymentController=new paymentController();
         payment payment=new payment();
         receipt receipt = new receipt();
+        string invoiceNo;
 
-        public manage_payment()
+        public manage_payment(string invoiceNo)
         {
             InitializeComponent();
+            this.invoiceNo = invoiceNo;
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -96,6 +99,9 @@ namespace finals_UI
             if (count == -1)
             {
                 MessageBox.Show("Payment has been done for this invoice.");
+                this.txtfullname.Text = "";
+                this.txtinvtot.Text = "";
+                this.txtplateNo.Text = "";
                 return;
             }
             
@@ -112,7 +118,9 @@ namespace finals_UI
 
         private void payment_Load(object sender, EventArgs e)
         {
-          
+           // manage_sales_invoice manage_Sales_Invoice = new manage_sales_invoice();
+       //     string invoiceNo=manage_Sales_Invoice.returnInvoiceNo();
+            this.txtinvoice.Text = invoiceNo;   
         }
 
         private void CBoffer_SelectedIndexChanged(object sender, EventArgs e)
@@ -148,7 +156,7 @@ namespace finals_UI
             payment.paymentMethod=this.CBpaymentmethod.SelectedItem.ToString();
             payment.vehicleId=paymentController.retrieveVehicleId(this.txtplateNo.Text);
             payment.customerInvoiceId=paymentController.retrieveInvoiceId(this.txtinvoice.Text);
-            receipt.receptionistId = 2;
+           // receipt.receptionistId = 2;
 
             paymentController.savePaymentDetails(payment, receipt);
         }

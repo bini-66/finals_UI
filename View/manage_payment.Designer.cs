@@ -198,13 +198,14 @@
             // 
             this.txtinvoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.txtinvoice.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtinvoice.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtinvoice.Font = new System.Drawing.Font("Arial Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtinvoice.ForeColor = System.Drawing.Color.White;
             this.txtinvoice.Location = new System.Drawing.Point(427, 153);
             this.txtinvoice.Multiline = true;
             this.txtinvoice.Name = "txtinvoice";
             this.txtinvoice.Size = new System.Drawing.Size(177, 30);
             this.txtinvoice.TabIndex = 116;
+            this.txtinvoice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 

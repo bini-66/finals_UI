@@ -16,6 +16,7 @@ namespace finals_UI.Controller
 {
     internal class purchaseController
     {
+
         
         public void addStock(purchase purchase)
         {
@@ -26,13 +27,15 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "INSERT INTO purchase (itemId,quantity,purchaseDate,comment,supplierId,supplierInvoiceNo,inventoryManagerId) VALUES (@itemId,@quantity,@purchaseDate,@comment,@supplierId,@supplierInvoiceNo,@inventoryManagerId)";
+            string query = "INSERT INTO purchase (itemId,quantity,purchaseDate,comment,supplierId,supplierInvoiceNo,operationalManagerId) VALUES (@itemId,@quantity,@purchaseDate,@comment,@supplierId,@supplierInvoiceNo,@operationalManagerId)";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());
+
+            int operationalManagerId= retrieveOperationalManagerId();
 
             com.Parameters.AddWithValue("@itemId", purchase.itemId);
             com.Parameters.AddWithValue("@quantity",purchase.quantity);
             com.Parameters.AddWithValue("@purchaseDate",purchase.purchaseDate);
-            com.Parameters.AddWithValue("@inventoryManagerId", purchase.inventoryManagerId);
+            com.Parameters.AddWithValue("@operationalManagerId", operationalManagerId);
             com.Parameters.AddWithValue("@supplierId", purchase.supplierId);
             com.Parameters.AddWithValue("@comment", purchase.comment);
             com.Parameters.AddWithValue("@supplierInvoiceNo", purchase.supplierInvoiceNo);
@@ -86,7 +89,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceNo,inventoryManagerID " +
+            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceNo,operationalManagerId " +
                 "FROM purchase " +
                 "INNER JOIN  item ON  item.itemId=purchase.itemId" +
                 " INNER JOIN supplier ON supplier.supplierId=purchase.supplierId";
@@ -216,7 +219,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceNo,inventoryManagerID FROM purchase INNER JOIN  item ON  item.itemId=purchase.itemId INNER JOIN supplier ON supplier.supplierId=purchase.supplierId WHERE purchase.itemId=@itemId";
+            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceNo,operationalManagerId FROM purchase INNER JOIN  item ON  item.itemId=purchase.itemId INNER JOIN supplier ON supplier.supplierId=purchase.supplierId WHERE purchase.itemId=@itemId";
             MySqlCommand com = new MySqlCommand( query, con.getConnection());
 
             com.Parameters.AddWithValue("@itemId", itemId);
@@ -235,7 +238,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceNo,inventoryManagerID FROM purchase INNER JOIN  item ON  item.itemId=purchase.itemId INNER JOIN supplier ON supplier.supplierId=purchase.supplierId WHERE itemName LIKE @itemName";
+            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceNo,operationalManagerId FROM purchase INNER JOIN  item ON  item.itemId=purchase.itemId INNER JOIN supplier ON supplier.supplierId=purchase.supplierId WHERE itemName LIKE @itemName";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             com.Parameters.AddWithValue("@itemName", itemName+"%");
@@ -254,7 +257,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceNo,inventoryManagerID FROM purchase INNER JOIN  item ON  item.itemId=purchase.itemId INNER JOIN supplier ON supplier.supplierId=purchase.supplierId WHERE purchaseDate=@purchaseDate";
+            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceNo,operationalManagerId FROM purchase INNER JOIN  item ON  item.itemId=purchase.itemId INNER JOIN supplier ON supplier.supplierId=purchase.supplierId WHERE purchaseDate=@purchaseDate";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             com.Parameters.AddWithValue("@purchaseDate", date);
@@ -273,7 +276,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceNo,inventoryManagerID FROM purchase INNER JOIN  item ON  item.itemId=purchase.itemId INNER JOIN supplier ON supplier.supplierId=purchase.supplierId WHERE supplierCompany LIKE @supplierCompany";
+            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceNo,operationalManagerId FROM purchase INNER JOIN  item ON  item.itemId=purchase.itemId INNER JOIN supplier ON supplier.supplierId=purchase.supplierId WHERE supplierCompany LIKE @supplierCompany";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             com.Parameters.AddWithValue("@supplierCompany", supplierCompany+"%");
@@ -292,7 +295,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceNo,inventoryManagerID FROM purchase INNER JOIN  item ON  item.itemId=purchase.itemId INNER JOIN supplier ON supplier.supplierId=purchase.supplierId WHERE supplierInvoiceNo=@supplierInvoiceNo";
+            string query = "SELECT purchaseId,item.itemId,itemName,quantity,purchaseDate,comment,supplierCompany,supplierInvoiceNo,operationalManagerId FROM purchase INNER JOIN  item ON  item.itemId=purchase.itemId INNER JOIN supplier ON supplier.supplierId=purchase.supplierId WHERE supplierInvoiceNo=@supplierInvoiceNo";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
             com.Parameters.AddWithValue("@supplierInvoiceNo", invoiceNo );
@@ -303,6 +306,20 @@ namespace finals_UI.Controller
             DAP.Fill(ds);
 
             return ds;
+        }
+        public int retrieveOperationalManagerId()
+        {
+            //connection class
+            dbConnection con= new dbConnection();   
+            con.openConnection();
+
+            //command class
+            string query = "SELECT operationalManagerId FROM operational_manager WHERE email=@email";
+            MySqlCommand com = new MySqlCommand( query, con.getConnection());
+
+            com.Parameters.AddWithValue("@email",userSession.userName);
+            int operationalManagerId = Convert.ToInt32(com.ExecuteScalar());
+            return operationalManagerId;
         }
     }
 }

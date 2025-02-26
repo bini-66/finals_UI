@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using finals_UI.Controller;
@@ -27,9 +28,9 @@ namespace finals_UI
 
         private void button14_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
-
+        //dashboard
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -39,7 +40,9 @@ namespace finals_UI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            
+
+          
+
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -80,16 +83,8 @@ namespace finals_UI
             {
                 errorProvider4.Clear();
             }
-            if (this.txtSalary.Text == "")
-            {
-                this.errorProvider5.SetError(this.txtSalary, "Employee salary cannot be empty");
-                return;
-            }
-            else
-            {
-                errorProvider5.Clear();
-            }
-
+           
+         
             employee.firstName = this.txtFName.Text;
             employee.lastName = this.txtLName.Text;
             employee.email = this.txtEmail.Text;
@@ -126,7 +121,7 @@ namespace finals_UI
             this.txtLName.Text = "";
             this.txtEmail.Text = "";
             this.txtPhone.Text = "";
-            this.txtSalary.Text = "";
+          
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -153,16 +148,17 @@ namespace finals_UI
 
         private void btnIdSearch_Click(object sender, EventArgs e)
         {
-            if (this.txtEmpId.Text == "")
+            this.txtNamesrch.Text = "";
+            if (this.txtEmpIdsrch.Text == "")
             {
-                this.errorProvider1.SetError(this.txtEmpId, "Employee id cannot be empty");
+                this.errorProvider1.SetError(this.txtEmpIdsrch, "Employee id cannot be empty");
                 return;
             }
             else
             {
                 errorProvider1.Clear();
             }
-            employee.employeeId = Convert.ToInt32(this.txtEmpId.Text);
+            employee.employeeId = Convert.ToInt32(this.txtEmpIdsrch.Text);
 
             loadEmployeeData(employee.employeeId);
         }
@@ -182,11 +178,12 @@ namespace finals_UI
         }
         private void btnNameSearch_Click(object sender, EventArgs e)
         {
-            string inputName = txtName.Text.Trim();
+            this.txtEmpIdsrch.Text = "";
+            string inputName = txtNamesrch.Text.Trim();
 
             if (string.IsNullOrEmpty(inputName))
             {
-                errorProvider1.SetError(txtName, "Employee name cannot be empty");
+                errorProvider1.SetError(txtNamesrch, "Employee name cannot be empty");
                 return;
             }
             else
@@ -218,6 +215,87 @@ namespace finals_UI
                 MessageBox.Show("No employee found with this name.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGridView1.DataSource = null; // Clear DataGridView if no match
             }
+        }
+
+        private void btnadd_Click_1(object sender, EventArgs e)
+        {
+            //validations
+            if (this.txtFName.Text == "")
+            {
+                this.errorProvider1.SetError(this.txtFName, "Employee first name cannot be empty");
+                return;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (this.txtLName.Text == "")
+            {
+                this.errorProvider2.SetError(this.txtLName, "Employee last name cannot be empty");
+                return;
+            }
+            else
+            {
+                errorProvider3.Clear();
+            }
+            if (this.txtPhone.Text == "")
+            {
+                this.errorProvider3.SetError(this.txtPhone, "Phone number cannot be empty");
+                return;
+            }
+            if (!Regex.IsMatch(this.txtPhone.Text, @"^\d{10}$"))
+            {
+                this.errorProvider3.SetError(this.txtPhone, "Please enter a valid 10-digit phone number");
+                return;
+            }
+
+            else
+            {
+                errorProvider3.Clear();
+            }
+            if (this.txtEmail.Text == "")
+            {
+                this.errorProvider4.SetError(this.txtEmail, "Employee email cannot be empty");
+                return;
+            }
+            if (!Regex.IsMatch(this.txtEmail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                this.errorProvider4.SetError(this.txtEmail, "Please enter a valid email address");
+                return;
+            }
+
+            else
+            {
+                errorProvider4.Clear();
+            }
+           
+            employee.firstName = this.txtFName.Text;
+            employee.lastName = this.txtLName.Text;
+            employee.email = this.txtEmail.Text;
+            employee.phoneNumber = this.txtPhone.Text;
+            //employee.employeeSalary = Convert.ToSingle(this.txtSalary.Text);
+
+            //calling update employee function 
+            employeeController.addEmployee(employee);
+
+            //refresh grid
+            refreshGrid();
+            //clear fields
+            clearFields();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            userSession.Logout();
+
+            sign_in sign_In = new sign_in();
+            sign_In.Show();
+            this.Close();
         }
     }
 }

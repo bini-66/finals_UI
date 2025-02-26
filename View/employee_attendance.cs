@@ -1,5 +1,6 @@
 ﻿using finals_UI.Controller;
 using finals_UI.Model.classes;
+using finals_UI.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,7 +43,7 @@ namespace finals_UI
             //this.btnup.Visible = false;
 
             // Manually call the method to load attendance status for today's date
-            monthCalendar1_DateSelected(monthCalendar1, new DateRangeEventArgs(DateTime.Now, DateTime.Now));
+           // monthCalendar1_DateSelected(monthCalendar1, new DateRangeEventArgs(DateTime.Now, DateTime.Now));
 
             //load employee details on load
             DataSet ds = attendanceController.loadEmployeeInfo();
@@ -84,18 +85,20 @@ namespace finals_UI
         private void button14_Click(object sender, EventArgs e)
         {
             Application.Exit();
+
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
             //this.btnup.Enabled = true;
-            
+            calendarDateChange();
+
         }
         //save button
         private void button8_Click(object sender, EventArgs e)
         {
             DateTime selectedDate = monthCalendar1.SelectionStart;
-            this.btnsave.Enabled = false;
+           // this.btnsave.Enabled = false;
             List<attendance> records = new List<attendance>();
 
             foreach(DataGridViewRow row in dataGridView1.Rows)
@@ -185,6 +188,52 @@ namespace finals_UI
                 }
             }
         }
+        private void calendarDateChange()
+        {
+            this.txtdate.Text = monthCalendar1.SelectionStart.ToShortDateString();
+            //load employee details
+            DataSet ds = attendanceController.loadEmployeeInfo();
+
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = ds.Tables[0];
+
+            // Map predefined columns to dataset columns
+            dataGridView1.Columns["Employee_ID"].DataPropertyName = "employeeId";
+            dataGridView1.Columns["Employee_Name"].DataPropertyName = "firstName";
+
+            // Set the selected date from MonthCalendar to "Date" column
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (!row.IsNewRow) // Ensure we don't modify the new (empty) row
+                {
+                    row.Cells["Date"].Value = monthCalendar1.SelectionStart.ToString("yyyy-MM-dd");
+                }
+            }
+
+            DataSet ds2 = attendanceController.loadAttendanceStatus(monthCalendar1.SelectionStart.Date);
+            foreach (DataGridViewRow dgvRow in dataGridView1.Rows)
+            {
+
+                if (dgvRow.Cells["Employee_ID"].Value != null)
+                {
+                    string employeeId = dgvRow.Cells["Employee_ID"].Value.ToString();
+
+                    foreach (DataRow dbRow in ds2.Tables[0].Rows)
+                    {
+                        if (dbRow["employeeId"].ToString() == employeeId)
+                        {
+                            string status = dbRow["attendanceStatus"].ToString().ToLower();
+                            dgvRow.Cells["Status"].Value = (status == "present"); // Checkbox checked if present
+                            break;
+                        }
+                    }
+                }
+            }
+        
+            // dataGridView1.Refresh();
+
+        }
+       
         //search button
         private void button7_Click(object sender, EventArgs e)
         {
@@ -223,6 +272,34 @@ namespace finals_UI
             //    }
             //    this.dataGridView1.DataSource = ds.Tables[0];
             
+        }
+
+        private void btndash_Click(object sender, EventArgs e)
+        {
+            serviceManager_dash serviceManager_Dash = new serviceManager_dash();
+            serviceManager_Dash.Show();
+            this.Hide();
+        }
+
+        private void btnacc_Click(object sender, EventArgs e)
+        {
+            serviceManager_profile serviceManager_Profile = new serviceManager_profile();   
+            serviceManager_Profile.Show();  
+            this.Hide();
+        }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            userSession.Logout();
+
+            sign_in sign_In = new sign_in();
+            sign_In.Show();
+            this.Close();
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

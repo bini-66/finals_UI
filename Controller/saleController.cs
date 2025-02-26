@@ -325,13 +325,14 @@ namespace finals_UI.Controller
                 // If the sale does not exist, insert it
                 if (saleCount == 0)
                 {
-                    string query = "INSERT INTO sale(customerId,customerInvoiceId,operationalManagerId) VALUES(@customerId,@customerInvoiceId,@operationalManagerId)";
+                    string query = "INSERT INTO sale(customerId,customerInvoiceId,receptionistId) VALUES(@customerId,@customerInvoiceId,@receptionistId)";
                     MySqlCommand com = new MySqlCommand(query, con.getConnection());
 
+                    int receptionistId = retrieveReceptionistId();
 
                     com.Parameters.AddWithValue("@customerId", customerId);
                     com.Parameters.AddWithValue("@customerInvoiceId", invoiceId);
-                    com.Parameters.AddWithValue("@operationalManagerId", sale.operationalManagerId);
+                    com.Parameters.AddWithValue("@receptionistId", receptionistId);
 
                     com.ExecuteNonQuery();
                 }
@@ -445,15 +446,16 @@ namespace finals_UI.Controller
 
             }
             //updatng sale table
-            string query1 = "UPDATE sale SET customerId=@customerId,operationalManagerId=@operationalManagerId WHERE customerInvoiceId=@customerInvoiceId";
+            string query1 = "UPDATE sale SET customerId=@customerId,receptionistId=@receptionistId WHERE customerInvoiceId=@customerInvoiceId";
             MySqlCommand com1=new MySqlCommand(query1,con.getConnection());
-      
+
+            int receptionistId = retrieveReceptionistId();
 
             int customerId = retrieveCustomerId(sale.plateNumber);
             int invoiceId = retrieveInvoiceId(sale.invoiceNo);
             com1.Parameters.AddWithValue("@customerId", customerId);
             com1.Parameters.AddWithValue("@customerInvoiceId",invoiceId);
-            com1.Parameters.AddWithValue("@operationalManagerId", sale.operationalManagerId);
+            com1.Parameters.AddWithValue("@receptionistId", receptionistId);
 
             com1.ExecuteNonQuery();
 
@@ -611,6 +613,20 @@ namespace finals_UI.Controller
             float discount = result != null ? Convert.ToSingle(result) : 0;
 
             return discount;
+        }
+        public int retrieveReceptionistId()
+        {
+            //connection class
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT receptionistId FROM receptionist WHERE email=@email";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+
+            com.Parameters.AddWithValue("@email", userSession.userName);
+            int receptionistId = Convert.ToInt32(com.ExecuteScalar());
+            return receptionistId;
         }
     }
 }

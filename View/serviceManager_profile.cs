@@ -106,6 +106,16 @@ namespace finals_UI.View
             
         }
 
-        
+        private void btndash_Click(object sender, EventArgs e)
+        {
+          serviceManager_dash serviceManager_Dash = new serviceManager_dash();
+            serviceManager_Dash.Show();
+            this.Hide();
+        }
+
+        private void btnacc_Click(object sender, EventArgs e)
+        {
+            this.Show();
+        }
     }
 }

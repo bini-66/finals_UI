@@ -30,18 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnlogout = new System.Windows.Forms.Button();
+            this.btnacc = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btndash = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CBitmName = new System.Windows.Forms.ComboBox();
             this.NUDqty = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
@@ -67,24 +62,26 @@
             this.btndltser = new System.Windows.Forms.Button();
             this.btnserup = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnclose = new System.Windows.Forms.Button();
             this.txttot = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnsave = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnprint = new System.Windows.Forms.Button();
             this.btnpaymentDetails = new System.Windows.Forms.Button();
             this.CBoffer = new System.Windows.Forms.ComboBox();
             this.txtdisc = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.errorProvider6 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDqty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
@@ -94,6 +91,12 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -103,10 +106,10 @@
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btnlogout);
+            this.panel1.Controls.Add(this.btnacc);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btndash);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -114,73 +117,35 @@
             this.panel1.Size = new System.Drawing.Size(255, 943);
             this.panel1.TabIndex = 64;
             // 
-            // pictureBox5
+            // btnlogout
             // 
-            this.pictureBox5.Image = global::finals_UI.Properties.Resources.logout4;
-            this.pictureBox5.Location = new System.Drawing.Point(30, 825);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(39, 36);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 15;
-            this.pictureBox5.TabStop = false;
+            this.btnlogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnlogout.FlatAppearance.BorderSize = 0;
+            this.btnlogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlogout.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnlogout.Location = new System.Drawing.Point(0, 892);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(255, 51);
+            this.btnlogout.TabIndex = 6;
+            this.btnlogout.Text = "Log Out";
+            this.btnlogout.UseVisualStyleBackColor = true;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
-            // pictureBox4
+            // btnacc
             // 
-            this.pictureBox4.Image = global::finals_UI.Properties.Resources.account;
-            this.pictureBox4.Location = new System.Drawing.Point(30, 387);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(39, 36);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 14;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::finals_UI.Properties.Resources.schedule;
-            this.pictureBox3.Location = new System.Drawing.Point(30, 336);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(39, 36);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 11;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::finals_UI.Properties.Resources.home3;
-            this.pictureBox2.Location = new System.Drawing.Point(30, 273);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(39, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            // 
-            // button6
-            // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button6.Location = new System.Drawing.Point(0, 892);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(255, 51);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Log Out";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button3.Location = new System.Drawing.Point(0, 381);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(255, 51);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Account";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnacc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnacc.FlatAppearance.BorderSize = 0;
+            this.btnacc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnacc.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnacc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnacc.Location = new System.Drawing.Point(0, 381);
+            this.btnacc.Name = "btnacc";
+            this.btnacc.Size = new System.Drawing.Size(255, 51);
+            this.btnacc.TabIndex = 3;
+            this.btnacc.Text = "Account";
+            this.btnacc.UseVisualStyleBackColor = true;
+            this.btnacc.Click += new System.EventHandler(this.btnacc_Click);
             // 
             // button2
             // 
@@ -196,19 +161,20 @@
             this.button2.Text = "Schedule";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btndash
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button1.Location = new System.Drawing.Point(0, 267);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(255, 63);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Dashboard";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btndash.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btndash.FlatAppearance.BorderSize = 0;
+            this.btndash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndash.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btndash.Location = new System.Drawing.Point(0, 267);
+            this.btndash.Name = "btndash";
+            this.btndash.Size = new System.Drawing.Size(255, 63);
+            this.btndash.TabIndex = 1;
+            this.btndash.Text = "Dashboard";
+            this.btndash.UseVisualStyleBackColor = true;
+            this.btndash.Click += new System.EventHandler(this.btndash_Click);
             // 
             // panel2
             // 
@@ -226,11 +192,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label1.Location = new System.Drawing.Point(43, 193);
+            this.label1.Location = new System.Drawing.Point(74, 199);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 25);
+            this.label1.Size = new System.Drawing.Size(117, 25);
             this.label1.TabIndex = 37;
-            this.label1.Text = "Inventory Manager";
+            this.label1.Text = "Receptionist";
             // 
             // label11
             // 
@@ -242,16 +208,6 @@
             this.label11.Size = new System.Drawing.Size(100, 25);
             this.label11.TabIndex = 36;
             this.label11.Text = "WELCOME";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::finals_UI.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(88, 44);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 73);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 32;
-            this.pictureBox1.TabStop = false;
             // 
             // CBitmName
             // 
@@ -535,19 +491,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Items";
             // 
-            // button14
+            // btnclose
             // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.button14.Location = new System.Drawing.Point(1513, 24);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(30, 28);
-            this.button14.TabIndex = 113;
-            this.button14.Text = "X";
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.btnclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclose.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnclose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.btnclose.Location = new System.Drawing.Point(1513, 24);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(30, 28);
+            this.btnclose.TabIndex = 113;
+            this.btnclose.Text = "X";
+            this.btnclose.UseVisualStyleBackColor = false;
+            this.btnclose.Click += new System.EventHandler(this.button14_Click);
             // 
             // txttot
             // 
@@ -588,19 +544,19 @@
             this.btnsave.UseVisualStyleBackColor = false;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
-            // btnSearch
+            // btnprint
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(572, 825);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(183, 33);
-            this.btnSearch.TabIndex = 117;
-            this.btnSearch.Text = "Print Invoice";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
+            this.btnprint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnprint.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnprint.Location = new System.Drawing.Point(572, 825);
+            this.btnprint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnprint.Name = "btnprint";
+            this.btnprint.Size = new System.Drawing.Size(183, 33);
+            this.btnprint.TabIndex = 117;
+            this.btnprint.Text = "Print Invoice";
+            this.btnprint.UseVisualStyleBackColor = false;
+            this.btnprint.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
             // btnpaymentDetails
             // 
@@ -613,6 +569,7 @@
             this.btnpaymentDetails.Size = new System.Drawing.Size(215, 31);
             this.btnpaymentDetails.TabIndex = 118;
             this.btnpaymentDetails.Text = "Enter Payment Details";
+            this.toolTip1.SetToolTip(this.btnpaymentDetails, "click on save invoice first");
             this.btnpaymentDetails.UseVisualStyleBackColor = false;
             this.btnpaymentDetails.Click += new System.EventHandler(this.btnpaymentDetails_Click);
             // 
@@ -672,6 +629,60 @@
             // 
             this.errorProvider5.ContainerControl = this;
             // 
+            // errorProvider6
+            // 
+            this.errorProvider6.ContainerControl = this;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::finals_UI.Properties.Resources.logout4;
+            this.pictureBox5.Location = new System.Drawing.Point(30, 825);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 15;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::finals_UI.Properties.Resources.account;
+            this.pictureBox4.Location = new System.Drawing.Point(30, 387);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 14;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::finals_UI.Properties.Resources.schedule;
+            this.pictureBox3.Location = new System.Drawing.Point(30, 336);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::finals_UI.Properties.Resources.home3;
+            this.pictureBox2.Location = new System.Drawing.Point(30, 273);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::finals_UI.Properties.Resources.user;
+            this.pictureBox1.Location = new System.Drawing.Point(88, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 73);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
+            // 
             // manage_sales_invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -683,11 +694,11 @@
             this.Controls.Add(this.txtdisc);
             this.Controls.Add(this.CBoffer);
             this.Controls.Add(this.btnpaymentDetails);
-            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnprint);
             this.Controls.Add(this.btnsave);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txttot);
-            this.Controls.Add(this.button14);
+            this.Controls.Add(this.btnclose);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtplateNo);
@@ -702,13 +713,8 @@
             this.Text = "manage_sales";
             this.Load += new System.EventHandler(this.manage_sales_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDqty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
@@ -720,6 +726,12 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -732,10 +744,10 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnlogout;
+        private System.Windows.Forms.Button btnacc;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btndash;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label11;
@@ -764,17 +776,19 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btndltser;
         private System.Windows.Forms.Button btnserup;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnclose;
         private System.Windows.Forms.Button btnserclr;
         private System.Windows.Forms.TextBox txttot;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnsave;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnprint;
         private System.Windows.Forms.Button btnpaymentDetails;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtdisc;
         private System.Windows.Forms.ComboBox CBoffer;
         private System.Windows.Forms.ErrorProvider errorProvider5;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ErrorProvider errorProvider6;
     }
 }
