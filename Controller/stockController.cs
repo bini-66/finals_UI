@@ -48,5 +48,19 @@ namespace finals_UI.Controller
         
             return ds;
         }
+        public DataSet  restockItems()
+        {
+            dbConnection con=new dbConnection();
+            con.openConnection();
+
+            string query = "SELECT itemName,quantity FROM item INNER JOIN stock ON item.itemId=stock.itemId WHERE quantity < 5";
+            MySqlCommand com=new MySqlCommand(query, con.getConnection());  
+
+            MySqlDataAdapter DAP=new MySqlDataAdapter(com);
+            DataSet ds=new DataSet();
+            DAP.Fill(ds);
+
+            return ds;
+        }
     }
 }

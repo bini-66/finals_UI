@@ -1,8 +1,12 @@
-﻿using finals_UI.Model.classes;
+﻿using finals_UI.Controller;
+using finals_UI.Model.classes;
+using finals_UI.Model.Database;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +17,7 @@ namespace finals_UI.View
 {
     public partial class inventoryManager_dash : Form
     {
+        stockController stockController=new stockController();
         public inventoryManager_dash()
         {
             InitializeComponent();
@@ -27,7 +32,7 @@ namespace finals_UI.View
 
         private void btnstock_Click(object sender, EventArgs e)
         {
-            view_stock view_Stock = new view_stock();   
+            view_stock view_Stock = new view_stock();
             view_Stock.Show();
             this.Hide();
         }
@@ -58,5 +63,19 @@ namespace finals_UI.View
             sign_In.Show();
             this.Close();
         }
+
+        private void inventoryManager_dash_Load(object sender, EventArgs e)
+        {
+            DataSet ds=stockController.restockItems();
+            this.dataGridView1.DataSource = ds.Tables[0];
+
+            dataGridView1.Columns["quantity"].DefaultCellStyle.ForeColor = Color.Red;
+
+
+
+        }
     }
 }
+
+
+
