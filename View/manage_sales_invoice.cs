@@ -1,9 +1,7 @@
 ﻿using finals_UI;
-using CrystalDecisions.CrystalReports.Engine;
 using finals_UI.Controller;
 using finals_UI.Model.classes;
 using finals_UI.Model.Database;
-using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -693,14 +691,7 @@ namespace finals_UI.View
 
         private void btnSearch_Click_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtInvoiceNo.Text))
-            {
-                MessageBox.Show("Please enter an Invoice Number.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
-            customer_invoice report = new customer_invoice(txtInvoiceNo.Text);
-            report.Show();
         }
 
         private void btnpaymentDetails_Click(object sender, EventArgs e)
