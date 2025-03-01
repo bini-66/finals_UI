@@ -331,5 +331,10 @@ namespace finals_UI
         {
             this.Close();
         }
+
+        private void txtitmBrand_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
