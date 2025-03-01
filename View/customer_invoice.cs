@@ -10,23 +10,22 @@ using System.Windows.Forms;
 
 namespace finals_UI.View
 {
-    public partial class sales_report : Form
+    public partial class customer_invoice : Form
     {
-        private string selectedFilter;
-
-        public sales_report(string filter)
+        private string invoiceNo;
+        public customer_invoice(string invoiceNumber)
         {
             InitializeComponent();
-            selectedFilter = filter;
+            this.invoiceNo = invoiceNumber;
         }
 
-        private void sales_report_Load(object sender, EventArgs e)
+        private void customer_invoice_Load(object sender, EventArgs e)
         {
             try
             {
-                sales_cr report = new sales_cr();
+                customerInvoice_cr report = new customerInvoice_cr();
 
-                report.SetParameterValue("groupby", selectedFilter);
+                report.SetParameterValue("InvoiceNo", invoiceNo);
 
                 crystalReportViewer1.ReportSource = report;
                 crystalReportViewer1.Refresh();

@@ -157,6 +157,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="View\attendance_cr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>attendance_cr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\attendance_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\attendance_report.Designer.cs">
+      <DependentUpon>attendance_report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\customerInvoice_cr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerInvoice_cr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\customer_invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\customer_invoice.Designer.cs">
+      <DependentUpon>customer_invoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\edit_appointments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +192,12 @@
     </Compile>
     <Compile Include="View\inventoryManager_profile.Designer.cs">
       <DependentUpon>inventoryManager_profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\item_sub_cr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>item_sub_cr.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\maintenance_transaction.cs">
       <SubType>Form</SubType>
@@ -240,6 +270,12 @@
     </Compile>
     <Compile Include="View\serviceManager_profile.Designer.cs">
       <DependentUpon>serviceManager_profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\service_sub_cr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>service_sub_cr.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\view_appointment.cs">
       <SubType>Form</SubType>
@@ -375,8 +411,29 @@
     <Compile Include="View\view_feedback.Designer.cs">
       <DependentUpon>view_feedback.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\attendance_cr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>attendance_cr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\attendance_report.resx">
+      <DependentUpon>attendance_report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\customerInvoice_cr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>customerInvoice_cr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\customer_invoice.resx">
+      <DependentUpon>customer_invoice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\edit_appointments.resx">
       <DependentUpon>edit_appointments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\item_sub_cr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>item_sub_cr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\maintenance_transaction.resx">
+      <DependentUpon>maintenance_transaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\manage_employees.resx">
       <DependentUpon>manage_employees.cs</DependentUpon>
@@ -412,6 +469,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\serviceManager_profile.resx">
       <DependentUpon>serviceManager_profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\service_sub_cr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>service_sub_cr.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\view_appointment.resx">
       <DependentUpon>view_appointment.cs</DependentUpon>

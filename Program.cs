@@ -17,7 +17,7 @@ namespace finals_UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new purchase_report());
+            Application.Run(new manage_sales_invoice());
         }
     }
 }

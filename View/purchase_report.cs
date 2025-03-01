@@ -12,15 +12,28 @@ namespace finals_UI.View
 {
     public partial class purchase_report : Form
     {
-        public purchase_report()
+        private string selectedFilter;
+        public purchase_report(string filter)
         {
             InitializeComponent();
+            selectedFilter = filter;
         }
 
         private void purchase_report_Load(object sender, EventArgs e)
         {
-            purchase_cr rpt = new purchase_cr();
-            crystalReportViewer1.ReportSource = rpt;
+            try
+            {
+                purchase_cr report = new purchase_cr();
+
+                report.SetParameterValue("groupby", selectedFilter);
+
+                crystalReportViewer1.ReportSource = report;
+                crystalReportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading report: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
