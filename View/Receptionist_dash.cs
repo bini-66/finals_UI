@@ -92,10 +92,5 @@ namespace finals_UI
             view_Appointment.Show();
             this.Hide();
         }
-
-        private void Receptionist_dash_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

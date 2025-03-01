@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using finals_UI.Controller;
-using finals_UI.Model.classes;
 using finals_UI.View;
 
 namespace finals_UI
@@ -183,53 +182,6 @@ namespace finals_UI
         private void selectCellToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
-        }
-
-        private void btnapt_Click(object sender, EventArgs e)
-        {
-            view_appointment view_Appointment = new view_appointment();
-            view_Appointment.Show();
-            this.Hide();
-        }
-
-        private void btnsales_Click(object sender, EventArgs e)
-        {
-            manage_sales_invoice manage_Sales_Invoice = new manage_sales_invoice();
-            manage_Sales_Invoice.Show();
-            this.Hide();
-        }
-
-        private void btnpayments_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            manage_payment payment = new manage_payment(null);
-            payment.Show();
-        }
-
-        private void btncustomers_Click(object sender, EventArgs e)
-        {
-            view_customer customer = new view_customer();
-            customer.Show();
-            this.Hide();
-        }
-
-    
-
-        private void btnlogout_Click(object sender, EventArgs e)
-        {
-            userSession.Logout();
-
-            sign_in sign_In = new sign_in();
-            sign_In.Show();
-            this.Close();
-        }
-
-
-        private void btnacc_Click(object sender, EventArgs e)
-        {
-            receptionist_profile profile1 = new receptionist_profile();
-            profile1.Show();
-            this.Hide();
         }
     }
 }

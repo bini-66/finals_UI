@@ -433,47 +433,21 @@ namespace finals_UI
 
         private void btndash_Click(object sender, EventArgs e)
         {
-
-            maintenance_transaction transaction = new maintenance_transaction();
-            transaction.Show();
+            operationalManager_dash operationalManager_Dash = new operationalManager_dash();
+            operationalManager_Dash.Show();
             this.Hide();
         }
-        //btn purchases
 
         private void btnacc_Click(object sender, EventArgs e)
-        {
-            manage_purchases manage_Purchases = new manage_purchases();
-            manage_Purchases.Show();
-            this.Hide();
-          
-        }
-
-        private void btnclose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnsupp_Click(object sender, EventArgs e)
-        {
-            manage_supplier manage_Supplier = new manage_supplier();
-            manage_Supplier.Show();
-            this.Close();
-        }
-
-        private void btnacc1_Click(object sender, EventArgs e)
         {
             operationalManager_profile operationalManager_Profile = new operationalManager_profile();
             operationalManager_Profile.Show();
             this.Hide();
         }
 
-        private void btnlogout_Click(object sender, EventArgs e)
+        private void btnclose_Click(object sender, EventArgs e)
         {
-            userSession.Logout();
-
-            sign_in sign_In = new sign_in();
-            sign_In.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

@@ -63,8 +63,8 @@ namespace finals_UI.View
 
         private void btndash_Click(object sender, EventArgs e)
         {
-            view_stock view_Stock = new view_stock();
-            view_Stock.Show();
+            inventoryManager_dash inventoryManager_Dash = new inventoryManager_dash();  
+            inventoryManager_Dash.Show();
             this.Hide();
         }
 
@@ -87,14 +87,6 @@ namespace finals_UI.View
         private void btnclose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        //btn items
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            item_management item_Management = new item_management();
-            item_Management.Show();
-            this.Hide();
         }
     }
 }

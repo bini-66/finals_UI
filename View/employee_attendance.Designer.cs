@@ -29,20 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnfeedback = new System.Windows.Forms.Button();
-            this.btnemp = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnlogout = new System.Windows.Forms.Button();
-            this.btnoffers = new System.Windows.Forms.Button();
-            this.btnservices = new System.Windows.Forms.Button();
-            this.btnattendance = new System.Windows.Forms.Button();
+            this.btnacc = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btndash = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Employee_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,28 +53,26 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnclose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.panel1.Controls.Add(this.txtacc);
-            this.panel1.Controls.Add(this.btnfeedback);
-            this.panel1.Controls.Add(this.btnemp);
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.btnlogout);
-            this.panel1.Controls.Add(this.btnoffers);
-            this.panel1.Controls.Add(this.btnservices);
-            this.panel1.Controls.Add(this.btnattendance);
+            this.panel1.Controls.Add(this.btnacc);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btndash);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -106,7 +97,7 @@
             this.btnlogout.UseVisualStyleBackColor = true;
             this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
-            // btnoffers
+            // btnacc
             // 
             this.btnacc.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnacc.FlatAppearance.BorderSize = 0;
@@ -122,7 +113,7 @@
             this.btnacc.UseVisualStyleBackColor = true;
             this.btnacc.Click += new System.EventHandler(this.btnacc_Click);
             // 
-            // btnservices
+            // button2
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Top;
             this.button2.FlatAppearance.BorderSize = 0;
@@ -137,7 +128,7 @@
             this.button2.Text = "Schedule";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // btnattendance
+            // btndash
             // 
             this.btndash.Dock = System.Windows.Forms.DockStyle.Top;
             this.btndash.FlatAppearance.BorderSize = 0;
@@ -390,12 +381,13 @@
             this.Text = "employee_attendance";
             this.Load += new System.EventHandler(this.employee_attendance_Load);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -406,9 +398,9 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnlogout;
-        private System.Windows.Forms.Button btnoffers;
-        private System.Windows.Forms.Button btnservices;
-        private System.Windows.Forms.Button btnattendance;
+        private System.Windows.Forms.Button btnacc;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btndash;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.DataGridView dataGridView1;
