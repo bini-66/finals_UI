@@ -58,7 +58,7 @@ namespace finals_UI.View
 
                 ////hiding saleIteM id column
                 dataGridView1.Columns["saleItemId"].Visible = false;
-                dataGridView1.Columns["invitemservId"].Visible = false;
+                dataGridView1.Columns["invitemservId"].Visible = true;
                 dataGridView1.Columns["type"].Visible = false;
 
 
