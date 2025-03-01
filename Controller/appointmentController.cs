@@ -24,7 +24,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT a.appointmentId, v.plateNumber, a.date, a.time, " +
+            string query = "SELECT a.appointmentId, v.plateNumber, COALESCE(a.date, '0001-01-01') as date, a.time, " +
                 "a.appointmentStatus, a.description, c.firstName, c.lastName, c.phone " +
                 "FROM appointment a " +
                 "INNER JOIN vehicle v ON a.vehicleId = v.vehicleId " +
@@ -46,12 +46,11 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT a.appointmentId, v.plateNumber, a.date, a.time, " +
-                "a.appointmentStatus, a.description, c.firstName, c.lastName, c.phone " +
-                "FROM appointment a " +
-                "INNER JOIN vehicle v ON a.vehicleId = v.vehicleId " +
-                "INNER JOIN customer c ON a.customerId = c.customerId " +
-                "WHERE v.plateNumber LIKE @search OR c.firstName LIKE @search OR c.lastName LIKE @search";
+            string query = "SELECT a.appointmentId, v.plateNumber, COALESCE(a.date, '0001-01-01') as date, a.time, " +
+    "a.appointmentStatus, a.description, c.firstName, c.lastName, c.phone " +
+    "FROM appointment a " +
+    "INNER JOIN vehicle v ON a.vehicleId = v.vehicleId " +
+    "INNER JOIN customer c ON a.customerId = c.customerId";
             MySqlCommand com = new MySqlCommand(query, con.getConnection());
             com.Parameters.AddWithValue("@search", "%" + search + "%");
 
