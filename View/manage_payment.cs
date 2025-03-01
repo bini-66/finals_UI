@@ -168,5 +168,39 @@ namespace finals_UI
             //float balance = payment.paidAmount - payment.invoiceTotal;
             //this.txtbal.Text = balance.ToString("N2");
         }
+
+        private void btnappt_Click(object sender, EventArgs e)
+        {
+            view_appointment view_Appointment = new view_appointment();
+            view_Appointment.Show();
+            this.Hide();
+        }
+
+        private void btnsales_Click(object sender, EventArgs e)
+        {
+            manage_sales_invoice manage_Sales_Invoice = new manage_sales_invoice();
+            manage_Sales_Invoice.Show();
+            this.Hide();
+
+        }
+
+        private void btnpayment_Click(object sender, EventArgs e)
+        {
+          this.Show();
+        }
+
+        private void btncust_Click(object sender, EventArgs e)
+        {
+            view_customer customer = new view_customer();   
+            customer.Show();
+            this.Hide();
+        }
+
+        private void btnacc_Click(object sender, EventArgs e)
+        {
+            receptionist_profile profile = new receptionist_profile();
+            profile.Show();
+            this.Hide();
+        }
     }
 }

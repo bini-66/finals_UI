@@ -147,15 +147,15 @@ namespace finals_UI
 
         private void btndash_Click(object sender, EventArgs e)
         {
-            owner_dash owner_Dash = new owner_dash();
-            owner_Dash.Show();
+            view_appointment view_Appointment = new view_appointment();
+            view_Appointment.Show();
             this.Hide();
         }
-
+        //btn payment
         private void btnacc_Click(object sender, EventArgs e)
         {
-            owner_profile owner_Profile = new owner_profile();
-            owner_Profile.Show();
+            manage_payment manage_Payment = new manage_payment(null);
+            manage_Payment.Show();
             this.Hide();
         }
 
@@ -166,6 +166,28 @@ namespace finals_UI
             sign_in sign_In = new sign_in();
             sign_In.Show();
             this.Close();
+        }
+
+        //acc btn
+        private void button3_Click(object sender, EventArgs e)
+        {
+            receptionist_profile profile = new receptionist_profile();
+            profile.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+        //btnsales
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            manage_sales_invoice manage_sales_invoice = new manage_sales_invoice();
+            manage_sales_invoice.Show();    
+            this.Hide();
+
         }
     }
 }
