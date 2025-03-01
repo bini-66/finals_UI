@@ -17,9 +17,9 @@ namespace finals_UI.Model.classes
 
         public static void Login(int userId, string username, string role)
         {
-            userId = userId;
-            userName = username;
-            role = role;
+            userSession.userId = userId;  
+            userSession.userName = username;
+            userSession.role = role;
             IsLoggedIn = true;
         }
 

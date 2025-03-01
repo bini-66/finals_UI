@@ -42,6 +42,7 @@ namespace finals_UI.View
             else
             {
                MessageBox.Show("No data found for this username.");
+                return;
             }
         }
 
@@ -98,24 +99,70 @@ namespace finals_UI.View
 
         private void btnlogout_Click(object sender, EventArgs e)
         {
-            userSession.Logout();
+        //    userSession.Logout();
 
-            sign_in sign_In = new sign_in();
-            sign_In.Show();
-            this.Close();
+        //    sign_in sign_In = new sign_in();
+        //    sign_In.Show();
+        //    this.Close();
 
         }
 
         private void btndash_Click(object sender, EventArgs e)
         {
-            Receptionist_dash receptionist_Dash = new Receptionist_dash();
-            receptionist_Dash.Show();
-            this.Hide();
+        //    Receptionist_dash receptionist_Dash = new Receptionist_dash();
+        //    receptionist_Dash.Show();
+        //    this.Hide();
         }
 
         private void btnacc_Click(object sender, EventArgs e)
         {
-            this.Show();
+            //this.Show();
+        }
+
+        private void btnapt_Click(object sender, EventArgs e)
+        {
+            view_appointment view_Appointment = new view_appointment();
+            view_Appointment.Show();
+            this.Hide();
+        }
+
+        private void btnsales_Click(object sender, EventArgs e)
+        {
+            manage_sales_invoice invoice = new manage_sales_invoice();
+            invoice.Show();
+            this.Hide();
+        }
+
+        private void btnpayments_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            manage_payment payment = new manage_payment(null);
+            payment.ShowDialog();
+        }
+
+        private void btncustomers_Click(object sender, EventArgs e)
+        {
+            
+            view_customer view_Customer = new view_customer();
+            view_Customer.Show();
+            this.Hide();
+        }
+
+        private void btnacc_Click_1(object sender, EventArgs e)
+        {
+            receptionist_profile profile = new receptionist_profile();
+            profile.Show();
+            this.Hide();
+        }
+
+        private void btnlogout_Click_1(object sender, EventArgs e)
+        {
+            userSession.Logout();
+
+            sign_in sign_In = new sign_in();
+            sign_In.Show();
+            this.Close();
         }
     }
 }

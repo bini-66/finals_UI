@@ -130,5 +130,12 @@ namespace finals_UI
             sign_In.Show();
             this.Close();
         }
+
+        private void btnadduser_Click(object sender, EventArgs e)
+        {
+            Register_user register_User = new Register_user();
+            register_User.Show();
+            this.Hide();
+        }
     }
 }

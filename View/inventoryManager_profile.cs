@@ -117,5 +117,33 @@ namespace finals_UI.View
         {
             this.Show();
         }
+
+        private void btnstock_Click(object sender, EventArgs e)
+        {
+            view_stock view_Stock = new view_stock();
+            view_Stock.Show();
+            this.Hide();
+        }
+
+        private void btnitms_Click(object sender, EventArgs e)
+        {
+            item_management item_Management = new item_management();
+            item_Management.Show();
+            this.Hide();
+        }
+
+        private void btnacc_Click_1(object sender, EventArgs e)
+        {
+            this.Show();
+        }
+
+        private void btnlogout_Click_1(object sender, EventArgs e)
+        {
+            userSession.Logout();
+
+            sign_in sign_In = new sign_in();
+            sign_In.Show();
+            this.Close();
+        }
     }
 }
