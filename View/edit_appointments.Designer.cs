@@ -52,7 +52,6 @@
             this.btnNewCustomer = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
             this.txtPlateNumber = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -67,11 +66,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtDate = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.flowLayoutPanelServices.SuspendLayout();
             this.groupBoxServices.SuspendLayout();
             this.groupBoxStatus.SuspendLayout();
             this.groupBoxCustomer.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtDescription
@@ -286,7 +288,7 @@
             this.groupBoxServices.BackColor = System.Drawing.Color.White;
             this.groupBoxServices.Controls.Add(this.flowLayoutPanelServices);
             this.groupBoxServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxServices.Location = new System.Drawing.Point(64, 415);
+            this.groupBoxServices.Location = new System.Drawing.Point(64, 431);
             this.groupBoxServices.Name = "groupBoxServices";
             this.groupBoxServices.Size = new System.Drawing.Size(405, 160);
             this.groupBoxServices.TabIndex = 96;
@@ -301,7 +303,7 @@
             this.groupBoxStatus.Controls.Add(this.rbPending);
             this.groupBoxStatus.Controls.Add(this.rbConfirmed);
             this.groupBoxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxStatus.Location = new System.Drawing.Point(492, 415);
+            this.groupBoxStatus.Location = new System.Drawing.Point(492, 431);
             this.groupBoxStatus.Name = "groupBoxStatus";
             this.groupBoxStatus.Size = new System.Drawing.Size(119, 160);
             this.groupBoxStatus.TabIndex = 95;
@@ -323,7 +325,7 @@
             this.btnNewCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnNewCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewCustomer.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewCustomer.Location = new System.Drawing.Point(476, 30);
+            this.btnNewCustomer.Location = new System.Drawing.Point(474, 38);
             this.btnNewCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewCustomer.Name = "btnNewCustomer";
             this.btnNewCustomer.Size = new System.Drawing.Size(135, 27);
@@ -338,7 +340,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(495, 597);
+            this.btnSave.Location = new System.Drawing.Point(495, 613);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(116, 48);
@@ -352,27 +354,12 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(58, 30);
+            this.label2.Location = new System.Drawing.Point(56, 34);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(225, 31);
             this.label2.TabIndex = 87;
             this.label2.Text = "Edit Appointment";
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.btnClose.Location = new System.Drawing.Point(640, 11);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(22, 23);
-            this.btnClose.TabIndex = 86;
-            this.btnClose.Text = "X";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // txtPlateNumber
             // 
@@ -466,7 +453,7 @@
             this.groupBoxCustomer.Controls.Add(this.txtCustomerId);
             this.groupBoxCustomer.Controls.Add(this.label4);
             this.groupBoxCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxCustomer.Location = new System.Drawing.Point(64, 118);
+            this.groupBoxCustomer.Location = new System.Drawing.Point(64, 134);
             this.groupBoxCustomer.Name = "groupBoxCustomer";
             this.groupBoxCustomer.Size = new System.Drawing.Size(547, 162);
             this.groupBoxCustomer.TabIndex = 94;
@@ -481,7 +468,7 @@
             this.groupBox1.Controls.Add(this.txtDate);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(64, 301);
+            this.groupBox1.Location = new System.Drawing.Point(64, 317);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(547, 93);
             this.groupBox1.TabIndex = 95;
@@ -526,19 +513,45 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Date:";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.btnClose);
+            this.panel1.Controls.Add(this.btnNewCustomer);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(684, 109);
+            this.panel1.TabIndex = 97;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImage = global::finals_UI.Properties.Resources.close_window;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.btnClose.Image = global::finals_UI.Properties.Resources.close_window;
+            this.btnClose.Location = new System.Drawing.Point(648, 9);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(25, 25);
+            this.btnClose.TabIndex = 86;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // edit_appointments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(686, 686);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxServices);
             this.Controls.Add(this.groupBoxStatus);
-            this.Controls.Add(this.btnNewCustomer);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBoxCustomer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "edit_appointments";
@@ -554,8 +567,9 @@
             this.groupBoxCustomer.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -600,5 +614,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel1;
     }
 }

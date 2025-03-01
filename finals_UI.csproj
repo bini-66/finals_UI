@@ -668,6 +668,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\schedule.png" />
+    <None Include="Resources\remove-user.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\payment.png" />
+    <None Include="Resources\owner.png" />
+    <None Include="Resources\notification.png" />
+    <None Include="Resources\minimize-window.gif" />
+    <None Include="Resources\maximize-window.png" />
+    <None Include="Resources\manager.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\login.png" />
+    <None Include="Resources\kae-logo-light-transparent.png" />
+    <None Include="Resources\kae-logo-light.jpg" />
+    <None Include="Resources\kae-logo-dark.jpg" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\edit-user.png" />
+    <None Include="Resources\edit-property.png" />
+    <None Include="Resources\delete-property.png" />
+    <None Include="Resources\close-window.png" />
+    <None Include="Resources\administrator.png" />
+    <None Include="Resources\add-user.png" />
+    <None Include="Resources\add-list.png" />
     <None Include="Images\refresh-icon.png" />
     <None Include="Images\selection-icon.png" />
     <None Include="Images\edit-icon.png" />
