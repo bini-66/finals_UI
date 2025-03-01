@@ -473,9 +473,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>item_sub_cr.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\maintenance_transaction.resx">
-      <DependentUpon>maintenance_transaction.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\manage_employees.resx">
       <DependentUpon>manage_employees.cs</DependentUpon>
     </EmbeddedResource>
