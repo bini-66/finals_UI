@@ -93,32 +93,38 @@ namespace finals_UI
             {
                 if (user.role == "Receptionist")
                 {
-                    receptionist_profile receptionist_Profile = new receptionist_profile();
-                    receptionist_Profile.Show();
+                    Receptionist_dash dashboard= new Receptionist_dash();
+                    dashboard.Show();
                     this.Hide(); 
                 }
                 else if (user.role == "Owner")
                 {
-                    owner_profile owner_Profile = new owner_profile();
-                    owner_Profile.Show();
+                    owner_dash dashboard= new owner_dash();
+                    dashboard.Show(); 
                     this.Hide();
                 }
                 else if (user.role == "Operational Manager")
                 {
-                    operationalManager_profile operationalManager_Profile = new operationalManager_profile();
-                    operationalManager_Profile.Show();
+                    operationalManager_dash dashboard= new operationalManager_dash();
+                    dashboard.Show();
                     this.Hide();
                 }
                 else if (user.role == "Service Manager")
                 {
-                    serviceManager_profile serviceManager_Profile = new serviceManager_profile();
-                    serviceManager_Profile.Show();
+                    serviceManager_dash dashboard= new serviceManager_dash();
+                    dashboard.Show();
                     this.Hide();
                 }
                 else if (user.role == "Inventory Manager")
                 {
-                    inventoryManager_profile inventoryManager_Profile = new inventoryManager_profile();
-                    inventoryManager_Profile.Show();
+                   inventoryManager_dash dashboard= new inventoryManager_dash();
+                    dashboard.Show();
+                    this.Hide();
+                }
+                if(user.role =="Super User")
+                {
+                    superUser_dash superUser_Dash = new superUser_dash();
+                    superUser_Dash.Show();
                     this.Hide();
                 }
             }

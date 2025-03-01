@@ -1,4 +1,5 @@
-﻿using CrystalDecisions.CrystalReports.Engine;
+﻿using finals_UI;
+using CrystalDecisions.CrystalReports.Engine;
 using finals_UI.Controller;
 using finals_UI.Model.classes;
 using finals_UI.Model.Database;
@@ -24,6 +25,8 @@ namespace finals_UI.View
         customerInvoice customerInvoice=new customerInvoice();
         customerInvoiceController customerInvoiceController=new customerInvoiceController();
 
+        string invoiceNo;
+
         public manage_sales_invoice()
         {
             InitializeComponent();
@@ -31,8 +34,9 @@ namespace finals_UI.View
 
         private void manage_sales_Load(object sender, EventArgs e)
         {
+            
             //generate and insert invoiceNo
-            string invoiceNo=customerInvoiceController.generateInvoiceNo();
+             invoiceNo=customerInvoiceController.generateInvoiceNo();
             this.txtInvoiceNo.Text = invoiceNo;
 
             if (dataGridView1.Columns.Count == 0)
@@ -60,7 +64,13 @@ namespace finals_UI.View
                 dataGridView1.Columns["type"].Visible = false;
 
 
-               
+               //disabling payment btn
+               this.btnpaymentDetails.Enabled = false;
+                //disabling print invoice btn
+                this.btnprint.Enabled = false;
+                //disablng save btn
+                this.btnsave.Enabled = false;
+
 
 
             }
@@ -91,7 +101,8 @@ namespace finals_UI.View
         //items  adding button 
         private void btnadd_Click(object sender, EventArgs e)
         {
-
+            //enabling save btn
+            this.btnsave.Enabled=true;
             //validations
             //item category
             if (this.CBitmName.SelectedIndex == -1)
@@ -442,6 +453,8 @@ namespace finals_UI.View
 
         private void btnaddservice_Click(object sender, EventArgs e)
         {
+            //enabling btn save
+            this.btnsave.Enabled= true;
             //validtng 
             if (this.CBservice.SelectedIndex == -1)
             {
@@ -587,7 +600,7 @@ namespace finals_UI.View
         //Exit btn
         private void button14_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void btnserclr_Click(object sender, EventArgs e)
@@ -618,9 +631,38 @@ namespace finals_UI.View
         //save invoice btn click
         private void btnsave_Click(object sender, EventArgs e)
         {
+           //validating plate numebr
+            if (this.txtplateNo.Text=="")
+            {
+                this.errorProvider2.SetError(this.txtplateNo, "please enter a plate number");
+                return;
+            }
+
+            else
+            {
+                errorProvider2.Clear();
+            }
+
+            //validating total field
+
+            if (this.txttot.Text == "")
+            {
+                this.errorProvider6.SetError(this.txttot, "Total field cannoth be empty");
+                return;
+            }
+
+            else
+            {
+                errorProvider6.Clear();
+            }
+
+            //enablin payment btn and print invoice bnt
+            btnpaymentDetails.Enabled = true;
+            btnprint.Enabled = true;
+
             customerInvoice.invoiceTotal = float.Parse(txttot.Text);
             customerInvoice.invoiceNo=this.txtInvoiceNo.Text;
-            customerInvoice.receptionistId = 1;
+            //customerInvoice.receptionistId = 1;
             customerInvoice.customerId = saleController.retrieveCustomerId(sale.plateNumber);
             customerInvoice.vehicleId = customerInvoiceController.retrieveVehicleId(sale.plateNumber);
 
@@ -663,9 +705,39 @@ namespace finals_UI.View
 
         private void btnpaymentDetails_Click(object sender, EventArgs e)
         {
-           manage_payment payment= new manage_payment();    
+           manage_payment payment= new manage_payment(invoiceNo);    
             payment.Show();
             this.Hide();    
         }
+
+        private void btndash_Click(object sender, EventArgs e)
+        {
+            Receptionist_dash receptionist_Dash = new Receptionist_dash();
+            receptionist_Dash.Show();
+            this.Hide();
+        }
+
+        private void btnacc_Click(object sender, EventArgs e)
+        {
+            receptionist_profile profile = new receptionist_profile();
+            profile.Show();
+            this.Hide();
+
+        }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            userSession.Logout();
+
+            sign_in sign_In = new sign_in();
+            sign_In.Show();
+            this.Close();
+
+        }
+        //public string returnInvoiceNo()
+        //{ 
+        //    this.txtInvoiceNo.Text = invoiceNo;
+        //    return invoiceNo;
+        //}
     }
 }

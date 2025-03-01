@@ -32,10 +32,13 @@ namespace finals_UI.Controller
                 newInvoiceNo = "INV" + (number + 1).ToString("D3");
             }
 
+            int receptionistId=retrieveReceptionistId();
             //insert into customer_invoice
-            string query2 = "INSERT INTO customer_invoice(invoiceNo, invoiceTotal,customerId,receptionistId,vehicleId) VALUES (@invoiceNo, NULL,NULL,NULL,NULL)";
+            string query2 = "INSERT INTO customer_invoice(invoiceNo, invoiceTotal,customerId,receptionistId,vehicleId) VALUES (@invoiceNo, NULL,NULL,@receptionistId,NULL)";
             MySqlCommand com2 = new MySqlCommand(query2, con.getConnection());
             com2.Parameters.AddWithValue("@invoiceNo", newInvoiceNo);
+            com2.Parameters.AddWithValue("@receptionistId", receptionistId);
+
             com2.ExecuteNonQuery();
 
 
@@ -63,12 +66,12 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "UPDATE customer_invoice SET invoiceTotal = @invoiceTotal, receptionistId = @receptionistId, customerId = @customerId, vehicleId = @vehicleId WHERE invoiceNo = @invoiceNo";
+            string query = "UPDATE customer_invoice SET invoiceTotal = @invoiceTotal, customerId = @customerId, vehicleId = @vehicleId WHERE invoiceNo = @invoiceNo";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());
 
             com.Parameters.AddWithValue("@invoiceNo",invoice.invoiceNo);
             com.Parameters.AddWithValue("@invoiceTotal",invoice.invoiceTotal);
-            com.Parameters.AddWithValue("@receptionistId",invoice.receptionistId);
+           // com.Parameters.AddWithValue("@receptionistId",invoice.receptionistId);
             com.Parameters.AddWithValue("@customerId",invoice.customerId);
             com.Parameters.AddWithValue("@vehicleId",invoice.vehicleId);
           
@@ -80,6 +83,20 @@ namespace finals_UI.Controller
 
 
 
+        }
+        public int retrieveReceptionistId()
+        {
+            //connection class
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT receptionistId FROM receptionist WHERE email=@email";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+
+            com.Parameters.AddWithValue("@email", userSession.userName);
+            int receptionistId = Convert.ToInt32(com.ExecuteScalar());
+            return receptionistId;
         }
 
     }

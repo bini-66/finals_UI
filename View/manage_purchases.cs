@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using finals_UI.Model;
 using finals_UI.Model.classes;
+using finals_UI.View;
 
 namespace finals_UI
 {
@@ -146,8 +147,8 @@ namespace finals_UI
             purchase.supplierId= Convert.ToInt32(CBsupDetails.SelectedValue);
             purchase.comment=this.txtcomment.Text;
             purchase.supplierInvoiceNo= this.txtinvoice.Text;
-            purchase.inventoryManagerId = 2;
-            
+            //purchase.operationalManagerId = 2;
+
             purchaseController.addStock(purchase);
 
             //refresh grid
@@ -276,10 +277,7 @@ namespace finals_UI
             clearFields();
         }
 
-        private void button14_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+     
 
         private void label8_Click(object sender, EventArgs e)
         {
@@ -402,6 +400,34 @@ namespace finals_UI
         private void CBitmName_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btndash_Click(object sender, EventArgs e)
+        {
+            operationalManager_dash operationalManager_Dash = new operationalManager_dash();
+            operationalManager_Dash.Show();
+            this.Hide();
+        }
+
+        private void btnacc_Click(object sender, EventArgs e)
+        {
+            operationalManager_profile operationalManager_Profile = new operationalManager_profile();
+            operationalManager_Profile.Show();
+            this.Hide();
+        }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            userSession.Logout();
+
+            sign_in sign_In = new sign_in();
+            sign_In.Show();
+            this.Close();
         }
     }
 }

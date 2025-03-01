@@ -106,5 +106,19 @@ namespace finals_UI.View
                this.Close();
             
         }
+
+        private void btndash_Click(object sender, EventArgs e)
+        {
+            operationalManager_dash operationalManager_Dash = new operationalManager_dash();
+            operationalManager_Dash.Show();
+            this.Close();
+
+        }
+
+        private void btnacc_Click(object sender, EventArgs e)
+        {
+            this.Show();
+
+        }
     }
 }

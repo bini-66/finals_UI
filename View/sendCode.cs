@@ -69,7 +69,7 @@ namespace finals_UI.View
 
                 MailMessage mailMessage = new MailMessage
                 {
-                    From = new MailAddress("futuretechtips@gmail.com"),
+                    From = new MailAddress("futuretechtips@gmail.com", "Kavinda Auto Engineering"),
                     Subject = subject,
                     Body = body,
                     IsBodyHtml = true

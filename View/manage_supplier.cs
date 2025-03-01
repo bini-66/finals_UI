@@ -1,5 +1,6 @@
 ﻿using finals_UI.Controller;
 using finals_UI.Model.classes;
+using finals_UI.View;
 using Org.BouncyCastle.Tls;
 using System;
 using System.Collections.Generic;
@@ -31,11 +32,6 @@ namespace finals_UI
             this.dataGridView1.DataSource = ds.Tables[0];
             this.btnup.Enabled = false;
             this.btndlt.Enabled = false;
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
 
@@ -310,6 +306,32 @@ namespace finals_UI
         private void manage_supplier_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btndash_Click(object sender, EventArgs e)
+        {
+            operationalManager_dash operationalManager_Dash = new operationalManager_dash();
+            operationalManager_Dash.Show();
+            this.Hide();
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnacc_Click(object sender, EventArgs e)
+        {
+            operationalManager_profile profile = new operationalManager_profile();
+            profile.Show();
+            this.Hide();
+
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

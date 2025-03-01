@@ -1,5 +1,7 @@
-﻿using finals_UI.Controller;
+﻿using finals_UI;
+using finals_UI.Controller;
 using finals_UI.Model.classes;
+using finals_UI.View;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -36,10 +38,7 @@ namespace finals_UI
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -109,6 +108,27 @@ namespace finals_UI
                     this.dataGridView1.DataSource = ds.Tables[0];
                 }
             }
+        }
+
+        private void btndash_Click(object sender, EventArgs e)
+        {
+            superUser_dash superUser_Dash = new superUser_dash();
+            superUser_Dash.Show();
+            this.Hide();
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            userSession.Logout();
+
+            sign_in sign_In = new sign_in();
+            sign_In.Show();
+            this.Close();
         }
     }
 }

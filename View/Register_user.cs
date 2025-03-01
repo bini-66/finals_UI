@@ -48,10 +48,6 @@ namespace finals_UI
 
         }
 
-        private void button14_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
@@ -190,6 +186,11 @@ namespace finals_UI
             {
                 txtpw.UseSystemPasswordChar = false;
             }
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

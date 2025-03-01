@@ -40,7 +40,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnadd = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnclose = new System.Windows.Forms.Button();
             this.txtfname = new System.Windows.Forms.TextBox();
             this.txtphone = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -185,19 +185,19 @@
             this.btnadd.UseVisualStyleBackColor = false;
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
-            // button14
+            // btnclose
             // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.button14.Location = new System.Drawing.Point(1151, 12);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(30, 28);
-            this.button14.TabIndex = 76;
-            this.button14.Text = "X";
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.btnclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclose.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnclose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.btnclose.Location = new System.Drawing.Point(1151, 12);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(30, 28);
+            this.btnclose.TabIndex = 76;
+            this.btnclose.Text = "X";
+            this.btnclose.UseVisualStyleBackColor = false;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
             // txtfname
             // 
@@ -314,7 +314,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtphone);
             this.Controls.Add(this.txtfname);
-            this.Controls.Add(this.button14);
+            this.Controls.Add(this.btnclose);
             this.Controls.Add(this.btnadd);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -355,7 +355,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnadd;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnclose;
         private System.Windows.Forms.TextBox txtfname;
         private System.Windows.Forms.TextBox txtphone;
         private System.Windows.Forms.Label label8;

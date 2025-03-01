@@ -76,15 +76,16 @@ namespace finals_UI.Controller
             //command class
             //insertng into receipt table
 
-            string query1 = "INSERT INTO receipt (receptionistId) VALUES (@receptionistId); SELECT LAST_INSERT_ID();"; ;
+            string query1 = "INSERT INTO receipt (receptionistId) VALUES (@receptionistId); SELECT LAST_INSERT_ID();"; 
+            int receptionistId = retrieveReceptionistId();
             MySqlCommand com=new MySqlCommand(query1,con.getConnection());
-            com.Parameters.AddWithValue("@receptionistId", receipt.receptionistId);
+            com.Parameters.AddWithValue("@receptionistId", receptionistId);
  
             int receiptId = Convert.ToInt32(com.ExecuteScalar());
             receipt.receiptId = receiptId;
 
             //insertgn into payment table
-
+            
             string query2 = "INSERT INTO payment(paymentAmount,paidAmount,paymentMethod,vehicleId,customerInvoiceId,receiptId) VALUES (@paymentAmount,@paidAmount,@paymentMethod,@vehicleId,@customerInvoiceId,@receiptId)";
             MySqlCommand com2=new MySqlCommand(query2 ,con.getConnection());
             com2.Parameters.AddWithValue("@paymentAmount", payment.invoiceTotal);
@@ -143,6 +144,20 @@ namespace finals_UI.Controller
             con.closeConnection();
 
 
+        }
+        public int retrieveReceptionistId()
+        {
+            //connection class
+            dbConnection con = new dbConnection();
+            con.openConnection();
+
+            //command class
+            string query = "SELECT receptionistId FROM receptionist WHERE email=@email";
+            MySqlCommand com = new MySqlCommand(query, con.getConnection());
+
+            com.Parameters.AddWithValue("@email", userSession.userName);
+            int receptionistId = Convert.ToInt32(com.ExecuteScalar());
+            return receptionistId;
         }
 
     }
