@@ -259,58 +259,5 @@ namespace finals_UI
         {
             this.Close();
         }
-
-        private void btnattendance_Click(object sender, EventArgs e)
-        {
-            employee_attendance employee_Attendance = new employee_attendance();
-            employee_Attendance.Show();
-            this.Hide();
-        }
-        private void btnacc_1Click(object sender, EventArgs e)
-        {
-            manage_offers manage_Offers = new manage_offers();
-            manage_Offers.Show();
-            this.Hide();
-        }
-
-     
-
-
-        private void btnservices_Click_1(object sender, EventArgs e)
-        {
-            manage_services manage_Services = new manage_services();
-            manage_Services.Show();
-            this.Hide();
-        }
-
-        private void btnemp_Click(object sender, EventArgs e)
-        {
-            manage_employees manage_Employees = new manage_employees();
-            manage_Employees.Show();
-            this.Hide();
-        }
-
-        private void btnfeedback_Click(object sender, EventArgs e)
-        {
-            view_feedback view_Feedback = new view_feedback();
-            view_Feedback.Show();
-            this.Hide();
-        }
-
-        private void btnoffers_Click(object sender, EventArgs e)
-        {
-            manage_offers manage_Offers = new manage_offers();
-            manage_Offers.Show();
-            this.Hide();
-        }
-
-        private void btnlogout_Click_1(object sender, EventArgs e)
-        {
-            userSession.Logout();
-
-            sign_in sign_In = new sign_in();
-            sign_In.Show();
-            this.Close();
-        }
     }
 }

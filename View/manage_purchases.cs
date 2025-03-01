@@ -429,43 +429,5 @@ namespace finals_UI
             sign_In.Show();
             this.Close();
         }
-
-        private void btnmaintenance_Click(object sender, EventArgs e)
-        {
-
-            maintenance_transaction transaction = new maintenance_transaction();
-            transaction.Show();
-            this.Hide();
-        }
-
-        private void btnsupp_Click(object sender, EventArgs e)
-        {
-            manage_supplier manage_Supplier = new manage_supplier();
-            manage_Supplier.Show();
-            this.Hide();
-        }
-
-        private void btnpur_Click(object sender, EventArgs e)
-        {
-            manage_purchases manage_Purchases = new manage_purchases();
-            manage_Purchases.Show();
-            this.Hide();
-        }
-
-        private void btnacc1_Click(object sender, EventArgs e)
-        {
-            operationalManager_profile operationalManager_Profile = new operationalManager_profile();
-            operationalManager_Profile.Show();
-            this.Hide();
-        }
-
-        private void btnlogout_Click_1(object sender, EventArgs e)
-        {
-            userSession.Logout();
-
-            sign_in sign_In = new sign_in();
-            sign_In.Show();
-            this.Close();
-        }
     }
 }
