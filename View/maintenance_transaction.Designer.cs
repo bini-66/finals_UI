@@ -605,9 +605,9 @@
             this.ClientSize = new System.Drawing.Size(1143, 717);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.panel3);
+         //   this.Controls.Add(this.btnClear);
+       //     this.Controls.Add(this.btnAdd);
+//            this.Controls.Add(this.panel3);
             this.Controls.Add(this.txtMaintenanceId);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.label9);

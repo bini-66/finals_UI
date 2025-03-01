@@ -359,7 +359,7 @@
             this.btnclose.TabIndex = 63;
             this.btnclose.Text = "X";
             this.btnclose.UseVisualStyleBackColor = false;
-            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
+ //           this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
             // employee_attendance
             // 
@@ -367,7 +367,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1211, 587);
-            this.Controls.Add(this.panel3);
+          //  this.Controls.Add(this.panel3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.txtdate);
             this.Controls.Add(this.btnsave);

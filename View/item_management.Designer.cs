@@ -460,7 +460,7 @@
             this.txtitmBrand.Name = "txtitmBrand";
             this.txtitmBrand.Size = new System.Drawing.Size(227, 24);
             this.txtitmBrand.TabIndex = 65;
-            this.txtitmBrand.TextChanged += new System.EventHandler(this.txtitmBrand_TextChanged);
+           // this.txtitmBrand.TextChanged += new System.EventHandler(this.txtitmBrand_TextChanged);
             // 
             // label5
             // 
