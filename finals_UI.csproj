@@ -515,6 +515,9 @@
     <EmbeddedResource Include="View\superUser_dash.resx">
       <DependentUpon>superUser_dash.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\view_reports.resx">
+      <DependentUpon>view_reports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\view_appointment.resx">
       <DependentUpon>view_appointment.cs</DependentUpon>
     </EmbeddedResource>

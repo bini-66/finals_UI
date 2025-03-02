@@ -276,15 +276,15 @@ namespace finals_UI
 
         private void btndash_Click(object sender, EventArgs e)
         {
-            serviceManager_dash serviceManager_Dash = new serviceManager_dash();
-            serviceManager_Dash.Show();
+            employee_attendance employee_Attendance = new employee_attendance();
+            employee_Attendance.Show();
             this.Hide();
         }
 
         private void btnacc_Click(object sender, EventArgs e)
         {
-            serviceManager_profile serviceManager_Profile = new serviceManager_profile();   
-            serviceManager_Profile.Show();  
+            manage_offers manage_Offers = new manage_offers();
+            manage_Offers.Show();
             this.Hide();
         }
 
@@ -300,6 +300,35 @@ namespace finals_UI
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnservices_Click(object sender, EventArgs e)
+        {
+            manage_services manage_Services = new manage_services();
+            manage_Services.Show();
+            this.Hide();
+        }
+
+        private void btnemp_Click(object sender, EventArgs e)
+        {
+
+            manage_employees manage_Employees = new manage_employees();
+            manage_Employees.Show();
+            this.Hide();
+        }
+
+        private void btnfeedback_Click(object sender, EventArgs e)
+        {
+            view_feedback view_Feedback = new view_feedback();
+            view_Feedback.Show();
+            this.Hide();
+        }
+
+        private void txtacc_Click(object sender, EventArgs e)
+        {
+           serviceManager_profile profile = new serviceManager_profile();
+            profile.Show();
+            this.Hide();
         }
     }
 }

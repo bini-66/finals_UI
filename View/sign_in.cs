@@ -93,32 +93,32 @@ namespace finals_UI
             {
                 if (user.role == "Receptionist")
                 {
-                    Receptionist_dash dashboard= new Receptionist_dash();
-                    dashboard.Show();
+                    view_appointment view_Appointment = new view_appointment();
+                    view_Appointment.Show();
                     this.Hide(); 
                 }
                 else if (user.role == "Owner")
                 {
-                    owner_dash dashboard= new owner_dash();
-                    dashboard.Show(); 
+                    view_reports viewReports = new view_reports();
+                    viewReports.Show();
                     this.Hide();
                 }
                 else if (user.role == "Operational Manager")
                 {
-                    operationalManager_dash dashboard= new operationalManager_dash();
-                    dashboard.Show();
+                    maintenance_transaction maintenance_Transaction = new maintenance_transaction();
+                    maintenance_Transaction.Show();
                     this.Hide();
                 }
                 else if (user.role == "Service Manager")
-                {
-                    serviceManager_dash dashboard= new serviceManager_dash();
-                    dashboard.Show();
+                {   
+                    employee_attendance employee_Attendance = new employee_attendance();
+                    employee_Attendance.Show();
                     this.Hide();
                 }
                 else if (user.role == "Inventory Manager")
                 {
-                   inventoryManager_dash dashboard= new inventoryManager_dash();
-                    dashboard.Show();
+                   view_stock view_Stock = new view_stock();
+                    view_Stock.Show();
                     this.Hide();
                 }
                 if(user.role =="Super User")

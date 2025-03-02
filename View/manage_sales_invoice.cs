@@ -725,6 +725,52 @@ namespace finals_UI.View
             this.Close();
 
         }
+
+        private void btnapt_Click(object sender, EventArgs e)
+        {
+
+            view_appointment view_Appointment = new view_appointment();
+            view_Appointment.Show();
+            this.Hide();
+        }
+
+        private void btnsales_Click(object sender, EventArgs e)
+        {
+            manage_sales_invoice invoice = new manage_sales_invoice();
+            invoice.Show();
+            this.Hide();
+        }
+
+        private void btnpayments_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            manage_payment payment = new manage_payment(null);
+            payment.Show();
+        }
+
+        private void btncustomers_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            view_customer view_Customer = new view_customer();
+            view_Customer.Show();
+        }
+
+        private void btnacc_Click_1(object sender, EventArgs e)
+        {
+            receptionist_profile profile = new receptionist_profile();
+            profile.Show();
+            this.Hide();
+        }
+
+        private void btnlogout_Click_1(object sender, EventArgs e)
+        {
+            userSession.Logout();
+
+            sign_in sign_In = new sign_in();
+            sign_In.Show();
+            this.Close();
+        }
+
         //public string returnInvoiceNo()
         //{ 
         //    this.txtInvoiceNo.Text = invoiceNo;

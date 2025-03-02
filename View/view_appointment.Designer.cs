@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(view_appointment));
             this.appointmentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,8 +52,30 @@
             this.selectEntireRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectCellToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btncustomers = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnlogout = new System.Windows.Forms.Button();
+            this.btnpayments = new System.Windows.Forms.Button();
+            this.btnsales = new System.Windows.Forms.Button();
+            this.btnapt = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnacc = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // appointmentId
@@ -124,7 +147,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(41, 38);
+            this.label2.Location = new System.Drawing.Point(361, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(214, 40);
             this.label2.TabIndex = 31;
@@ -135,7 +158,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label3.Location = new System.Drawing.Point(596, 123);
+            this.label3.Location = new System.Drawing.Point(916, 147);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 23);
             this.label3.TabIndex = 34;
@@ -146,7 +169,7 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(1091, 119);
+            this.btnSearch.Location = new System.Drawing.Point(1411, 143);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 33);
@@ -160,7 +183,7 @@
             this.btnNewAppointment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnNewAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewAppointment.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewAppointment.Location = new System.Drawing.Point(49, 119);
+            this.btnNewAppointment.Location = new System.Drawing.Point(369, 143);
             this.btnNewAppointment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNewAppointment.Name = "btnNewAppointment";
             this.btnNewAppointment.Size = new System.Drawing.Size(177, 33);
@@ -173,7 +196,7 @@
             // 
             this.txtSearch.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.Location = new System.Drawing.Point(700, 119);
+            this.txtSearch.Location = new System.Drawing.Point(1020, 143);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
@@ -185,7 +208,7 @@
             this.btnNewCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnNewCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewCustomer.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewCustomer.Location = new System.Drawing.Point(247, 119);
+            this.btnNewCustomer.Location = new System.Drawing.Point(567, 143);
             this.btnNewCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNewCustomer.Name = "btnNewCustomer";
             this.btnNewCustomer.Size = new System.Drawing.Size(180, 33);
@@ -245,21 +268,226 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Teal;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(49, 191);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(369, 215);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1141, 433);
             this.dataGridView1.TabIndex = 96;
             this.dataGridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDown);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.btnacc);
+            this.panel1.Controls.Add(this.btncustomers);
+            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.btnlogout);
+            this.panel1.Controls.Add(this.btnpayments);
+            this.panel1.Controls.Add(this.btnsales);
+            this.panel1.Controls.Add(this.btnapt);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(255, 719);
+            this.panel1.TabIndex = 129;
+            // 
+            // btncustomers
+            // 
+            this.btncustomers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btncustomers.FlatAppearance.BorderSize = 0;
+            this.btncustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncustomers.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btncustomers.Location = new System.Drawing.Point(0, 434);
+            this.btncustomers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btncustomers.Name = "btncustomers";
+            this.btncustomers.Size = new System.Drawing.Size(255, 52);
+            this.btncustomers.TabIndex = 52;
+            this.btncustomers.Text = "Customers";
+            this.btncustomers.UseVisualStyleBackColor = true;
+            this.btncustomers.Click += new System.EventHandler(this.btncustomers_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(27, 894);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 51;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(27, 336);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 49;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(27, 276);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnlogout
+            // 
+            this.btnlogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnlogout.FlatAppearance.BorderSize = 0;
+            this.btnlogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlogout.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnlogout.Location = new System.Drawing.Point(0, 667);
+            this.btnlogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(255, 52);
+            this.btnlogout.TabIndex = 6;
+            this.btnlogout.Text = "Log Out";
+            this.btnlogout.UseVisualStyleBackColor = true;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
+            // 
+            // btnpayments
+            // 
+            this.btnpayments.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnpayments.FlatAppearance.BorderSize = 0;
+            this.btnpayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnpayments.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnpayments.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnpayments.Location = new System.Drawing.Point(0, 382);
+            this.btnpayments.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnpayments.Name = "btnpayments";
+            this.btnpayments.Size = new System.Drawing.Size(255, 52);
+            this.btnpayments.TabIndex = 3;
+            this.btnpayments.Text = "Payments";
+            this.btnpayments.UseVisualStyleBackColor = true;
+            this.btnpayments.Click += new System.EventHandler(this.btnpayments_Click);
+            // 
+            // btnsales
+            // 
+            this.btnsales.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnsales.FlatAppearance.BorderSize = 0;
+            this.btnsales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsales.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnsales.Location = new System.Drawing.Point(0, 330);
+            this.btnsales.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnsales.Name = "btnsales";
+            this.btnsales.Size = new System.Drawing.Size(255, 52);
+            this.btnsales.TabIndex = 2;
+            this.btnsales.Text = "Sales";
+            this.btnsales.UseVisualStyleBackColor = true;
+            this.btnsales.Click += new System.EventHandler(this.btnsales_Click);
+            // 
+            // btnapt
+            // 
+            this.btnapt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnapt.FlatAppearance.BorderSize = 0;
+            this.btnapt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnapt.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnapt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnapt.Location = new System.Drawing.Point(0, 267);
+            this.btnapt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnapt.Name = "btnapt";
+            this.btnapt.Size = new System.Drawing.Size(255, 63);
+            this.btnapt.TabIndex = 1;
+            this.btnapt.Text = "Appointments";
+            this.btnapt.UseVisualStyleBackColor = true;
+            this.btnapt.Click += new System.EventHandler(this.btnapt_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(255, 267);
+            this.panel2.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.label10.Location = new System.Drawing.Point(66, 184);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(117, 25);
+            this.label10.TabIndex = 48;
+            this.label10.Text = "Receptionist";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.label1.Location = new System.Drawing.Point(83, 145);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 25);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "WELCOME";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(88, 44);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 73);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnacc
+            // 
+            this.btnacc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnacc.FlatAppearance.BorderSize = 0;
+            this.btnacc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnacc.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnacc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnacc.Location = new System.Drawing.Point(0, 486);
+            this.btnacc.Name = "btnacc";
+            this.btnacc.Size = new System.Drawing.Size(255, 51);
+            this.btnacc.TabIndex = 53;
+            this.btnacc.Text = "Account";
+            this.btnacc.UseVisualStyleBackColor = true;
+            this.btnacc.Click += new System.EventHandler(this.btnacc_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::finals_UI.Properties.Resources.account;
+            this.pictureBox4.Location = new System.Drawing.Point(27, 493);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 54;
+            this.pictureBox4.TabStop = false;
+            // 
             // view_appointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1237, 661);
+            this.ClientSize = new System.Drawing.Size(1622, 719);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnNewCustomer);
             this.Controls.Add(this.txtSearch);
@@ -275,6 +503,14 @@
             this.Load += new System.EventHandler(this.view_appointment_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +539,20 @@
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selectEntireRowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selectCellToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btncustomers;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnlogout;
+        private System.Windows.Forms.Button btnpayments;
+        private System.Windows.Forms.Button btnsales;
+        private System.Windows.Forms.Button btnapt;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnacc;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
