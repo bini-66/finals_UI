@@ -297,7 +297,7 @@ namespace finals_UI
             this.Close();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnclose_Click(object sender, EventArgs e)
         {
             this.Close();
         }

@@ -445,6 +445,12 @@
     <EmbeddedResource Include="View\customer_invoice.resx">
       <DependentUpon>customer_invoice.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="View\view_reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\view_reports.Designer.cs">
+      <DependentUpon>view_reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\view_stock.cs">
       <SubType>Form</SubType>
     </Compile>
