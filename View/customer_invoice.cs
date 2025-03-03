@@ -13,10 +13,10 @@ namespace finals_UI.View
     public partial class customer_invoice : Form
     {
         private string invoiceNo;
-        public customer_invoice(string invoiceNumber)
+        public customer_invoice(string invoiceNo)
         {
             InitializeComponent();
-            this.invoiceNo = invoiceNumber;
+            this.invoiceNo = invoiceNo;
         }
 
         private void customer_invoice_Load(object sender, EventArgs e)
