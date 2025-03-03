@@ -23,6 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <PreferNativeArm64>false</PreferNativeArm64>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -290,6 +291,12 @@
     </Compile>
     <Compile Include="View\serviceManager_profile.Designer.cs">
       <DependentUpon>serviceManager_profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\service_sub_cr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>service_sub_cr.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\superUser_dash.cs">
       <SubType>Form</SubType>

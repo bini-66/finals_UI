@@ -21,7 +21,6 @@ namespace finals_UI.View
         {
             attendance_cr report = new attendance_cr();
             crystalReportViewer1.ReportSource = report;
-            crystalReportViewer1.Refresh();
         }
     }
 }

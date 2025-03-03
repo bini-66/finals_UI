@@ -17,7 +17,7 @@ namespace finals_UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new view_stock());
+            Application.Run(new sign_in());
         }
     }
 }
