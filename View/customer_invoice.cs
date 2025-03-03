@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,9 @@ namespace finals_UI.View
                 customerInvoice_cr report = new customerInvoice_cr();
 
                 report.SetParameterValue("InvoiceNo", invoiceNo);
+
+                report.SetParameterValue("InvoiceNo", invoiceNo, "item_sub_cr.rpt");
+                report.SetParameterValue("InvoiceNo", invoiceNo, "service_sub_cr.rpt");
 
                 crystalReportViewer1.ReportSource = report;
                 crystalReportViewer1.Refresh();
