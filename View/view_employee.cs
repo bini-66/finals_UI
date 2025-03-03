@@ -132,5 +132,42 @@ namespace finals_UI
             sign_In.Show();
             this.Close();
         }
+
+        private void btnreports_Click(object sender, EventArgs e)
+        {
+            view_reports viewReports = new view_reports();
+            viewReports.Show();
+            this.Hide();
+        }
+
+        private void btncust_Click(object sender, EventArgs e)
+        {
+            //view_customer view_Customer = new view_customer();
+            //view_Customer.Show();
+            //this.Hide();
+        }
+
+        private void btnemp_Click(object sender, EventArgs e)
+        {
+            view_employee view_Employee = new view_employee();
+            view_Employee.Show();
+            this.Hide();
+        }
+
+        private void btnlogout_Click_1(object sender, EventArgs e)
+        {
+            userSession.Logout();
+
+            sign_in sign_In = new sign_in();
+            sign_In.Show();
+            this.Close();
+        }
+
+        private void btnacc_Click_1(object sender, EventArgs e)
+        {
+            owner_profile profile = new owner_profile();
+            profile.Show();
+            this.Hide();
+        }
     }
 }

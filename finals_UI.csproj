@@ -298,12 +298,6 @@
     <Compile Include="View\superUser_dash.Designer.cs">
       <DependentUpon>superUser_dash.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\service_sub_cr.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>service_sub_cr.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="View\view_appointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -452,6 +446,12 @@
     <EmbeddedResource Include="View\customer_invoice.resx">
       <DependentUpon>customer_invoice.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="View\view_reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\view_reports.Designer.cs">
+      <DependentUpon>view_reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\view_stock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -521,6 +521,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\superUser_dash.resx">
       <DependentUpon>superUser_dash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\view_reports.resx">
+      <DependentUpon>view_reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\view_appointment.resx">
       <DependentUpon>view_appointment.cs</DependentUpon>
