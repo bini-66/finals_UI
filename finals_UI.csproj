@@ -42,8 +42,8 @@
       <HintPath>packages\BouncyCastle.Cryptography.2.5.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Google.Protobuf, Version=3.29.3.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>packages\Google.Protobuf.3.29.3\lib\net45\Google.Protobuf.dll</HintPath>
@@ -159,6 +159,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="View\attendance_cr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>attendance_cr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\attendance_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\attendance_report.Designer.cs">
+      <DependentUpon>attendance_report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\customerInvoice_cr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerInvoice_cr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\customer_invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\customer_invoice.Designer.cs">
+      <DependentUpon>customer_invoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\edit_appointments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +200,12 @@
     </Compile>
     <Compile Include="View\inventoryManager_profile.Designer.cs">
       <DependentUpon>inventoryManager_profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\item_sub_cr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>item_sub_cr.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\maintenance_transaction.cs">
       <SubType>Form</SubType>
@@ -213,6 +243,18 @@
     <Compile Include="View\owner_profile.Designer.cs">
       <DependentUpon>owner_profile.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\purchase_cr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>purchase_cr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\purchase_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\purchase_report.Designer.cs">
+      <DependentUpon>purchase_report.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\receptionist_profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +266,18 @@
     </Compile>
     <Compile Include="View\resetPW.Designer.cs">
       <DependentUpon>resetPW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\sales_cr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sales_cr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\sales_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\sales_report.Designer.cs">
+      <DependentUpon>sales_report.cs</DependentUpon>
     </Compile>
     <Compile Include="View\sendCode.cs">
       <SubType>Form</SubType>
@@ -242,12 +296,6 @@
     </Compile>
     <Compile Include="View\superUser_dash.Designer.cs">
       <DependentUpon>superUser_dash.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\view_reports.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\view_reports.Designer.cs">
-      <DependentUpon>view_reports.cs</DependentUpon>
     </Compile>
     <Compile Include="View\view_appointment.cs">
       <SubType>Form</SubType>
@@ -278,6 +326,12 @@
     </Compile>
     <Compile Include="View\item_management.Designer.cs">
       <DependentUpon>item_management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\manage_customers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\manage_customers.Designer.cs">
+      <DependentUpon>manage_customers.cs</DependentUpon>
     </Compile>
     <Compile Include="View\manage_purchases.cs">
       <SubType>Form</SubType>
@@ -377,6 +431,26 @@
     <Compile Include="View\view_feedback.Designer.cs">
       <DependentUpon>view_feedback.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\attendance_cr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>attendance_cr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\attendance_report.resx">
+      <DependentUpon>attendance_report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\customerInvoice_cr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>customerInvoice_cr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\customer_invoice.resx">
+      <DependentUpon>customer_invoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\view_reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\view_reports.Designer.cs">
+      <DependentUpon>view_reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\view_stock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -395,6 +469,10 @@
     <EmbeddedResource Include="View\maintenance_transaction.resx">
       <DependentUpon>maintenance_transaction.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\item_sub_cr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>item_sub_cr.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\manage_employees.resx">
       <DependentUpon>manage_employees.cs</DependentUpon>
     </EmbeddedResource>
@@ -410,17 +488,35 @@
     <EmbeddedResource Include="View\owner_profile.resx">
       <DependentUpon>owner_profile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\purchase_cr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>purchase_cr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\purchase_report.resx">
+      <DependentUpon>purchase_report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\receptionist_profile.resx">
       <DependentUpon>receptionist_profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\resetPW.resx">
       <DependentUpon>resetPW.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\sales_cr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>sales_cr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\sales_report.resx">
+      <DependentUpon>sales_report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\sendCode.resx">
       <DependentUpon>sendCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\serviceManager_profile.resx">
       <DependentUpon>serviceManager_profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\service_sub_cr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>service_sub_cr.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\superUser_dash.resx">
       <DependentUpon>superUser_dash.cs</DependentUpon>
@@ -442,6 +538,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\item_management.resx">
       <DependentUpon>item_management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\manage_customers.resx">
+      <DependentUpon>manage_customers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\manage_purchases.resx">
       <DependentUpon>manage_purchases.cs</DependentUpon>
@@ -572,9 +671,36 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\schedule.png" />
+    <None Include="Resources\remove-user.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\payment.png" />
+    <None Include="Resources\owner.png" />
+    <None Include="Resources\notification.png" />
+    <None Include="Resources\minimize-window.gif" />
+    <None Include="Resources\maximize-window.png" />
+    <None Include="Resources\manager.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\login.png" />
+    <None Include="Resources\kae-logo-light-transparent.png" />
+    <None Include="Resources\kae-logo-light.jpg" />
+    <None Include="Resources\kae-logo-dark.jpg" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\edit-user.png" />
+    <None Include="Resources\edit-property.png" />
+    <None Include="Resources\delete-property.png" />
+    <None Include="Resources\close-window.png" />
+    <None Include="Resources\administrator.png" />
+    <None Include="Resources\add-user.png" />
+    <None Include="Resources\add-list.png" />
     <None Include="Images\refresh-icon.png" />
     <None Include="Images\selection-icon.png" />
     <None Include="Images\edit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
