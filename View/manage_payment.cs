@@ -149,8 +149,6 @@ namespace finals_UI
 
         private void btnreceipt_Click(object sender, EventArgs e)
         {
-           
-
             payment.invoiceTotal = Convert.ToSingle(this.txtinvtot.Text);
             payment.paidAmount = Convert.ToSingle(this.txtpaid.Text);
             payment.paymentMethod=this.CBpaymentmethod.SelectedItem.ToString();
@@ -159,6 +157,14 @@ namespace finals_UI
            // receipt.receptionistId = 2;
 
             paymentController.savePaymentDetails(payment, receipt);
+
+            if (this.txtinvoice.Text == "")
+            {
+                MessageBox.Show("Please enter an Invoice Number.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            receipt_display report = new receipt_display(txtinvoice.Text);
+            report.Show();
         }
 
         private void txtpaid_KeyPress(object sender, KeyPressEventArgs e)

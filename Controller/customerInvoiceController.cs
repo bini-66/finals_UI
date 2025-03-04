@@ -34,7 +34,7 @@ namespace finals_UI.Controller
 
             int receptionistId=retrieveReceptionistId();
             //insert into customer_invoice
-            string query2 = "INSERT INTO customer_invoice(invoiceNo, invoiceTotal,customerId,receptionistId,vehicleId) VALUES (@invoiceNo, NULL,NULL,@receptionistId,NULL)";
+            string query2 = "INSERT INTO customer_invoice(invoiceNo, invoiceTotal,customerId,receptionistId,vehicleId,offerId) VALUES (@invoiceNo, NULL,NULL,@receptionistId,NULL,NULL)";
             MySqlCommand com2 = new MySqlCommand(query2, con.getConnection());
             com2.Parameters.AddWithValue("@invoiceNo", newInvoiceNo);
             com2.Parameters.AddWithValue("@receptionistId", receptionistId);
@@ -66,7 +66,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "UPDATE customer_invoice SET invoiceTotal = @invoiceTotal, customerId = @customerId, vehicleId = @vehicleId WHERE invoiceNo = @invoiceNo";
+            string query = "UPDATE customer_invoice SET invoiceTotal = @invoiceTotal, customerId = @customerId, vehicleId = @vehicleId, offerId = @offerId WHERE invoiceNo = @invoiceNo";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());
 
             com.Parameters.AddWithValue("@invoiceNo",invoice.invoiceNo);
@@ -74,6 +74,7 @@ namespace finals_UI.Controller
            // com.Parameters.AddWithValue("@receptionistId",invoice.receptionistId);
             com.Parameters.AddWithValue("@customerId",invoice.customerId);
             com.Parameters.AddWithValue("@vehicleId",invoice.vehicleId);
+            com.Parameters.AddWithValue("@offerId", invoice.offerId);
           
             com.ExecuteNonQuery();
 

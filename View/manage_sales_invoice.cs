@@ -116,7 +116,7 @@ namespace finals_UI.View
             //itm qty
             if (this.NUDqty.Value == 0)
             {
-                this.errorProvider2.SetError(this.NUDqty, "please enter a valid qunatity");
+                this.errorProvider2.SetError(this.NUDqty, "please enter a valid quantity");
                 return;
             }
             else
@@ -663,7 +663,14 @@ namespace finals_UI.View
             //customerInvoice.receptionistId = 1;
             customerInvoice.customerId = saleController.retrieveCustomerId(sale.plateNumber);
             customerInvoice.vehicleId = customerInvoiceController.retrieveVehicleId(sale.plateNumber);
-
+            if (CBoffer.SelectedValue == null || Convert.ToInt32(CBoffer.SelectedValue) == -1)
+            {
+                customerInvoice.offerId = null;
+            }
+            else
+            {
+                customerInvoice.offerId = Convert.ToInt32(CBoffer.SelectedValue);
+            }
             customerInvoiceController.saveInvoiceInfo(customerInvoice);
         }
 
