@@ -136,7 +136,7 @@ namespace finals_UI.View
             //itm qty
             if (this.NUDqty.Value == 0)
             {
-                this.errorProvider2.SetError(this.NUDqty, "please enter a valid qunatity");
+                this.errorProvider2.SetError(this.NUDqty, "please enter a valid quantity");
                 return;
             }
             else

@@ -66,6 +66,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
+            string query = "UPDATE customer_invoice SET invoiceTotal = @invoiceTotal, customerId = @customerId, vehicleId = @vehicleId, offerId = @offerId WHERE invoiceNo = @invoiceNo";
             string query = "UPDATE customer_invoice SET invoiceTotal = @invoiceTotal, customerId = @customerId, vehicleId = @vehicleId, offerId=@offerId WHERE invoiceNo = @invoiceNo";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());
 

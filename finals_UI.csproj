@@ -252,6 +252,18 @@
       <DependentUpon>purchase_cr.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="View\receipt_cr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>receipt_cr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\receipt_display.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\receipt_display.Designer.cs">
+      <DependentUpon>receipt_display.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\receptionist_profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -494,6 +506,13 @@
     <EmbeddedResource Include="View\purchase_cr.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>purchase_cr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\receipt_cr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>receipt_cr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\receipt_display.resx">
+      <DependentUpon>receipt_display.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\receptionist_profile.resx">
       <DependentUpon>receptionist_profile.cs</DependentUpon>

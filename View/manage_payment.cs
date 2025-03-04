@@ -241,6 +241,14 @@ namespace finals_UI
             }
 
             paymentController.savePaymentDetails(payment, receipt);
+
+            if (this.txtinvoice.Text == "")
+            {
+                MessageBox.Show("Please enter an Invoice Number.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            receipt_display report = new receipt_display(txtinvoice.Text);
+            report.Show();
         }
 
         private void txtpaid_KeyPress(object sender, KeyPressEventArgs e)
