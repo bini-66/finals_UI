@@ -37,6 +37,8 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnback = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             this.SuspendLayout();
             // 
             // txtresetpw
@@ -119,7 +121,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(113, 132);
+            this.label3.Location = new System.Drawing.Point(120, 170);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(263, 40);
             this.label3.TabIndex = 89;
@@ -128,14 +130,25 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label2.Location = new System.Drawing.Point(123, 244);
+            this.label2.Location = new System.Drawing.Point(165, 258);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 21);
+            this.label2.Size = new System.Drawing.Size(113, 21);
             this.label2.TabIndex = 88;
-            this.label2.Text = "<- Back to login";
+            this.label2.Text = "Back to login";
             this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // btnback
+            // 
+            this.btnback.Image = global::finals_UI.Properties.Resources.left_chevron;
+            this.btnback.Location = new System.Drawing.Point(120, 250);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(39, 36);
+            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnback.TabIndex = 90;
+            this.btnback.TabStop = false;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
             // resetPW
             // 
@@ -143,6 +156,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(783, 668);
+            this.Controls.Add(this.btnback);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.checkBox2);
@@ -157,6 +171,7 @@
             this.Name = "resetPW";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "resetPW";
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,5 +187,6 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox btnback;
     }
 }

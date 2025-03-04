@@ -192,5 +192,12 @@ namespace finals_UI
         {
             this.Close();
         }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+            manage_employee manage_users=new manage_employee();
+            manage_users.Show();
+            this.Hide();
+        }
     }
 }

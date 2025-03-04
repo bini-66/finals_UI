@@ -4,6 +4,7 @@ using finals_UI.Model.classes;
 using finals_UI.View;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace finals_UI
@@ -29,6 +30,7 @@ namespace finals_UI
             deleteButtonColumn.Name = "Actions";
             deleteButtonColumn.Text = "Delete";  
             deleteButtonColumn.UseColumnTextForButtonValue = true;  // Makes sure all buttons display "Delete"
+            //deleteButtonColumn.DefaultCellStyle.ForeColor = Color.Red;
             this.dataGridView1.Columns.Add(deleteButtonColumn);
 
         }
