@@ -678,6 +678,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
+    <None Include="Images\left-chevron.png" />
     <None Include="Images\stock.png" />
     <None Include="Images\item.png" />
     <None Include="Images\customer3.png" />

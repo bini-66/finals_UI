@@ -79,5 +79,12 @@ namespace finals_UI.View
                 txtconresetpw.UseSystemPasswordChar = false;
             }
         }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+            sign_in sign_In=new sign_in();
+            sign_In.Show();
+            this.Hide();
+        }
     }
 }

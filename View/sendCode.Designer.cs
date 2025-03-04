@@ -34,7 +34,9 @@
             this.btnsend = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnback = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             this.SuspendLayout();
             // 
             // txtemail
@@ -107,17 +109,27 @@
             this.label1.TabIndex = 84;
             this.label1.Text = "Enter Code";
             // 
+            // btnback
+            // 
+            this.btnback.Image = global::finals_UI.Properties.Resources.left_chevron;
+            this.btnback.Location = new System.Drawing.Point(77, 169);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(39, 36);
+            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnback.TabIndex = 92;
+            this.btnback.TabStop = false;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label2.Location = new System.Drawing.Point(80, 192);
+            this.label2.Location = new System.Drawing.Point(122, 177);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 21);
-            this.label2.TabIndex = 89;
-            this.label2.Text = "<- Back to login";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.Size = new System.Drawing.Size(113, 21);
+            this.label2.TabIndex = 91;
+            this.label2.Text = "Back to login";
             // 
             // sendCode
             // 
@@ -125,6 +137,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(895, 668);
+            this.Controls.Add(this.btnback);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label8);
@@ -137,6 +150,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "sendCode";
             this.Load += new System.EventHandler(this.sendCode_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,6 +164,7 @@
         private System.Windows.Forms.Button btnsend;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox btnback;
         private System.Windows.Forms.Label label2;
     }
 }
