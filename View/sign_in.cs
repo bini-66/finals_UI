@@ -153,5 +153,10 @@ namespace finals_UI
             this.Hide();
             sc.Show();
         }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

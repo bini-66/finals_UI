@@ -189,5 +189,10 @@ namespace finals_UI
             this.Hide();
 
         }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
