@@ -395,6 +395,7 @@
             this.btnclose.TabIndex = 124;
             this.btnclose.Text = "X";
             this.btnclose.UseVisualStyleBackColor = false;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
             // inventoryManager_profile
             // 

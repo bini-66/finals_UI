@@ -351,5 +351,10 @@ namespace finals_UI
         {
 
         }
+
+        private void btnclose_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

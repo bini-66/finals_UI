@@ -240,5 +240,10 @@ namespace finals_UI
             this.Hide();
 
         }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

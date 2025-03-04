@@ -66,14 +66,12 @@
             this.label13 = new System.Windows.Forms.Label();
             this.btnNewCustomer = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnclose = new System.Windows.Forms.Button();
             this.flowLayoutPanelServices.SuspendLayout();
             this.groupBoxServices.SuspendLayout();
             this.groupBoxStatus.SuspendLayout();
             this.groupBoxCustomer.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtDescription
@@ -82,7 +80,7 @@
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.Location = new System.Drawing.Point(493, 140);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(200, 35);
             this.txtDescription.TabIndex = 13;
@@ -92,7 +90,7 @@
             // 
             this.txtVehicleId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVehicleId.Location = new System.Drawing.Point(493, 54);
-            this.txtVehicleId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtVehicleId.Margin = new System.Windows.Forms.Padding(4);
             this.txtVehicleId.Name = "txtVehicleId";
             this.txtVehicleId.ReadOnly = true;
             this.txtVehicleId.Size = new System.Drawing.Size(200, 24);
@@ -103,7 +101,7 @@
             this.chkService10.AutoSize = true;
             this.chkService10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkService10.Location = new System.Drawing.Point(123, 64);
-            this.chkService10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkService10.Margin = new System.Windows.Forms.Padding(4);
             this.chkService10.Name = "chkService10";
             this.chkService10.Size = new System.Drawing.Size(119, 22);
             this.chkService10.TabIndex = 9;
@@ -115,7 +113,7 @@
             this.rbMissed.AutoSize = true;
             this.rbMissed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbMissed.Location = new System.Drawing.Point(11, 138);
-            this.rbMissed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbMissed.Margin = new System.Windows.Forms.Padding(4);
             this.rbMissed.Name = "rbMissed";
             this.rbMissed.Size = new System.Drawing.Size(84, 24);
             this.rbMissed.TabIndex = 3;
@@ -127,7 +125,7 @@
             this.rbCancelled.AutoSize = true;
             this.rbCancelled.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbCancelled.Location = new System.Drawing.Point(11, 69);
-            this.rbCancelled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbCancelled.Margin = new System.Windows.Forms.Padding(4);
             this.rbCancelled.Name = "rbCancelled";
             this.rbCancelled.Size = new System.Drawing.Size(104, 24);
             this.rbCancelled.TabIndex = 2;
@@ -140,7 +138,7 @@
             this.rbPending.Checked = true;
             this.rbPending.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbPending.Location = new System.Drawing.Point(11, 103);
-            this.rbPending.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbPending.Margin = new System.Windows.Forms.Padding(4);
             this.rbPending.Name = "rbPending";
             this.rbPending.Size = new System.Drawing.Size(90, 24);
             this.rbPending.TabIndex = 1;
@@ -153,7 +151,7 @@
             this.rbConfirmed.AutoSize = true;
             this.rbConfirmed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbConfirmed.Location = new System.Drawing.Point(11, 34);
-            this.rbConfirmed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbConfirmed.Margin = new System.Windows.Forms.Padding(4);
             this.rbConfirmed.Name = "rbConfirmed";
             this.rbConfirmed.Size = new System.Drawing.Size(107, 24);
             this.rbConfirmed.TabIndex = 0;
@@ -176,7 +174,7 @@
             this.chkService1.AutoSize = true;
             this.chkService1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkService1.Location = new System.Drawing.Point(4, 4);
-            this.chkService1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkService1.Margin = new System.Windows.Forms.Padding(4);
             this.chkService1.Name = "chkService1";
             this.chkService1.Size = new System.Drawing.Size(111, 22);
             this.chkService1.TabIndex = 0;
@@ -200,7 +198,7 @@
             this.flowLayoutPanelServices.Controls.Add(this.chkService10);
             this.flowLayoutPanelServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanelServices.Location = new System.Drawing.Point(0, 31);
-            this.flowLayoutPanelServices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanelServices.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanelServices.Name = "flowLayoutPanelServices";
             this.flowLayoutPanelServices.Size = new System.Drawing.Size(540, 166);
             this.flowLayoutPanelServices.TabIndex = 98;
@@ -210,7 +208,7 @@
             this.chkService2.AutoSize = true;
             this.chkService2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkService2.Location = new System.Drawing.Point(123, 4);
-            this.chkService2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkService2.Margin = new System.Windows.Forms.Padding(4);
             this.chkService2.Name = "chkService2";
             this.chkService2.Size = new System.Drawing.Size(111, 22);
             this.chkService2.TabIndex = 1;
@@ -222,7 +220,7 @@
             this.chkService3.AutoSize = true;
             this.chkService3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkService3.Location = new System.Drawing.Point(242, 4);
-            this.chkService3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkService3.Margin = new System.Windows.Forms.Padding(4);
             this.chkService3.Name = "chkService3";
             this.chkService3.Size = new System.Drawing.Size(111, 22);
             this.chkService3.TabIndex = 2;
@@ -234,7 +232,7 @@
             this.chkService4.AutoSize = true;
             this.chkService4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkService4.Location = new System.Drawing.Point(361, 4);
-            this.chkService4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkService4.Margin = new System.Windows.Forms.Padding(4);
             this.chkService4.Name = "chkService4";
             this.chkService4.Size = new System.Drawing.Size(111, 22);
             this.chkService4.TabIndex = 3;
@@ -246,7 +244,7 @@
             this.chkService5.AutoSize = true;
             this.chkService5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkService5.Location = new System.Drawing.Point(4, 34);
-            this.chkService5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkService5.Margin = new System.Windows.Forms.Padding(4);
             this.chkService5.Name = "chkService5";
             this.chkService5.Size = new System.Drawing.Size(111, 22);
             this.chkService5.TabIndex = 4;
@@ -258,7 +256,7 @@
             this.chkService6.AutoSize = true;
             this.chkService6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkService6.Location = new System.Drawing.Point(123, 34);
-            this.chkService6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkService6.Margin = new System.Windows.Forms.Padding(4);
             this.chkService6.Name = "chkService6";
             this.chkService6.Size = new System.Drawing.Size(111, 22);
             this.chkService6.TabIndex = 5;
@@ -270,7 +268,7 @@
             this.chkService7.AutoSize = true;
             this.chkService7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkService7.Location = new System.Drawing.Point(242, 34);
-            this.chkService7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkService7.Margin = new System.Windows.Forms.Padding(4);
             this.chkService7.Name = "chkService7";
             this.chkService7.Size = new System.Drawing.Size(111, 22);
             this.chkService7.TabIndex = 6;
@@ -282,7 +280,7 @@
             this.chkService8.AutoSize = true;
             this.chkService8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkService8.Location = new System.Drawing.Point(361, 34);
-            this.chkService8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkService8.Margin = new System.Windows.Forms.Padding(4);
             this.chkService8.Name = "chkService8";
             this.chkService8.Size = new System.Drawing.Size(111, 22);
             this.chkService8.TabIndex = 7;
@@ -294,7 +292,7 @@
             this.chkService9.AutoSize = true;
             this.chkService9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkService9.Location = new System.Drawing.Point(4, 64);
-            this.chkService9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkService9.Margin = new System.Windows.Forms.Padding(4);
             this.chkService9.Name = "chkService9";
             this.chkService9.Size = new System.Drawing.Size(111, 22);
             this.chkService9.TabIndex = 8;
@@ -307,9 +305,9 @@
             this.groupBoxServices.Controls.Add(this.flowLayoutPanelServices);
             this.groupBoxServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxServices.Location = new System.Drawing.Point(85, 530);
-            this.groupBoxServices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxServices.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxServices.Name = "groupBoxServices";
-            this.groupBoxServices.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxServices.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxServices.Size = new System.Drawing.Size(540, 197);
             this.groupBoxServices.TabIndex = 96;
             this.groupBoxServices.TabStop = false;
@@ -324,9 +322,9 @@
             this.groupBoxStatus.Controls.Add(this.rbConfirmed);
             this.groupBoxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxStatus.Location = new System.Drawing.Point(656, 530);
-            this.groupBoxStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxStatus.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxStatus.Name = "groupBoxStatus";
-            this.groupBoxStatus.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxStatus.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxStatus.Size = new System.Drawing.Size(159, 197);
             this.groupBoxStatus.TabIndex = 95;
             this.groupBoxStatus.TabStop = false;
@@ -362,7 +360,7 @@
             // 
             this.txtPlateNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPlateNumber.Location = new System.Drawing.Point(493, 97);
-            this.txtPlateNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPlateNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtPlateNumber.Name = "txtPlateNumber";
             this.txtPlateNumber.ReadOnly = true;
             this.txtPlateNumber.Size = new System.Drawing.Size(200, 24);
@@ -383,7 +381,7 @@
             // 
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.Location = new System.Drawing.Point(148, 144);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.ReadOnly = true;
             this.txtPhone.Size = new System.Drawing.Size(201, 24);
@@ -404,7 +402,7 @@
             // 
             this.txtFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFullName.Location = new System.Drawing.Point(148, 97);
-            this.txtFullName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFullName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.ReadOnly = true;
             this.txtFullName.Size = new System.Drawing.Size(201, 24);
@@ -425,7 +423,7 @@
             // 
             this.txtCustomerId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerId.Location = new System.Drawing.Point(148, 54);
-            this.txtCustomerId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCustomerId.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerId.Name = "txtCustomerId";
             this.txtCustomerId.ReadOnly = true;
             this.txtCustomerId.Size = new System.Drawing.Size(201, 24);
@@ -459,9 +457,9 @@
             this.groupBoxCustomer.Controls.Add(this.label4);
             this.groupBoxCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxCustomer.Location = new System.Drawing.Point(85, 165);
-            this.groupBoxCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxCustomer.Name = "groupBoxCustomer";
-            this.groupBoxCustomer.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxCustomer.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxCustomer.Size = new System.Drawing.Size(729, 199);
             this.groupBoxCustomer.TabIndex = 94;
             this.groupBoxCustomer.TabStop = false;
@@ -476,9 +474,9 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(85, 390);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(729, 114);
             this.groupBox1.TabIndex = 95;
             this.groupBox1.TabStop = false;
@@ -488,7 +486,7 @@
             // 
             this.txtTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTime.Location = new System.Drawing.Point(493, 54);
-            this.txtTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTime.Margin = new System.Windows.Forms.Padding(4);
             this.txtTime.Name = "txtTime";
             this.txtTime.ReadOnly = true;
             this.txtTime.Size = new System.Drawing.Size(200, 24);
@@ -509,7 +507,7 @@
             // 
             this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDate.Location = new System.Drawing.Point(148, 54);
-            this.txtDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtDate.Name = "txtDate";
             this.txtDate.ReadOnly = true;
             this.txtDate.Size = new System.Drawing.Size(201, 24);
@@ -531,7 +529,7 @@
             this.btnNewCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnNewCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewCustomer.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewCustomer.Location = new System.Drawing.Point(632, 47);
+            this.btnNewCustomer.Location = new System.Drawing.Point(634, 76);
             this.btnNewCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNewCustomer.Name = "btnNewCustomer";
             this.btnNewCustomer.Size = new System.Drawing.Size(180, 33);
@@ -545,40 +543,25 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(75, 42);
+            this.label2.Location = new System.Drawing.Point(78, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(283, 40);
             this.label2.TabIndex = 87;
             this.label2.Text = "Edit Appointment";
             // 
-            // btnClose
+            // btnclose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundImage = global::finals_UI.Properties.Resources.close_window;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.btnClose.Image = global::finals_UI.Properties.Resources.close_window;
-            this.btnClose.Location = new System.Drawing.Point(864, 11);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(33, 31);
-            this.btnClose.TabIndex = 86;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Controls.Add(this.btnNewCustomer);
-            this.panel1.Location = new System.Drawing.Point(3, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(912, 134);
-            this.panel1.TabIndex = 97;
+            this.btnclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclose.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnclose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.btnclose.Location = new System.Drawing.Point(863, 24);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(30, 28);
+            this.btnclose.TabIndex = 97;
+            this.btnclose.Text = "X";
+            this.btnclose.UseVisualStyleBackColor = false;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click_1);
             // 
             // edit_appointments
             // 
@@ -586,14 +569,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(915, 844);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnclose);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnNewCustomer);
             this.Controls.Add(this.groupBoxServices);
             this.Controls.Add(this.groupBoxStatus);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBoxCustomer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "edit_appointments";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "edit_appointments";
@@ -607,9 +592,8 @@
             this.groupBoxCustomer.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -653,7 +637,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnNewCustomer;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnclose;
     }
 }

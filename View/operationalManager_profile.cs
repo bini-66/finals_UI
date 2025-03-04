@@ -158,5 +158,10 @@ namespace finals_UI.View
             sign_In.Show();
             this.Close();
         }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

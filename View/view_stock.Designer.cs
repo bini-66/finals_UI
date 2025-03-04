@@ -47,7 +47,6 @@
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.btnrefresh = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.btnclose = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -278,7 +277,7 @@
             this.btnrefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnrefresh.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnrefresh.Location = new System.Drawing.Point(380, 750);
+            this.btnrefresh.Location = new System.Drawing.Point(1294, 750);
             this.btnrefresh.Name = "btnrefresh";
             this.btnrefresh.Size = new System.Drawing.Size(168, 33);
             this.btnrefresh.TabIndex = 91;
@@ -296,19 +295,6 @@
             this.label10.Size = new System.Drawing.Size(106, 40);
             this.label10.TabIndex = 92;
             this.label10.Text = "Stock";
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(1195, 750);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(267, 33);
-            this.button4.TabIndex = 93;
-            this.button4.Text = "Generate Invenotry Reports";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnclose
             // 
@@ -360,7 +346,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.btnclose);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnrefresh);
             this.Controls.Add(this.label9);
@@ -402,7 +387,6 @@
         private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.Button btnrefresh;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnclose;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
