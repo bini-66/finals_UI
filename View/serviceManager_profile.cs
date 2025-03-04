@@ -168,5 +168,10 @@ namespace finals_UI.View
             profile.Show();
             this.Hide();
         }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

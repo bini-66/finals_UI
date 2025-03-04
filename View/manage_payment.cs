@@ -248,6 +248,7 @@ namespace finals_UI
                 return;
             }
             receipt_display report = new receipt_display(txtinvoice.Text);
+            report.WindowState = FormWindowState.Maximized;
             report.Show();
         }
 
