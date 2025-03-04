@@ -19,5 +19,6 @@ namespace finals_UI.Model.classes
         public int operationalManagerId {  get; set; }
         public int saleItemId {  get; set; }    
         public int invoiceItemServiceId {  get; set; }  
+      
     }
 }

@@ -679,6 +679,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
+    <None Include="Images\left-chevron.png" />
+    <None Include="Images\stock.png" />
+    <None Include="Images\item.png" />
+    <None Include="Images\customer3.png" />
+    <None Include="Images\payment2 %282%29.png" />
+    <None Include="Images\sales.png" />
+    <None Include="Images\appointment.png" />
+    <None Include="Images\purchases.png" />
+    <None Include="Images\suppliers.png" />
+    <None Include="Images\maintenance.png" />
+    <None Include="Images\feedback2.png" />
+    <None Include="Images\feedback.png" />
+    <None Include="Images\employees.png" />
+    <None Include="Images\offers.png" />
+    <None Include="Images\services.png" />
+    <None Include="Images\attendance.png" />
     <None Include="Resources\user.png" />
     <None Include="Resources\search.png" />
     <None Include="Resources\schedule.png" />

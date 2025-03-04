@@ -144,7 +144,7 @@ namespace finals_UI.Controller
                 // Store session data         
                 userSession.Login(user.userId, user.username, user.role);
 
-                MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return true;
             }
             else

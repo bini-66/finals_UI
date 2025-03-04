@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.txtacc = new System.Windows.Forms.Button();
             this.btnfeedback = new System.Windows.Forms.Button();
             this.btnemp = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -53,10 +57,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button14 = new System.Windows.Forms.Button();
             this.txtdate = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.btnclose = new System.Windows.Forms.Button();
-            this.txtacc = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -69,6 +74,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.pictureBox8);
+            this.panel1.Controls.Add(this.pictureBox7);
+            this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.Controls.Add(this.txtacc);
             this.panel1.Controls.Add(this.btnfeedback);
             this.panel1.Controls.Add(this.btnemp);
@@ -87,6 +95,55 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(255, 722);
             this.panel1.TabIndex = 3;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::finals_UI.Properties.Resources.account1;
+            this.pictureBox8.InitialImage = global::finals_UI.Properties.Resources.feedback22;
+            this.pictureBox8.Location = new System.Drawing.Point(24, 535);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 65;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::finals_UI.Properties.Resources.feedback23;
+            this.pictureBox7.InitialImage = global::finals_UI.Properties.Resources.feedback22;
+            this.pictureBox7.Location = new System.Drawing.Point(24, 489);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 64;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::finals_UI.Properties.Resources.employees1;
+            this.pictureBox6.Location = new System.Drawing.Point(24, 440);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 19;
+            this.pictureBox6.TabStop = false;
+            // 
+            // txtacc
+            // 
+            this.txtacc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtacc.FlatAppearance.BorderSize = 0;
+            this.txtacc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtacc.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtacc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.txtacc.Location = new System.Drawing.Point(0, 530);
+            this.txtacc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtacc.Name = "txtacc";
+            this.txtacc.Size = new System.Drawing.Size(255, 50);
+            this.txtacc.TabIndex = 18;
+            this.txtacc.Text = "Account";
+            this.txtacc.UseVisualStyleBackColor = true;
+            this.txtacc.Click += new System.EventHandler(this.txtacc_Click);
             // 
             // btnfeedback
             // 
@@ -123,7 +180,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::finals_UI.Properties.Resources.logout4;
-            this.pictureBox5.Location = new System.Drawing.Point(24, 654);
+            this.pictureBox5.Location = new System.Drawing.Point(24, 675);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(39, 36);
@@ -133,8 +190,8 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::finals_UI.Properties.Resources.account;
-            this.pictureBox4.Location = new System.Drawing.Point(24, 386);
+            this.pictureBox4.Image = global::finals_UI.Properties.Resources.offers;
+            this.pictureBox4.Location = new System.Drawing.Point(24, 384);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(39, 36);
@@ -144,8 +201,8 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::finals_UI.Properties.Resources.schedule;
-            this.pictureBox3.Location = new System.Drawing.Point(24, 338);
+            this.pictureBox3.Image = global::finals_UI.Properties.Resources.services;
+            this.pictureBox3.Location = new System.Drawing.Point(24, 334);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(39, 36);
@@ -155,8 +212,8 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::finals_UI.Properties.Resources.home3;
-            this.pictureBox2.Location = new System.Drawing.Point(24, 273);
+            this.pictureBox2.Image = global::finals_UI.Properties.Resources.attendance;
+            this.pictureBox2.Location = new System.Drawing.Point(24, 280);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(39, 36);
@@ -384,26 +441,13 @@
             this.txtdate.TabIndex = 61;
             this.txtdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(322, 462);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(292, 36);
-            this.button4.TabIndex = 62;
-            this.button4.Text = "Generate Attendance Report";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // btnclose
             // 
             this.btnclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclose.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnclose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.btnclose.Location = new System.Drawing.Point(1648, 21);
+            this.btnclose.Location = new System.Drawing.Point(1503, 28);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(30, 28);
             this.btnclose.TabIndex = 63;
@@ -411,30 +455,13 @@
             this.btnclose.UseVisualStyleBackColor = false;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
-            // txtacc
-            // 
-            this.txtacc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtacc.FlatAppearance.BorderSize = 0;
-            this.txtacc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtacc.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtacc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.txtacc.Location = new System.Drawing.Point(0, 530);
-            this.txtacc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtacc.Name = "txtacc";
-            this.txtacc.Size = new System.Drawing.Size(255, 50);
-            this.txtacc.TabIndex = 18;
-            this.txtacc.Text = "Account";
-            this.txtacc.UseVisualStyleBackColor = true;
-            this.txtacc.Click += new System.EventHandler(this.txtacc_Click);
-            // 
             // employee_attendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1719, 722);
+            this.ClientSize = new System.Drawing.Size(1624, 722);
             this.Controls.Add(this.btnclose);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.txtdate);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.label3);
@@ -449,6 +476,9 @@
             this.Text = "employee_attendance";
             this.Load += new System.EventHandler(this.employee_attendance_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -487,10 +517,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewCheckBoxColumn status;
         private System.Windows.Forms.TextBox txtdate;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnclose;
         private System.Windows.Forms.Button btnfeedback;
         private System.Windows.Forms.Button btnemp;
         private System.Windows.Forms.Button txtacc;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }

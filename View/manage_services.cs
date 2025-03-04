@@ -312,5 +312,19 @@ namespace finals_UI
             sign_In.Show();
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //view_reports view_Reports = new view_reports();
+            //view_Reports.MdiParent = this;
+            //view_Reports.Show();
+        }
+
+        private void btnacc_Click_1(object sender, EventArgs e)
+        {
+            serviceManager_profile profile = new serviceManager_profile();
+            profile.Show();
+            this.Hide();
+        }
     }
 }

@@ -53,11 +53,13 @@
             this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnback = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -302,12 +304,24 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // btnback
+            // 
+            this.btnback.Image = global::finals_UI.Properties.Resources.left_chevron;
+            this.btnback.Location = new System.Drawing.Point(25, 74);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(39, 36);
+            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnback.TabIndex = 86;
+            this.btnback.TabStop = false;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
+            // 
             // Register_user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1193, 644);
+            this.Controls.Add(this.btnback);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.txtemail);
             this.Controls.Add(this.label9);
@@ -337,6 +351,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,5 +383,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider4;
         private System.Windows.Forms.ErrorProvider errorProvider5;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.PictureBox btnback;
     }
 }

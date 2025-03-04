@@ -151,7 +151,7 @@ namespace finals_UI.View
             sale.plateNumber=this.txtplateNo.Text;
             sale.invoiceNo = this.txtInvoiceNo.Text;
             string type = "Item";
-            sale.operationalManagerId = 3;
+            //sale.operationalManagerId = 3;
 
             //function to retrieve customer ID
            int customerId= saleController.retrieveCustomerId(sale.plateNumber);
@@ -328,7 +328,9 @@ namespace finals_UI.View
             sale.quantity = Convert.ToInt32(this.NUDqty.Value);
             sale.plateNumber = this.txtplateNo.Text;
             sale.invoiceNo = this.txtInvoiceNo.Text;
-            sale.operationalManagerId = 2;
+            //sale.operationalManagerId = 2;
+         
+
 
             //function to retrieve customer ID
             int customerId = saleController.retrieveCustomerId(sale.plateNumber);

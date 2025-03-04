@@ -67,6 +67,7 @@ namespace finals_UI.Controller
 
             //command class
             string query = "UPDATE customer_invoice SET invoiceTotal = @invoiceTotal, customerId = @customerId, vehicleId = @vehicleId, offerId = @offerId WHERE invoiceNo = @invoiceNo";
+            string query = "UPDATE customer_invoice SET invoiceTotal = @invoiceTotal, customerId = @customerId, vehicleId = @vehicleId, offerId=@offerId WHERE invoiceNo = @invoiceNo";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());
 
             com.Parameters.AddWithValue("@invoiceNo",invoice.invoiceNo);
@@ -75,7 +76,9 @@ namespace finals_UI.Controller
             com.Parameters.AddWithValue("@customerId",invoice.customerId);
             com.Parameters.AddWithValue("@vehicleId",invoice.vehicleId);
             com.Parameters.AddWithValue("@offerId", invoice.offerId);
-          
+
+
+
             com.ExecuteNonQuery();
 
             MessageBox.Show("Invoice saved successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
