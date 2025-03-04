@@ -694,7 +694,13 @@ namespace finals_UI.View
 
         private void btnSearch_Click_1(object sender, EventArgs e)
         {
-
+            if (this.txtInvoiceNo.Text == "")
+            {
+                MessageBox.Show("Please enter an Invoice Number.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            customer_invoice report = new customer_invoice(txtInvoiceNo.Text);
+            report.Show();
         }
 
         private void btnpaymentDetails_Click(object sender, EventArgs e)
