@@ -798,7 +798,6 @@
             this.Name = "manage_sales_invoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "manage_sales";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.manage_sales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NUDqty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
