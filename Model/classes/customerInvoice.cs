@@ -15,7 +15,7 @@ namespace finals_UI.Model.classes
         public int receptionistId {  get; set; }
         public int vehicleId { get; set; }
         public int customerId { get; set; }
-        public int offerId {  get; set; }
+        public int? offerId{  get; set; }
 
 
 
