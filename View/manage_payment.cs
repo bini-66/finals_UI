@@ -198,6 +198,13 @@ namespace finals_UI
 
         private void btnacc_Click(object sender, EventArgs e)
         {
+            view_customer_inquiries view_Customer_Inquiries = new view_customer_inquiries();
+            view_Customer_Inquiries.Show();
+            this.Hide();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
             receptionist_profile profile = new receptionist_profile();
             profile.Show();
             this.Hide();

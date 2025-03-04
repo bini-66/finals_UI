@@ -55,7 +55,6 @@
             this.status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnsave = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
             this.txtdate = new System.Windows.Forms.TextBox();
             this.btnclose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -93,7 +92,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 722);
+            this.panel1.Size = new System.Drawing.Size(255, 1012);
             this.panel1.TabIndex = 3;
             // 
             // pictureBox8
@@ -180,7 +179,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::finals_UI.Properties.Resources.logout4;
-            this.pictureBox5.Location = new System.Drawing.Point(24, 675);
+            this.pictureBox5.Location = new System.Drawing.Point(24, 962);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(39, 36);
@@ -228,7 +227,7 @@
             this.btnlogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlogout.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnlogout.Location = new System.Drawing.Point(0, 672);
+            this.btnlogout.Location = new System.Drawing.Point(0, 962);
             this.btnlogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnlogout.Name = "btnlogout";
             this.btnlogout.Size = new System.Drawing.Size(255, 50);
@@ -349,13 +348,13 @@
             this.Date,
             this.status});
             this.dataGridView1.GridColor = System.Drawing.Color.Teal;
-            this.dataGridView1.Location = new System.Drawing.Point(709, 204);
+            this.dataGridView1.Location = new System.Drawing.Point(652, 204);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(824, 268);
+            this.dataGridView1.Size = new System.Drawing.Size(824, 235);
             this.dataGridView1.TabIndex = 29;
             // 
             // Employee_ID
@@ -391,7 +390,7 @@
             this.btnsave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsave.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsave.Location = new System.Drawing.Point(1079, 513);
+            this.btnsave.Location = new System.Drawing.Point(1035, 508);
             this.btnsave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(108, 54);
@@ -412,28 +411,13 @@
             this.label3.Text = "Attendance System";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.button14.Location = new System.Drawing.Point(1797, 12);
-            this.button14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(29, 28);
-            this.button14.TabIndex = 60;
-            this.button14.Text = "X";
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
             // txtdate
             // 
             this.txtdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.txtdate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtdate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.txtdate.Location = new System.Drawing.Point(1375, 163);
+            this.txtdate.Location = new System.Drawing.Point(1318, 173);
             this.txtdate.Multiline = true;
             this.txtdate.Name = "txtdate";
             this.txtdate.ReadOnly = true;
@@ -447,7 +431,7 @@
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclose.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnclose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.btnclose.Location = new System.Drawing.Point(1503, 28);
+            this.btnclose.Location = new System.Drawing.Point(1455, 27);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(30, 28);
             this.btnclose.TabIndex = 63;
@@ -460,10 +444,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1624, 722);
+            this.ClientSize = new System.Drawing.Size(1805, 1012);
             this.Controls.Add(this.btnclose);
             this.Controls.Add(this.txtdate);
-            this.Controls.Add(this.button14);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnsave);
             this.Controls.Add(this.dataGridView1);
@@ -506,7 +489,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox3;

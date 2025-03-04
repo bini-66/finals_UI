@@ -19,7 +19,7 @@ namespace finals_UI.Controller
             con.openConnection();
 
             //command class
-            string query = "SELECT stock.itemId,item.itemName,item.itemBrand AS Brand,stock.quantity AS available quantity FROM stock INNER JOIN item ON item.itemId=stock.itemId";
+            string query = "SELECT stock.itemId,item.itemName,item.itemBrand AS Brand,stock.quantity AS 'Available quantity' FROM stock INNER JOIN item ON item.itemId=stock.itemId";
             MySqlCommand com=new MySqlCommand(query,con.getConnection());   
 
             MySqlDataAdapter DAP=new MySqlDataAdapter(com); 

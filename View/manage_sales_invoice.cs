@@ -151,7 +151,7 @@ namespace finals_UI.View
             sale.plateNumber=this.txtplateNo.Text;
             sale.invoiceNo = this.txtInvoiceNo.Text;
             string type = "Item";
-            //sale.operationalManagerId = 3;
+            sale.operationalManagerId = 3;
 
             //function to retrieve customer ID
            int customerId= saleController.retrieveCustomerId(sale.plateNumber);
@@ -328,7 +328,7 @@ namespace finals_UI.View
             sale.quantity = Convert.ToInt32(this.NUDqty.Value);
             sale.plateNumber = this.txtplateNo.Text;
             sale.invoiceNo = this.txtInvoiceNo.Text;
-            //sale.operationalManagerId = 2;
+            sale.operationalManagerId = 2;
          
 
 
@@ -766,8 +766,8 @@ namespace finals_UI.View
 
         private void btnacc_Click_1(object sender, EventArgs e)
         {
-            receptionist_profile profile = new receptionist_profile();
-            profile.Show();
+            view_customer_inquiries view_Customer_Inquiries = new view_customer_inquiries();
+            view_Customer_Inquiries.Show();
             this.Hide();
         }
 
@@ -778,6 +778,13 @@ namespace finals_UI.View
             sign_in sign_In = new sign_in();
             sign_In.Show();
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            receptionist_profile profile = new receptionist_profile();
+            profile.Show();
+            this.Hide();
         }
 
         //public string returnInvoiceNo()

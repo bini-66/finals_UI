@@ -53,7 +53,7 @@
             this.selectCellToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnacc = new System.Windows.Forms.Button();
+            this.btninq = new System.Windows.Forms.Button();
             this.btncustomers = new System.Windows.Forms.Button();
             this.btnlogout = new System.Windows.Forms.Button();
             this.btnpayments = new System.Windows.Forms.Button();
@@ -62,6 +62,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnacc = new System.Windows.Forms.Button();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -73,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -151,7 +154,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(361, 62);
+            this.label2.Location = new System.Drawing.Point(328, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(214, 40);
             this.label2.TabIndex = 31;
@@ -162,7 +165,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label3.Location = new System.Drawing.Point(916, 147);
+            this.label3.Location = new System.Drawing.Point(883, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 23);
             this.label3.TabIndex = 34;
@@ -173,7 +176,7 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(1411, 143);
+            this.btnSearch.Location = new System.Drawing.Point(1378, 172);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 33);
@@ -187,7 +190,7 @@
             this.btnNewAppointment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnNewAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewAppointment.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewAppointment.Location = new System.Drawing.Point(369, 143);
+            this.btnNewAppointment.Location = new System.Drawing.Point(336, 172);
             this.btnNewAppointment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNewAppointment.Name = "btnNewAppointment";
             this.btnNewAppointment.Size = new System.Drawing.Size(177, 33);
@@ -200,7 +203,7 @@
             // 
             this.txtSearch.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.Location = new System.Drawing.Point(1020, 143);
+            this.txtSearch.Location = new System.Drawing.Point(987, 172);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
@@ -212,7 +215,7 @@
             this.btnNewCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnNewCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewCustomer.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewCustomer.Location = new System.Drawing.Point(567, 143);
+            this.btnNewCustomer.Location = new System.Drawing.Point(534, 172);
             this.btnNewCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNewCustomer.Name = "btnNewCustomer";
             this.btnNewCustomer.Size = new System.Drawing.Size(180, 33);
@@ -272,7 +275,7 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Teal;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(369, 215);
+            this.dataGridView1.Location = new System.Drawing.Point(336, 244);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -283,10 +286,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.pictureBox8);
+            this.panel1.Controls.Add(this.btnacc);
             this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.btnacc);
+            this.panel1.Controls.Add(this.btninq);
             this.panel1.Controls.Add(this.btncustomers);
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.pictureBox3);
@@ -300,23 +305,23 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 719);
+            this.panel1.Size = new System.Drawing.Size(255, 1012);
             this.panel1.TabIndex = 129;
             // 
-            // btnacc
+            // btninq
             // 
-            this.btnacc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnacc.FlatAppearance.BorderSize = 0;
-            this.btnacc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnacc.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnacc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnacc.Location = new System.Drawing.Point(0, 486);
-            this.btnacc.Name = "btnacc";
-            this.btnacc.Size = new System.Drawing.Size(255, 51);
-            this.btnacc.TabIndex = 53;
-            this.btnacc.Text = "Account";
-            this.btnacc.UseVisualStyleBackColor = true;
-            this.btnacc.Click += new System.EventHandler(this.btnacc_Click);
+            this.btninq.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btninq.FlatAppearance.BorderSize = 0;
+            this.btninq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btninq.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btninq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btninq.Location = new System.Drawing.Point(0, 486);
+            this.btninq.Name = "btninq";
+            this.btninq.Size = new System.Drawing.Size(255, 51);
+            this.btninq.TabIndex = 53;
+            this.btninq.Text = "      Customer Inquiries";
+            this.btninq.UseVisualStyleBackColor = true;
+            this.btninq.Click += new System.EventHandler(this.btnacc_Click);
             // 
             // btncustomers
             // 
@@ -341,7 +346,7 @@
             this.btnlogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlogout.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnlogout.Location = new System.Drawing.Point(0, 667);
+            this.btnlogout.Location = new System.Drawing.Point(0, 960);
             this.btnlogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnlogout.Name = "btnlogout";
             this.btnlogout.Size = new System.Drawing.Size(255, 52);
@@ -394,7 +399,7 @@
             this.btnapt.Name = "btnapt";
             this.btnapt.Size = new System.Drawing.Size(255, 63);
             this.btnapt.TabIndex = 1;
-            this.btnapt.Text = "Appointments";
+            this.btnapt.Text = "   Appointments";
             this.btnapt.UseVisualStyleBackColor = true;
             this.btnapt.Click += new System.EventHandler(this.btnapt_Click);
             // 
@@ -415,7 +420,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label10.Location = new System.Drawing.Point(66, 184);
+            this.label10.Location = new System.Drawing.Point(75, 184);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(117, 25);
             this.label10.TabIndex = 48;
@@ -432,10 +437,36 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "WELCOME";
             // 
+            // btnacc
+            // 
+            this.btnacc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnacc.FlatAppearance.BorderSize = 0;
+            this.btnacc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnacc.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnacc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnacc.Location = new System.Drawing.Point(0, 537);
+            this.btnacc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnacc.Name = "btnacc";
+            this.btnacc.Size = new System.Drawing.Size(255, 52);
+            this.btnacc.TabIndex = 57;
+            this.btnacc.Text = "Account";
+            this.btnacc.UseVisualStyleBackColor = true;
+            this.btnacc.Click += new System.EventHandler(this.btnacc_Click_1);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::finals_UI.Properties.Resources.account;
+            this.pictureBox8.Location = new System.Drawing.Point(12, 542);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 58;
+            this.pictureBox8.TabStop = false;
+            // 
             // pictureBox7
             // 
             this.pictureBox7.Image = global::finals_UI.Properties.Resources.customer3;
-            this.pictureBox7.Location = new System.Drawing.Point(27, 442);
+            this.pictureBox7.Location = new System.Drawing.Point(12, 441);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(39, 36);
@@ -446,7 +477,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::finals_UI.Properties.Resources.payment2__2_;
-            this.pictureBox6.Location = new System.Drawing.Point(27, 390);
+            this.pictureBox6.Location = new System.Drawing.Point(12, 389);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(39, 36);
@@ -456,8 +487,8 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::finals_UI.Properties.Resources.account;
-            this.pictureBox4.Location = new System.Drawing.Point(27, 493);
+            this.pictureBox4.Image = global::finals_UI.Properties.Resources.inquiry1;
+            this.pictureBox4.Location = new System.Drawing.Point(12, 492);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(39, 36);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -467,7 +498,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(27, 894);
+            this.pictureBox5.Location = new System.Drawing.Point(12, 834);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(39, 36);
@@ -478,7 +509,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::finals_UI.Properties.Resources.sales;
-            this.pictureBox3.Location = new System.Drawing.Point(27, 336);
+            this.pictureBox3.Location = new System.Drawing.Point(12, 335);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(39, 36);
@@ -489,7 +520,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::finals_UI.Properties.Resources.appointment;
-            this.pictureBox2.Location = new System.Drawing.Point(27, 276);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 275);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(39, 36);
@@ -513,7 +544,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1622, 719);
+            this.ClientSize = new System.Drawing.Size(1805, 1012);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
@@ -534,6 +565,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -582,9 +614,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnacc;
+        private System.Windows.Forms.Button btninq;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Button btnacc;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }
