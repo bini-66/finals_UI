@@ -250,12 +250,6 @@
       <DependentUpon>purchase_cr.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="View\purchase_report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\purchase_report.Designer.cs">
-      <DependentUpon>purchase_report.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\receptionist_profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,12 +267,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>sales_cr.rpt</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="View\sales_report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\sales_report.Designer.cs">
-      <DependentUpon>sales_report.cs</DependentUpon>
     </Compile>
     <Compile Include="View\sendCode.cs">
       <SubType>Form</SubType>
@@ -499,9 +487,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>purchase_cr.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\purchase_report.resx">
-      <DependentUpon>purchase_report.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\receptionist_profile.resx">
       <DependentUpon>receptionist_profile.cs</DependentUpon>
     </EmbeddedResource>
@@ -511,9 +496,6 @@
     <EmbeddedResource Include="View\sales_cr.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>sales_cr.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\sales_report.resx">
-      <DependentUpon>sales_report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\sendCode.resx">
       <DependentUpon>sendCode.cs</DependentUpon>
