@@ -12,16 +12,18 @@ namespace finals_UI.View
 {
     public partial class purchase_report : Form
     {
-        private string selectedFilter;
-        public purchase_report(string filter)
+        //private string selectedFilter;
+        public purchase_report()
         {
             InitializeComponent();
-            selectedFilter = filter;
+            //selectedFilter = filter;
         }
 
         private void purchase_report_Load(object sender, EventArgs e)
         {
-            try
+            purchase_cr rpt = new purchase_cr();
+            crystalReportViewer1.ReportSource = rpt;
+            /*try
             {
                 purchase_cr report = new purchase_cr();
 
@@ -33,7 +35,7 @@ namespace finals_UI.View
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading report: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
         }
     }
 }
