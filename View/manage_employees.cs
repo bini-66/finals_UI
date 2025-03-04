@@ -134,6 +134,8 @@ namespace finals_UI
         {
             DataSet ds = employeeController.viewEmployee();
             this.dataGridView1.DataSource = ds.Tables[0];
+            this.txtEmpIdsrch.Text = "";
+            this.txtNamesrch.Text = "";
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

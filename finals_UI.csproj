@@ -116,6 +116,7 @@
     <Compile Include="Controller\customerInvoiceController.cs" />
     <Compile Include="Controller\employeeController.cs" />
     <Compile Include="Controller\feedbackController.cs" />
+    <Compile Include="Controller\inquiryController.cs" />
     <Compile Include="Controller\inventoryManagerContoller.cs" />
     <Compile Include="Controller\itemController.cs" />
     <Compile Include="Controller\maintenanceController.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="Model\classes\customerInvoice.cs" />
     <Compile Include="Model\classes\employee.cs" />
     <Compile Include="Model\classes\feedback.cs" />
+    <Compile Include="Model\classes\inquiry.cs" />
     <Compile Include="Model\classes\inventoryManager.cs" />
     <Compile Include="Model\classes\item.cs" />
     <Compile Include="Model\classes\maintenance.cs" />
@@ -414,6 +416,12 @@
     <Compile Include="View\view_customer.Designer.cs">
       <DependentUpon>view_customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\view_customer_inquiries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\view_customer_inquiries.Designer.cs">
+      <DependentUpon>view_customer_inquiries.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\view_employee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -509,6 +517,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\superUser_dash.resx">
       <DependentUpon>superUser_dash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\view_customer_inquiries.resx">
+      <DependentUpon>view_customer_inquiries.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\view_reports.resx">
       <DependentUpon>view_reports.cs</DependentUpon>
@@ -660,6 +671,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
+    <None Include="Images\inquiry.png" />
     <None Include="Images\left-chevron.png" />
     <None Include="Images\stock.png" />
     <None Include="Images\item.png" />

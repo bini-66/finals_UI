@@ -67,7 +67,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(95, 74);
+            this.label1.Location = new System.Drawing.Point(252, 139);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 40);
             this.label1.TabIndex = 0;
@@ -79,7 +79,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label2.Location = new System.Drawing.Point(98, 267);
+            this.label2.Location = new System.Drawing.Point(256, 395);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 23);
             this.label2.TabIndex = 1;
@@ -91,7 +91,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label3.Location = new System.Drawing.Point(97, 373);
+            this.label3.Location = new System.Drawing.Point(255, 501);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 23);
             this.label3.TabIndex = 3;
@@ -103,7 +103,7 @@
             this.txtlname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtlname.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtlname.ForeColor = System.Drawing.Color.White;
-            this.txtlname.Location = new System.Drawing.Point(252, 364);
+            this.txtlname.Location = new System.Drawing.Point(410, 492);
             this.txtlname.Multiline = true;
             this.txtlname.Name = "txtlname";
             this.txtlname.Size = new System.Drawing.Size(439, 42);
@@ -114,7 +114,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label4.Location = new System.Drawing.Point(97, 471);
+            this.label4.Location = new System.Drawing.Point(255, 599);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 23);
             this.label4.TabIndex = 5;
@@ -125,7 +125,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label7.Location = new System.Drawing.Point(98, 179);
+            this.label7.Location = new System.Drawing.Point(256, 307);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 23);
             this.label7.TabIndex = 11;
@@ -145,7 +145,7 @@
             "Operational Manager",
             "Inventory Manager",
             "Service Manager"});
-            this.CBrole.Location = new System.Drawing.Point(252, 178);
+            this.CBrole.Location = new System.Drawing.Point(410, 306);
             this.CBrole.Name = "CBrole";
             this.CBrole.Size = new System.Drawing.Size(296, 25);
             this.CBrole.TabIndex = 12;
@@ -153,7 +153,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(760, 141);
+            this.panel1.Location = new System.Drawing.Point(918, 269);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1, 398);
             this.panel1.TabIndex = 13;
@@ -161,7 +161,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(811, 267);
+            this.panel2.Location = new System.Drawing.Point(969, 395);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(300, 1);
             this.panel2.TabIndex = 16;
@@ -169,7 +169,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(811, 395);
+            this.panel3.Location = new System.Drawing.Point(969, 523);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(300, 1);
             this.panel3.TabIndex = 17;
@@ -179,7 +179,7 @@
             this.btnadd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnadd.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnadd.Location = new System.Drawing.Point(811, 455);
+            this.btnadd.Location = new System.Drawing.Point(969, 583);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(177, 58);
             this.btnadd.TabIndex = 20;
@@ -193,7 +193,7 @@
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclose.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnclose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.btnclose.Location = new System.Drawing.Point(1151, 12);
+            this.btnclose.Location = new System.Drawing.Point(1474, 36);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(30, 28);
             this.btnclose.TabIndex = 76;
@@ -207,7 +207,7 @@
             this.txtfname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtfname.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtfname.ForeColor = System.Drawing.Color.White;
-            this.txtfname.Location = new System.Drawing.Point(252, 260);
+            this.txtfname.Location = new System.Drawing.Point(410, 388);
             this.txtfname.Multiline = true;
             this.txtfname.Name = "txtfname";
             this.txtfname.Size = new System.Drawing.Size(439, 42);
@@ -219,7 +219,7 @@
             this.txtphone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtphone.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtphone.ForeColor = System.Drawing.Color.White;
-            this.txtphone.Location = new System.Drawing.Point(252, 471);
+            this.txtphone.Location = new System.Drawing.Point(410, 599);
             this.txtphone.Multiline = true;
             this.txtphone.Name = "txtphone";
             this.txtphone.Size = new System.Drawing.Size(439, 42);
@@ -230,7 +230,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label8.Location = new System.Drawing.Point(808, 195);
+            this.label8.Location = new System.Drawing.Point(966, 323);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 23);
             this.label8.TabIndex = 81;
@@ -241,7 +241,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label9.Location = new System.Drawing.Point(807, 318);
+            this.label9.Location = new System.Drawing.Point(965, 446);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(98, 23);
             this.label9.TabIndex = 82;
@@ -253,7 +253,7 @@
             this.txtpw.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtpw.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtpw.Location = new System.Drawing.Point(809, 361);
+            this.txtpw.Location = new System.Drawing.Point(967, 489);
             this.txtpw.Name = "txtpw";
             this.txtpw.Size = new System.Drawing.Size(321, 23);
             this.txtpw.TabIndex = 15;
@@ -266,7 +266,7 @@
             this.txtemail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtemail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtemail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtemail.Location = new System.Drawing.Point(811, 230);
+            this.txtemail.Location = new System.Drawing.Point(969, 358);
             this.txtemail.Multiline = true;
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(319, 35);
@@ -296,7 +296,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.checkBox1.Location = new System.Drawing.Point(986, 402);
+            this.checkBox1.Location = new System.Drawing.Point(1144, 530);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(125, 20);
             this.checkBox1.TabIndex = 85;
@@ -307,7 +307,7 @@
             // btnback
             // 
             this.btnback.Image = global::finals_UI.Properties.Resources.left_chevron;
-            this.btnback.Location = new System.Drawing.Point(25, 74);
+            this.btnback.Location = new System.Drawing.Point(183, 139);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(39, 36);
             this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -320,7 +320,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1193, 644);
+            this.ClientSize = new System.Drawing.Size(1805, 1012);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.txtemail);

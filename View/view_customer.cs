@@ -168,11 +168,11 @@ namespace finals_UI
             this.Close();
         }
 
-        //acc btn
+        //cust inq
         private void button3_Click(object sender, EventArgs e)
         {
-            receptionist_profile profile = new receptionist_profile();
-            profile.Show();
+           view_customer_inquiries view_Customer_Inquiries = new view_customer_inquiries();
+            view_Customer_Inquiries.Show();
             this.Hide();
         }
 
@@ -193,6 +193,13 @@ namespace finals_UI
         private void pictureBox6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnacc2_Click(object sender, EventArgs e)
+        {
+            receptionist_profile receptionist_Profile = new receptionist_profile();
+            receptionist_Profile.Show();
+            this.Hide();
         }
     }
 }

@@ -43,7 +43,7 @@
             // 
             // txtresetpw
             // 
-            this.txtresetpw.Location = new System.Drawing.Point(368, 321);
+            this.txtresetpw.Location = new System.Drawing.Point(422, 312);
             this.txtresetpw.Name = "txtresetpw";
             this.txtresetpw.Size = new System.Drawing.Size(224, 22);
             this.txtresetpw.TabIndex = 1;
@@ -51,7 +51,7 @@
             // 
             // txtconresetpw
             // 
-            this.txtconresetpw.Location = new System.Drawing.Point(368, 378);
+            this.txtconresetpw.Location = new System.Drawing.Point(422, 369);
             this.txtconresetpw.Name = "txtconresetpw";
             this.txtconresetpw.Size = new System.Drawing.Size(224, 22);
             this.txtconresetpw.TabIndex = 2;
@@ -62,7 +62,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(343, 471);
+            this.button1.Location = new System.Drawing.Point(397, 462);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 39);
             this.button1.TabIndex = 4;
@@ -75,7 +75,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label8.Location = new System.Drawing.Point(123, 318);
+            this.label8.Location = new System.Drawing.Point(177, 309);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(143, 23);
             this.label8.TabIndex = 84;
@@ -86,7 +86,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label1.Location = new System.Drawing.Point(123, 389);
+            this.label1.Location = new System.Drawing.Point(177, 380);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(172, 23);
             this.label1.TabIndex = 85;
@@ -96,7 +96,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.checkBox1.Location = new System.Drawing.Point(621, 322);
+            this.checkBox1.Location = new System.Drawing.Point(675, 313);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(61, 20);
             this.checkBox1.TabIndex = 86;
@@ -108,7 +108,7 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.checkBox2.Location = new System.Drawing.Point(621, 380);
+            this.checkBox2.Location = new System.Drawing.Point(675, 371);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(61, 20);
             this.checkBox2.TabIndex = 87;
@@ -121,7 +121,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(120, 170);
+            this.label3.Location = new System.Drawing.Point(174, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(263, 40);
             this.label3.TabIndex = 89;
@@ -132,7 +132,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label2.Location = new System.Drawing.Point(165, 258);
+            this.label2.Location = new System.Drawing.Point(219, 221);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 21);
             this.label2.TabIndex = 88;
@@ -142,7 +142,7 @@
             // btnback
             // 
             this.btnback.Image = global::finals_UI.Properties.Resources.left_chevron;
-            this.btnback.Location = new System.Drawing.Point(120, 250);
+            this.btnback.Location = new System.Drawing.Point(174, 213);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(39, 36);
             this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -155,7 +155,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(783, 668);
+            this.ClientSize = new System.Drawing.Size(895, 668);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

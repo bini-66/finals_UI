@@ -45,12 +45,12 @@ namespace finals_UI.View
 
         private void btnSales_Click(object sender, EventArgs e)
         {
-            LoadReport(@"C:\Users\abc\Source\Repos\finals_UI\View\sales_cr.rpt");
+            LoadReport(@"D:\NIBM\GUI-C#\finals_UI\View\sales_cr.rpt");
         }
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
-            LoadReport(@"C:\Users\abc\Source\Repos\finals_UI\View\purchase_cr.rpt");
+            LoadReport(@"D:\NIBM\GUI-C#\finals_UI\View\purchase_cr.rpt");
         }
 
         private void view_reports_Load(object sender, EventArgs e)
@@ -67,7 +67,7 @@ namespace finals_UI.View
 
         private void btnAttendance_Click(object sender, EventArgs e)
         {
-            LoadReport(@"C:\Users\abc\Source\Repos\finals_UI\View\attendance_cr.rpt");
+            LoadReport(@"D:\NIBM\GUI-C#\finals_UI\View\attendance_cr.rpt");
         }
     }
 }

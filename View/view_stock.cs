@@ -25,6 +25,12 @@ namespace finals_UI.View
         {
             DataSet ds=stockController.loadStock();
             this.dataGridView1.DataSource = ds.Tables[0];
+
+            //load low stock items
+            DataSet ds2 = stockController.restockItems();
+            this.dataGridView2.DataSource = ds2.Tables[0];
+            dataGridView2.Columns["quantity"].DefaultCellStyle.ForeColor = Color.Red;
+
         }
 
         private void btnsearch_Click(object sender, EventArgs e)

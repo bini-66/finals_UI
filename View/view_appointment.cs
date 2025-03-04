@@ -224,12 +224,21 @@ namespace finals_UI
             this.Close();
         }
 
-
+        //btn cust inquiries
         private void btnacc_Click(object sender, EventArgs e)
         {
+         view_customer_inquiries view_Customer_Inquiries = new view_customer_inquiries();
+         view_Customer_Inquiries.Show();
+            this.Hide();
+        }
+
+        private void btnacc_Click_1(object sender, EventArgs e)
+        {
+
             receptionist_profile profile1 = new receptionist_profile();
             profile1.Show();
             this.Hide();
+
         }
     }
 }
