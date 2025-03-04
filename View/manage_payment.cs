@@ -137,6 +137,25 @@ namespace finals_UI
 
         private void txtpaid_Leave(object sender, EventArgs e)
         {
+            if (this.txtinvtot.Text == "")
+            {
+                errorProvider2.SetError(this.txtpaid, "Total foeld cannot be empty");
+                return;
+            }
+            else
+            {
+                errorProvider2.Clear();
+            }
+            if (this.txtpaid.Text == "")
+            {
+                errorProvider2.SetError(this.txtpaid, "please enter the paid amount");
+                return;
+            }
+            else
+            {
+                errorProvider2.Clear();
+            }
+
             payment.invoiceTotal= Convert.ToSingle(this.txtinvtot.Text);
             payment.paidAmount = Convert.ToSingle(this.txtpaid.Text);
             if (payment.paidAmount >= payment.invoiceTotal)
@@ -197,12 +216,29 @@ namespace finals_UI
                 errorProvider3.Clear();
             }
 
+            if (CBpaymentmethod.SelectedIndex == -1) 
+            {
+                errorProvider5.SetError(CBpaymentmethod, "Please select a payment method.");
+                return;
+            }
+            else
+            {
+                errorProvider5.Clear();
+            }
+
             payment.invoiceTotal = Convert.ToSingle(this.txtinvtot.Text);
             payment.paidAmount = Convert.ToSingle(this.txtpaid.Text);
             payment.paymentMethod=this.CBpaymentmethod.SelectedItem.ToString();
             payment.vehicleId=paymentController.retrieveVehicleId(this.txtplateNo.Text);
             payment.customerInvoiceId=paymentController.retrieveInvoiceId(this.txtinvoice.Text);
            // receipt.receptionistId = 2;
+
+            if(payment.paidAmount < payment.invoiceTotal)
+            {
+                float balanceDue = payment.invoiceTotal - payment.paidAmount;
+                MessageBox.Show($"Insufficient payment. Remaining balance: {balanceDue:N2}", "Balance Due", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             paymentController.savePaymentDetails(payment, receipt);
 
@@ -251,6 +287,13 @@ namespace finals_UI
         }
 
         private void btnacc_Click(object sender, EventArgs e)
+        {
+            view_customer_inquiries view_Customer_Inquiries = new view_customer_inquiries();
+            view_Customer_Inquiries.Show();
+            this.Hide();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             receptionist_profile profile = new receptionist_profile();
             profile.Show();

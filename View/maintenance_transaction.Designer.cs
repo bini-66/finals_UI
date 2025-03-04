@@ -214,7 +214,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 882);
+            this.panel1.Size = new System.Drawing.Size(255, 1012);
             this.panel1.TabIndex = 63;
             // 
             // pictureBox6
@@ -289,7 +289,7 @@
             this.btnlogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlogout.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnlogout.Location = new System.Drawing.Point(0, 831);
+            this.btnlogout.Location = new System.Drawing.Point(0, 961);
             this.btnlogout.Name = "btnlogout";
             this.btnlogout.Size = new System.Drawing.Size(255, 51);
             this.btnlogout.TabIndex = 6;
@@ -606,7 +606,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1489, 882);
+            this.ClientSize = new System.Drawing.Size(1805, 1012);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CBcolumns);
             this.Controls.Add(this.txtDesc);
