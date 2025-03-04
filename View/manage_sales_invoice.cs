@@ -1,4 +1,5 @@
-﻿using finals_UI;
+﻿using CrystalDecisions.Windows.Forms;
+using finals_UI;
 using finals_UI.Controller;
 using finals_UI.Model.classes;
 using finals_UI.Model.Database;
@@ -12,6 +13,7 @@ using System.Linq;
 using System.Security.Authentication.ExtendedProtection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Services.Description;
 using System.Windows.Forms;
 
 namespace finals_UI.View
@@ -96,6 +98,24 @@ namespace finals_UI.View
             CBoffer.SelectedIndex = -1;
         }
 
+        private bool IsItemIdExists(int itemId)
+        {
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+
+                if (row.IsNewRow) continue;
+
+
+                if (Convert.ToInt32(row.Cells["ItemServiceId"].Value) == itemId)
+                {
+                    return true;  // itemId exists
+                }
+            }
+
+            return false;  // itemId does not exist
+        }
+
         //items  adding button 
         private void btnadd_Click(object sender, EventArgs e)
         {
@@ -151,7 +171,7 @@ namespace finals_UI.View
             sale.plateNumber=this.txtplateNo.Text;
             sale.invoiceNo = this.txtInvoiceNo.Text;
             string type = "Item";
-            //sale.operationalManagerId = 3;
+            sale.operationalManagerId = 3;
 
             //function to retrieve customer ID
            int customerId= saleController.retrieveCustomerId(sale.plateNumber);
@@ -171,53 +191,63 @@ namespace finals_UI.View
             //}
 
 
-          
-
-            bool stockAvailability = saleController.checkStockAvailability(sale.itemId, sale.quantity);
-            if (stockAvailability == false)
+            if (IsServiceIdExists(sale.itemId))
             {
-                MessageBox.Show("No enough stock", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return ;
+                MessageBox.Show("This service has already been added to the list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             else
             {
-                //function to insert sale details
-                int saleItemId = saleController.addItem(sale);
-
-
-                //insertng record to data grid view
-                string itemName = this.CBitmName.Text;
-                float itemPrice = saleController.retrieveItemPrice(sale.itemId);
-                //calcuate total price 
-                float totalPrice = sale.quantity * itemPrice;
-                int invoiceitmid=saleController.retrieveinvitmId(sale.itemId,invoiceId);
-
-                dataGridView1.Rows.Add(sale.itemId,itemName,type, sale.quantity,itemPrice,totalPrice,saleItemId,invoiceitmid);
-                updateTotal();
-                //// Create and add Update button
-                //DataGridViewButtonCell updateButtonCell = new DataGridViewButtonCell();
-                //updateButtonCell.Value = "Update";
-                //dataGridView1.Rows[rowIndex].Cells["Update"] = updateButtonCell;
-
-                //// Create and add Delete button
-                //DataGridViewButtonCell deleteButtonCell = new DataGridViewButtonCell();
-                //deleteButtonCell.Value = "Delete";
-                //dataGridView1.Rows[rowIndex].Cells["Delete"] = deleteButtonCell;
-                //////hiding saleIteM id column
-                dataGridView1.Columns["saleItemId"].Visible = false;
-               // dataGridView1.Columns["invitemservId"].Visible = false;
-                dataGridView1.Columns["Quantity"].Visible = true;
-                dataGridView1.Columns["type"].Visible = false;
-                dataGridView1.Columns["invitemservId"].Visible = false;
 
 
 
+                bool stockAvailability = saleController.checkStockAvailability(sale.itemId, sale.quantity);
+                if (stockAvailability == false)
+                {
+                    MessageBox.Show("No enough stock", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    //function to insert sale details
+                    int saleItemId = saleController.addItem(sale);
 
-                //clear fields
-                this.CBitmName.SelectedIndex = -1;
-                this.NUDqty.Value = 0;
+
+                    //insertng record to data grid view
+                    string itemName = this.CBitmName.Text;
+                    float itemPrice = saleController.retrieveItemPrice(sale.itemId);
+                    //calcuate total price 
+                    float totalPrice = sale.quantity * itemPrice;
+                    int invoiceitmid = saleController.retrieveinvitmId(sale.itemId, invoiceId);
 
 
+                    dataGridView1.Rows.Add(sale.itemId, itemName, type, sale.quantity, itemPrice, totalPrice, saleItemId, invoiceitmid);
+                    updateTotal();
+                    //// Create and add Update button
+                    //DataGridViewButtonCell updateButtonCell = new DataGridViewButtonCell();
+                    //updateButtonCell.Value = "Update";
+                    //dataGridView1.Rows[rowIndex].Cells["Update"] = updateButtonCell;
+
+                    //// Create and add Delete button
+                    //DataGridViewButtonCell deleteButtonCell = new DataGridViewButtonCell();
+                    //deleteButtonCell.Value = "Delete";
+                    //dataGridView1.Rows[rowIndex].Cells["Delete"] = deleteButtonCell;
+                    //////hiding saleIteM id column
+                    dataGridView1.Columns["saleItemId"].Visible = false;
+                    // dataGridView1.Columns["invitemservId"].Visible = false;
+                    dataGridView1.Columns["Quantity"].Visible = true;
+                    dataGridView1.Columns["type"].Visible = false;
+                    dataGridView1.Columns["invitemservId"].Visible = false;
+
+
+
+
+                    //clear fields
+                    this.CBitmName.SelectedIndex = -1;
+                    this.NUDqty.Value = 0;
+
+
+                }
             }
 
 
@@ -328,7 +358,7 @@ namespace finals_UI.View
             sale.quantity = Convert.ToInt32(this.NUDqty.Value);
             sale.plateNumber = this.txtplateNo.Text;
             sale.invoiceNo = this.txtInvoiceNo.Text;
-            //sale.operationalManagerId = 2;
+            sale.operationalManagerId = 2;
          
 
 
@@ -350,46 +380,57 @@ namespace finals_UI.View
             //}
 
             //function to insert sale details
-           
 
-            bool stockAvailability = saleController.checkStockAvailability(sale.itemId, sale.quantity);
-            if (stockAvailability == false)
+            //checkng whether same service is enetered
+            if (IsServiceIdExists(sale.itemId))
             {
+                MessageBox.Show("This service has already been added to the list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
+
             }
             else
             {
-                //insertng record to data grid view
-                saleController.updateitem(sale);
-
-                float itemPrice = saleController.retrieveItemPrice(sale.itemId);
-                //calcuate total price 
-                float totalPrice = sale.quantity * itemPrice;
-                
-
-                // Update the selected row in the DataGridView 
-                if (dataGridView1.CurrentRow != null)
+               
+            
+            bool stockAvailability = saleController.checkStockAvailability(sale.itemId, sale.quantity);
+                if (stockAvailability == false)
                 {
-                    dataGridView1.CurrentRow.Cells["ItemServiceName"].Value = this.CBitmName.Text;
-                    dataGridView1.CurrentRow.Cells["Quantity"].Value = sale.quantity;
-                    dataGridView1.CurrentRow.Cells["Price"].Value = totalPrice;
-
-                    updateTotal();
-
-
-                    //dataGridView1.CurrentRow.Cells["InvoiceNo"].Value = sale.invoiceNo;
-                    //dataGridView1.CurrentRow.Cells["plateNumber"].Value = sale.plateNumber;
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Please select a row to update.", "Update Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //insertng record to data grid view
+                    saleController.updateitem(sale);
+
+                    float itemPrice = saleController.retrieveItemPrice(sale.itemId);
+                    //calcuate total price 
+                    float totalPrice = sale.quantity * itemPrice;
+
+
+                    // Update the selected row in the DataGridView 
+                    if (dataGridView1.CurrentRow != null)
+                    {
+                        dataGridView1.CurrentRow.Cells["ItemServiceName"].Value = this.CBitmName.Text;
+                        dataGridView1.CurrentRow.Cells["Quantity"].Value = sale.quantity;
+                        dataGridView1.CurrentRow.Cells["Price"].Value = totalPrice;
+
+                        updateTotal();
+
+
+                        //dataGridView1.CurrentRow.Cells["InvoiceNo"].Value = sale.invoiceNo;
+                        //dataGridView1.CurrentRow.Cells["plateNumber"].Value = sale.plateNumber;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select a row to update.", "Update Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
+
+                    //clear fields
+                    this.CBitmName.SelectedIndex = -1;
+                    this.NUDqty.Value = 0;
+
                 }
-
-                //clear fields
-                this.CBitmName.SelectedIndex = -1;
-                this.NUDqty.Value = 0;
-
-
             }
 
         }
@@ -450,6 +491,24 @@ namespace finals_UI.View
         {
 
         }
+        private bool IsServiceIdExists(int serviceId)
+        {
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+               
+                if (row.IsNewRow) continue;
+
+                
+                if (Convert.ToInt32(row.Cells["ItemServiceId"].Value) == serviceId)
+                {
+                    return true;  // serviceId exists
+                }
+            }
+
+            return false;  // serviceId does not exist
+        }
+
 
         private void btnaddservice_Click(object sender, EventArgs e)
         {
@@ -499,18 +558,27 @@ namespace finals_UI.View
             //    return;
             //}
             //callig function to insert data
-            saleController.addService(serviceId, invoiceId);
+          
+            if (!IsServiceIdExists(serviceId))
+            {
+                saleController.addService(serviceId, invoiceId);
 
+                //function to return servicePrice
+                float servicePrice = saleController.retrieveServicePrice(serviceId);
+                //funtion to return invserviceId
+                int invserId = saleController.retrieveinvserId(serviceId, invoiceId);
 
+                // If the serviceId doesn't exist, add the row
+                dataGridView1.Rows.Add(serviceId, service, type, "", servicePrice, servicePrice, "", invserId);
+                updateTotal();
+            }
+            else
+            {
+                MessageBox.Show("This service has already been added to the list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            //function to return servicePrice
-            float servicePrice = saleController.retrieveServicePrice(serviceId);
-            //funtion to return invserviceId
-            int invserId=saleController.retrieveinvserId(serviceId,invoiceId);
-
-            //loading data into data grid view 
-           dataGridView1.Rows.Add(serviceId, service,type,"", servicePrice,servicePrice, "",invserId);
-            updateTotal();
+            
 
             //// Create and add Delete button
             //DataGridViewButtonCell deleteButtonCell = new DataGridViewButtonCell();
@@ -560,21 +628,33 @@ namespace finals_UI.View
             int serviceId = Convert.ToInt32(CBservice.SelectedValue);
             float servicePrice = saleController.retrieveServicePrice(serviceId);
 
+            //checkng whether same service is enetered
+            if (!IsServiceIdExists(serviceId))
+            {
 
-            //callng update function
-            saleController.updateService(serviceId,sale.invoiceItemServiceId);
+                //callng update function
+                saleController.updateService(serviceId, sale.invoiceItemServiceId);
 
-            //updating data grid view
-            dataGridView1.CurrentRow.Cells["ItemServiceId"].Value = serviceId;
-            dataGridView1.CurrentRow.Cells["ItemServiceName"].Value = this.CBservice.Text;
-            dataGridView1.CurrentRow.Cells["Price"].Value = servicePrice;
+                //updating data grid view
+                dataGridView1.CurrentRow.Cells["ItemServiceId"].Value = serviceId;
+                dataGridView1.CurrentRow.Cells["ItemServiceName"].Value = this.CBservice.Text;
+                dataGridView1.CurrentRow.Cells["Price"].Value = servicePrice;
 
-            updateTotal();
+                updateTotal();
 
 
 
-            this.CBservice.SelectedIndex = -1;
+                this.CBservice.SelectedIndex = -1;
 
+
+            }
+            else
+            {
+                MessageBox.Show("This service has already been added to the list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+        
 
 
 
@@ -706,6 +786,7 @@ namespace finals_UI.View
                 return;
             }
             customer_invoice report = new customer_invoice(txtInvoiceNo.Text);
+            report.WindowState = FormWindowState.Maximized;
             report.Show();
         }
 
@@ -772,8 +853,8 @@ namespace finals_UI.View
 
         private void btnacc_Click_1(object sender, EventArgs e)
         {
-            receptionist_profile profile = new receptionist_profile();
-            profile.Show();
+            view_customer_inquiries view_Customer_Inquiries = new view_customer_inquiries();
+            view_Customer_Inquiries.Show();
             this.Hide();
         }
 
@@ -784,6 +865,39 @@ namespace finals_UI.View
             sign_in sign_In = new sign_in();
             sign_In.Show();
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            receptionist_profile profile = new receptionist_profile();
+            profile.Show();
+            this.Hide();
+        }
+        private HashSet<object> selectedItems = new HashSet<object>();
+
+        private void CBservice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            //if(CBservice.SelectedIndex == 0)
+            //{
+            //    return;
+            //}
+            //if (CBservice.SelectedIndex != -1)
+            //{
+            //    object selectedItem = CBservice.SelectedItem;
+
+            //    if (selectedItems.Contains(selectedItem))
+            //    {
+
+            //        MessageBox.Show("This service has already been selected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //        CBservice.SelectedIndex = -1;
+            //    }
+            //    else
+            //    {
+            //        // Add new selection to the list
+            //        selectedItems.Add(selectedItem);
+            //    }
+            //}
         }
 
         //public string returnInvoiceNo()

@@ -139,8 +139,17 @@ namespace finals_UI
         {
             payment.invoiceTotal= Convert.ToSingle(this.txtinvtot.Text);
             payment.paidAmount = Convert.ToSingle(this.txtpaid.Text);
-            float balance=payment.paidAmount-payment.invoiceTotal;
-            this.txtbal.Text = balance.ToString("N2");
+            if (payment.paidAmount >= payment.invoiceTotal)
+            {
+                float balance = payment.paidAmount - payment.invoiceTotal;
+                this.txtbal.Text = balance.ToString("N2");
+            }
+            else
+            {
+                float balanceDue = payment.invoiceTotal - payment.paidAmount; 
+               MessageBox.Show($"Insufficient payment. Remaining balance: {balanceDue:N2}", "Balance Due", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
 
         private void CBpaymentmethod_SelectedIndexChanged(object sender, EventArgs e)
@@ -149,6 +158,45 @@ namespace finals_UI
 
         private void btnreceipt_Click(object sender, EventArgs e)
         {
+
+            if (this.txtfullname.Text == "")
+            {
+                errorProvider1.SetError(this.txtfullname, "please enter full name of teh customer");
+                return;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (this.txtpaid.Text == "")
+            {
+                errorProvider2.SetError(this.txtpaid, "please enter the paid amount");
+                return;
+            }
+            else
+            {
+                errorProvider2.Clear();
+            }
+            if (this.txtplateNo.Text == "")
+            {
+                errorProvider3.SetError(this.txtplateNo, "Please enter the plate number");
+                return;
+
+            }
+            else
+            {
+                errorProvider3.Clear();
+            }
+            if (this.txtplateNo.Text == "")
+            {
+                errorProvider3.SetError(this.txtplateNo, "Please enter the plate number");
+                return;
+            }
+            else
+            {
+                errorProvider3.Clear();
+            }
+
             payment.invoiceTotal = Convert.ToSingle(this.txtinvtot.Text);
             payment.paidAmount = Convert.ToSingle(this.txtpaid.Text);
             payment.paymentMethod=this.CBpaymentmethod.SelectedItem.ToString();
