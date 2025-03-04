@@ -319,5 +319,12 @@ namespace finals_UI
             //view_Reports.MdiParent = this;
             //view_Reports.Show();
         }
+
+        private void btnacc_Click_1(object sender, EventArgs e)
+        {
+            serviceManager_profile profile = new serviceManager_profile();
+            profile.Show();
+            this.Hide();
+        }
     }
 }

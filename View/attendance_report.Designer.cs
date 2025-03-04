@@ -38,16 +38,19 @@
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1187, 593);
             this.crystalReportViewer1.TabIndex = 0;
+            this.crystalReportViewer1.ToolPanelWidth = 178;
             // 
             // attendance_report
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1187, 593);
             this.Controls.Add(this.crystalReportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "attendance_report";
             this.Text = "attendance_report";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

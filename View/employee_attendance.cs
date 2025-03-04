@@ -37,7 +37,7 @@ namespace finals_UI
         private void employee_attendance_Load(object sender, EventArgs e)
         {
             monthCalendar1.MaxDate = DateTime.Today;
-
+            txtdate.Text = monthCalendar1.SelectionStart.ToString("yyyy-MM-dd");
             // Set the current date as the selected date 
             monthCalendar1.SelectionStart = DateTime.Today;
             //this.btnup.Visible = false;
@@ -329,6 +329,16 @@ namespace finals_UI
            serviceManager_profile profile = new serviceManager_profile();
             profile.Show();
             this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

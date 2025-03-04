@@ -38,6 +38,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnacc1 = new System.Windows.Forms.Button();
             this.btnlogout = new System.Windows.Forms.Button();
             this.btnpur = new System.Windows.Forms.Button();
             this.btnsupp = new System.Windows.Forms.Button();
@@ -70,13 +71,12 @@
             this.errorProvider6 = new System.Windows.Forms.ErrorProvider(this.components);
             this.txtMaintenanceId = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnacc1 = new System.Windows.Forms.Button();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -86,12 +86,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // btnsearch
@@ -217,6 +217,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(255, 882);
             this.panel1.TabIndex = 63;
+            // 
+            // btnacc1
+            // 
+            this.btnacc1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnacc1.FlatAppearance.BorderSize = 0;
+            this.btnacc1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnacc1.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnacc1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnacc1.Location = new System.Drawing.Point(0, 432);
+            this.btnacc1.Name = "btnacc1";
+            this.btnacc1.Size = new System.Drawing.Size(255, 63);
+            this.btnacc1.TabIndex = 16;
+            this.btnacc1.Text = "Account";
+            this.btnacc1.UseVisualStyleBackColor = true;
+            this.btnacc1.Click += new System.EventHandler(this.btnacc1_Click);
             // 
             // btnlogout
             // 
@@ -536,6 +551,16 @@
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btndlt_Click);
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::finals_UI.Properties.Resources.account;
+            this.pictureBox6.Location = new System.Drawing.Point(30, 449);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 17;
+            this.pictureBox6.TabStop = false;
+            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::finals_UI.Properties.Resources.logout4;
@@ -548,7 +573,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::finals_UI.Properties.Resources.account;
+            this.pictureBox4.Image = global::finals_UI.Properties.Resources.purchases;
             this.pictureBox4.Location = new System.Drawing.Point(30, 387);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(39, 36);
@@ -558,7 +583,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::finals_UI.Properties.Resources.schedule;
+            this.pictureBox3.Image = global::finals_UI.Properties.Resources.suppliers;
             this.pictureBox3.Location = new System.Drawing.Point(30, 336);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(39, 36);
@@ -568,7 +593,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::finals_UI.Properties.Resources.home3;
+            this.pictureBox2.Image = global::finals_UI.Properties.Resources.maintenance;
             this.pictureBox2.Location = new System.Drawing.Point(30, 273);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(39, 36);
@@ -585,31 +610,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnacc1
-            // 
-            this.btnacc1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnacc1.FlatAppearance.BorderSize = 0;
-            this.btnacc1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnacc1.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnacc1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnacc1.Location = new System.Drawing.Point(0, 432);
-            this.btnacc1.Name = "btnacc1";
-            this.btnacc1.Size = new System.Drawing.Size(255, 63);
-            this.btnacc1.TabIndex = 16;
-            this.btnacc1.Text = "Account";
-            this.btnacc1.UseVisualStyleBackColor = true;
-            this.btnacc1.Click += new System.EventHandler(this.btnacc1_Click);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::finals_UI.Properties.Resources.account;
-            this.pictureBox6.Location = new System.Drawing.Point(30, 449);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(39, 36);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 17;
-            this.pictureBox6.TabStop = false;
             // 
             // maintenance_transaction
             // 
@@ -660,12 +660,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
