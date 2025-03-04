@@ -123,8 +123,8 @@ namespace finals_UI
                 }
                 if(user.role =="Super User")
                 {
-                    superUser_dash superUser_Dash = new superUser_dash();
-                    superUser_Dash.Show();
+                     manage_employee manage_Employee = new manage_employee();
+                    manage_Employee.Show();
                     this.Hide();
                 }
             }

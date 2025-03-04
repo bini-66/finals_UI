@@ -312,5 +312,12 @@ namespace finals_UI
             sign_In.Show();
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //view_reports view_Reports = new view_reports();
+            //view_Reports.MdiParent = this;
+            //view_Reports.Show();
+        }
     }
 }

@@ -16,5 +16,21 @@ namespace finals_UI.View
         {
             InitializeComponent();
         }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void view_reports_Load(object sender, EventArgs e)
+        {
+    
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+         
+        }
     }
 }
