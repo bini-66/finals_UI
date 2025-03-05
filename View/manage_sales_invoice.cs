@@ -381,15 +381,15 @@ namespace finals_UI.View
 
             //function to insert sale details
 
-            //checkng whether same service is enetered
-            if (IsServiceIdExists(sale.itemId))
-            {
-                MessageBox.Show("This service has already been added to the list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+            //checkng whether same ITEM is enetered
+            ////if (IsServiceIdExists(sale.itemId))
+            ////{
+            ////    MessageBox.Show("This service has already been added to the list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            ////    return;
 
-            }
-            else
-            {
+            ////}
+            ////else
+            ////{
                
             
             bool stockAvailability = saleController.checkStockAvailability(sale.itemId, sale.quantity);
@@ -430,7 +430,7 @@ namespace finals_UI.View
                     this.CBitmName.SelectedIndex = -1;
                     this.NUDqty.Value = 0;
 
-                }
+                
             }
 
         }

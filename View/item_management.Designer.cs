@@ -419,7 +419,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::finals_UI.Properties.Resources.logout4;
-            this.pictureBox5.Location = new System.Drawing.Point(23, 934);
+            this.pictureBox5.Location = new System.Drawing.Point(23, 841);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(39, 36);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

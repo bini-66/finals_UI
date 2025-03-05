@@ -47,7 +47,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.btnlogout = new System.Windows.Forms.Button();
             this.btnacc = new System.Windows.Forms.Button();
@@ -66,7 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -217,7 +215,6 @@
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.btnlogout);
             this.panel1.Controls.Add(this.btnacc);
@@ -233,7 +230,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::finals_UI.Properties.Resources.account;
-            this.pictureBox4.Location = new System.Drawing.Point(23, 396);
+            this.pictureBox4.Location = new System.Drawing.Point(23, 387);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(39, 36);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -260,20 +257,10 @@
             this.pictureBox2.TabIndex = 38;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::finals_UI.Properties.Resources.logout4;
-            this.pictureBox6.Location = new System.Drawing.Point(23, 752);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(39, 36);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 37;
-            this.pictureBox6.TabStop = false;
-            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::finals_UI.Properties.Resources.logout4;
-            this.pictureBox5.Location = new System.Drawing.Point(23, 934);
+            this.pictureBox5.Location = new System.Drawing.Point(23, 853);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(39, 36);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -356,7 +343,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label8.Location = new System.Drawing.Point(38, 175);
+            this.label8.Location = new System.Drawing.Point(45, 175);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(177, 25);
             this.label8.TabIndex = 33;
@@ -429,7 +416,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -455,7 +441,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.ErrorProvider errorProvider3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button btnlogout;
         private System.Windows.Forms.Button btnacc;

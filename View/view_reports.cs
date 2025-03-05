@@ -69,5 +69,27 @@ namespace finals_UI.View
         {
             LoadReport(@"D:\NIBM\GUI-C#\finals_UI\View\attendance_cr.rpt");
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnacc_Click(object sender, EventArgs e)
+        {
+            owner_profile owner_Profile =new owner_profile();
+            owner_Profile.Show();
+            this.Hide();
+        }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+
+            userSession.Logout();
+
+            sign_in sign_In = new sign_in();
+            sign_In.Show();
+            this.Close();
+        }
     }
 }

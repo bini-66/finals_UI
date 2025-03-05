@@ -124,7 +124,8 @@ namespace finals_UI
         private void btnNewAppointment_Click(object sender, EventArgs e)
         {
             new_appointments apt = new new_appointments();
-            apt.ShowDialog();
+            apt.Show();
+            this.Hide();
         }
 
         private void btnNewCustomer_Click(object sender, EventArgs e)
