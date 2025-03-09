@@ -326,5 +326,10 @@ namespace finals_UI
             profile.Show();
             this.Hide();
         }
+
+        private void manage_services_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

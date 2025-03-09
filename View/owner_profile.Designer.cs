@@ -44,33 +44,31 @@
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnacc = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnlogout = new System.Windows.Forms.Button();
-            this.btnemp = new System.Windows.Forms.Button();
-            this.btncust = new System.Windows.Forms.Button();
             this.btnreports = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnclose = new System.Windows.Forms.Button();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // txtphone
@@ -215,15 +213,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.panel1.Controls.Add(this.pictureBox6);
+            this.panel1.Controls.Add(this.pictureBox8);
             this.panel1.Controls.Add(this.btnacc);
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.btnlogout);
-            this.panel1.Controls.Add(this.btnemp);
-            this.panel1.Controls.Add(this.btncust);
             this.panel1.Controls.Add(this.btnreports);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -233,17 +229,6 @@
             this.panel1.Size = new System.Drawing.Size(255, 1012);
             this.panel1.TabIndex = 133;
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::finals_UI.Properties.Resources.account;
-            this.pictureBox6.Location = new System.Drawing.Point(27, 430);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(39, 36);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 66;
-            this.pictureBox6.TabStop = false;
-            // 
             // btnacc
             // 
             this.btnacc.Dock = System.Windows.Forms.DockStyle.Top;
@@ -251,7 +236,7 @@
             this.btnacc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnacc.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnacc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnacc.Location = new System.Drawing.Point(0, 430);
+            this.btnacc.Location = new System.Drawing.Point(0, 330);
             this.btnacc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnacc.Name = "btnacc";
             this.btnacc.Size = new System.Drawing.Size(255, 52);
@@ -273,7 +258,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::finals_UI.Properties.Resources.account;
-            this.pictureBox4.Location = new System.Drawing.Point(27, 388);
+            this.pictureBox4.Location = new System.Drawing.Point(27, 334);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(39, 36);
@@ -318,38 +303,6 @@
             this.btnlogout.Text = "Log Out";
             this.btnlogout.UseVisualStyleBackColor = true;
             this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click_1);
-            // 
-            // btnemp
-            // 
-            this.btnemp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnemp.FlatAppearance.BorderSize = 0;
-            this.btnemp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnemp.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnemp.Location = new System.Drawing.Point(0, 380);
-            this.btnemp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnemp.Name = "btnemp";
-            this.btnemp.Size = new System.Drawing.Size(255, 50);
-            this.btnemp.TabIndex = 3;
-            this.btnemp.Text = "Employees";
-            this.btnemp.UseVisualStyleBackColor = true;
-            this.btnemp.Click += new System.EventHandler(this.btnemp_Click);
-            // 
-            // btncust
-            // 
-            this.btncust.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btncust.FlatAppearance.BorderSize = 0;
-            this.btncust.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncust.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncust.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btncust.Location = new System.Drawing.Point(0, 330);
-            this.btncust.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btncust.Name = "btncust";
-            this.btncust.Size = new System.Drawing.Size(255, 50);
-            this.btncust.TabIndex = 2;
-            this.btncust.Text = "Customers";
-            this.btncust.UseVisualStyleBackColor = true;
-            this.btncust.Click += new System.EventHandler(this.btncust_Click);
             // 
             // btnreports
             // 
@@ -426,6 +379,17 @@
             this.btnclose.UseVisualStyleBackColor = false;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::finals_UI.Properties.Resources.account;
+            this.pictureBox8.Location = new System.Drawing.Point(27, 338);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 67;
+            this.pictureBox8.TabStop = false;
+            // 
             // owner_profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -455,7 +419,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -463,6 +426,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -489,15 +453,13 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnlogout;
-        private System.Windows.Forms.Button btnemp;
-        private System.Windows.Forms.Button btncust;
         private System.Windows.Forms.Button btnreports;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button btnacc;
         private System.Windows.Forms.Button btnclose;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }
