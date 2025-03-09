@@ -80,9 +80,9 @@ namespace finals_UI
 
         private void btndash_Click(object sender, EventArgs e)
         {
-            serviceManager_dash serviceManager_Dash = new serviceManager_dash();
-            serviceManager_Dash.Show();
-            this.Hide();
+            //serviceManager_dash serviceManager_Dash = new serviceManager_dash();
+            //serviceManager_Dash.Show();
+            //this.Hide();
 
 
         }

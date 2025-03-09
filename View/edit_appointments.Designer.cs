@@ -67,11 +67,13 @@
             this.btnNewCustomer = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnclose = new System.Windows.Forms.Button();
+            this.btnback = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanelServices.SuspendLayout();
             this.groupBoxServices.SuspendLayout();
             this.groupBoxStatus.SuspendLayout();
             this.groupBoxCustomer.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDescription
@@ -563,12 +565,24 @@
             this.btnclose.UseVisualStyleBackColor = false;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click_1);
             // 
+            // btnback
+            // 
+            this.btnback.Image = global::finals_UI.Properties.Resources.left_chevron;
+            this.btnback.Location = new System.Drawing.Point(33, 73);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(39, 36);
+            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnback.TabIndex = 98;
+            this.btnback.TabStop = false;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
+            // 
             // edit_appointments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(915, 844);
+            this.Controls.Add(this.btnback);
             this.Controls.Add(this.btnclose);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
@@ -592,6 +606,7 @@
             this.groupBoxCustomer.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -638,5 +653,6 @@
         private System.Windows.Forms.Button btnNewCustomer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnclose;
+        private System.Windows.Forms.PictureBox btnback;
     }
 }

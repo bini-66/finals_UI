@@ -310,9 +310,9 @@ namespace finals_UI
 
         private void btndash_Click(object sender, EventArgs e)
         {
-            operationalManager_dash operationalManager_Dash = new operationalManager_dash();
-            operationalManager_Dash.Show();
-            this.Hide();
+            //operationalManager_dash operationalManager_Dash = new operationalManager_dash();
+            //operationalManager_Dash.Show();
+            //this.Hide();
 
         }
 

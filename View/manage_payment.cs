@@ -65,9 +65,9 @@ namespace finals_UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Receptionist_dash dash = new Receptionist_dash();
-            dash.Show();
+            //this.Hide();
+            //Receptionist_dash dash = new Receptionist_dash();
+            //dash.Show();
         }
 
         private void label8_Click(object sender, EventArgs e)

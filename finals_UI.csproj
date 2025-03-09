@@ -192,12 +192,6 @@
     <Compile Include="View\edit_appointments.Designer.cs">
       <DependentUpon>edit_appointments.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\inventoryManager_dash.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\inventoryManager_dash.Designer.cs">
-      <DependentUpon>inventoryManager_dash.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\inventoryManager_profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,23 +216,11 @@
     <Compile Include="View\manage_employees.Designer.cs">
       <DependentUpon>manage_employees.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\operationalManager_dash.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\operationalManager_dash.Designer.cs">
-      <DependentUpon>operationalManager_dash.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\operationalManager_profile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\operationalManager_profile.Designer.cs">
       <DependentUpon>operationalManager_profile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\owner_dash.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\owner_dash.Designer.cs">
-      <DependentUpon>owner_dash.cs</DependentUpon>
     </Compile>
     <Compile Include="View\owner_profile.cs">
       <SubType>Form</SubType>
@@ -300,12 +282,6 @@
       <DependentUpon>service_sub_cr.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="View\superUser_dash.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\superUser_dash.Designer.cs">
-      <DependentUpon>superUser_dash.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\view_appointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -335,12 +311,6 @@
     </Compile>
     <Compile Include="View\item_management.Designer.cs">
       <DependentUpon>item_management.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\manage_customers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\manage_customers.Designer.cs">
-      <DependentUpon>manage_customers.cs</DependentUpon>
     </Compile>
     <Compile Include="View\manage_purchases.cs">
       <SubType>Form</SubType>
@@ -386,41 +356,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\Receptionist_dash.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Receptionist_dash.Designer.cs">
-      <DependentUpon>Receptionist_dash.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Register_user.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Register_user.Designer.cs">
       <DependentUpon>Register_user.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\schedule.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\schedule.Designer.cs">
-      <DependentUpon>schedule.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\serviceManager_dash.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\serviceManager_dash.Designer.cs">
-      <DependentUpon>serviceManager_dash.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\trial.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\trial.Designer.cs">
-      <DependentUpon>trial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\vehicle_details.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\vehicle_details.Designer.cs">
-      <DependentUpon>vehicle_details.cs</DependentUpon>
     </Compile>
     <Compile Include="View\view_customer.cs">
       <SubType>Form</SubType>
@@ -475,9 +415,6 @@
     <EmbeddedResource Include="View\edit_appointments.resx">
       <DependentUpon>edit_appointments.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\inventoryManager_dash.resx">
-      <DependentUpon>inventoryManager_dash.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\inventoryManager_profile.resx">
       <DependentUpon>inventoryManager_profile.cs</DependentUpon>
     </EmbeddedResource>
@@ -491,14 +428,8 @@
     <EmbeddedResource Include="View\manage_employees.resx">
       <DependentUpon>manage_employees.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\operationalManager_dash.resx">
-      <DependentUpon>operationalManager_dash.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\operationalManager_profile.resx">
       <DependentUpon>operationalManager_profile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\owner_dash.resx">
-      <DependentUpon>owner_dash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\owner_profile.resx">
       <DependentUpon>owner_profile.cs</DependentUpon>
@@ -534,9 +465,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>service_sub_cr.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\superUser_dash.resx">
-      <DependentUpon>superUser_dash.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\view_customer_inquiries.resx">
       <DependentUpon>view_customer_inquiries.cs</DependentUpon>
     </EmbeddedResource>
@@ -557,9 +485,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\item_management.resx">
       <DependentUpon>item_management.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\manage_customers.resx">
-      <DependentUpon>manage_customers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\manage_purchases.resx">
       <DependentUpon>manage_purchases.cs</DependentUpon>
@@ -587,23 +512,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Receptionist_dash.resx">
-      <DependentUpon>Receptionist_dash.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Register_user.resx">
       <DependentUpon>Register_user.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\schedule.resx">
-      <DependentUpon>schedule.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\serviceManager_dash.resx">
-      <DependentUpon>serviceManager_dash.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\trial.resx">
-      <DependentUpon>trial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\vehicle_details.resx">
-      <DependentUpon>vehicle_details.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\view_customer.resx">
       <DependentUpon>view_customer.cs</DependentUpon>

@@ -157,7 +157,7 @@ namespace finals_UI
                 {
                     Console.WriteLine("Selected Appointment ID: " + appointmentId); // Debug message
                     edit_appointments editForm = new edit_appointments(appointmentId);
-                    editForm.ShowDialog();
+                    editForm.Show();
                     this.Hide();
                     LoadAppointments(); //to refresh grid after editing
                 }

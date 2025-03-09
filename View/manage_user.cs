@@ -114,9 +114,9 @@ namespace finals_UI
 
         private void btndash_Click(object sender, EventArgs e)
         {
-            superUser_dash superUser_Dash = new superUser_dash();
-            superUser_Dash.Show();
-            this.Hide();
+            //superUser_dash superUser_Dash = new superUser_dash();
+            //superUser_Dash.Show();
+            //this.Hide();
         }
 
         private void btnclose_Click(object sender, EventArgs e)

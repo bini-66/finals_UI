@@ -34,9 +34,9 @@ namespace finals_UI
         //dashboard
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Receptionist_dash dash = new Receptionist_dash();
-            dash.Show();
+            //this.Hide();
+            //Receptionist_dash dash = new Receptionist_dash();
+            //dash.Show();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

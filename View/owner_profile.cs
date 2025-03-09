@@ -111,9 +111,9 @@ namespace finals_UI.View
 
         private void btndash_Click(object sender, EventArgs e)
         {
-            owner_dash owner_Dash = new owner_dash();
-            owner_Dash.Show();
-            this.Hide();
+            //owner_dash owner_Dash = new owner_dash();
+            //owner_Dash.Show();
+            //this.Hide();
         }
 
         private void btnacc_Click(object sender, EventArgs e)

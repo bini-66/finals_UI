@@ -182,5 +182,12 @@ namespace finals_UI.View
         {
             this.Close();
         }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+            view_appointment view_Appointment = new view_appointment();
+            view_Appointment.Show();
+            this.Hide();
+        }
     }
 }
